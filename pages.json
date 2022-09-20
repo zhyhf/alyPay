@@ -351,11 +351,29 @@
 		{
 			"path": "pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter",
 			"style": {
-				"navigationBarTitleText": "关于"
+				"navigationBarTitleText": "国家政务服务平台"
 			}
 		}
 		// #endif
-	],
+	    ,{
+            "path" : "pages/component/myCertificates/myCertificates",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的证照",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/manageCertificates/manageCertificates",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "添加证照",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{
