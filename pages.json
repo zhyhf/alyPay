@@ -357,7 +357,7 @@
 		{
 			"path": "pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter",
 			"style": {
-				"navigationBarTitleText": "国家政务服务平台"
+				"navigationBarTitleText": ""
 			}
 		}
 		// #endif
@@ -365,7 +365,7 @@
             "path" : "pages/component/myCertificates/myCertificates",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "我的证照",
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             
@@ -374,7 +374,7 @@
             "path" : "pages/component/manageCertificates/manageCertificates",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "添加证照",
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             

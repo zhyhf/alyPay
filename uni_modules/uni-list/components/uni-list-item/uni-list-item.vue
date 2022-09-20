@@ -12,7 +12,7 @@
 				<slot name="header">
 					<view class="uni-list-item__header">
 						<view v-if="thumb" class="uni-list-item__icon">
-							<image :src="thumb" class="uni-list-item__icon-img" :class="['uni-list--' + thumbSize]" />
+							<image :src="img[Math.floor(Math.random() * 4)]" class="uni-list-item__icon-img" :class="['uni-list--' + thumbSize]" />
 						</view>
 						<view v-else-if="showExtraIcon" class="uni-list-item__icon">
 							<uni-icons :color="extraIcon.color" :size="extraIcon.size" :type="extraIcon.type" />
@@ -179,7 +179,13 @@
 		// inject: ['list'],
 		data() {
 			return {
-				isFirstChild: false
+				isFirstChild: false,
+				img: [
+					require('../../../../static/government/house.png'),
+					require('../../../../static/government/china.png'),
+					require('../../../../static/government/green.png'),
+					require('../../../../static/government/profile.png')
+				]
 			};
 		},
 		mounted() {
