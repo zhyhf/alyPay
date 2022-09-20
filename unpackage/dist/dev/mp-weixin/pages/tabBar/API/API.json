@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "生活",
+  "usingComponents": {
+    "u-link": "/components/u-link/u-link",
+    "set-tab-bar": "/components/api-set-tabbar"
+  }
+}
