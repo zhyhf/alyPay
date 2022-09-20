@@ -12,7 +12,7 @@
 	import componentPage from '@/pages/tabBar/component/component.nvue'
 	import API from '@/pages/tabBar/API/API.nvue'
 	import extUI from '@/pages/tabBar/extUI/extUI.nvue'
-	import templatePage from '@/pages/tabBar/template/template.nvue'
+	import templatePage from '@/pages/tabBar/template/template.vue'
 	import {
 		mapMutations,
 		mapState
