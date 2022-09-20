@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image src="@/static/government/header.png" class="gov-header"></image>
+		<image src="@/static/government/header.png" class="gov-header" @click="toMyInfo"></image>
 		<view class="content">
 			<image src="@/static/government/slider.png" class="gov-slider">
 			<image src="@/static/government/service.png" class="gov-service"></image>
@@ -69,6 +69,11 @@
 			jumpToAll() {
 				uni.switchTab({
 					url: '/pages/tabBar/extUI/extUI'
+				})
+			},
+			toMyInfo(){
+				uni.navigateTo({
+					url:"/pages/component//MyInfo/MyInfo"
 				})
 			}
 		}
