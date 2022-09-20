@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image src="@/static/government/header.png" class="gov-header"></image>
+		<image @click="toMyPage" src="@/static/government/header.png" class="gov-header"></image>
 		<view class="content">
 			<image src="@/static/government/slider.png" class="gov-slider">
 			<image src="@/static/government/service.png" class="gov-service"></image>
@@ -69,6 +69,12 @@
 			jumpToAll() {
 				uni.navigateTo({
 					url: '/pages/component/myCertificates/myCertificates'
+				})
+			},
+			toMyPage(){
+				console.log()
+				uni.navigateTo({
+					url:"/pages/component/MyInfo/MyInfo"
 				})
 			}
 		}

@@ -96,6 +96,12 @@
 			}
 		},
 		{
+			"path": "pages/component/MyInfo/MyInfo",
+			"style": {
+				"navigationBarTitleText": "个人服务中心"
+			}
+		},
+		{
 			"path": "pages/component/view/view",
 			"style": {
 				"navigationBarTitleText": "view"
