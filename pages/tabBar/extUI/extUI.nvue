@@ -20,11 +20,11 @@
 				</image>
 			</view>
 			<view class="btn" style="width: 90vw; margin: 0 auto;">
-				<button style="background: skyblue;color: white">人脸识别认证</button>
+				<button style="background: skyblue;color: white" @click="cameraFlag = true">人脸识别认证</button>
 			</view>
 		</view>
 		<div v-if="cameraFlag" class="livefater" style="position: fixed;top: 40vw;left: 8vw;">
-			<div style="width: 360px;height: 360px;border-radius: 50%;overflow: hidden;background-color: aqua;">
+			<div style="width: 360px;height: 360px;border-radius: 50%;overflow: hidden;">
 				<!-- orientation="horizontal" //设置垂直水平方向 -->
 				<live-pusher id='livePusher' ref="livePusher" class="livePusher" url="" mode="SD" :muted="true"
 					:enable-camera="true" :auto-focus="true" :beauty="1" whiteness="2" aspect="1:1"
@@ -56,7 +56,6 @@
 			}
 		},
 		mounted() {
-
 			// 注意：需要在onReady中 或 onLoad 延时
 			this.context = uni.createLivePusherContext("livePusher", this);
 			var that = this
@@ -95,6 +94,9 @@
 					success: (e) => {
 						console.log(e.message, '拍照信息');
 						this.$emit('faceImg', e.message)
+						uni.navigateTo({
+							url: '/pages/component/myCertificates/myCertificates'
+						})
 					}
 				});
 			},

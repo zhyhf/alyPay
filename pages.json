@@ -96,12 +96,6 @@
 			}
 		},
 		{
-			"path": "pages/component/MyInfo/MyInfo",
-			"style": {
-				"navigationBarTitleText": "个人服务中心"
-			}
-		},
-		{
 			"path": "pages/component/view/view",
 			"style": {
 				"navigationBarTitleText": "view"
@@ -347,7 +341,7 @@
 				"navigationBarTitleText": "问题反馈"
 			}
 		}
-		// #ifdef H5
+		
 		, {
 			"path": "pages/error/404",
 			"style": {
@@ -360,7 +354,7 @@
 				"navigationBarTitleText": ""
 			}
 		}
-		// #endif
+		
 	    ,{
             "path" : "pages/component/myCertificates/myCertificates",
             "style" :                                                                                    
@@ -1361,30 +1355,30 @@
 		"list": [
 			{
 				"pagePath": "pages/tabBar/indexPage/indexPage",
-				"iconPath": "static/image/shouye.png",
-				"selectedIconPath": "static/image/shouye.png",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
 				"text": "首页"
 			},
 			{
 				"pagePath": "pages/tabBar/component/component",
-				"iconPath": "static/image/licai.png",
-				"selectedIconPath": "static/image/licai.png",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
 				"text": "理财"
 			},
 			{
 				"pagePath": "pages/tabBar/API/API",
-				"iconPath": "static/image/shenghuo.png",
-				"selectedIconPath": "static/image/shenghuo.png",
+				"iconPath": "static/api.png",
+				"selectedIconPath": "static/apiHL.png",
 				"text": "生活"
 			}, {
 				"pagePath": "pages/tabBar/extUI/extUI",
-				"iconPath": "static/image/message.png",
-				"selectedIconPath": "static/image/message.png",
+				"iconPath": "static/extui.png",
+				"selectedIconPath": "static/extuiHL.png",
 				"text": "消息"
 			}, {
 				"pagePath": "pages/tabBar/template/template",
-				"iconPath": "static/image/my.png",
-				"selectedIconPath": "static/image/my.png",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
 				"text": "我的"
 			}
 		]
