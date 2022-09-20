@@ -347,6 +347,12 @@
 			"style": {
 				"navigationBarTitleText": "Not Found"
 			}
+		},
+		{
+			"path": "pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter",
+			"style": {
+				"navigationBarTitleText": "关于"
+			}
 		}
 		// #endif
 	],
