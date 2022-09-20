@@ -1,8 +1,8 @@
 {
-    "name" : "alyPay",
+    "name" : "支付宇",
     "appid" : "__UNI__A858910",
     "description" : "应用描述",
-    "versionName" : "1.0.1",
+    "versionName" : "1.0.2",
     "versionCode" : 100,
     "transformPx" : false,
     "app-plus" : {
@@ -72,7 +72,18 @@
                 },
                 "ad" : {}
             },
-            "orientation" : [ "portrait-primary" ]
+            "orientation" : [ "portrait-primary" ],
+            "icons" : {
+                "android" : {
+                    "hdpi" : "D:/appPro/zfb.png",
+                    "xhdpi" : "D:/appPro/zfb.png",
+                    "xxhdpi" : "D:/appPro/zfb.png",
+                    "xxxhdpi" : "D:/appPro/zfb.png"
+                },
+                "ios" : {
+                    "appstore" : "D:/appPro/zfb.png"
+                }
+            }
         }
     },
     "quickapp" : {},

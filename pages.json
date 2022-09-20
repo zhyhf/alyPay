@@ -16,7 +16,7 @@
 		{
 			"path": "pages/tabBar/indexPage/indexPage",
 			"style": {
-				"navigationBarTitleText": "首页",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
@@ -357,7 +357,7 @@
 		{
 			"path": "pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "国家政务服务平台"
 			}
 		}
 		// #endif
@@ -365,7 +365,7 @@
             "path" : "pages/component/myCertificates/myCertificates",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "我的证照",
                 "enablePullDownRefresh": false
             }
             
@@ -374,7 +374,7 @@
             "path" : "pages/component/manageCertificates/manageCertificates",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "添加证照",
                 "enablePullDownRefresh": false
             }
             
