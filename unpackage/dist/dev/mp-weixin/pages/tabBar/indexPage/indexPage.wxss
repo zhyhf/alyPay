@@ -33,7 +33,7 @@ button {
 
 
 .image {
-	margin:40rpx auto;
+	/* margin:40rpx auto; */
 	width: 90%;
 }
 

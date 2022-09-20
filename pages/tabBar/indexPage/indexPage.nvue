@@ -1,13 +1,67 @@
 <template>
 	<view class="uni-padding-wrap uni-common-mt">
-		<view class="uni-center" style="background:#FFFFFF; font-size:0;">
-			<image class="image" mode="widthFix" src="../../../static/image/indexPageImg1.svg" />
+		<view class="uni-center" style="background:blue; font-size:0;">
+			<image class="image" mode="widthFix" src="" />
+		</view>
+		<view class="more-chose">
+			<view class="chose-item">
+				<image mode="widthFix"  class="image" src="../../../static/image/elm.png"></image>
+			</view>
+			<view class="chose-item">
+				<image mode="widthFix" class="image" src="../../../static/image/center.png"></image>
+			</view>
+			<view class="chose-item">
+				<image mode="widthFix"  class="image" src="../../../static/image/contry.png"></image>
+			</view>
+			<view class="chose-item">
+				<image mode="widthFix"  class="image" src="../../../static/image/dianying.png"></image>
+			</view>
+			<view class="chose-item">
+				<image mode="widthFix"  class="image" src="../../../static/image/he.png"></image>
+			</view>
+			<view class="chose-item">
+				<image mode="widthFix"  class="image" src="../../../static/image/houc.png"></image>
+			</view>
+			<view class="chose-item">
+				<image mode="widthFix"  class="image" src="../../../static/image/sport.png"></image>
+			</view>
+			<view class="chose-item">
+				<image mode="widthFix"  class="image" src="../../../static/image/zhuan.png"></image>
+			</view>
 		</view>
 	</view>
 </template>
-<style>
+<script>
+	 
+</script>
+<style lang="scss" scoped>
+	.uni-padding-wrap {
+		// width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 	.image {
 		margin:40rpx auto;
 		width: 90%;
+		height: 30rpx;
+	}
+	.more-chose {
+		// width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		/* justify-content: space-between; */
+		background-color: #f7f7f7;
+	}
+	.chose-item {
+		width: 130rpx;
+		height: 130rpx;
+		// width: 18%;
+		.image {
+			// width: 100%;
+			width: 130rpx;
+			height: 130rpx;
+		}
 	}
 </style>

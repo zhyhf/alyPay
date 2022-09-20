@@ -10,7 +10,7 @@
   "compileType": "miniprogram",
   "libVersion": "",
   "appid": "touristappid",
-  "projectname": "intelligent_water_app",
+  "projectname": "alyPay",
   "condition": {
     "search": {
       "current": -1,
