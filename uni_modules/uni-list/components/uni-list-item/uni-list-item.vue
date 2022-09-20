@@ -359,6 +359,7 @@
 		justify-content: center;
 	}
 	.uni-list-item__content-title {
+		margin-top: 20rpx;
 		font-size: $uni-font-size-base;
 		color: #3b4144;
 		overflow: hidden;
@@ -387,6 +388,7 @@
 	}
 	.uni-list-item__icon {
 		margin-right: 18rpx;
+		margin-top: 25rpx;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
@@ -405,6 +407,7 @@
 		/* #endif */
 		align-items: center;
 		padding: 0 10px;
+		margin-top: 25rpx;
 	}
 	.flex--direction {
 		flex-direction: column;
