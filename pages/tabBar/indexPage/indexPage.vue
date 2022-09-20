@@ -63,6 +63,12 @@
 					<image @click="toNewPage" mode="scaleToFill" class="image" src="../../../static/image/guojia.png">
 					</image>
 				</view>
+				<view class="chose-item">
+					<image mode="scaleToFill" class="image" src="../../../static/image/wode.png"></image>
+				</view>
+				<view class="chose-item">
+					<image mode="scaleToFill" class="image" src="../../../static/image/more.png"></image>
+				</view>
 			</view>
 		</view>
 		<view class="bottom">
