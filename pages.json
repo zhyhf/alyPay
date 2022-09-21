@@ -17,7 +17,7 @@
 			"path": "pages/tabBar/indexPage/indexPage",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#0C7DFF",
+				"navigationBarBackgroundColor": "#1777FF",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
@@ -36,7 +36,7 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom",
-				"navigationBarBackgroundColor": "#0C7DFF",
+				"navigationBarBackgroundColor": "#1777FF",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
@@ -54,7 +54,7 @@
 			"path": "pages/tabBar/API/API",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#0C7DFF",
+				"navigationBarBackgroundColor": "#1777FF",
 				"app-plus": {
 					"titleNView": {
 						// "buttons": [{
@@ -71,7 +71,7 @@
 			"path": "pages/tabBar/extUI/extUI",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#0C7DFF",
+				"navigationBarBackgroundColor": "#1777FF",
 				"app-plus": {
 					"titleNView": {
 						// "buttons": [{
@@ -88,7 +88,7 @@
 			"path": "pages/tabBar/template/template",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#0C7DFF",
+				"navigationBarBackgroundColor": "#1777FF",
 				"app-plus": {
 					"titleNView": {
 						// "buttons": [{
@@ -1374,11 +1374,10 @@
 		"pageOrientation": "portrait",
 		"navigationBarTitleText": "Hello uniapp",
 		"navigationBarTextStyle": "white",
-		"navigationBarBackgroundColor": "#007AFF",
+		"navigationBarBackgroundColor": "#1777FF",
 		"backgroundColor": "#F8F8F8",
 		"backgroundColorTop": "#F4F5F6",
 		"backgroundColorBottom": "#F4F5F6",
-		"navigationStyle": "custom",
 		"mp-360": {
 			"navigationStyle": "custom"
 		},
