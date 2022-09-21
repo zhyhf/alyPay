@@ -38,7 +38,7 @@
 		<view class="more-main">
 			<view class="more-chose">
 				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/ele.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/dianying.png"></image>
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/dianying.png"></image>
@@ -52,9 +52,6 @@
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/kuaidi.png"></image>
-				</view>
-				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
@@ -190,6 +187,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding-left: 2vw;
 	}
 	.more-chose {
 		margin: 0 auto;
@@ -203,12 +201,12 @@
 
 	.chose-item {
 		margin: 1vw;
-		width: 16vw;
-		height: 16vw;
+		width: 16.5vw;
+		height: 16.5vw;
 
 		.image {
-			width: 16vw;
-			height: 16vw;
+			width:  16.5vw;
+			height:  16.5vw;
 		}
 	}
 </style>

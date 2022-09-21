@@ -1,0 +1,175 @@
+<template>
+	<div>
+		<view class="top-des" style="text-align: center;font-size: 36rpx;padding-top: 30rpx;line-height: 50rpx;">
+			<view class="top-shuomin" style="padding-bottom:20rpx;letter-spacing: 5rpx;padding-top: 10rpx;">
+				本服务仅限本人查询，请先完成人脸识别
+			</view>
+			<view class="top-help" style="color: #ccc;padding-top: 20rpx;">
+				拍摄您本人人脸，请确保正对手机，光线充足
+			</view>
+			<view class="user-info" style="display: flex;justify-content: center;width: 100vw;flex-direction: row;">
+				<view class="name" style="color: #ccc;">
+					**帅、
+				</view>
+				<view class="phone" style="color: #ccc;">
+					186*****2731
+				</view>
+			</view>
+			<view style="margin: 98rpx auto;width: 50vw;height: 50vw;">
+				<image v-show="!cameraFlag" style="width: 50vw;height: 50vw;" src="../../../static/app-plus/scan1.png" mode="widthFix">
+				</image>
+			</view>
+			<view class="btn" style="width: 90vw; margin: 0 auto;">
+				<button style="background: skyblue;color: white" @click="handleClick">人脸识别认证</button>
+			</view>
+		</view>
+		<div v-show="cameraFlag">
+			<div style="width: 360px;height: 360px;border-radius: 50%;overflow: hidden;">
+				<!-- orientation="horizontal" //设置垂直水平方向 -->
+				<live-pusher id='livePusher' ref="livePusher" class="livePusher" url="" mode="SD" :muted="true"
+					:enable-camera="true" :auto-focus="true" :beauty="1" whiteness="2" aspect="1:1"
+					@statechange="statechange" @netstatus="netstatus" @error="error"></live-pusher>
+			</div>
+			<!-- <cover-image src="/static/compass.png" class="gaiimg"></cover-image> -->
+		</div>
+		<!-- <view class="message" style="color: #fff;">
+			<text class="info"></text>
+		</view> -->
+	</div>
+</template>
+
+<script>
+	export default {
+		props: {
+			time: {
+				default: 5000,
+				type: Number
+			},
+			message: {
+				default: '识别中，请稍后...',
+				type: String
+			}
+		},
+		data() {
+			return {
+				cameraFlag:false
+			}
+		},
+		 onReady() {
+				// 注意：需要在onReady中 或 onLoad 延时
+				this.context = uni.createLivePusherContext("livePusher", this);
+		 },
+		methods: {
+			handleClick(){
+				let that = this
+				that.cameraFlag  = true
+				 setTimeout(() => {
+					that.startPreview()
+				 })
+			},
+			// 拍照事件
+			snapshot: function() {
+				var that = this
+				this.context.snapshot({
+					success: (e) => {
+						console.log(e.message, '拍照信息');
+						this.$emit('faceImg', e.message)
+						this.cameraFlag = false
+						uni.navigateTo({
+							url: '/pages/component/myCertificates/myCertificates'
+						})
+					}
+				});
+			},
+			// 开启摄像头
+			startPreview() {
+				console.log("1")
+				var that = this
+				this.context.startPreview({
+					success: (a) => {
+						console.log("livePusher.startPreview:" + JSON.stringify(a));
+						that.Timer = setInterval(function() {
+							that.snapshot()
+						}, that.time)
+					},
+					fail(err) {
+						console.log(err);
+					}
+				});
+			},
+		},
+	}
+</script>
+
+<style>
+	<style lang="less">page {
+		background: #0c8cf9;
+	}
+
+	.u-navbar__content__left {
+		display: flex !important;
+		align-items: center;
+	}
+
+	.u_nav_slot {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		color: rgba(0, 0, 0, 0.9);
+		font-size: 14.4rpx;
+		font-weight: 700;
+
+	}
+
+	.text {
+		margin-left: 1rpx;
+		color: #fff;
+		font-size: 16rpx;
+	}
+
+	.box {
+		z-index: 99;
+		position: absolute;
+		left: 35%;
+		top: 25%;
+		width: 250rpx;
+		height: 250rpx;
+		background: pink;
+	}
+
+	.message {
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+		font-weight: 700;
+	}
+
+	.info {
+		color: #fff !important;
+		font-size: 20rpx;
+	}
+
+	.livePusher {
+		width: 300px;
+		height: 300px;
+	}
+
+	.livefater {
+		display: -ms-flex;
+		display: -webkit-flex;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10rpx;
+		margin-bottom: 50rpx;
+		height: 350px;
+	}
+
+	.gaiimg {
+		width: 300px;
+		height: 300px;
+		margin-top: -300px;
+	}
+</style>
+</style>

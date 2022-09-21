@@ -23,7 +23,9 @@
             "Push" : {},
             "Share" : {},
             "Speech" : {},
-            "VideoPlayer" : {}
+            "VideoPlayer" : {},
+            "FaceID" : {},
+            "LivePusher" : {}
         },
         "distribute" : {
             "android" : {
