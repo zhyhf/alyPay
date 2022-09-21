@@ -13,7 +13,6 @@
 			}
 		},
 		mounted() {
-			console.log(uni.getStorageSync('selectMarried'))
 			this.index = uni.getStorageSync('selectMarried')
 		},
 		methods: {
@@ -25,6 +24,6 @@
 <style lang="scss" scoped>
 .image-sty {
 	width: 100vw;
-	height: 2000rpx;
+	height: 1900rpx;
 }
 </style>
