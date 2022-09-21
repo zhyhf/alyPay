@@ -354,7 +354,6 @@
 	}
 	.uni-list-item__content-title {
 		margin-top: 20rpx;
-		margin-left: -4rpx;
 		font-size: $uni-font-size-base;
 		color: #333;
 		font-weight: bold;
