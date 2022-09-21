@@ -1,5 +1,27 @@
 <template>
+<<<<<<< HEAD
 	<view class="uni-container">
 	<image :src="require('../../../static/government/xiaoxi.png')" mode="widthFix" style="width: 100%;">
 	</view>
 </template>
+=======
+	<view class="user-info">
+		</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style  lang="scss">
+	
+</style>
+>>>>>>> 107b82d0e82f541bb2b81935b5e3e209c96af8cc

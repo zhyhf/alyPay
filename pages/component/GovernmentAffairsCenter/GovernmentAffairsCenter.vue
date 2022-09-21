@@ -19,7 +19,7 @@
 					<text class="certificate-title">我的证照</text>
 					<text class="certificate-all" @click="jumpToAll">全部 ></text>
 				</view>
-				<image src="@/static/government/society.png" class="certificate-item"></image>
+				<image src="@/static/government/my-certificate.png" class="certificate-item"></image>
 			</view>
 			<view class="prefecture">
 				<view class="prefecture-header">
@@ -67,12 +67,9 @@
 		},
 		methods: {
 			jumpToAll() {
-				// uni.navigateTo({
-				// 	url: "/pages/component/myCertificates/myCertificates"
-				// })
 				uni.navigateTo({
 					url: "/pages/component/extUI/extUI"
-				})
+			     })
 			},
 			toMyInfo(){
 				uni.navigateTo({
@@ -80,7 +77,7 @@
 				})
 			}
 		}
-	}
+	  }
 </script>
 
 <style lang="scss" scoped>
