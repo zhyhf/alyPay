@@ -21,12 +21,12 @@
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						// "buttons": [{
+						// 	"text": "\ue534",
+						// 	"fontSrc": "/static/uni.ttf",
+						// 	"fontSize": "22px",
+						// 	"color": "#FFFFFF"
+						// }]
 					}
 				}
 			}
@@ -38,12 +38,12 @@
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						// "buttons": [{
+						// 	"text": "\ue534",
+						// 	"fontSrc": "/static/uni.ttf",
+						// 	"fontSize": "22px",
+						// 	"color": "#FFFFFF"
+						// }]
 					}
 				}
 			}
@@ -54,12 +54,12 @@
 				"navigationBarTitleText": "生活",
 				"app-plus": {
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						// "buttons": [{
+						// 	"text": "\ue534",
+						// 	"fontSrc": "/static/uni.ttf",
+						// 	"fontSize": "22px",
+						// 	"color": "#FFFFFF"
+						// }]
 					}
 				}
 			}
@@ -70,12 +70,12 @@
 				"navigationBarTitleText": "消息",
 				"app-plus": {
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						// "buttons": [{
+						// 	"text": "\ue534",
+						// 	"fontSrc": "/static/uni.ttf",
+						// 	"fontSize": "22px",
+						// 	"color": "#FFFFFF"
+						// }]
 					}
 				}
 			}
@@ -86,12 +86,12 @@
 				"navigationBarTitleText": "我的",
 				"app-plus": {
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						// "buttons": [{
+						// 	"text": "\ue534",
+						// 	"fontSrc": "/static/uni.ttf",
+						// 	"fontSize": "22px",
+						// 	"color": "#FFFFFF"
+						// }]
 					}
 				}
 			}
@@ -100,7 +100,7 @@
 			"path": "pages/component/SearchInfo/SearchInfo",
 			"style": {
 					"navigationStyle":"custom",
-					"navigationBarTitleText": "个人专属服务空间"
+					"navigationBarTitleText": "搜索结果"
 			}
 		},
 		{
