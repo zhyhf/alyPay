@@ -1357,40 +1357,40 @@
 		}
 
 	},
-	"tabBar":{
-  "color": "#7A7E83",
-  "selectedColor": "#007AFF",
-  "borderStyle": "black",
-  "backgroundColor": "#F8F8F8",
-  "list": [
-   {
-    "pagePath": "pages/tabBar/indexPage/indexPage",
-    "iconPath": "static/image/shouye.png",
-    "selectedIconPath": "static/image/shouye.png",
-    "text": "首页"
-   },
-   {
-    "pagePath": "pages/tabBar/component/component",
-    "iconPath": "static/image/licai.png",
-    "selectedIconPath": "static/image/licai.png",
-    "text": "理财"
-   },
-   {
-    "pagePath": "pages/tabBar/API/API",
-    "iconPath": "static/image/shenghuo.png",
-    "selectedIconPath": "static/image/shenghuo.png",
-    "text": "生活"
-   }, {
-  	"pagePath": "pages/tabBar/extUI/extUI",
-    "iconPath": "static/image/message.png",
-    "selectedIconPath": "static/image/message.png",
-    "text": "消息"
-   }, {
-    "pagePath": "pages/tabBar/template/template",
-    "iconPath": "static/image/my.png",
-    "selectedIconPath": "static/image/my.png",
-    "text": "我的"
-   }
-  ]
- }
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [
+			{
+				"pagePath": "pages/tabBar/indexPage/indexPage",
+				"iconPath": "static/image/shouye.png",
+				"selectedIconPath": "static/image/shouye.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabBar/component/component",
+				"iconPath": "static/image/licai.png",
+				"selectedIconPath": "static/image/licai.png",
+				"text": "理财"
+			},
+			{
+				"pagePath": "pages/tabBar/API/API",
+				"iconPath": "static/image/shenghuo.png",
+				"selectedIconPath": "static/image/shenghuo.png",
+				"text": "生活"
+			}, {
+				"pagePath": "pages/tabBar/extUI/extUI",
+				"iconPath": "static/image/message.png",
+				"selectedIconPath": "static/image/message.png",
+				"text": "消息"
+			}, {
+				"pagePath": "pages/tabBar/template/template",
+				"iconPath": "static/image/my.png",
+				"selectedIconPath": "static/image/my.png",
+				"text": "我的"
+			}
+		]
+	}
 }

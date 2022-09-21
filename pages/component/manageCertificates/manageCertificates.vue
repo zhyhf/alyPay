@@ -22,12 +22,16 @@
 			<text class="category-title">交通行驶</text>
 		</view>
 		<uni-list>
-			<uni-list-item v-for="(item, index) in trafficList"
+			<uni-list-item
+				style="height: 65rpx;"
+				class="list"
+				v-for="(item, index) in trafficList"
 				:title="item.title"
 				to="/pages/me/copyright/copyright"
 				link
 				:thumb="item.url"
 				thumb-size="medium"
+				@click="show"
 			/>
 		</uni-list>
 		<uni-popup ref="popup" background-color="#fff">
@@ -38,7 +42,6 @@
 				<text>
 					暂未在国家政务服务平台找到您证照数据,您可联系地方证照颁发部门核实证照数据上传情况。或点击下方“我要纠错”进行证照缺失登记，等待处理
 				</text>
-				<!-- <slot name="content"></slot> -->
 			</view>
 			<view class="button-info">
 				<view class="btn" @click="close">知道了</view>
@@ -55,39 +58,39 @@
 				casualList: [
 					{
 						title: '学位证书',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/certificate.png')
 					},
 					{
 						title: '学历证书',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F80%2F581107a5f3a15_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=04b404e8f0dbf71b73832cbc06020a7b'
+						url: require('@/static/government/degree.png')
 					},
 					{
 						title: '中华人民共和国机动车驾驶证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/license.png')
 					},
 					{
 						title: '中华人民共和国居民身份证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F80%2F581107a5f3a15_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=04b404e8f0dbf71b73832cbc06020a7b'
+						url: require('@/static/government/identity.png')
 					},
 					{
 						title: '居民户口簿',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/household.png')
 					},
 					{
 						title: '中华人民共和国机动车行驶证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F80%2F581107a5f3a15_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=04b404e8f0dbf71b73832cbc06020a7b'
+						url: require('@/static/government/xingshi.png')
 					},
 					{
 						title: '中华人民共和国社会保障卡',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/social.png')
 					},
 					{
 						title: '居住证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/live.png')
 					},
 					{
 						title: '中华人民共和国结婚证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/marriage.png')
 					},
 					{
 						title: '中华人民共和国离婚证',
@@ -95,29 +98,29 @@
 					},
 					{
 						title: '出生医学证明',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F80%2F581107a5f3a15_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=04b404e8f0dbf71b73832cbc06020a7b'
+						url: require('@/static/government/born.png')
 					},
 				],
 				trafficList: [
 					{
-						title: '中华人名共和国道路运输特征',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F37%2F91%2F5812259ddbad7_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=5d2917988711231517b43cd6092d414a'
+						title: '中华人民共和国道路运输证',
+						url: require('@/static/government/transport.png')
 					},
 					{
 						title: '道路运输从业人员从业资格证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/quality.png')
 					},
 					{
 						title: '网络预约出租车驾驶员证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F80%2F581107a5f3a15_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=04b404e8f0dbf71b73832cbc06020a7b'
+						url: require('@/static/government/car.png')
 					},
 					{
 						title: '中华人民共和国机动车登记证书',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F37%2F91%2F5812259ddbad7_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=5d2917988711231517b43cd6092d414a'
+						url: require('@/static/government/register.png')
 					},
 					{
 						title: '巡游出租汽车驾驶员证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F80%2F581107a5f3a15_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=04b404e8f0dbf71b73832cbc06020a7b'
+						url: require('@/static/government/taxi.png')
 					}
 				]
 			}
