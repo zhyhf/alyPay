@@ -27,7 +27,12 @@
 					title: '关联成功',
 					success() {
 						let selectIndex = uni.getStorageSync('selectIndex')
-						let selectArr = JSON.parse(uni.getStorageSync('selectArr')) || []
+						let selectArr
+						if (uni.getStorageSync('selectArr')) {
+							selectArr = uni.getStorageSync('selectArr')
+						} else {
+							selectArr = []
+						}
 						if (selectArr.indexOf(selectIndex) === -1) {
 							selectArr.push(selectIndex)
 						}
@@ -52,7 +57,7 @@
 		padding: 0 30rpx;
 		.img {
 			width: calc(100vw - 60rpx);
-			height: 800rpx;
+			height: 720rpx;
 		}
 		.relative-btn {
 			margin-bottom: 30rpx;
