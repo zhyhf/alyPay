@@ -391,6 +391,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/component/relativeCertificate/relativeCertificate",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "关联证照",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/collectError/collectError",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我要纠错",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",
