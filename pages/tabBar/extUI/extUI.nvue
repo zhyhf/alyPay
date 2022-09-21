@@ -1,12 +1,8 @@
 <template>
-<<<<<<< HEAD
 	<view class="uni-container">
 	<image :src="require('../../../static/government/xiaoxi.png')" mode="widthFix" style="width: 100%;">
 	</view>
 </template>
-=======
-	<view class="user-info">
-		</view>
 </template>
 <script>
 	export default {

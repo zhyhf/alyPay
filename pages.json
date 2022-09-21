@@ -34,7 +34,7 @@
 		{
 			"path": "pages/tabBar/component/component",
 			"style": {
-				"navigationBarTitleText": "理财",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
@@ -51,7 +51,7 @@
 		{
 			"path": "pages/tabBar/API/API",
 			"style": {
-				"navigationBarTitleText": "生活",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -67,7 +67,7 @@
 		{
 			"path": "pages/tabBar/extUI/extUI",
 			"style": {
-				"navigationBarTitleText": "消息",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -83,7 +83,7 @@
 		{
 			"path": "pages/tabBar/template/template",
 			"style": {
-				"navigationBarTitleText": "我的",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -1398,6 +1398,16 @@
 				"iconPath": "static/image/my.png",
 				"selectedIconPath": "static/image/my.png",
 				"text": "我的"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]
 	}

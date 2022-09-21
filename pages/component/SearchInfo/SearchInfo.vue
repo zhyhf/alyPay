@@ -1,5 +1,8 @@
 <template>
 	<view class="search-info">
+		<view class="status_bar">
+		            <!-- 这里是状态栏 -->
+		        </view>
 		<view class="top-input">
 			<view class="back" @click="back">
 				< </view>
@@ -40,6 +43,12 @@
 </script>
 
 <style lang="scss" scoped>
+	
+	    .status_bar {
+	        height: var(--status-bar-height);
+	        width: 100%;
+	    }
+
 	.top-input {
 		display: flex;
 		margin-top: 30rpx;

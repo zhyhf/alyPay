@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="livefater">
-            <div style="width: 200px;height: 200px;border-radius: 10px;overflow: hidden;">
+            <div style="width: 210px;height: 210px;border-radius: 2px;overflow: hidden;">
                 <live-pusher id='livePusher' ref="livePusher" class="livePusher" url=""
                     mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" :beauty="2" whiteness="2"
                     aspect="1:1" @statechange="statechange" @netstatus="netstatus" @error="error"></live-pusher>
@@ -14,7 +14,7 @@
     export default {
         props: {
             time: {
-                default: 3000,
+                default: 2000,
                 type: Number
             },
         },
