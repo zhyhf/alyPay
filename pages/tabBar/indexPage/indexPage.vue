@@ -104,6 +104,7 @@
 		},
 		mounted() {
 			this.searchValue = ''
+			uni.clearStorage()
 		},
 		methods: {
 			toNewPage() {
