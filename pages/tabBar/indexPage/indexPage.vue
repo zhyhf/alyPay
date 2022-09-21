@@ -5,23 +5,24 @@
 				<view class="left-text">
 					<view class="t-text">
 						南京
+					 <view class="down">></view>
 					</view>
 					<view class="b-text">
 						多云23℃
 					</view>
 				</view>
 				<view class="text-input">
-					<input style="border: 1px solid #ccc;" placeholder="健康码,展示绿码" />
-					<view class="btn">
-					
+					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder="国家政务服务中心" />
+					<view class="btn" @click="search">
+						搜索
 					</view>
 				</view>
 				<view class="add">
-					
+					<image src="../../../static/icons/add.png" mode="aspectFill"></image>
 				</view>
 			</view>
 			<view class="gongneng">
-				<view class="g-item">
+				<view class="g-item" @click="scanInfo">
 					<image src="../../../static/image/shao.png" mode="scaleToFill"></image>
 				</view>
 				<view class="g-item">
@@ -37,9 +38,12 @@
 		</view>
 		<view class="more-main">
 			<view class="more-chose">
-				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/dianying.png"></image>
+				<!-- <view class="chose-item">
+					<image mode="scaleToFill" class="image" src="../../../static/image/gongdai.png"></image>
 				</view>
+				<view class="chose-item">
+					<image mode="scaleToFill" class="image" src="../../../static/image/gongjijing.png"></image>
+				</view> -->
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/dianying.png"></image>
 				</view>
@@ -69,6 +73,9 @@
 			</view>
 		</view>
 		<view class="bottom">
+			<view class="b-guanggao curMsg">
+				<image src="../../../static/image/cMsg.png" mode="widthFix"></image>
+			</view>
 			<view class="latest-info">
 				<view class="b-image">
 					<image src="../../../static/image/msg.png" mode="widthFix"></image>
@@ -90,14 +97,37 @@
 	export default {
 		data() {
 			return {
-
+				searchValue:''
 			}
+		},
+		mounted() {
+			this.searchValue = ''
 		},
 		methods: {
 			toNewPage() {
 				uni.navigateTo({
 					url: '/pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter'
 				});
+			},
+			changValue(e){
+				this.searchValue = e.detail.value
+			},
+			search(){
+				if(this.searchValue.length<=0 || this.searchValue.includes("国家"))
+				uni.navigateTo({
+					url:'/pages/component/SearchInfo/SearchInfo'
+				})
+				// uni.showToast({
+					
+				// })
+			},
+			scanInfo(){
+				uni.scanCode({
+					onlyFromCamera:true,
+					success(res) {
+						console.log("扫描成功")
+					}
+				})
 			}
 		}
 	}
@@ -116,6 +146,8 @@
 	}
 	.latest-info {
 		width: 95vw;
+		margin-top: 18rpx;
+		margin-bottom: 5rpx;
 		border-radius: 16rpx;
 		// height: 150rpx;
 		background-color: #fff;
@@ -140,11 +172,11 @@
 		width: 100vw;
 		// height: 150rpx;
 		display: flex;
-		background-color: #007AFF;
+		background-color: #0C7DFF;
 		justify-content: space-around;
 		image {
-			width: 20vw;
-			height: 20vw;
+			width: 18vw;
+			height: 18vw;
 		}
 	}
 	.top-header {
@@ -152,6 +184,33 @@
 		height: 130rpx;
 		display: flex;
 		background-color: #007AFF;
+		.add {
+			height: 100%;
+			margin-top: 15rpx;
+			image {
+				width:60rpx;
+				height:60rpx;
+			}
+		}
+	
+		.b-text {
+			// padding-top: 1rpx;
+			font-size: 24rpx;
+			// margin-right: -3rpx;
+			color: #ccc;
+		}
+		.t-text {
+			display: flex;
+			margin-top: 3rpx;
+			justify-content: flex-end;
+			padding-right: 30rpx;
+			font-size: 32rpx;
+			letter-spacing: 8rpx;
+			.down {
+				margin-top: 8rpx;
+				transform: rotate(90deg) !important;
+			}
+		}
 		.left-text {
 			color: white;
 			flex: 2;
@@ -159,26 +218,34 @@
 		}
 		
 		.text-input {
+			margin-top: 10rpx;
+			display: flex;
+			align-items: center;
 			position: relative;
-			height: 80rpx;
+			height: 70rpx;
 			overflow: hidden;
 			border-radius: 16rpx;
 			flex: 5;
 			.btn {
 				position: absolute;
-				right: 0;
-				top: 25rpx;
+				right: 20rpx;
+				top: 18rpx;
+				padding: 0 5rpx 0 15rpx;
 				color: #007AFF;
+				// line-height: 70rpx;
+				border-left: 1rpx solid #ccc;
 			}
 			input {
 				width: 100%;
 				height: 100%;
+				text-align: left;
+				padding-left: 20rpx;
 				background-color: #fff;
 			}
 		}
 
 		.add {
-			flex: 1;
+			flex: 1.3;
 		}
 	}
 
@@ -191,22 +258,25 @@
 	}
 	.more-chose {
 		margin: 0 auto;
-		width: 100vw;
+		// width: 98vw;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-		/* justify-content: space-between; */
+		
+		width: 100vw;
+		margin-right: 4.1vw;
+		// justify-content: space-between; 
 		// background-color: #f7f7f7;
 	}
 
 	.chose-item {
-		margin: 1vw;
-		width: 16.5vw;
-		height: 16.5vw;
+		margin: 2.3vw;
+		// width: 14.5vw;
+		// height: 14.5vw;
 
 		.image {
-			width:  16.5vw;
-			height:  16.5vw;
+			width:  14.5vw;
+			height:  14.5vw;
 		}
 	}
 </style>

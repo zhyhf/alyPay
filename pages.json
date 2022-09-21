@@ -17,6 +17,7 @@
 			"path": "pages/tabBar/indexPage/indexPage",
 			"style": {
 				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#0C7DFF",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
@@ -93,6 +94,13 @@
 						}]
 					}
 				}
+			}
+		},
+		{
+			"path": "pages/component/SearchInfo/SearchInfo",
+			"style": {
+					"navigationStyle":"custom",
+					"navigationBarTitleText": "个人专属服务空间"
 			}
 		},
 		{
