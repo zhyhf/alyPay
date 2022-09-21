@@ -181,7 +181,7 @@
 		width: 100vw;
 		height: 130rpx;
 		display: flex;
-		background-color: #007AFF;
+		background-color: #0C7DFF;
 		.add {
 			height: 100%;
 			margin-top: 16rpx;
