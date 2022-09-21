@@ -25,13 +25,13 @@
 				<view class="g-item" @click="scanInfo">
 					<image src="../../../static/image/shao.png" mode="scaleToFill"></image>
 				</view>
-				<view class="g-item">
+				<view class="g-item" @click="scanInfo">
 					<image src="../../../static/image/shoufukuan.png" mode="scaleToFill"></image>
 				</view>
-				<view class="g-item">
+				<view class="g-item" @click="scanInfo">
 					<image src="../../../static/image/chuxing.png" mode="scaleToFill"></image>
 				</view>
-				<view class="g-item">
+				<view class="g-item" @click="scanInfo">
 					<image src="../../../static/image/kabao.png" mode="scaleToFill"></image>
 				</view>
 			</view>
