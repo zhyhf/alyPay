@@ -67,13 +67,16 @@
 		},
 		methods: {
 			jumpToAll() {
-				uni.switchTab({
-					url: '/pages/tabBar/extUI/extUI'
+				// uni.navigateTo({
+				// 	url: "/pages/component/myCertificates/myCertificates"
+				// })
+				uni.navigateTo({
+					url: "/pages/component/extUI/extUI"
 				})
 			},
 			toMyInfo(){
 				uni.navigateTo({
-					url:"/pages/component//MyInfo/MyInfo"
+					url:"/pages/component/MyInfo/MyInfo"
 				})
 			}
 		}

@@ -1,20 +1,5 @@
 <template>
-	<view class="user-info">
-		</view>
+	<view class="uni-container">
+	<image :src="require('../../../static/government/my.png')" mode="widthFix" style="width: 100%;">
+	</view>
 </template>
-<script>
-	export default {
-		data() {
-			return {
-
-			}
-		},
-		methods: {
-			
-		}
-	}
-</script>
-
-<style  lang="scss">
-	
-</style>

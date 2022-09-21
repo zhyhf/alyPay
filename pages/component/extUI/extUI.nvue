@@ -1,0 +1,115 @@
+<template>
+	<div>
+		<view  style="display:flex;justify-content: center;align-items:center; padding-top: 30rpx;">
+			<view  scroll-y="true" style="padding-bottom:20rpx;letter-spacing: 5rpx;padding-top: 10rpx;">
+				<text style="font-size:32rpx">本服务仅限本人查询，请先完成人脸识别验证</text>
+			</view>
+			<view  style="padding-top: 20rpx;">
+				<text style="font-size:30rpx;color: #ccc;">拍摄您本人人脸，请确保正对手机，光线充足</text>
+			</view>
+			<view class="user-info" style="display: flex;justify-content: center;width: 100vw;flex-direction: row;">
+				<view class="name" style="color: #ccc;padding-top: 20rpx;">
+					<text style="font-size:30rpx;color: #ccc;">**帅、</text>
+				</view>
+				<view class="phone" style="color: #ccc;padding-top: 20rpx;">
+					<text style="font-size:30rpx;color: #ccc;">186*****2731</text>
+				</view>
+			</view>
+		</view>
+		<div v-if="cameraFlag">
+		  <TestingFace :time="3000"></TestingFace>
+		</div>
+		<view v-else style="margin: 98rpx auto;display: flex;justify-content: center;flex-direction: column;align-items: center;
+        margin-top: 10rpx;margin-bottom: 16rpx;height: 300px;">
+			<image v-show="!cameraFlag" style="width: 200px;height: 200px;" src="../../../static/app-plus/scan1.png" mode="widthFix">
+			</image>
+		</view>
+		<view  style="width: 90vw; margin: 0 auto;">
+			<button type="primary" @click="handleClick">
+				人脸识别认证
+			</button>
+		</view>
+	</div>
+</template>
+
+<script>
+	import TestingFace from './SubCom.nvue'
+	export default {
+		data() {
+			return {
+				cameraFlag:false
+			}
+		},
+		components: {
+		    TestingFace
+		},
+		methods: {
+			handleClick(){
+				let that = this
+				that.cameraFlag  = true
+			},
+		},
+	}
+</script>
+
+<style>
+	<style lang="less">page {
+		background: #0c8cf9;
+	}
+	.text-box {
+		margin-bottom: 40rpx;
+		padding: 40rpx 0;
+		display: flex;
+		min-height: 300rpx;
+		background-color: #FFFFFF;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 10rpx;
+		color: red;
+		line-height: 1.8;
+	}
+	.u-navbar__content__left {
+		display: flex !important;
+		align-items: center;
+	}
+
+	.u_nav_slot {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		color: rgba(0, 0, 0, 0.9);
+		font-size: 14.4rpx;
+		font-weight: 700;
+
+	}
+
+	.text {
+		margin-left: 1rpx;
+		color: #fff;
+		font-size: 16rpx;
+	}
+
+	.box {
+		z-index: 99;
+		position: absolute;
+		left: 35%;
+		top: 25%;
+		width: 250rpx;
+		height: 250rpx;
+		background: pink;
+	}
+
+	.message {
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+		font-weight: 700;
+	}
+
+	.info {
+		color: #fff !important;
+		font-size: 20rpx;
+	}
+</style>
+</style>

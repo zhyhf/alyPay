@@ -1,0 +1,155 @@
+<template>
+    <div>
+        <div class="livefater">
+            <div style="width: 200px;height: 200px;border-radius: 10px;overflow: hidden;">
+                <live-pusher id='livePusher' ref="livePusher" class="livePusher" url=""
+                    mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" :beauty="2" whiteness="2"
+                    aspect="1:1" @statechange="statechange" @netstatus="netstatus" @error="error"></live-pusher>
+            </div>
+        </div>
+    </div>
+</template>
+  
+<script>
+    export default {
+        props: {
+            time: {
+                default: 3000,
+                type: Number
+            },
+        },
+        data() {
+            return {
+			}
+        },
+        mounted() {
+            this.context = uni.createLivePusherContext("livePusher", this);
+            var that = this
+            uni.getSystemInfo({
+                success: function(e) {
+                    // 计算导航栏高度
+                    that.statusBar = e.statusBarHeight
+                    // #ifndef MP  
+                    if (e.platform == 'android') {
+                        that.CustomBar = e.statusBarHeight + 50
+                    } else {
+                        that.CustomBar = e.statusBarHeight + 45
+                    }
+                    console.log(that.statusBar)
+                    // #endif  
+                    // #ifdef MP-WEIXIN  
+                    let custom = wx.getMenuButtonBoundingClientRect()
+                    that.CustomBar = custom.bottom + custom.top - e.statusBarHeight
+  
+                    // #endif  
+  
+                    // #ifdef MP-ALIPAY  
+                    that.CustomBar = e.statusBarHeight + e.titleBarHeight
+                    // #endif  
+                }
+            })
+            setTimeout(() => {
+                this.startPreview()
+            })
+        },
+        methods: {
+            // 拍照事件
+            snapshot: function() {
+                var that = this
+                this.context.snapshot({
+                    success: (e) => {
+						uni.navigateTo({
+							url: "/pages/component/myCertificates/myCertificates"
+						})
+                        this.$emit('faceImg', e.message)
+                    }
+                });
+            },
+            // 开启摄像头
+            startPreview() {
+                var that = this
+                this.context.startPreview({
+                    success: (a) => {
+                        that.Timer = setInterval(function() {
+                            that.snapshot()
+                        }, that.time)
+                    },
+                    fail(err) {
+                        console.log(err);
+                    }
+                });
+            },
+        },
+    }
+</script>
+  
+<style>
+    <style lang="less">page {
+        background: #0c8cf9;
+    }
+  
+    .u-navbar__content__left {
+        display: flex !important;
+        align-items: center;
+    }
+  
+    .u_nav_slot {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 14.4rpx;
+        font-weight: 700;
+  
+    }
+  
+    .text {
+        margin-left: 1rpx;
+        color: #fff;
+        font-size: 16rpx;
+    }
+  
+    .box {
+        z-index: 99;
+        position: absolute;
+        left: 35%;
+        top: 25%;
+        width: 250rpx;
+        height: 250rpx;
+        background: pink;
+    }
+  
+    .message {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+    }
+  
+    .info {
+        color: #fff !important;
+        font-size: 20rpx;
+    }
+  
+    .livePusher {
+        width: 300px;
+        height: 300px;
+    }
+  
+    .livefater {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10rpx;
+        margin-bottom: 50rpx;
+        height: 350px;
+    }
+  
+    .gaiimg {
+        width: 300px;
+        height: 300px;
+        margin-top: -300px;
+    }
+</style>
+</style>
