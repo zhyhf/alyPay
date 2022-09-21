@@ -5,6 +5,8 @@
 			<text class="manage">管理 ></text>
 		</view>
 		<image src="@/static/government/my-certificate.png" class="certificate"></image>
+		<image v-if="index3" src="@/static/government/shenfen-card.png" class="certificate"></image>
+		<image v-if="index4" src="@/static/government/hukou-card.png" class="certificate"></image>
 		<button class="button" @click="add">添加证照</button>
 	</view>
 </template>
@@ -13,6 +15,21 @@
 	export default {
 		data() {
 			return {
+				index3: 0,
+				index4: 0
+			}
+		},
+		mounted() {
+			let arr = JSON.parse(uni.getStorageSync('selectArr')) || []
+			console.log(arr)
+			if (arr.length > 0) {
+				for (const item of arr) {
+					if (item === 3) {
+						this.index3 = 1
+					} else if (item === 4) {
+						this.index4 = 1
+					}
+				}
 			}
 		},
 		methods: {

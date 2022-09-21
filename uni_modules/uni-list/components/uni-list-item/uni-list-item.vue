@@ -354,8 +354,10 @@
 	}
 	.uni-list-item__content-title {
 		margin-top: 20rpx;
+		margin-left: -4rpx;
 		font-size: $uni-font-size-base;
-		color: #3b4144;
+		color: #333;
+		font-weight: bold;
 		overflow: hidden;
 	}
 	.uni-list-item__content-note {

@@ -15,7 +15,7 @@
 				link
 				:thumb="item.url"
 				thumb-size="medium"
-				@click="show"
+				@click="show(index)"
 			/>
 		</uni-list>
 		<view class="category-wrapper">
@@ -94,7 +94,7 @@
 					},
 					{
 						title: '中华人民共和国离婚证',
-						url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F46%2F5812e8fd3ae7f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265017&t=b91c9e88f58c08fa8de3ef22b4531287'
+						url: require('@/static/government/divorce.png')
 					},
 					{
 						title: '出生医学证明',
@@ -122,17 +122,32 @@
 						title: '巡游出租汽车驾驶员证',
 						url: require('@/static/government/taxi.png')
 					}
-				]
+				],
+				index: 0
 			}
 		},
 		methods: {
-			show() {
-				this.$refs.popup.open()
+			show(index) {
+				this.index = index
+				if (index === 3 || index === 4) {
+					uni.setStorageSync('selectIndex', index)
+					uni.navigateTo({
+						url: `/pages/component/relativeCertificate/relativeCertificate`
+					})
+				} else {
+					this.$refs.popup.open()
+				}
 			},
 			close() {
 				this.$refs.popup.close()
 			},
 			confirm() {
+				if (this.index === 8 || this.index === 9) {
+					uni.navigateTo({
+						url: '/pages/component/collectError/collectError'
+					})
+					uni.setStorageSync('selectMarried', this.index)
+				}
 				this.$refs.popup.close()
 			}
 		}
@@ -201,6 +216,7 @@
 	}
 	.header-wrapper {
 		margin-top: 10rpx;
+		margin-left: 27rpx;
 		.header-text {
 			font-size: 32rpx;
 			font-weight: bold;
@@ -211,6 +227,7 @@
 	}
 	.category-wrapper {
 		margin-top: 15rpx;
+		margin-left: 27rpx;
 		margin-bottom: 10rpx;
 		.category-title {
 			font-size: 32rpx;
