@@ -29,7 +29,7 @@
 						let selectIndex = uni.getStorageSync('selectIndex')
 						let selectArr
 						if (uni.getStorageSync('selectArr')) {
-							selectArr = uni.getStorageSync('selectArr')
+							selectArr = JSON.parse(uni.getStorageSync('selectArr'))
 						} else {
 							selectArr = []
 						}
