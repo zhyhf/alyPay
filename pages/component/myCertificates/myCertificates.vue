@@ -61,8 +61,8 @@
 			height: 90rpx;
 			color: white;
 			background-color: rgb(163, 51, 42);
-			position: absolute;
-			bottom: 30rpx;
+			position: fixed;
+			bottom: 24rpx;
 		}
 	}
 </style>
