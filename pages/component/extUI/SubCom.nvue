@@ -58,6 +58,7 @@
                 var that = this
                 this.context.snapshot({
                     success: (e) => {
+						clearInterval(that.Timer)
 						uni.navigateTo({
 							url: "/pages/component/myCertificates/myCertificates"
 						})

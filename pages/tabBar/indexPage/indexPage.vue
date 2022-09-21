@@ -5,7 +5,9 @@
 				<view class="left-text">
 					<view class="t-text">
 						南京
-					 <view class="down">></view>
+					 <view class="down">
+						<image src="../../../static/image/down.png" mode=""></image>
+					 </view>
 					</view>
 					<view class="b-text">
 						多云23℃
@@ -109,7 +111,7 @@
 			search(){
 				if(this.searchValue.length<=0 || this.searchValue.includes("国家"))
 				uni.navigateTo({
-					url:'/pages/component/SearchInfo/SearchInfo'
+					url:'/pages/component/SearchInfo/SearchInfo?text=111'
 				})
 				// uni.showToast({
 					
@@ -163,6 +165,8 @@
 		}
 	}
 	.gongneng {
+		padding-bottom: 20rpx;
+		margin-top: -10rpx;
 		width: 100vw;
 		// height: 150rpx;
 		display: flex;
@@ -180,10 +184,10 @@
 		background-color: #007AFF;
 		.add {
 			height: 100%;
-			margin-top: 15rpx;
+			margin-top: 16rpx;
 			image {
-				width:60rpx;
-				height:60rpx;
+				width:50rpx;
+				height:50rpx;
 			}
 		}
 	
@@ -197,12 +201,15 @@
 			display: flex;
 			margin-top: 3rpx;
 			justify-content: flex-end;
-			padding-right: 30rpx;
+			padding-right: 35rpx;
 			font-size: 32rpx;
-			letter-spacing: 8rpx;
+			letter-spacing: 12rpx;
 			.down {
-				margin-top: 8rpx;
-				transform: rotate(90deg) !important;
+				margin-top: -2rpx;
+				image {
+					width:18rpx;
+					height:18rpx;
+				}
 			}
 		}
 		.left-text {
@@ -216,14 +223,14 @@
 			display: flex;
 			align-items: center;
 			position: relative;
-			height: 70rpx;
+			height: 65rpx;
 			overflow: hidden;
 			border-radius: 16rpx;
 			flex: 5;
 			.btn {
 				position: absolute;
 				right: 20rpx;
-				top: 18rpx;
+				top: 14rpx;
 				padding: 0 5rpx 0 15rpx;
 				color: #007AFF;
 				// line-height: 70rpx;
@@ -252,6 +259,7 @@
 	}
 	.more-chose {
 		margin: 0 auto;
+		margin-top: 20rpx;
 		// width: 98vw;
 		display: flex;
 		flex-wrap: wrap;
