@@ -2,9 +2,9 @@
 	<view>
 		<view class="uni-center">
 			<view class="top-header">
-				<view class="left-text">
+				<view class="left-text" @click="toCity">
 					<view class="t-text">
-						南京
+						<text class="city">{{city}}</text>
 						<view class="down">
 							<image src="../../../static/image/down.png" mode=""></image>
 						</view>
@@ -91,9 +91,13 @@
 </template>
 <script>
 	export default {
+		onShow() {
+			this.city = uni.getStorageSync('city') || this.city
+		},
 		data() {
 			return {
-				searchValue: ''
+				searchValue: '',
+				city: '南京'
 			}
 		},
 		mounted() {
@@ -101,11 +105,16 @@
 			uni.clearStorage()
 		},
 		methods: {
-			shoufukuan(){
+			toCity() {
+				uni.navigateTo({
+					url: "/pages/component/ChooseCity/ChooseCity"
+				})
+			},
+			shoufukuan() {
 				uni.navigateTo({
 					url: '/pages/component/shoufukuan/shoufukuan'
 				});
-				},
+			},
 			toCardBag() {
 				uni.navigateTo({
 					url: "/pages/component/CardBag/CardBag"
@@ -207,6 +216,7 @@
 		height: 130rpx;
 		display: flex;
 		background-color: #0C7DFF;
+		box-sizing: border-box;
 
 		.add {
 			height: 100%;
@@ -227,11 +237,20 @@
 
 		.t-text {
 			display: flex;
+			width: 24vw;
 			margin-top: 3rpx;
-			justify-content: flex-end;
+			// justify-content: flex-end;
+			padding-left: 40rpx;
 			padding-right: 35rpx;
 			font-size: 32rpx;
 			letter-spacing: 12rpx;
+
+			.city {
+				width: 50%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
 
 			.down {
 				margin-top: -2rpx;
@@ -245,7 +264,9 @@
 
 		.left-text {
 			color: white;
-			flex: 2;
+			// flex: 2;
+			width: 24vw;
+			box-sizing: border-box;
 			// font-size: 24rpx;
 		}
 
