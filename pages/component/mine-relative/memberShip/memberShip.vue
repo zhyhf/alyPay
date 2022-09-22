@@ -1,14 +1,17 @@
 <template>
-	<view>
+	<view class="container">
 		<view class="header-wrapper">
-			<image src="@/static/mine/member-header.png" class="member-header"></image>
+			<image class="back" src="@/static/mine/back.png" @click="back"></image>
+			<image src="@/static/mine/member-header-top.png" class="member-header"></image>
 			<view class="activity-wrapper">
 				<view class="activity-item" v-for="(item, index) in activities" :key="index">
 					<image class="activity-image" :src="item"></image>
 				</view>
 			</view>
+			<image src="@/static/mine/arrow-up.png" class="arrow-up" @click="show" :style="arrowStyle"></image>
 		</view>
-		<view class="member-content">
+		<image src="@/static/mine/member-header-bottom.png" class="member-header-bottom"></image>
+		<view class="member-content" :style="contentStyle">
 			<image src="@/static/mine/member-info.png" class="member-info"></image>
 			<view class="tab-container">
 			    <view
@@ -20,7 +23,14 @@
 			    </view>
 			</view>
 			<view class="line"></view>
-			<image class="detail" src="@/static/mine/all.png"></image>
+			<image
+				v-if="tabIndex === index"
+				class="detail"
+				v-for="(item, index) in detailList"
+				:key="index"
+				:src="item.img"
+				:style="{ height: item.height }"
+				></image>
 		</view>
 	</view>
 </template>
@@ -57,6 +67,37 @@
 					require("@/static/mine/priority.png"),
 					require("@/static/mine/phone-money.png"),
 					require("@/static/mine/video-member.png"),
+				],
+				showFlag: true,
+				detailList: [
+					{
+						img: require('@/static/mine/all.png'),
+						height: '1720rpx'
+					},
+					{
+						img: require('@/static/mine/recommend-detail.png'),
+						height: '2200rpx'
+					},
+					{
+						img: require('@/static/mine/special-detail.png'),
+						height: '1900rpx'
+					},
+					{
+						img: require('@/static/mine/outgoing-detail.png'),
+						height: '1800rpx'
+					},
+					{
+						img: require('@/static/mine/entertainment-detail.png'),
+						height: '2000rpx'
+					},
+					{
+						img: require('@/static/mine/food-detail.png'),
+						height: '2200rpx'
+					},
+					{
+						img: require('@/static/mine/daily-detail.png'),
+						height: '2200rpx'
+					}
 				]
 			}
 		},
@@ -64,14 +105,51 @@
 			ontabtap(index) {
 				this.tabIndex = index
 			},
+			show() {
+				this.showFlag = !this.showFlag
+			}
+		},
+		computed: {
+			arrowStyle() {
+				return this.showFlag ? {
+					transition: 'all 0.4s',
+					transform: 'translateY(0) rotate(180deg)'
+				}: {
+					transition: 'all 0.4s',
+					transform: 'translateY(670rpx) rotate(0deg)'
+				}
+			},
+			contentStyle() {
+				return this.showFlag ? {
+					transition: 'all 0.4s',
+					transform: 'translateY(-700rpx)'
+				}: {
+					transition: 'all 0.4s',
+					transform: 'translateY(-37rpx)'
+				}
+			},
+			back() {
+				uni.navigateBack()
+			}
 		}
 	}
 </script>
 
 <style scoped lang="scss">
+	.container {
+		height: 2820rpx;
+	}
 	.header-wrapper {
 		width: 100vw;
 		position: relative;
+		.back {
+			position: absolute;
+			top: 10rpx;
+			left: 20rpx;
+			z-index: 99;
+			width: 25rpx;
+			height: 40rpx;
+		}
 		.member-header {
 			width: 100vw;
 			height: 380rpx;
@@ -94,24 +172,31 @@
 					width: 63%;
 					height: 70rpx;
 				}
-				&:first-child {
-					.activity-image {
-						width: 72.5%;
-						height: 73rpx;
-						// transform: translateX(-3rpx) scale(1.07);
-						margin-top: 3rpx;
-						margin-left: 14rpx;
-					}
-				}
 			}
 		}
+		.arrow-up {
+			position: absolute;
+			bottom: 5rpx;
+			width: 25rpx;
+			height: 20rpx;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 99;
+		}
+	}
+	.member-header-bottom {
+		width: 100vw;
+		height: 700rpx;
+		position: relative;
+		top: -12rpx;
 	}
 	.member-content {
 		width: calc(100vw - 50rpx);
-		border-top-left-radius: 30rpx;
-		border-top-right-radius: 30rpx;
+		border-top-left-radius: 35rpx;
+		border-top-right-radius: 35rpx;
 		padding: 20rpx 25rpx;
-		background-color: #fff;
+		background-color: #F5F5F5;
+		transform: translateY(-700rpx);
 		.member-info {
 			width: 100%;
 			height: 550rpx;
@@ -127,7 +212,7 @@
 				margin: 0 10rpx;
 			}
 			.uni-tab-item-active {
-				border-bottom: 2px solid #007AFF;
+				border-bottom: 2px solid #213CC9;
 			}
 			.uni-tab-item-title {
 			    color: #555;
@@ -138,13 +223,13 @@
 			}
 			
 			.uni-tab-item-title-active {
-			    color: #007AFF;
+			    color: #213CC9;
 			}
 		}
 		.line {
 			width: 100vw;
 			height: 2rpx;
-			background-color: lightgray;
+			background-color: #e6e6e6;
 			transform: translateX(-25rpx);
 		}
 		.detail {
