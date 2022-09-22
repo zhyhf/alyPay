@@ -41,11 +41,10 @@
 		<view class="more-main">
 			<view class="more-chose">
 				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/dianying.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png"></image>
 				</view>
-
 				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/ele.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/yundong.png"></image>
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/jiangkang.png"></image>
