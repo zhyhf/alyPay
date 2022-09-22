@@ -33,7 +33,7 @@
 				<view class="g-item" @click="toTravel">
 					<image src="../../../static/image/chuxing.png" mode="scaleToFill"></image>
 				</view>
-				<view class="g-item" @click="scanInfo">
+				<view class="g-item" @click="toCardBag">
 					<image src="../../../static/image/kabao.png" mode="scaleToFill"></image>
 				</view>
 			</view>
@@ -57,7 +57,7 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
-					<image @click="toNewPage" mode="scaleToFill" class="image" src="../../../static/image/guojia.png">
+					<image @click="toNewPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
 					</image>
 				</view>
 				<view class="chose-item">
@@ -101,6 +101,11 @@
 			uni.clearStorage()
 		},
 		methods: {
+			toCardBag() {
+				uni.navigateTo({
+					url: "/pages/component/CardBag/CardBag"
+				})
+			},
 			toTravel() {
 				uni.navigateTo({
 					url: '/pages/component/Travel/Travel'

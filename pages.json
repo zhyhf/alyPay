@@ -17,7 +17,7 @@
 			"path": "pages/tabBar/indexPage/indexPage",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#1777FF",
+				"navigationBarBackgroundColor": "#0C7DFF",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
