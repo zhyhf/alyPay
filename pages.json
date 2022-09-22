@@ -17,7 +17,7 @@
 			"path": "pages/tabBar/indexPage/indexPage",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#1777FF",
+				"navigationBarBackgroundColor": "#0C7DFF",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
@@ -87,7 +87,8 @@
 		{
 			"path": "pages/tabBar/template/template",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "我的",
+				"navigationBarTextStyle": "white",
 				"navigationBarBackgroundColor": "#1777FF",
 				"app-plus": {
 					"titleNView": {
@@ -422,7 +423,55 @@
 			}
 		
 		}
-	],
+	    ,{
+            "path" : "pages/component/mine-relative/information/information",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个人信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/mine-relative/memberShip/memberShip",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "支付宝会员",
+				"navigationBarTextStyle": "white",
+				"navigationStyle": "custom",
+				"navigationBarBackgroundColor": "#1777FF",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/mine-relative/bill/bill",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "账单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/mine-relative/credit-card/credit-card",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/mine-relative/userProtect/userProtect",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户保护中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{
