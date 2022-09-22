@@ -1,20 +1,20 @@
 <template>
-	<view >
+	<view>
 		<view class="uni-center">
 			<view class="top-header">
 				<view class="left-text">
 					<view class="t-text">
 						南京
-					 <view class="down">
-						<image src="../../../static/image/down.png" mode=""></image>
-					 </view>
+						<view class="down">
+							<image src="../../../static/image/down.png" mode=""></image>
+						</view>
 					</view>
 					<view class="b-text">
 						多云23℃
 					</view>
 				</view>
 				<view class="text-input">
-					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder="国家政务服务中心" />
+					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder="" />
 					<view class="btn" @click="search">
 						搜索
 					</view>
@@ -30,7 +30,7 @@
 				<view class="g-item" @click="scanInfo">
 					<image src="../../../static/image/shoufukuan.png" mode="scaleToFill"></image>
 				</view>
-				<view class="g-item" @click="scanInfo">
+				<view class="g-item" @click="toTravel">
 					<image src="../../../static/image/chuxing.png" mode="scaleToFill"></image>
 				</view>
 				<view class="g-item" @click="scanInfo">
@@ -93,7 +93,7 @@
 	export default {
 		data() {
 			return {
-				searchValue:''
+				searchValue: ''
 			}
 		},
 		mounted() {
@@ -101,26 +101,31 @@
 			uni.clearStorage()
 		},
 		methods: {
+			toTravel() {
+				uni.navigateTo({
+					url: '/pages/component/Travel/Travel'
+				});
+			},
 			toNewPage() {
 				uni.navigateTo({
 					url: '/pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter'
 				});
 			},
-			changValue(e){
+			changValue(e) {
 				this.searchValue = e.detail.value
 			},
-			search(){
-				if(this.searchValue.length<=0 || this.searchValue.includes("国家"))
-				uni.navigateTo({
-					url:'/pages/component/SearchInfo/SearchInfo?text=111'
-				})
+			search() {
+				if (this.searchValue.length <= 0 || this.searchValue.includes("国家"))
+					uni.navigateTo({
+						url: '/pages/component/SearchInfo/SearchInfo?text=111'
+					})
 				// uni.showToast({
-					
+
 				// })
 			},
-			scanInfo(){
+			scanInfo() {
 				uni.scanCode({
-					onlyFromCamera:true,
+					onlyFromCamera: true,
 					success(res) {
 						console.log("扫描成功")
 					}
@@ -134,6 +139,7 @@
 		padding: 0;
 		margin: 0;
 	}
+
 	.bottom {
 		display: flex;
 		flex-direction: column;
@@ -141,6 +147,7 @@
 		align-items: center;
 		flex-wrap: wrap;
 	}
+
 	.latest-info {
 		width: 95vw;
 		margin-top: 18rpx;
@@ -148,23 +155,28 @@
 		border-radius: 16rpx;
 		// height: 150rpx;
 		background-color: #fff;
+
 		.title {
 			padding: 10rpx 0 0 10rpx;
-			color:rgba(0,0,0,.4);
+			color: rgba(0, 0, 0, .4);
 			font-weight: 700;
-			
+
 		}
+
 		image {
 			width: 100%;
 		}
 	}
+
 	.b-guanggao {
 		margin-top: 2vw;
 		width: 95vw;
+
 		image {
 			width: 100%;
 		}
 	}
+
 	.gongneng {
 		padding-bottom: 20rpx;
 		margin-top: -10rpx;
@@ -173,31 +185,36 @@
 		display: flex;
 		background-color: #0C7DFF;
 		justify-content: space-around;
+
 		image {
 			width: 18vw;
 			height: 18vw;
 		}
 	}
+
 	.top-header {
 		width: 100vw;
 		height: 130rpx;
 		display: flex;
 		background-color: #0C7DFF;
+
 		.add {
 			height: 100%;
 			margin-top: 16rpx;
+
 			image {
-				width:50rpx;
-				height:50rpx;
+				width: 50rpx;
+				height: 50rpx;
 			}
 		}
-	
+
 		.b-text {
 			// padding-top: 1rpx;
 			font-size: 24rpx;
 			// margin-right: -3rpx;
 			color: #ccc;
 		}
+
 		.t-text {
 			display: flex;
 			margin-top: 3rpx;
@@ -205,20 +222,23 @@
 			padding-right: 35rpx;
 			font-size: 32rpx;
 			letter-spacing: 12rpx;
+
 			.down {
 				margin-top: -2rpx;
+
 				image {
-					width:18rpx;
-					height:18rpx;
+					width: 18rpx;
+					height: 18rpx;
 				}
 			}
 		}
+
 		.left-text {
 			color: white;
 			flex: 2;
 			// font-size: 24rpx;
 		}
-		
+
 		.text-input {
 			margin-top: 10rpx;
 			display: flex;
@@ -228,6 +248,7 @@
 			overflow: hidden;
 			border-radius: 16rpx;
 			flex: 5;
+
 			.btn {
 				position: absolute;
 				right: 20rpx;
@@ -237,6 +258,7 @@
 				// line-height: 70rpx;
 				border-left: 1rpx solid #ccc;
 			}
+
 			input {
 				width: 100%;
 				height: 100%;
@@ -258,6 +280,7 @@
 		align-items: center;
 		padding-left: 2vw;
 	}
+
 	.more-chose {
 		margin: 0 auto;
 		margin-top: 20rpx;
@@ -265,7 +288,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-		
+
 		width: 100vw;
 		margin-right: 4.1vw;
 		// justify-content: space-between; 
@@ -278,8 +301,8 @@
 		// height: 14.5vw;
 
 		.image {
-			width:  14.5vw;
-			height:  14.5vw;
+			width: 14.5vw;
+			height: 14.5vw;
 		}
 	}
 </style>
