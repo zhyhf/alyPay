@@ -3,8 +3,7 @@
 		<view style="padding-top:25rpx;">
 			<image src="../../../static/image/shoufukuanInner.png" mode="widthFix" style="display:block;margin:0 auto;width: 93%;"></image>
 		</view>
-	  <uni-card :isShadow="true" mode="basic" :border="false" :padding="false" :spacing="false" :margin="false"
-	   style="background-color:#4492FF">
+	  <uni-card :isShadow="true" mode="basic" :border="false"  style="background-color:#4492FF">
 		<uni-list>
 			<uni-list-item v-for="(item, index) in list"
 				style="height: 95rpx;background-color: #4492FF;color:#4492FF"
@@ -12,7 +11,7 @@
 				showArrow
 				link
 				:thumb="item.url"
-				thumb-size="medium"
+				thumb-size="base"
 				@click="show(index)"
 			/>
 		</uni-list>
