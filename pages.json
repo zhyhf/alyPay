@@ -471,6 +471,35 @@
             }
             
         }
+        ,{
+            "path" : "pages/component/indexPage-relative/lifePayment/lifePayment",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "生活缴费",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/indexPage-relative/latestMessage/latestMessage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "消息盒子",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/indexPage-relative/investCenter/investCenter",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值中心",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#0C7DFF",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",

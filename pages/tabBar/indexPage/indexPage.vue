@@ -41,7 +41,7 @@
 		<view class="more-main">
 			<view class="more-chose">
 				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png" @click="jump"></image>
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/yundong.png"></image>
@@ -56,7 +56,7 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
-					<image @click="toNewPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
+					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
 					</image>
 				</view>
 				<view class="chose-item">
@@ -69,7 +69,7 @@
 		</view>
 		<view class="bottom">
 			<view class="b-guanggao curMsg">
-				<image src="../../../static/image/cMsg.png" mode="widthFix"></image>
+				<image src="../../../static/image/cMsg.png" mode="widthFix" @click="toMessageBox"></image>
 			</view>
 			<view class="b-guanggao">
 				<image src="../../../static/info-card.gif" style="height: 180rpx;"></image>
@@ -118,9 +118,9 @@
 					url: '/pages/component/Travel/Travel'
 				});
 			},
-			toNewPage() {
+			toInvestPage() {
 				uni.navigateTo({
-					url: '/pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter'
+					url: '/pages/component/indexPage-relative/investCenter/investCenter'
 				});
 			},
 			changValue(e) {
@@ -141,6 +141,16 @@
 					success(res) {
 						console.log("扫描成功")
 					}
+				})
+			},
+			jump() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/lifePayment/lifePayment'
+				})
+			},
+			toMessageBox() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/latestMessage/latestMessage'
 				})
 			}
 		}
