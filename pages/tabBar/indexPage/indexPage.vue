@@ -74,11 +74,6 @@
 			<view class="b-guanggao">
 				<image src="../../../static/info-card.gif" style="height: 180rpx;"></image>
 			</view>
-			<view class="latest-info">
-				<view class="b-image">
-					<image src="../../../static/image/msg.png" mode="widthFix"></image>
-				</view>
-			</view>
 			<view class="b-guanggao">
 				<image src="../../../static/image/guanggao.png" mode="widthFix"></image>
 			</view>
@@ -87,6 +82,11 @@
 			</view>
 			<view class="b-guanggao">
 				<image src="../../../static/image/g3.png" mode="widthFix"></image>
+			</view>
+			<view class="latest-info">
+				<view class="b-image">
+					<image src="../../../static/image/msg.png" mode="widthFix"></image>
+				</view>
 			</view>
 		</view>
 	</view>
