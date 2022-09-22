@@ -413,6 +413,14 @@
 				"enablePullDownRefresh": false
 			}
 
+		},
+		{
+			"path": "pages/component/shoufukuan/shoufukuan",
+			"style": {
+				"navigationBarTitleText": "收付款",
+				"enablePullDownRefresh": false
+			}
+		
 		}
 	],
 	"subPackages": [{

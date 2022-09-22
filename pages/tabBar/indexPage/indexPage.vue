@@ -27,7 +27,7 @@
 				<view class="g-item" @click="scanInfo">
 					<image src="../../../static/image/shao.png" mode="scaleToFill"></image>
 				</view>
-				<view class="g-item" @click="scanInfo">
+				<view class="g-item" @click="shoufukuan">
 					<image src="../../../static/image/shoufukuan.png" mode="scaleToFill"></image>
 				</view>
 				<view class="g-item" @click="toTravel">
@@ -101,6 +101,11 @@
 			uni.clearStorage()
 		},
 		methods: {
+			shoufukuan(){
+				uni.navigateTo({
+					url: '/pages/component/shoufukuan/shoufukuan'
+				});
+			},
 			toTravel() {
 				uni.navigateTo({
 					url: '/pages/component/Travel/Travel'
