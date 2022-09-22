@@ -110,6 +110,12 @@
 			}
 		},
 		{
+			"path": "pages/component/CardBag/CardBag",
+			"style": {
+				"navigationBarTitleText": "卡包"
+			}
+		},
+		{
 			"path": "pages/component/MyInfo/MyInfo",
 			"style": {
 				"navigationBarTitleText": "个人专属服务空间"
@@ -421,40 +427,48 @@
 				"navigationBarTitleText": "收付款",
 				"enablePullDownRefresh": false
 			}
-		
-		}
-	    ,{
-            "path" : "pages/component/mine-relative/information/information",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "个人信息",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/component/mine-relative/memberShip/memberShip",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "支付宝会员",
+
+		}, {
+			"path": "pages/component/mine-relative/information/information",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/mine-relative/memberShip/memberShip",
+			"style": {
+				"navigationBarTitleText": "支付宝会员",
 				"navigationBarTextStyle": "white",
 				"navigationStyle": "custom",
 				"navigationBarBackgroundColor": "#1777FF",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/component/mine-relative/bill/bill",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "账单",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/component/mine-relative/credit-card/credit-card",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/mine-relative/bill/bill",
+			"style": {
+				"navigationBarTitleText": "账单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/mine-relative/credit-card/credit-card",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/mine-relative/userProtect/userProtect",
+			"style": {
+				"navigationBarTitleText": "用户保护中心",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/component/ChooseCity/ChooseCity",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -463,10 +477,39 @@
             
         }
         ,{
-            "path" : "pages/component/mine-relative/userProtect/userProtect",
+            "path" : "pages/component/ChooseCity/ChooseCity",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "用户保护中心",
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/indexPage-relative/lifePayment/lifePayment",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "生活缴费",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/indexPage-relative/latestMessage/latestMessage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "消息盒子",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/indexPage-relative/investCenter/investCenter",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值中心",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#0C7DFF",
                 "enablePullDownRefresh": false
             }
             
