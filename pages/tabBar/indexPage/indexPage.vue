@@ -14,13 +14,45 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder="" @focus="focus"/>
+					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder=""
+						@focus="focus" />
 					<view class="btn" @click="search">
 						搜索
 					</view>
 				</view>
-				<view class="add">
-					<image src="../../../static/icons/add.png" mode="aspectFill"></image>
+				<view class="add" @click="showList = !showList">
+					<image :src="showList ? close : add" mode="aspectFill"></image>
+					<view class="list" v-if="showList">
+						<view class="sanjiao">
+
+						</view>
+						<view class="sys item" @click="scanInfo">
+							<image src="/static/addControl/b.png" mode=""></image>
+							<text class="item-t">
+
+								扫一扫
+							</text>
+						</view>
+						<view class="ewm item" @click="shoufukuan">
+							<image src="/static/addControl/a.png" mode=""></image>
+							<text class="item-t">
+								二维码收款
+							</text>
+						</view>
+						<view class="mp item" @click="toMyCard">
+							<image src="/static/addControl/c.png" mode=""></image>
+							<text class="item-t">
+								我的名片
+							</text>
+						</view>
+						<view class="zl item" @click="toIntelligence">
+							<image src="/static/addControl/d.png" mode=""></image>
+							<text class="item-t">
+								智能助理
+							</text>
+						</view>
+
+					</view>
 				</view>
 			</view>
 			<view class="gongneng">
@@ -57,7 +89,7 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/phone.png">
+					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
 					</image>
 				</view>
 				<view class="chose-item">
@@ -99,6 +131,9 @@
 		},
 		data() {
 			return {
+				close: require("@/static/addControl/close.png"),
+				add: require("@/static/icons/add.png"),
+				showList: false,
 				searchValue: '',
 				city: '南京'
 			}
@@ -108,6 +143,18 @@
 			uni.clearStorage()
 		},
 		methods: {
+			toIntelligence() {
+				uni.navigateTo({
+					url: "/pages/component/Intelligence/Intelligence"
+				})
+				this.showList = false
+			},
+			toMyCard() {
+				uni.navigateTo({
+					url: "/pages/component/MyBusCard/MyBusCard"
+				})
+				this.showList = false
+			},
 			toCity() {
 				uni.navigateTo({
 					url: "/pages/component/ChooseCity/ChooseCity"
@@ -117,6 +164,7 @@
 				uni.navigateTo({
 					url: '/pages/component/shoufukuan/shoufukuan'
 				});
+				this.showList = false
 			},
 			toCardBag() {
 				uni.navigateTo({
@@ -157,6 +205,7 @@
 						console.log("扫描成功")
 					}
 				})
+				this.showList = false
 			},
 			jump() {
 				uni.navigateTo({
@@ -176,6 +225,8 @@
 		padding: 0;
 		margin: 0;
 	}
+
+
 
 	.bottom {
 		display: flex;
@@ -237,6 +288,7 @@
 		box-sizing: border-box;
 
 		.add {
+			position: relative;
 			height: 100%;
 			margin-top: 16rpx;
 
@@ -244,6 +296,59 @@
 				width: 50rpx;
 				height: 50rpx;
 			}
+
+
+			.sys {
+				image {
+					// width: 10rpx;
+					// height: 10rpx;
+				}
+			}
+
+
+			.list {
+				position: absolute;
+				color: white !important;
+				font-size: 30rpx;
+				right: 34rpx;
+				top: 80rpx;
+				z-index: 999;
+				width: 36vw;
+				height: 30vh;
+				border-radius: 16rpx;
+				background-color: black;
+				padding-left: 20rpx;
+
+				.sanjiao {
+					position: absolute;
+					right: 10rpx;
+					top: -26rpx;
+					border-bottom: 15rpx solid black;
+					border-right: 15rpx solid transparent;
+					border-top: 15rpx solid transparent;
+					border-left: 15rpx solid transparent;
+
+				}
+
+				.item {
+					display: flex;
+					align-items: center;
+					width: 100%;
+					height: 7.2vh;
+
+				}
+
+				.item-t {
+					margin: 0 20rpx;
+				}
+
+				image {
+					width: 40rpx;
+					height: 40rpx;
+				}
+			}
+
+
 		}
 
 		.b-text {
