@@ -236,7 +236,7 @@
 		display: flex;
 		background-color: #0C7DFF;
 		box-sizing: border-box;
-		padding-top: 40rpx;
+		padding-top: 2rpx;
 		z-index: 99;
 		position: fixed;
 		top: 0rpx;
