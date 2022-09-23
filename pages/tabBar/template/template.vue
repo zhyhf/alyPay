@@ -3,13 +3,11 @@
 		<image
 			src="../../../static/mine/header.png"
 			style="width: 100vw; height: 160rpx;"
-			@click="navigateToInfo"
-		></image>
-		<view class="content-wrapper">
+			@click="navigateToInfo"></image>
 			<view class="content-item" style="margin:10rpx 20rpx 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in topList"
-						style="border-radius: 20rpx;height: 80rpx;font-weight: 15rpx;line-height: 80rpx;"
+						style="align-items:center;border-radius: 20rpx;height:100rpx;"
 						:title="item.title"
 						showArrow
 						link
@@ -21,7 +19,7 @@
 			<view class="content-item" style="margin: 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in middleList"
-						style="border-radius: 20rpx; height: 80rpx;"
+						style="align-items:center;border-radius: 20rpx;height:102rpx;"
 						:title="item.title"
 						showArrow
 						link
@@ -34,7 +32,7 @@
 			<view class="content-item" style="margin: 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in bottomList"
-						style="border-radius: 20rpx;height: 80rpx;"
+						style="align-items:center;border-radius: 20rpx;height:106rpx;"
 						:title="item.title"
 						showArrow
 						link
@@ -140,6 +138,12 @@
 		margin-right: 20rpx !important;
 	}
 	/deep/.uni-list-item__content-title {
-		font-size: 30rpx !important;
+		font-size: 38rpx !important;
+	}ss
+	/deep/ .uni-list--border-bottom{
+		height: 0px !important;
+	}
+	/deep/ .uni-list:after{
+		height: 0px !important;
 	}
 </style>
