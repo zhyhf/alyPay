@@ -11,7 +11,7 @@
 				共1张
 			</view>
 			<view class="item-bg">
-				<image src="@/static/cardBag/youhui.png" mode=""></image>
+				<image style="height: 21vh;" src="@/static/cardBag/wy.png" mode=""></image>
 			</view>
 		</view>
 		<view class="bottom-item" v-if="currentIndex == 1">
@@ -19,7 +19,7 @@
 				共1张
 			</view>
 			<view class="item-bg">
-				<image src="@/static/cardBag/huiyuan.png" mode=""></image>
+				<image src="@/static/cardBag/wh.png" style="height: 21vh;" mode=""></image>
 			</view>
 		</view>
 		<view class="b-item" style="background-color: transparent;" v-if="currentIndex == 2">
@@ -35,10 +35,16 @@
 				全部证件
 			</view>
 			<view class="item-bg">
-				<image src="@/static/cardBag/shen.png" mode=""></image>
+				<image src="@/static/cardBag/s.png" mode=""></image>
 			</view>
 			<view class="item-bg">
-				<image src="@/static/cardBag/huiyuan.png" mode=""></image>
+				<image src="@/static/cardBag/h.png" mode=""></image>
+			</view>
+			<view class="item-bg">
+				<image src="@/static/cardBag/y.png" mode=""></image>
+			</view>
+			<view class="item-bg">
+				<image src="@/static/cardBag/sf.png" mode=""></image>
 			</view>
 		</view>
 	</view>
@@ -98,7 +104,7 @@
 		box-sizing: border-box;
 
 		.can-use {
-			height: 34vh;
+			height: 36vh;
 
 			image {
 				height: 100%;
@@ -109,7 +115,7 @@
 
 		.piao {
 			margin-top: 20rpx;
-			height: 25vh;
+			height: 23vh;
 
 			image {
 				height: 100%;
@@ -133,7 +139,7 @@
 		image {
 			margin-top: 18rpx;
 			width: 100%;
-			height: 15vh;
+			height: 20vh;
 		}
 
 	}

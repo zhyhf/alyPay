@@ -146,7 +146,7 @@
 			}
 		},
 		onShow() {
-			this.gCity = uni.getStorageSync("pro") || "江苏"
+			this.gCity = uni.getStorageSync("pro") || "江苏省"
 		},
 		mounted() {
 			setInterval(() => {
@@ -306,7 +306,7 @@
 			position: absolute;
 			right: 80rpx;
 			top: 20rpx;
-			color: red;
+			color: #B52C1C;
 
 			.spe {
 				padding-right: 15rpx;
