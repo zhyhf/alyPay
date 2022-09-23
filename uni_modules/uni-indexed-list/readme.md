@@ -1,11 +1,28 @@
+# t-index-address
 
+轻量级拼音首字母城市索引列表选择组件
 
-## IndexedList 索引列表
-> **组件名：uni-indexed-list**
-> 代码块： `uIndexedList`
+## 安装方式
 
+本组件符合[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)规范，只需将本组件导入项目，在页面`template`中即可直接使用，无需在页面中`import`和注册`components`
 
-用于展示索引列表。
+### 基本用法
 
-### [查看文档](https://uniapp.dcloud.io/component/uniui/uni-indexed-list)
-#### 如使用过程中有任何问题，或者您对uni-ui有一些好的建议，欢迎加入 uni-ui 交流群：871950839 
+```html
+
+<t-index-address @select="select"></t-index-address>
+
+methods: {
+	select(data) {
+		console.log(data)
+	}
+}
+
+```
+
+## API
+
+### Events
+|事件名	 |说明			|返回值|
+|:-:	 |:-:			|:-:  |
+|@select |选中城市事件    |Object|
