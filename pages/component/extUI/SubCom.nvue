@@ -1,5 +1,10 @@
 <template>
     <div>
+		<view style="display:flex;justify-content: center;align-items:center; padding-top: 30rpx;">
+			<view  scroll-y="true" style="padding-bottom:20rpx;letter-spacing: 5rpx;padding-top: 10rpx;">
+				<text style="font-size:36rpx;font-weight: 500;">拿起手机，眨眨眼</text>
+			</view>
+	   </view>
         <div class="livefater">
             <div style="width: 210px;height: 210px;border-radius: 2px;overflow: hidden;">
                 <live-pusher id='livePusher' ref="livePusher" class="livePusher" url=""

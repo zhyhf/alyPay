@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<view  style="display:flex;justify-content: center;align-items:center; padding-top: 30rpx;">
+		<view v-if="!cameraFlag" style="display:flex;justify-content: center;align-items:center; padding-top: 30rpx;">
 			<view  scroll-y="true" style="padding-bottom:20rpx;letter-spacing: 5rpx;padding-top: 10rpx;">
 				<text style="font-size:32rpx">本服务仅限本人查询，请先完成人脸识别验证</text>
 			</view>
@@ -15,20 +15,20 @@
 					<text style="font-size:30rpx;color: #ccc;">************2834</text>
 				</view>
 			</view>
+			<view style="margin: 98rpx auto;display: flex;justify-content: center;flex-direction: column;align-items: center;
+			margin-top: 10rpx;margin-bottom: 16rpx;height: 300px;">
+				<image v-show="!cameraFlag" style="width: 210px;height: 210px;" src="../../../static/app-plus/scan1.png" mode="widthFix">
+				</image>
+			</view>
+			<view style="margin:0 auto;width:92%">
+				<button type="primary" @click="handleClick">
+					人脸识别认证
+				</button>
+			</view>
 		</view>
-		<div v-if="cameraFlag">
+		<div v-else>
 		  <TestingFace :time="2000"></TestingFace>
 		</div>
-		<view v-else style="margin: 98rpx auto;display: flex;justify-content: center;flex-direction: column;align-items: center;
-        margin-top: 10rpx;margin-bottom: 16rpx;height: 300px;">
-			<image v-show="!cameraFlag" style="width: 210px;height: 210px;" src="../../../static/app-plus/scan1.png" mode="widthFix">
-			</image>
-		</view>
-		<view style="margin:0 16">
-			<button type="primary" @click="handleClick">
-				人脸识别认证
-			</button>
-		</view>
 	</div>
 </template>
 
