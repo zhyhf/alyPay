@@ -14,7 +14,7 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder="" />
+					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder="" @focus="focus"/>
 					<view class="btn" @click="search">
 						搜索
 					</view>
@@ -41,7 +41,8 @@
 		<view class="more-main">
 			<view class="more-chose">
 				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png" @click="jump"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png" @click="jump">
+					</image>
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/yundong.png"></image>
@@ -56,7 +57,7 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
-					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
+					<image mode="scaleToFill" class="image" src="../../../static/image/phone.png">
 					</image>
 				</view>
 				<view class="chose-item">
@@ -135,11 +136,16 @@
 			changValue(e) {
 				this.searchValue = e.detail.value
 			},
+			focus() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/search/search'
+				})
+			},
 			search() {
-				if (this.searchValue.length <= 0 || this.searchValue.includes("国家"))
-					uni.navigateTo({
-						url: '/pages/component/SearchInfo/SearchInfo?text=111'
-					})
+				// if (this.searchValue.length <= 0 || this.searchValue.includes("国家"))
+				// 	uni.navigateTo({
+				// 		url: '/pages/component/SearchInfo/SearchInfo?text=111'
+				// 	})
 				// uni.showToast({
 
 				// })
