@@ -139,4 +139,7 @@
 	/deep/.uni-list-item__icon-img {
 		margin-right: 20rpx !important;
 	}
+	/deep/.uni-list-item__content-title {
+		font-size: 50rpx !important;
+	}
 </style>

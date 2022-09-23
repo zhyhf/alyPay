@@ -21,22 +21,22 @@
 
 <style lang="scss" scoped>
 .wrapper {
-	width: 96vw;
-	padding: 0 2vw;
+	width: 94vw;
+	padding: 20rpx 3vw;
 	background-color: #F5F5F5;
 	.payment-assistant {
 		width: 100%;
-		height: 820rpx;
+		height: 762rpx;
 		margin-bottom: 20rpx;
 	}
 	.payment {
 		width: 100%;
-		height: 480rpx;
+		height: 450rpx;
 		margin-bottom: 20rpx;
 	}
 	.sport {
 		width: 100%;
-		height: 420rpx;
+		height: 364rpx;
 		margin-bottom: 20rpx;
 	}
 }

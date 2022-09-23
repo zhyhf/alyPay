@@ -512,6 +512,17 @@
 			}
 
 		}
+
+
+		, {
+			"path": "pages/component/indexPage-relative/search/search",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
 	],
 	"subPackages": [{
 			"root": "pages/API",

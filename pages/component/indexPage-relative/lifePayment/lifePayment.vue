@@ -9,10 +9,17 @@
 			vertical
 		>
 			<swiper-item>
-				<image src="@/static/image/energy.png" class="swiper-item"></image>
+				<view class="life-item">
+					<image src="@/static/image/energy.png" class="icon-item"></image>
+					<text class="item-text">水电燃缴费得绿色能量</text>
+					<text class="amount">162g</text>
+				</view>
 			</swiper-item>
 			<swiper-item>
-				<image src="@/static/image/zhimafen.png" class="swiper-item"></image>
+				<view class="life-item">
+					<image src="@/static/image/zhimafen.png" class="icon-item"></image>
+					<text class="item-text">水电燃缴费有助于涨芝麻分</text>
+				</view>
 			</swiper-item>
 		</swiper>
 		<image class="card-list" src="@/static/image/card-list.png"></image>
@@ -50,14 +57,42 @@
 			border-top-left-radius: 20rpx;
 			border-top-right-radius: 20rpx;
 			padding-top: 10rpx;
-			.swiper-item {
-				width: 44%;
+			.life-item {
+				width: 100%;
 				height: 50rpx;
-				text-align: center;
-				position: relative;
-				left: 50%;
-				transform: translateX(-50%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.icon-item {
+					width: 36rpx;
+					height: 36rpx;
+					margin-right: 10rpx;
+					position: relative;
+					// top: 4rpx;
+				}
+				.item-text {
+					font-size: 26rpx;
+					position: relative;
+					top: -2.5rpx;
+					color: #333333;
+				}
+				.amount {
+					font-size: 30rpx;
+					color: #208111;
+					position: relative;
+					top: -2.5rpx;
+					left: 8rpx;
+					font-weight: bold;
+				}
 			}
+			// .swiper-item {
+			// 	width: 44%;
+			// 	height: 50rpx;
+			// 	text-align: center;
+			// 	position: relative;
+			// 	left: 50%;
+			// 	transform: translateX(-50%);
+			// }
 			// /deep/.uni-swiper-slide-frame {
 			// 	display: flex;
 			// 	justify-content: center;
