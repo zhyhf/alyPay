@@ -217,7 +217,7 @@
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		margin-top: 20rpx;
+		margin-top: 34rpx;
 		.history {
 			height: 40rpx;
 			padding: 10rpx 16rpx;

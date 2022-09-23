@@ -12,6 +12,7 @@
 		</view>
 		<view class="tab-container">
 			<text
+				ref="tabItem"
 				v-for="(item, index) in tabs"
 				:class="activeIndex === index ? 'tab-item-active tab-item': 'tab-item'"
 				@click="changeIndex(index)"
@@ -67,6 +68,7 @@
 				})
 			},
 			changeIndex(index) {
+				console.log(this.$refs.tabItem[index].$el.getBoundingClientRect().left)
 				this.activeIndex = index
 			},
 			back() {
@@ -151,7 +153,7 @@
 		height: 1050rpx;
 		position: relative;
 		.loading {
-			width: 200rpx;
+			width: 150rpx;
 			position: absolute;
 			left: 50%;
 			top: 50%;
