@@ -523,6 +523,20 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/component/MyBusCard/MyBusCard",
+			"style": {
+				"navigationBarTitleText": "我的名片",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/Intelligence/Intelligence",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	    ,{
             "path" : "pages/component/loading/loading",

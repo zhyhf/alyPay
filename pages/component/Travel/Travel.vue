@@ -36,7 +36,11 @@
 			</view>
 			<!-- 12306 -->
 			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == '12306'">
-				<image style="width: 100vw;" src="../../../static/travel/ti.png" mode="widthFix">
+				<image style="width: 100vw;margin-bottom: 8rpx;" src="../../../static/travel/1.png" mode="widthFix">
+				</image>
+				<image style="width: 100vw;margin-bottom: 8rpx;" src="../../../static/travel/2.png" mode="widthFix">
+				</image>
+				<image style="width: 100vw;" src="../../../static/travel/3.png" mode="widthFix">
 				</image>
 			</view>
 			<!-- 机票 -->
