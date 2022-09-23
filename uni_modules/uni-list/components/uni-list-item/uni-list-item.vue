@@ -353,10 +353,9 @@
 		justify-content: center;
 	}
 	.uni-list-item__content-title {
-		margin-top: 20rpx;
+		// margin-top: 20rpx;
 		font-size: $uni-font-size-base;
 		color: #333;
-		font-weight: bold;
 		overflow: hidden;
 	}
 	.uni-list-item__content-note {
