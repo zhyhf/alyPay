@@ -377,6 +377,7 @@
 		{
 			"path": "pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter",
 			"style": {
+				"navigationStyle": "custom",
 				"navigationBarTitleText": "国家政务服务平台"
 			}
 		}, {
@@ -466,55 +467,52 @@
 				"enablePullDownRefresh": false
 			}
 
-		}
-	    ,{
-            "path" : "pages/component/ChooseCity/ChooseCity",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/component/ChooseCity/ChooseCity",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/component/indexPage-relative/lifePayment/lifePayment",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "生活缴费",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/component/indexPage-relative/latestMessage/latestMessage",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "消息盒子",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/component/indexPage-relative/investCenter/investCenter",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "充值中心",
+		}, {
+			"path": "pages/component/ChooseCity/ChooseCity",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/ChooseCity/ChooseCity",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/indexPage-relative/lifePayment/lifePayment",
+			"style": {
+				"navigationBarTitleText": "生活缴费",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/indexPage-relative/latestMessage/latestMessage",
+			"style": {
+				"navigationBarTitleText": "消息盒子",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/indexPage-relative/investCenter/investCenter",
+			"style": {
+				"navigationBarTitleText": "充值中心",
 				"navigationBarTextStyle": "white",
 				"navigationBarBackgroundColor": "#0C7DFF",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/CCityChose/CCityChose",
+			"style": {
+				"navigationBarTitleText": "国家政务服务平台(试运行)",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{

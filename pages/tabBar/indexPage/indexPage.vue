@@ -41,7 +41,8 @@
 		<view class="more-main">
 			<view class="more-chose">
 				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png" @click="jump"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png" @click="jump">
+					</image>
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" class="image" src="../../../static/image/yundong.png"></image>
@@ -56,7 +57,7 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
-					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
+					<image mode="scaleToFill" class="image" src="../../../static/image/phone.png">
 					</image>
 				</view>
 				<view class="chose-item">
