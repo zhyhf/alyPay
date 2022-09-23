@@ -65,7 +65,7 @@
                     success: (e) => {
 						clearInterval(that.Timer)
 						uni.navigateTo({
-							url: "/pages/component/myCertificates/myCertificates"
+							url: "/pages/component/loading2/loading2"
 						})
                         this.$emit('faceImg', e.message)
                     }
