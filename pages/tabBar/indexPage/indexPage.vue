@@ -23,19 +23,19 @@
 					<image src="../../../static/icons/add.png" mode="aspectFill"></image>
 				</view>
 			</view>
-			<view class="gongneng">
-				<view class="g-item" @click="scanInfo">
-					<image src="../../../static/image/shao.png" mode="scaleToFill"></image>
-				</view>
-				<view class="g-item" @click="shoufukuan">
-					<image src="../../../static/image/shoufukuan.png" mode="scaleToFill"></image>
-				</view>
-				<view class="g-item" @click="toTravel">
-					<image src="../../../static/image/chuxing.png" mode="scaleToFill"></image>
-				</view>
-				<view class="g-item" @click="toCardBag">
-					<image src="../../../static/image/kabao.png" mode="scaleToFill"></image>
-				</view>
+		</view>
+		<view class="gongneng">
+			<view class="g-item" @click="scanInfo">
+				<image src="../../../static/image/shao.png" mode="scaleToFill"></image>
+			</view>
+			<view class="g-item" @click="shoufukuan">
+				<image src="../../../static/image/shoufukuan.png" mode="scaleToFill"></image>
+			</view>
+			<view class="g-item" @click="toTravel">
+				<image src="../../../static/image/chuxing.png" mode="scaleToFill"></image>
+			</view>
+			<view class="g-item" @click="toCardBag">
+				<image src="../../../static/image/kabao.png" mode="scaleToFill"></image>
 			</view>
 		</view>
 		<view class="more-main">
@@ -177,6 +177,7 @@
 		margin: 0;
 	}
 
+
 	.bottom {
 		display: flex;
 		flex-direction: column;
@@ -216,7 +217,7 @@
 
 	.gongneng {
 		padding-bottom: 9rpx;
-		margin-top: -32rpx;
+		margin-top: 130rpx;
 		width: 100vw;
 		// height: 150rpx;
 		display: flex;
@@ -235,6 +236,11 @@
 		display: flex;
 		background-color: #0C7DFF;
 		box-sizing: border-box;
+		padding-top: 40rpx;
+		z-index: 99;
+		position: fixed;
+		top: 0rpx;
+		left: 0;
 
 		.add {
 			height: 100%;
