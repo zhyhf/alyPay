@@ -9,7 +9,7 @@
 			<view class="content-item" style="margin:10rpx 20rpx 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in topList"
-						style="border-radius: 20rpx;"
+						style="border-radius: 20rpx;height: 80rpx;font-weight: normal;"
 						:title="item.title"
 						showArrow
 						link
@@ -21,7 +21,7 @@
 			<view class="content-item" style="margin: 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in middleList"
-					style="border-radius: 20rpx;"
+						style="border-radius: 20rpx; height: 80rpx;"
 						:title="item.title"
 						showArrow
 						link
@@ -34,7 +34,7 @@
 			<view class="content-item" style="margin: 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in bottomList"
-					style="border-radius: 20rpx;"
+						style="border-radius: 20rpx;height: 80rpx;"
 						:title="item.title"
 						showArrow
 						link
@@ -135,5 +135,11 @@
 				display: none;
 			}
 		}
+	}
+	/deep/.uni-list-item__icon-img {
+		margin-right: 20rpx !important;
+	}
+	/deep/.uni-list-item__content-title {
+		font-size: 50rpx !important;
 	}
 </style>
