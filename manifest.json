@@ -25,7 +25,8 @@
             "Speech" : {},
             "VideoPlayer" : {},
             "FaceID" : {},
-            "LivePusher" : {}
+            "LivePusher" : {},
+            "Maps" : {}
         },
         "distribute" : {
             "android" : {
@@ -72,18 +73,24 @@
                 "speech" : {
                     "ifly" : {}
                 },
-                "ad" : {}
+                "ad" : {},
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "c0edd44983d05530b844ad08f052b5f3",
+                        "appkey_android" : "c0edd44983d05530b844ad08f052b5f3"
+                    }
+                }
             },
             "orientation" : [ "portrait-primary" ],
             "icons" : {
                 "android" : {
-                    "hdpi" : "D:/appPro/zfb.png",
-                    "xhdpi" : "D:/appPro/zfb.png",
-                    "xxhdpi" : "D:/appPro/zfb.png",
-                    "xxxhdpi" : "D:/appPro/zfb.png"
+                    "hdpi" : "D:/appPro/zfbN.png",
+                    "xhdpi" : "D:/appPro/zfbN.png",
+                    "xxhdpi" : "D:/appPro/zfbN.png",
+                    "xxxhdpi" : "D:/appPro/zfbN.png"
                 },
                 "ios" : {
-                    "appstore" : "D:/appPro/zfb.png"
+                    "appstore" : "D:/appPro/zfbN.png"
                 }
             }
         }
