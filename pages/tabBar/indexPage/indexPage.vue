@@ -14,7 +14,7 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder="" @focus="focus"/>
+					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" @click="focus"/>
 					<view class="btn" @click="search">
 						搜索
 					</view>

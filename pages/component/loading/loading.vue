@@ -28,7 +28,7 @@
 		height: 90vh;
 		position: relative;
 		.loading {
-			width: 200rpx;
+			width: 150rpx;
 			position: absolute;
 			left: 50%;
 			top: 50%;
