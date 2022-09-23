@@ -14,8 +14,8 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" @click="focus" />
 
+					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" @click="focus" />
 					<view class="btn" @click="search">
 						搜索
 					</view>
@@ -227,8 +227,7 @@
 		margin: 0;
 	}
 
-
-	<<<<<<< HEAD=======>>>>>>>b8d14e89d2704a8f972af7b0a79d85714af4236a .bottom {
+	.bottom {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
