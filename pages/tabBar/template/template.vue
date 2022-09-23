@@ -9,7 +9,7 @@
 			<view class="content-item" style="margin:10rpx 20rpx 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in topList"
-						style="border-radius: 20rpx;height: 80rpx;font-weight: normal;"
+						style="border-radius: 20rpx;height: 80rpx;font-weight: 15rpx;line-height: 80rpx;"
 						:title="item.title"
 						showArrow
 						link
@@ -140,6 +140,6 @@
 		margin-right: 20rpx !important;
 	}
 	/deep/.uni-list-item__content-title {
-		font-size: 50rpx !important;
+		font-size: 30rpx !important;
 	}
 </style>

@@ -209,8 +209,8 @@
 	}
 
 	.gongneng {
-		padding-bottom: 20rpx;
-		margin-top: -10rpx;
+		padding-bottom: 9rpx;
+		margin-top: -32rpx;
 		width: 100vw;
 		// height: 150rpx;
 		display: flex;
