@@ -140,6 +140,7 @@
 		},
 		mounted() {
 			this.searchValue = ''
+			this.showList = false
 			uni.clearStorage()
 		},
 		methods: {
