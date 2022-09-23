@@ -14,8 +14,8 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" placeholder=""
-						@focus="focus" />
+					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" @click="focus" />
+
 					<view class="btn" @click="search">
 						搜索
 					</view>
@@ -55,19 +55,19 @@
 					</view>
 				</view>
 			</view>
-			<view class="gongneng">
-				<view class="g-item" @click="scanInfo">
-					<image src="../../../static/image/shao.png" mode="scaleToFill"></image>
-				</view>
-				<view class="g-item" @click="shoufukuan">
-					<image src="../../../static/image/shoufukuan.png" mode="scaleToFill"></image>
-				</view>
-				<view class="g-item" @click="toTravel">
-					<image src="../../../static/image/chuxing.png" mode="scaleToFill"></image>
-				</view>
-				<view class="g-item" @click="toCardBag">
-					<image src="../../../static/image/kabao.png" mode="scaleToFill"></image>
-				</view>
+		</view>
+		<view class="gongneng">
+			<view class="g-item" @click="scanInfo">
+				<image src="../../../static/image/shao.png" mode="scaleToFill"></image>
+			</view>
+			<view class="g-item" @click="shoufukuan">
+				<image src="../../../static/image/shoufukuan.png" mode="scaleToFill"></image>
+			</view>
+			<view class="g-item" @click="toTravel">
+				<image src="../../../static/image/chuxing.png" mode="scaleToFill"></image>
+			</view>
+			<view class="g-item" @click="toCardBag">
+				<image src="../../../static/image/kabao.png" mode="scaleToFill"></image>
 			</view>
 		</view>
 		<view class="more-main">
@@ -228,8 +228,7 @@
 	}
 
 
-
-	.bottom {
+	<<<<<<< HEAD=======>>>>>>>b8d14e89d2704a8f972af7b0a79d85714af4236a .bottom {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -268,7 +267,7 @@
 
 	.gongneng {
 		padding-bottom: 9rpx;
-		margin-top: -32rpx;
+		margin-top: 130rpx;
 		width: 100vw;
 		// height: 150rpx;
 		display: flex;
@@ -287,6 +286,11 @@
 		display: flex;
 		background-color: #0C7DFF;
 		box-sizing: border-box;
+		padding-top: 40rpx;
+		z-index: 99;
+		position: fixed;
+		top: 0rpx;
+		left: 0;
 
 		.add {
 			position: relative;

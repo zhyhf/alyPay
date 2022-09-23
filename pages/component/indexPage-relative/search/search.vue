@@ -1,51 +1,55 @@
 <template>
-	<view class="wrapper">
-		<view class="search">
-			<input v-model="text" type="text" auto-focus class="search-input" >
-			<text class="cancel" @click="search">搜索</text>
-			<image src="@/static/image/search-icon.png" class="search-icon"></image>
-			<image src="@/static/image/search-icon.png" class="clear-icon" @click="clear"></image>
-		</view>
-		<view v-show="text.length > 0" class="search-res">
-			<image src="@/static/image/search-result.png" class="search-image" @click="jump"></image>
-			<view class="search-list">
-				<view class="search-item" v-for="(item, index) in serachList" :key="index">
-					<image src="@/static/image/search-icon.png" class="search-icon"></image>
-					<text class="serach-title">{{ item.title }}</text>
-					<view class="line"></view>
+	<view>
+		<view class="header"></view>
+		<view class="wrapper">
+			<view class="search">
+				<image src="@/static/image/search-back.png" class="back-icon" @click="back"></image>
+				<input v-model="text" type="text" auto-focus class="search-input" >
+				<text class="cancel" @click="search">搜索</text>
+				<image src="@/static/image/search-icon.png" class="search-icon"></image>
+				<image src="@/static/image/search-clear.png" class="clear-icon" @click="clear"></image>
+			</view>
+			<view v-show="text.length > 0" class="search-res">
+				<image src="@/static/image/search-result.png" class="search-image" @click="jump"></image>
+				<view class="search-list">
+					<view class="search-item" v-for="(item, index) in serachList" :key="index">
+						<image src="@/static/image/search-icon.png" class="search-icon"></image>
+						<text class="serach-title">{{ item.title }}</text>
+						<view class="line"></view>
+					</view>
 				</view>
 			</view>
-		</view>
-		<view v-show="text.length === 0" class="history-wrapper">
-			<text class="history">生活缴费</text>
-			<text class="history">生活缴费电费</text>
-			<text class="history">防疫出行政策查询</text>
-		</view>
-		<view v-show="text.length === 0" class="search-history">
-			<text class="search-history-title">搜索历史</text>
-			<text class="search-history-card" @click="jump">国家政务服务平台</text>
-		</view>
-		<view v-show="text.length === 0" class="discover">
-			<text class="discover-title">搜索发现</text>
-			<view class="discover-container">
-				<view class="yuanshen">
-					<view class="left">
-						<view class="title">
-							<image src="@/static/image/fire.png" class="title-image"></image>
-							<text class="title-text">限时兑换40原神原石</text>
+			<view v-show="text.length === 0" class="history-wrapper">
+				<text class="history">生活缴费</text>
+				<text class="history">生活缴费电费</text>
+				<text class="history">防疫出行政策查询</text>
+			</view>
+			<view v-show="text.length === 0" class="search-history">
+				<text class="search-history-title">搜索历史</text>
+				<text class="search-history-card" @click="jump">国家政务服务平台</text>
+			</view>
+			<view v-show="text.length === 0" class="discover">
+				<text class="discover-title">搜索发现</text>
+				<view class="discover-container">
+					<view class="yuanshen">
+						<view class="left">
+							<view class="title">
+								<image src="@/static/image/fire.png" class="title-image"></image>
+								<text class="title-text">限时兑换40原神原石</text>
+							</view>
+							<text class="note">还有原神周边等你抽</text>
 						</view>
-						<text class="note">还有原神周边等你抽</text>
+						<image src="@/static/image/yuanshen.gif" class="yuanshen-icon"></image>
 					</view>
-					<image src="@/static/image/yuanshen.gif" class="yuanshen-icon"></image>
-				</view>
-				<view class="line"></view>
-				<view class="list-item" v-for="(item, index) in list">
-					<view class="left">
-						<image src="@/static/image/circle.png" class="title-image"></image>
-						<text class="title">{{ item.title }}</text>
-						<text class="note">{{ item.note }}</text>
+					<view class="line"></view>
+					<view class="list-item" v-for="(item, index) in list">
+						<view class="left">
+							<image src="@/static/image/circle.png" class="title-image"></image>
+							<text class="title">{{ item.title }}</text>
+							<text class="note">{{ item.note }}</text>
+						</view>
+						<image v-if="item.hot" src="@/static/image/hot.png" class="hot-image"></image>
 					</view>
-					<image v-if="item.hot" src="@/static/image/hot.png" class="hot-image"></image>
 				</view>
 			</view>
 		</view>
@@ -113,15 +117,27 @@
 			},
 			clear() {
 				this.text = ''
+			},
+			back() {
+				uni.navigateBack()
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.header {
+		height: var(--status-bar-height);
+		width: 100%;
+	}
 .wrapper {
 	padding: 30rpx 2.5vw;
 	background-color: #F5F5F5;
+	.header {
+		height: var(--status-bar-height);
+		width: 100%;
+		background-color: red;
+	}
 	.search {
 		display: flex;
 		align-items: center;
@@ -142,15 +158,20 @@
 			width: 36rpx;
 			height: 36rpx;
 			position: absolute;
-			left: 16rpx;
+			left: 60rpx;
 			top: 14rpx;
 		}
 		.clear-icon {
-			width: 36rpx;
-			height: 36rpx;
+			width: 24rpx;
+			height: 24rpx;
 			position: absolute;
 			right: 110rpx;
-			top: 14rpx;
+			top: 20rpx;
+		}
+		.back-icon {
+			width: 25rpx;
+			height: 36rpx;
+			margin-right: 20rpx;
 		}
 	}
 	.search-res {
@@ -196,7 +217,7 @@
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		margin-top: 20rpx;
+		margin-top: 34rpx;
 		.history {
 			height: 40rpx;
 			padding: 10rpx 16rpx;

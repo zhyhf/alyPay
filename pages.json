@@ -17,6 +17,7 @@
 			"path": "pages/tabBar/indexPage/indexPage",
 			"style": {
 				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
 				"navigationBarBackgroundColor": "#0C7DFF",
 				"app-plus": {
 					"bounce": "vertical",
@@ -537,7 +538,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/component/loading/loading",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{
