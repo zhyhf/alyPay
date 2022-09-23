@@ -5,7 +5,12 @@
 				定位 / 最近访问
 			</view>
 			<view class="current-item">
-				<view class="item" @click="SelectCity(item)" v-for="(item,index) in currentArr" :key="index">
+				<view style="display: flex;align-items: center;justify-content: center;" class="item"
+					@click="SelectCity(item)" v-for="(item,index) in currentArr" :key="index">
+					<text v-if="index == 0 ">
+						<image style="width: 25rpx; height: 30rpx;margin: 18rpx 10rpx 0 0;" src="@/static/icons/bp.png"
+							mode=""></image>
+					</text>
 					{{item}}
 				</view>
 			</view>

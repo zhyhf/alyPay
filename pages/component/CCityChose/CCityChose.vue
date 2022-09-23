@@ -6,6 +6,8 @@
 			</view>
 			<view class="choose">
 				<view @click="chosePro(item)" class="c-item" v-for="(item,index) in cArr" :key="index">
+					<image v-if="index==0" style="width: 25rpx; height: 30rpx;margin: 0rpx 10rpx 0 0;"
+						src="@/static/icons/rp.png" mode=""></image>
 					{{item}}
 				</view>
 			</view>
@@ -117,6 +119,10 @@
 			background-color: white;
 		}
 
+		.top-title {
+			margin-bottom: 20rpx;
+		}
+
 		.p-item {
 			width: 92vw;
 			height: 6vh;
@@ -124,7 +130,7 @@
 			font-size: 32rpx;
 			line-height: 6vh;
 			margin: 0 auto;
-			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid #F0F0F0;
 		}
 	}
 </style>
