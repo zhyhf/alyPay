@@ -69,7 +69,8 @@
 					},
 					{
 						title: '总资产',
-						icon: require('../../../static/mine/property.png')
+						icon: require('../../../static/mine/property.png'),
+						navigatePath: '/pages/component/loading/loading'
 					},
 					{
 						title: '余额',
@@ -79,29 +80,35 @@
 					},
 					{
 						title: '余额宝',
-						icon: require('../../../static/mine/yuebao.png')
+						icon: require('../../../static/mine/yuebao.png'),
+						navigatePath: '/pages/component/loading/loading'
 					},
 					{
 						title: '花呗',
-						icon: require('../../../static/mine/huabei.png')
+						icon: require('../../../static/mine/huabei.png'),
+						navigatePath: '/pages/component/loading/loading'
 					},
 					{
 						title: '余利宝',
-						icon: require('../../../static/mine/yulibao.png')
+						icon: require('../../../static/mine/yulibao.png'),
+						navigatePath: '/pages/component/loading/loading'
 					},
 					{
 						title: '银行卡',
-						icon: require('../../../static/mine/credit-card.png')
+						icon: require('../../../static/mine/credit-card.png'),
+						navigatePath: '/pages/component/loading/loading'
 					}
 				],
 				bottomList: [
 					{
 						title: '芝麻信用',
-						icon: require('../../../static/mine/zhima.png')
+						icon: require('../../../static/mine/zhima.png'),
+						navigatePath: '/pages/component/loading/loading'
 					},
 					{
 						title: '借呗',
-						icon: require('../../../static/mine/jiebei.png')
+						icon: require('../../../static/mine/jiebei.png'),
+						navigatePath: '/pages/component/loading/loading'
 					}
 				]
 			}

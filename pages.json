@@ -18,18 +18,7 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom",
-				"navigationBarBackgroundColor": "#0C7DFF",
-				"app-plus": {
-					"bounce": "vertical",
-					"titleNView": {
-						// "buttons": [{
-						// 	"text": "\ue534",
-						// 	"fontSrc": "/static/uni.ttf",
-						// 	"fontSize": "22px",
-						// 	"color": "#FFFFFF"
-						// }]
-					}
-				}
+				"navigationBarBackgroundColor": "#0C7DFF"
 			}
 		},
 		{
@@ -585,7 +574,25 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/component/indexPage-relative/pandemic/pandemic",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/indexPage-relative/usage/usage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{
