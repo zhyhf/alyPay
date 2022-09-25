@@ -1,38 +1,39 @@
 <template>
 	<view style="min-height: 100vh;">
-		<view class="header-wrapper">
-			<text class="header-text">请选择要添加的证照</text>
+		<view class="top-header">
+			<view class="left-info">
+				<uni-icons type="left" color="black" size="26"></uni-icons>
+				<view class="txt">
+					添加证照
+				</view>
+			</view>
+			<view class="right-info">
+				<view class="left-img">
+					<image style="width: 50rpx; height: 50rpx;" src="@/static/government/p1.png" mode=""></image>
+				</view>
+				<view class="right-img">
+					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
+					</image>
+				</view>
+			</view>
+			<view class="header-wrapper" style="width: 100vw;">
+				<text class="header-text">请选择要添加的证照</text>
+			</view>
 		</view>
-		<view class="category-wrapper">
+
+		<view class="category-wrapper" style="margin-top: 200rpx;background-color: #fff;">
 			<text class="category-title">常用证件</text>
 		</view>
 		<uni-list>
-			<uni-list-item v-for="(item, index) in casualList"
-				style="height: 65rpx;"
-				class="list"
-				:title="item.title"
-				showArrow
-				link
-				:thumb="item.url"
-				thumb-size="medium"
-				@click="show(index)"
-			/>
+			<uni-list-item v-for="(item, index) in casualList" style="height: 65rpx;" class="list" :title="item.title"
+				showArrow link :thumb="item.url" thumb-size="medium" @click="show(index)" />
 		</uni-list>
 		<view class="category-wrapper">
 			<text class="category-title">交通行驶</text>
 		</view>
 		<uni-list>
-			<uni-list-item
-				style="height: 65rpx;"
-				class="list"
-				v-for="(item, index) in trafficList"
-				:title="item.title"
-				to="/pages/me/copyright/copyright"
-				link
-				:thumb="item.url"
-				thumb-size="medium"
-				@click="show"
-			/>
+			<uni-list-item style="height: 65rpx;" class="list" v-for="(item, index) in trafficList" :title="item.title"
+				to="/pages/me/copyright/copyright" link :thumb="item.url" thumb-size="medium" @click="show" />
 		</uni-list>
 		<uni-popup ref="popup" background-color="#fff">
 			<view class="popup-title">
@@ -55,8 +56,7 @@
 	export default {
 		data() {
 			return {
-				casualList: [
-					{
+				casualList: [{
 						title: '学位证书',
 						url: require('@/static/government/certificate.png')
 					},
@@ -101,8 +101,7 @@
 						url: require('@/static/government/born.png')
 					},
 				],
-				trafficList: [
-					{
+				trafficList: [{
 						title: '中华人民共和国道路运输证',
 						url: require('@/static/government/transport.png')
 					},
@@ -155,29 +154,62 @@
 </script>
 
 <style lang="scss" scoped>
+	.top-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding-top: var(--status-bar-height);
+		padding-bottom: 20rpx;
+		z-index: 9999;
+		background-color: white;
+		width: 100vw;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.left-info {
+			display: flex;
+			font-size: 34rpx;
+			align-items: center;
+
+			.txt {
+				margin-left: 20rpx;
+			}
+		}
+
+		.right-info {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+
 	::v-deep .uni-popup__wrapper {
 		width: 600rpx !important;
 		min-height: 300rpx !important;
 		padding-right: 0;
-		position: relative; 
+		position: relative;
 		border-radius: 20rpx;
 		overflow: hidden;
 		background-color: #ffffff;
+
 		.popup-title {
 			text-align: center;
 			margin-top: 28rpx;
 			font-size: 36rpx;
 			font-weight: bold;
 		}
+
 		.popup-content {
 			text-align: center;
 			width: 90%;
 			padding: 28rpx;
 		}
+
 		.button-info {
 			width: 100%;
 			height: 80rpx;
 			display: flex;
+
 			.btn {
 				width: 50%;
 				border-top: 1px solid lightgray;
@@ -188,18 +220,22 @@
 				align-items: center;
 				color: rgb(77, 117, 208);
 			}
+
 			.btn:first-child {
 				border-right: 1px solid lightgray;
 			}
-			.uni-btn{
+
+			.uni-btn {
 				flex-basis: 50%;
 				font-size: 33rpx;
 				background-color: #fff;
-				&:first-child{
+
+				&:first-child {
 					// border-bottom-left-radius: 20rpx;
 					color: rgb(77, 117, 208);
 					// border-right: 1px solid lightgray;
 				}
+
 				// &:last-child{
 				// 	border-bottom-right-radius: 20rpx;
 				// 	color: rgb(77, 117, 208);
@@ -211,24 +247,33 @@
 				// 	border-top: 1px solid lightgray;
 				// }
 			}
-	
+
 		}
 	}
+
 	.header-wrapper {
 		margin-top: 10rpx;
 		margin-left: 27rpx;
+
 		.header-text {
 			font-size: 32rpx;
 			font-weight: bold;
 		}
 	}
+
 	.list {
 		margin-bottom: 20rpx;
 	}
+
 	.category-wrapper {
-		margin-top: 15rpx;
-		margin-left: 27rpx;
-		margin-bottom: 10rpx;
+		padding-top: 15rpx;
+		// margin-left: 27rpx;
+		padding-left: 27rpx;
+		padding-bottom: 10rpx;
+		background-color: white;
+		box-sizing: border-box;
+		width: 100vw;
+
 		.category-title {
 			font-size: 32rpx;
 			font-weight: bold;

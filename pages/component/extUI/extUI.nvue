@@ -1,26 +1,44 @@
 <template>
-	<div>
-		<view v-if="!cameraFlag" style="display:flex;padding-top: 30rpx;flex-direction:column;width: 93%;">
+	<div style="background-color: #F5F5F5;">
+		<view class="top-header" style="padding-top: 88rpx;width: 100vw;">
+			<view class="back" style="display: flex; align-items: center;">
+				<image @click="back" style="width: 35rpx;height: 35rpx;" src="/static/image/back.png" mode=""></image>
+				<view class="txt">
+					人脸识别认证
+				</view>
+			</view>
+			<view class="right-info">
+				<view class="left-img">
+					<image style="width: 50rpx; height: 50rpx;" src="@/static/government/p1.png" mode=""></image>
+				</view>
+				<view class="right-img">
+					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
+					</image>
+				</view>
+			</view>
+		</view>
+		<view v-if="!cameraFlag"
+			style="display:flex;padding-top: 30rpx;flex-direction:column;width: 93%;background-color: #F5F5F5;">
 			<view style="display:flex;justify-content: center;align-items:center;">
-			<view  scroll-y="true" style="padding-bottom:20rpx;letter-spacing: 5rpx;padding-top: 10rpx;">
-				<text style="font-size:32rpx">本服务仅限本人查询，请先完成人脸识别验证</text>
-			</view>
-			<view  style="padding-top: 20rpx;">
-				<text style="font-size:30rpx;color: #ccc;">拍摄您本人人脸，请确保正对手机，光线充足</text>
-			</view>
-			<view class="user-info" style="display: flex;justify-content: center;width: 100vw;flex-direction: row;">
-				<view class="name" style="color: #ccc;padding-top: 20rpx;">
-					<text style="font-size:30rpx;color: #ccc;">**帅、</text>
+				<view scroll-y="true" style="padding-bottom:20rpx;letter-spacing: 5rpx;padding-top: 10rpx;">
+					<text style="font-size:32rpx">本服务仅限本人查询，请先完成人脸识别验证</text>
 				</view>
-				<view class="phone" style="color: #ccc;padding-top: 20rpx;">
-					<text style="font-size:30rpx;color: #ccc;">************2834</text>
+				<view style="padding-top: 20rpx;">
+					<text style="font-size:30rpx;color: #ccc;">拍摄您本人人脸，请确保正对手机，光线充足</text>
 				</view>
-			</view>
-			<view style="margin: 98rpx auto;display: flex;justify-content: center;flex-direction: column;align-items: center;
+				<view class="user-info" style="display: flex;justify-content: center;width: 100vw;flex-direction: row;">
+					<view class="name" style="color: #ccc;padding-top: 20rpx;">
+						<text style="font-size:30rpx;color: #ccc;">**帅、</text>
+					</view>
+					<view class="phone" style="color: #ccc;padding-top: 20rpx;">
+						<text style="font-size:30rpx;color: #ccc;">************2834</text>
+					</view>
+				</view>
+				<view style="margin: 98rpx auto;display: flex;justify-content: center;flex-direction: column;align-items: center;
 			    margin-top: 10rpx;margin-bottom: 16rpx;height: 300px;">
-				<image style="width: 200px;height: 200px;" src="../../../static/app-plus/scan1.png" mode="widthFix">
-				</image>
-			</view>
+					<image style="width: 200px;height: 200px;" src="../../../static/app-plus/scan1.png" mode="widthFix">
+					</image>
+				</view>
 			</view>
 			<view style="margin: 0 auto;">
 				<button type="primary" @click="handleClick">
@@ -29,7 +47,7 @@
 			</view>
 		</view>
 		<view v-else>
-		  <TestingFace :time="2000"></TestingFace>
+			<TestingFace :time="2000"></TestingFace>
 		</view>
 	</div>
 </template>
@@ -39,29 +57,79 @@
 	export default {
 		data() {
 			return {
-				cameraFlag:false
+				cameraFlag: false
 			}
 		},
 		components: {
-		    TestingFace
+			TestingFace
 		},
 		methods: {
-			handleClick(){
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
+			handleClick() {
 				let that = this
-				that.cameraFlag  = true
+				that.cameraFlag = true
 			},
 		},
 	}
 </script>
 
-<style>
-	<style lang="less">
-	page {
-		background: #0c8cf9;
+
+<style lang="scss" scoped>
+	.top-header {
+		padding-top: var(--status-bar-height);
+		padding-right: 20rpx;
+		padding-left: 20rpx;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		width: 100vw;
+		background-color: #f5f5f5;
 	}
-	/deep/ .uni-button{
+
+	.right-info {
+		display: flex;
+		flex-direction: row;
+
+		.left-img {
+			margin-right: 20rpx;
+
+			image {
+				width: 50rpx;
+				height: 50rpx;
+			}
+		}
+
+		.right-img {
+			position: relative;
+
+			image {
+				width: 140rpx;
+				height: 50rpx;
+			}
+		}
+	}
+
+	.back {
+		display: flex;
+		flex-direction: row;
+		font-size: 32rpx;
+
+		image {
+			margin-right: 30rpx;
+			width: 35rpx;
+			height: 35rpx;
+		}
+	}
+
+	/deep/ .uni-button {
 		width: 100% !important;
 	}
+
 	.text-box {
 		margin-bottom: 40rpx;
 		padding: 40rpx 0;
@@ -75,6 +143,7 @@
 		color: red;
 		line-height: 1.8;
 	}
+
 	.u-navbar__content__left {
 		display: flex !important;
 		align-items: center;
@@ -103,7 +172,7 @@
 		top: 25%;
 		width: 250rpx;
 		height: 250rpx;
-		background: pink;
+		// background: pink;
 	}
 
 	.message {
@@ -117,5 +186,4 @@
 		color: #fff !important;
 		font-size: 20rpx;
 	}
-</style>
 </style>

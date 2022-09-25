@@ -43,6 +43,10 @@
 </script>
 
 <style lang="scss" scoped>
+	.header {
+		padding-top: var(--status-bar-height);
+	}
+
 	.wrapper {
 		width: 94vw;
 		height: 470rpx;
@@ -50,16 +54,19 @@
 		padding: 0 3vw;
 		position: relative;
 		height: 100vh;
+
 		.header {
 			height: 60rpx;
 			display: flex;
 			justify-content: space-between;
+
 			.title {
 				font-size: 36rpx;
 				font-weight: bold;
 				position: relative;
 				top: 10rpx;
 			}
+
 			.manage {
 				color: darkred;
 				font-size: 30rpx;
@@ -68,11 +75,13 @@
 				right: 10rpx;
 			}
 		}
+
 		.certificate {
 			margin-top: 30rpx;
 			width: 94vw;
 			height: 240rpx;
 		}
+
 		.button {
 			width: 94vw;
 			height: 90rpx;
