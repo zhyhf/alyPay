@@ -71,20 +71,20 @@
 		</view>
 		<view class="more-main">
 			<view class="more-chose">
-				<view class="chose-item">
-					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png" @click="jump">
+				<view class="chose-item" @click="jumpToLoading">
+					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png">
 					</image>
 				</view>
-				<view class="chose-item">
+				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/yundong.png"></image>
 				</view>
-				<view class="chose-item">
+				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/jiangkang.png"></image>
 				</view>
-				<view class="chose-item">
+				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/kuaidi.png"></image>
 				</view>
-				<view class="chose-item">
+				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
@@ -96,10 +96,28 @@
 					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
 					</image>
 				</view>
-				<view class="chose-item">
+				<view class="chose-item" @click="jumpToLoading">
+					<image mode="scaleToFill" class="image" src="../../../static/image/jiebei.png"></image>
+				</view>
+				<view class="chose-item" @click="jumpToLoading">
+					<image mode="scaleToFill" class="image" src="../../../static/image/movie.png"></image>
+				</view>
+				<view class="chose-item" @click="jumpToLoading">
+					<image mode="scaleToFill" class="image" src="../../../static/image/takeout.png"></image>
+				</view>
+				<view class="chose-item" @click="jumpToLoading">
+					<image mode="scaleToFill" class="image" src="../../../static/image/gaode.png"></image>
+				</view>
+				<view class="chose-item" @click="jumpToLoading">
+					<image mode="scaleToFill" class="image" src="../../../static/image/huabei.png"></image>
+				</view>
+				<view class="chose-item" @click="jumpToLoading">
+					<image mode="scaleToFill" class="image" src="../../../static/image/zhima-credit.png"></image>
+				</view>
+				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/wode.png"></image>
 				</view>
-				<view class="chose-item">
+				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/more.png"></image>
 				</view>
 			</view>
@@ -108,19 +126,19 @@
 			<view class="b-guanggao curMsg">
 				<image src="../../../static/image/cMsg.png" mode="widthFix" @click="toMessageBox"></image>
 			</view>
-			<view class="b-guanggao">
+			<view class="b-guanggao" @click.stop="jumpToLoading">
 				<image src="../../../static/info-card.gif" style="height: 180rpx;"></image>
 			</view>
-			<view class="b-guanggao">
+			<view class="b-guanggao" @click.stop="jumpToLoading">
 				<image src="../../../static/image/guanggao.png" mode="widthFix"></image>
 			</view>
-			<view class="b-guanggao">
+			<view class="b-guanggao" @click="jumpToLoading">
 				<image src="../../../static/image/g2.png" mode="widthFix"></image>
 			</view>
-			<view class="b-guanggao">
+			<view class="b-guanggao" @click="toPandemicPage">
 				<image src="../../../static/image/g3.png" mode="widthFix"></image>
 			</view>
-			<view class="latest-info">
+			<view class="latest-info" @click="toUsagePage">
 				<view class="b-image">
 					<image src="../../../static/image/msg.png" mode="widthFix"></image>
 				</view>
@@ -148,6 +166,16 @@
 			uni.clearStorage()
 		},
 		methods: {
+			toUsagePage() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/usage/usage'
+				})
+			},
+			jumpToLoading() {
+				uni.navigateTo({
+					url: '/pages/component/loading/loading'
+				})
+			},
 			toTAccounts() {
 				uni.navigateTo({
 					url: "/pages/component/TransferAccounts/TransferAccounts"
@@ -229,6 +257,11 @@
 			toMessageBox() {
 				uni.navigateTo({
 					url: '/pages/component/indexPage-relative/latestMessage/latestMessage'
+				})
+			},
+			toPandemicPage() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/pandemic/pandemic'
 				})
 			}
 		}

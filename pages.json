@@ -574,7 +574,25 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/component/indexPage-relative/pandemic/pandemic",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/indexPage-relative/usage/usage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{
