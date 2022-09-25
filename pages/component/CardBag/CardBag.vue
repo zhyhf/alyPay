@@ -14,7 +14,8 @@
 				</view>
 			</view>
 		</view>
-		<view class="bottom-item" v-if="currentIndex == 0">
+		<view class="bottomCont">
+			 <strong><view class="bottom-item" v-if="currentIndex == 0">
 			<view class="total">
 				共1张
 			</view>
@@ -54,6 +55,7 @@
 			<view class="item-bg">
 				<image src="@/static/cardBag/sf.png" mode=""></image>
 			</view>
+		</view></strong>
 		</view>
 	</view>
 </template>
@@ -91,6 +93,13 @@
 		padding-bottom: 30rpx;
 		background-color: #fff;
 	}
+	.bottomCont{
+		position:absolute;
+		top: 150px;
+		left: 50%;
+		width: 1000px;
+		margin-left: -500px;
+	}
 
 	.top-status-bar {
 		display: flex;
@@ -117,7 +126,6 @@
 	.top-tab {
 		display: flex;
 		margin-top: 40rpx;
-		height: 40rpx;
 		justify-content: space-around;
 		font-size: 30rpx;
 		font-weight: 400;
@@ -152,8 +160,8 @@
 		box-sizing: border-box;
 
 		.can-use {
-			height: 36vh;
-
+			height: 30vh;
+            margin-top: 10rpx;
 			image {
 				height: 100%;
 				width: 100%;
@@ -163,7 +171,7 @@
 
 		.piao {
 			margin-top: 20rpx;
-			height: 23vh;
+			height: 20vh;
 
 			image {
 				height: 100%;
@@ -173,9 +181,9 @@
 	}
 
 	.bottom-item {
-		margin: 40rpx auto;
+		margin: 0rpx auto;
 		background-color: #fff;
-		margin-top: 220rpx;
+		// margin-top: 220rpx;
 		width: 95vw;
 		padding: 24rpx;
 		box-sizing: border-box;
@@ -186,9 +194,9 @@
 
 
 		image {
-			margin-top: 18rpx;
+			margin-top: 30rpx;
 			width: 100%;
-			height: 20vh;
+			height: 18vh;
 		}
 
 	}

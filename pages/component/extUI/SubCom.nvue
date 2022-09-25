@@ -12,8 +12,8 @@
                     aspect="1:1" @statechange="statechanse" @netstatus="netstatus" @error="error"></live-pusher>
             </div>
 			<cover-image src="/static/image/kongxinCircle.png" class="gaiimg2"></cover-image>
-			<cover-image v-if="showCircle"  src="/static/image/loadingJi.png" class="gaiimg3"></cover-image>
-			<div v-else ></div>
+			<!-- <cover-image v-if="showCircle"  src="/static/image/loadingJi.png" class="gaiimg3"></cover-image> -->
+			<!-- <div v-else ></div> -->
         </div>
     </div>
 </template>
@@ -91,7 +91,7 @@
 							uni.navigateTo({
 								url: "/pages/component/loading2/loading2"
 							})
-						},500)
+						},400)
                         this.$emit('faceImg', e.message)
                     }
                 });
@@ -236,8 +236,8 @@
         height: 320px;
     }
 	 .gaiimg3 {
-		  width: 120px;
-		  height: 120px;
+		  width: 90px;
+		  height: 90px;
 		  margin-top: -220px;
 	  }
    .gaiimg2 {
