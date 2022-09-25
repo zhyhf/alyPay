@@ -1,5 +1,11 @@
 <template>
 	<view class="city-sel">
+		<view class="top-header">
+			<uni-icons @click="back" type="left" color="white" size="24" class="left"></uni-icons>
+			<view class="txt">
+				南京
+			</view>
+		</view>
 		<view class="current">
 			<view class="current-text">
 				定位 / 最近访问
@@ -58,6 +64,11 @@
 			};
 		},
 		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
 			getHeight() {
 				const query = uni.createSelectorQuery()
 				query.select('.city-list').boundingClientRect()
@@ -88,6 +99,21 @@
 </script>
 
 <style lang="scss" scoped>
+	.top-header {
+		padding-top: var(--status-bar-height);
+		display: flex;
+		align-items: center;
+		font-size: 32rpx;
+		margin-bottom: 30rpx;
+		height: 80rpx;
+		color: white;
+		background-color: #1777FF;
+
+		.txt {
+			margin: 0 auto;
+		}
+	}
+
 	.city-list {
 		position: relative;
 	}
@@ -105,11 +131,13 @@
 
 	.city-sel {
 		width: 100vw;
-		padding: 20rpx;
+		// padding: 20rpx;
 		box-sizing: border-box;
 	}
 
 	.hot-city {
+		padding: 0 20rpx;
+
 		.current-item {
 			flex-wrap: wrap !important;
 			justify-content: space-between;

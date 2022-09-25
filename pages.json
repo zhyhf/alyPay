@@ -18,18 +18,7 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom",
-				"navigationBarBackgroundColor": "#0C7DFF",
-				"app-plus": {
-					"bounce": "vertical",
-					"titleNView": {
-						// "buttons": [{
-						// 	"text": "\ue534",
-						// 	"fontSrc": "/static/uni.ttf",
-						// 	"fontSize": "22px",
-						// 	"color": "#FFFFFF"
-						// }]
-					}
-				}
+				"navigationBarBackgroundColor": "#0C7DFF"
 			}
 		},
 		{

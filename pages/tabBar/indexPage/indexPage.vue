@@ -280,8 +280,9 @@
 	.gongneng {
 		padding-bottom: 9rpx;
 		margin-top: 130rpx;
+		padding-top: 28rpx;
 		width: 100vw;
-		// height: 150rpx;
+		height: 150rpx;
 		display: flex;
 		background-color: #0C7DFF;
 		justify-content: space-around;
@@ -294,11 +295,11 @@
 
 	.top-header {
 		width: 100vw;
-		height: 130rpx;
+		padding-top: var(--status-bar-height);
+		padding-bottom: 10rpx;
 		display: flex;
 		background-color: #0C7DFF;
 		box-sizing: border-box;
-		padding-top: 2rpx;
 		z-index: 99;
 		position: fixed;
 		top: 0rpx;
