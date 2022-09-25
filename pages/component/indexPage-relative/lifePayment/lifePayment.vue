@@ -76,7 +76,7 @@
 		padding-top: var(--status-bar-height);
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
-		background-color: #1777FF;
+		background-color: #DCEBFF;
 		// border-bottom: 1px solid yellowgreen;
 
 		.right-icon {
