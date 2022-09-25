@@ -28,7 +28,6 @@
 						<view class="sys item" @click="scanInfo">
 							<image src="/static/addControl/b.png" mode=""></image>
 							<text class="item-t">
-
 								扫一扫
 							</text>
 						</view>
@@ -89,6 +88,11 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
 				</view>
 				<view class="chose-item">
+					<image mode="scaleToFill" @click="toTAccounts" class="image"
+						src="../../../static/image/zhuanzhang.png">
+					</image>
+				</view>
+				<view class="chose-item">
 					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
 					</image>
 				</view>
@@ -128,6 +132,7 @@
 	export default {
 		onShow() {
 			this.city = uni.getStorageSync('city') || this.city
+			this.showList = false
 		},
 		data() {
 			return {
@@ -140,21 +145,25 @@
 		},
 		mounted() {
 			this.searchValue = ''
-			this.showList = false
 			uni.clearStorage()
 		},
 		methods: {
+			toTAccounts() {
+				uni.navigateTo({
+					url: "/pages/component/TransferAccounts/TransferAccounts"
+				})
+			},
 			toIntelligence() {
+				this.showList = false
 				uni.navigateTo({
 					url: "/pages/component/Intelligence/Intelligence"
 				})
-				this.showList = false
 			},
 			toMyCard() {
+				this.showList = false
 				uni.navigateTo({
 					url: "/pages/component/MyBusCard/MyBusCard"
 				})
-				this.showList = false
 			},
 			toCity() {
 				uni.navigateTo({
@@ -162,10 +171,10 @@
 				})
 			},
 			shoufukuan() {
+				this.showList = false
 				uni.navigateTo({
 					url: '/pages/component/shoufukuan/shoufukuan'
 				});
-				this.showList = false
 			},
 			toCardBag() {
 				uni.navigateTo({
@@ -200,13 +209,17 @@
 				// })
 			},
 			scanInfo() {
+
 				uni.scanCode({
 					onlyFromCamera: true,
 					success(res) {
 						console.log("扫描成功")
-					}
+						this.showList = false
+					},
+					fail() {
+						this.showList = false
+					},
 				})
-				this.showList = false
 			},
 			jump() {
 				uni.navigateTo({

@@ -129,6 +129,7 @@
 	.header {
 		height: var(--status-bar-height);
 		width: 100%;
+		background-color: #F5F5F5;
 	}
 .wrapper {
 	padding: 30rpx 2.5vw;
