@@ -537,25 +537,38 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/component/loading/loading",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/loading2/loading2",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/TransferAccounts/TransferAccounts",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "转账",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/transferPage/transferPage",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/component/loading/loading",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        },{
-            "path" : "pages/component/loading2/loading2",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{
@@ -1519,6 +1532,7 @@
 		"backgroundColor": "#F8F8F8",
 		"backgroundColorTop": "#F4F5F6",
 		"backgroundColorBottom": "#F4F5F6",
+		"navigationStyle": "custom",
 		"mp-360": {
 			"navigationStyle": "custom"
 		},
