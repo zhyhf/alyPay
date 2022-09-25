@@ -6,11 +6,13 @@
 			</view>
 	   </view>
         <div class="livefater">
-            <div style="width: 210px;height: 210px;border-radius: 2px;overflow: hidden;">
+            <div style="width: 200px;height: 200px;border-radius: 150px;overflow: hidden;">
                 <live-pusher id='livePusher' ref="livePusher" class="livePusher" url=""
                     mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" :beauty="2" whiteness="2"
-                    aspect="1:1" @statechange="statechange" @netstatus="netstatus" @error="error"></live-pusher>
+                    aspect="1:1" @statechange="statechanse" @netstatus="netstatus" @error="error"></live-pusher>
             </div>
+			<cover-image src="/static/image/loading.gif" cslass="gaiimg"></cover-image>
+			<cover-image src="/static/image/kongxinCircle.png" class="gaiimg2"></cover-image>
         </div>
     </div>
 </template>
@@ -25,41 +27,59 @@
         },
         data() {
             return {
+				 poenCarmeInterval: null, //打开相机的轮询
+				 camerastate: false, //相机准备好了
 			}
         },
+
         mounted() {
+		    this.poenCarme();
             this.context = uni.createLivePusherContext("livePusher", this);
             var that = this
-            uni.getSystemInfo({
-                success: function(e) {
-                    // 计算导航栏高度
-                    that.statusBar = e.statusBarHeight
-                    // #ifndef MP  
-                    if (e.platform == 'android') {
-                        that.CustomBar = e.statusBarHeight + 50
-                    } else {
-                        that.CustomBar = e.statusBarHeight + 45
-                    }
-                    console.log(that.statusBar)
-                    // #endif  
-                    // #ifdef MP-WEIXIN  
-                    let custom = wx.getMenuButtonBoundingClientRect()
-                    that.CustomBar = custom.bottom + custom.top - e.statusBarHeight
-  
-                    // #endif  
-  
-                    // #ifdef MP-ALIPAY  
-                    that.CustomBar = e.statusBarHeight + e.titleBarHeight
-                    // #endif  
-                }
-            })
             setTimeout(() => {
                 this.startPreview()
             })
         },
         methods: {
+			   error(e) {
+			      clearInterval(this.poenCarmeInterval);
+			      console.log('error:' + JSON.stringify(e));
+			      if (e.detail.errCode === 10001) {
+			        uni.showModal({
+			          content: '请打开摄像头授权功能！',
+			          showCancel: false,
+			          success: (res) => {
+			            if (res.confirm) gotoAppPermissionSetting();
+			          },
+			        });
+			      }
+			    },
+				  //状态
+				    statechange(e) {
+				      //状态改变
+				      if (e.detail.code == 1003 || e.detail.code == 1007) {
+				        //1007
+				        this.camerastate = true;
+				      } else if (e.detail.code == -1301) {
+				        this.checkCamera();
+				        this.camerastate = false;
+				      }
+				    },
+				//轮询打开
+						poenCarme() {
+							//#ifdef APP-PLUS
+							if (plus.os.name == 'Android') {
+								this.poenCarmeInterval = setInterval(function() {
+									if (!_this.camerastate) _this.startPreview();
+								}, 1000);
+							}
+							//#endif
+						},
             // 拍照事件
             snapshot: function() {
+			  if (!this.checkCamera()) {
+					return false;
+				  }
                 var that = this
                 this.context.snapshot({
                     success: (e) => {
@@ -78,6 +98,7 @@
                     success: (a) => {
                         that.Timer = setInterval(function() {
                             that.snapshot()
+							this.camerastate = true;
                         }, that.time)
                     },
                     fail(err) {
@@ -85,6 +106,66 @@
                     }
                 });
             },
+			//停止预览
+			    stopPreview() {
+			      this.context.stopPreview({
+			        success: (a) => {
+			          thss.camerastate = false; //标记相机未启动
+			        },
+			      });
+			    },
+			   //检查照相机权限
+			    checkCamera() {
+			      return new Promise(async (resolve) => {
+			        // #ifdef APP-PLUS
+			        if (plus.oss.name === 'iOS' && !judgeIosPermission('camera')) {
+			          uni.showModal({
+			            content: '请打开摄像头授权功能！',
+			            showCancel: false,
+			            success: (res) => {
+			              if (res.confirm) gotoAppPermissionSetting();
+			            },
+			          });
+			          resolve(false);
+			        } else if (plus.os.name === 'Android') {
+			          let androidPermisson = await requestAndroidPermission(
+			            'android.permission.CAMERA'
+			          );
+			          console.log(androidPermisson);
+			          if (androidPermisson < 1) {
+			            uni.showModal({
+			              content: '请打开摄像头授权功能！',
+			              showCancel: false,
+			            });
+			            resolve(false);
+			          } else {
+			            resolve(true);
+			          }
+			        } else {
+			          resolve(true);
+			        }
+			        // #endif
+			        // #ifdef MP
+			        uni.getSetting({
+			          success: (sRes) => {
+			            console.log(sRes);
+			            if (sRes.authSetting['scope.camera'] === false) {
+			              uni.showModal({
+			                content: '请打开摄像头授权功能！',
+			                showCancel: false,
+			              });
+			              resolve(false);
+			            } else {
+			              resolve(true);
+			            }
+			          },
+			          fail: (err) => {
+			            console.log(err);
+			          },
+			        });
+			        // #endif
+			      });
+			    },
         },
     }
 </script>
@@ -138,8 +219,8 @@
     }
   
     .livePusher {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
     }
   
     .livefater {
@@ -147,15 +228,19 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        margin-top: 10rpx;
+        margin-top: 15rpx;
         margin-bottom: 50rpx;
-        height: 350px;
+        height: 320px;
     }
-  
-    .gaiimg {
-        width: 300px;
-        height: 300px;
-        margin-top: -300px;
+  .gaiimg {
+      width: 200px;
+      height:200px;
+      margin-top: -228px;
+  }
+   .gaiimg2 {
+        width: 240px;
+        height:240px;
+        margin-top: -226px;
     }
 </style>
 </style>
