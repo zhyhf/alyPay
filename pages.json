@@ -451,6 +451,7 @@
 			"path": "pages/component/mine-relative/bill/bill",
 			"style": {
 				"navigationBarTitleText": "账单",
+				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
 
@@ -561,7 +562,7 @@
             {
                 "navigationBarTitleText": "余额",
 				"navigationBarTextStyle": "white",
-				"navigationBarBackgroundColor": "#0C7DFF",
+				"navigationBarBackgroundColor": "#3476FE",
                 "enablePullDownRefresh": false,
 				"app-plus": {
 					"titleNView": {

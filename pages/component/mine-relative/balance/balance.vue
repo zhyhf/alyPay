@@ -86,7 +86,7 @@
 					color: #333;
 				}
 				.invest {
-					background-color: #1777FF;
+					background-color: #3476FE;
 					color: #fff;
 				}
 			}
