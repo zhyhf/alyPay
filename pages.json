@@ -451,6 +451,7 @@
 			"path": "pages/component/mine-relative/bill/bill",
 			"style": {
 				"navigationBarTitleText": "账单",
+				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
 
@@ -538,6 +539,22 @@
 			}
 
 		}, {
+			"path": "pages/component/TransferAccounts/TransferAccounts",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "转账",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/transferPage/transferPage",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
 			"path": "pages/component/loading/loading",
 			"style": {
 				"navigationBarTitleText": "",
@@ -552,19 +569,19 @@
 			}
 
 		}, {
-			"path": "pages/component/TransferAccounts/TransferAccounts",
+			"path": "pages/component/mine-relative/balance/balance",
 			"style": {
-				"navigationStyle": "custom",
-				"navigationBarTitleText": "转账",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/component/transferPage/transferPage",
-			"style": {
-				"navigationStyle": "custom",
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "余额",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#3476FE",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "menu"
+						}]
+					}
+				}
 			}
 
 		}

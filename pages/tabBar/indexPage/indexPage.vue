@@ -24,7 +24,6 @@
 					<image :src="showList ? close : add" mode="aspectFill"></image>
 					<view class="list" v-if="showList">
 						<view class="sanjiao">
-
 						</view>
 						<view class="sys item" @click="scanInfo">
 							<image src="/static/addControl/b.png" mode=""></image>
@@ -52,6 +51,7 @@
 						</view>
 
 					</view>
+					<view v-else></view>
 				</view>
 			</view>
 		</view>
@@ -298,7 +298,7 @@
 		display: flex;
 		background-color: #0C7DFF;
 		box-sizing: border-box;
-		padding-top: 40rpx;
+		padding-top: 2rpx;
 		z-index: 99;
 		position: fixed;
 		top: 0rpx;

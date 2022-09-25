@@ -2,8 +2,8 @@
     "name" : "支付寶",
     "appid" : "__UNI__A858910",
     "description" : "应用描述",
-    "versionName" : "1.0.9",
-    "versionCode" : 101,
+    "versionName" : "1.0.10",
+    "versionCode" : 102,
     "transformPx" : false,
     "app-plus" : {
         "usingComponents" : true,
