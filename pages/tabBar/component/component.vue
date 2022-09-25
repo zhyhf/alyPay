@@ -9,7 +9,7 @@
 			</view>
 			<image src="@/static/image/finance-right-icon.png" class="f-icon"></image>
 		</view>
-		<image src="@/static/image/f1.png" mode="widthFix" style="width: 100%;"></image>
+		<image src="@/static/image/f1.png" mode="widthFix" style="width: 100%;" class="image"></image>
 		<image src="@/static/image/f2.png" mode="widthFix" style="width: 100%;"></image>
 		<image src="@/static/image/f3.png"mode="widthFix" style="width: 100%;"></image>
 	</view>
@@ -32,12 +32,22 @@
 			width: 100%;
 			height: var(--status-bar-height);
 			background-color: #1777FF;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 99;
 		}
 		.header {
 			display: flex;
+			width: 100vw;
+			height: 60rpx;
 			align-items: center;
 			padding: 20rpx 0;
 			background-color: #1777FF;
+			position: fixed;
+			top: var(--status-bar-height);
+			left: 0;
+			z-index: 99;
 			.f-icon {
 				display: inline-block;
 				width: 60rpx;
@@ -60,6 +70,9 @@
 					top: 12rpx;
 				}
 			}
+		}
+		.image {
+			margin-top: calc(90rpx + var(--status-bar-height));
 		}
 	}
 </style>
