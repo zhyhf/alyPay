@@ -555,6 +555,26 @@
             }
             
         }
+        ,{
+            "path" : "pages/component/mine-relative/balance/balance",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "余额",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#0C7DFF",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"type": "menu"
+							}
+						]
+					}
+				}
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",

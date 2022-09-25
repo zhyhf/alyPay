@@ -74,7 +74,8 @@
 					{
 						title: '余额',
 						icon: require('../../../static/mine/balance.png'),
-						rightText: '1000'
+						rightText: '1000',
+						navigatePath: '/pages/component/mine-relative/balance/balance'
 					},
 					{
 						title: '余额宝',
