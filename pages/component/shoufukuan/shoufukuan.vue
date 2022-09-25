@@ -69,4 +69,7 @@
 /deep/ .uni-list:after{
 	height: 0px;
 }
+/deep/ .uni-card .uni-card__content{
+	padding: 0px !important;
+}
 </style>
