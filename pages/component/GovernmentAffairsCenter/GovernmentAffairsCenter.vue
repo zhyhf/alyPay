@@ -48,19 +48,17 @@
 			<view class="search">
 				<uni-icons class="search-icon" type="search" size="26" color="#6F6F6F"></uni-icons>
 				<input type="text">
-				<view class="search-btn">
+				<view class="search-btn" @click="jump">
 					<text class="spe">|</text> 搜索
 				</view>
 			</view>
 		</view>
 
 		<view class="content">
-			<!-- <image> -->
-			<!-- <image src="@/static/government/service.png" class="gov-service"></image> -->
 			<view class="slider-top" style="position: relative;">
 				<swiper :current="index" :disable-touch="false" style="height: 20vh;margin-top: 5rpx;" circular
 					:indicator-dots="false" :autoplay="true" :interval="15000">
-					<swiper-item style="width: 100%;height: 100%;" v-for="(item,index) in topSliderList" :key="index">
+					<swiper-item style="width: 100%;height: 100%;" v-for="(item,index) in topSliderList" :key="index"  @click="jump">
 						<image style="width: 100%;height: 100%;" :src="item" mode="widthFix"></image>
 					</swiper-item>
 				</swiper>
@@ -69,9 +67,10 @@
 						:class="index===i ? 'line-item line-item-active' : 'line-item'"></view>
 				</view>
 			</view>
+			<image src="@/static/government/service.png" class="gov-service" mode="widthFix" @click="jump"></image>
 			<view class="app-container" style="margin-top: -3.5vh;">
 				<view class="app-wrapper" :style="sliderStyle">
-					<view class="app-item" v-for="(item, index) in appLists" :key="index">
+					<view class="app-item" v-for="(item, index) in appLists" :key="index" @click="jump">
 						<image :src="item" style="height: 100%; width: 100%;"></image>
 					</view>
 				</view>
@@ -80,7 +79,7 @@
 					<view :class="flag ? 'line-item line-item-active' : 'line-item'"></view>
 				</view>
 			</view>
-			<image src="@/static/government/life.png" class="gov-life"></image>
+			<image src="@/static/government/life.png" class="gov-life" @click="jump"></image>
 			<view class="certificate">
 				<view class="certificate-header">
 					<text class="certificate-title">我的证照</text>
@@ -91,10 +90,10 @@
 			<view class="prefecture">
 				<view class="prefecture-header">
 					<text class="prefecture-title">专区</text>
-					<text class="prefecture-all">全部 ></text>
+					<text class="prefecture-all" @click="jump('主题专区')">全部 ></text>
 				</view>
 				<view class="item-wrapper">
-					<image v-for="(item, index) in serviceList" :key="index" :src="item" class="item"></image>
+					<image v-for="(item, index) in serviceList" :key="index" :src="item.img" class="item" @click="jump(item.title)"></image>
 				</view>
 			</view>
 		</view>
@@ -146,10 +145,22 @@
 					require('@/static/government/24.png'),
 				],
 				serviceList: [
-					require('@/static/government/exam.png'),
-					require('@/static/government/job.png'),
-					require('@/static/government/food-chain.png'),
-					require('@/static/government/small-enterprise.png')
+					{
+						img: require('@/static/government/exam.png'),
+						title: '教育考试服务专区'
+					},
+					{
+						img: require('@/static/government/job.png'),
+						title: '就业服务专栏'
+					},
+					{
+						img: require('@/static/government/food-chain.png'),
+						title: '冷链食品追溯服务专区'
+					},
+					{
+						img: require('@/static/government/small-enterprise.png'),
+						title: '小微企业和个体工商户服务专栏'
+					}
 				]
 			}
 		},
@@ -177,6 +188,11 @@
 			jumpToAll() {
 				uni.navigateTo({
 					url: "/pages/component/extUI/extUI"
+				})
+			},
+			jump(title) {
+				uni.navigateTo({
+					url: `/pages/component/loading/loading?type=1${typeof title === 'string' ? `&title=${title}` : ''}`
 				})
 			},
 			toMyInfo() {
@@ -449,9 +465,12 @@
 		}
 
 		.gov-service {
-			width: 94vw;
-			height: 136rpx;
-			margin-top: 10rpx;
+			width: 100%;
+			position: relative;
+			top: -34rpx;
+			// width: 94vw;
+			// height: 136rpx;
+			// margin-top: 10rpx;
 		}
 
 		.app-container {
@@ -461,6 +480,8 @@
 			padding: 20rpx 15rpx;
 			margin-top: 15rpx;
 			overflow: hidden;
+			position: relative;
+			top: 26rpx;
 		}
 
 		.app-wrapper {
