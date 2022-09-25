@@ -154,8 +154,8 @@
 	}
 
 	.b-item {
-		margin: 40rpx auto;
-		margin-top: 220rpx;
+		margin: 0rpx auto;
+		// margin-top: 220rpx;
 		width: 95vw;
 		box-sizing: border-box;
 

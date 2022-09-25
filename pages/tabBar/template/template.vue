@@ -75,7 +75,7 @@
 					{
 						title: '余额',
 						icon: require('../../../static/mine/balance.png'),
-						rightText: '1000',
+						rightText: '111.93',
 						navigatePath: '/pages/component/mine-relative/balance/balance'
 					},
 					{
