@@ -6,14 +6,27 @@
 			<image src="../../../static/travel/bg.png" mode="widthFix"></image>
 		</view>
 		<view class="travel-choose">
-			<view class="travel-select">
-				<view @click="changeTab(index)" class="travel-item" :key="index" v-for="(item,index) in travelSelArr">
-					<view :class="{'travel-icon':true,'active-icon':currentIndex == index}">
-						<image :src="currentIndex == index ? item.active : item.default" mode="widthFix"></image>
+			<view class=" sel-box">
+				<view class="top-status-bar">
+					<view class="icon">
+						<uni-icons color="white" @click="back" type="left" size="24"></uni-icons>
+						<text class="txt">出行·南京</text>
 					</view>
-					<!-- <view class="travel-text">
+					<view class="right-text">
+						管理
+					</view>
+				</view>
+				<view class="travel-select">
+					<view @click="changeTab(index)" class="travel-item" :key="index"
+						v-for="(item,index) in travelSelArr">
+						<view :class="{'travel-icon':true,'active-icon':currentIndex == index}">
+							<image :src="currentIndex == index ? item.active : item.default" mode="widthFix"></image>
+						</view>
+						<!-- <view class="travel-text">
 						{{item.text}}
 					</view> -->
+					</view>
+
 				</view>
 
 			</view>
@@ -106,6 +119,11 @@
 		methods: {
 			changeTab(i) {
 				this.currentIndex = i
+			},
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
 			}
 		}
 	}
@@ -113,6 +131,35 @@
 
 <style lang="scss" scoped>
 	$pageWidth:92vw;
+
+	.top-status-bar {
+		display: flex;
+		align-items: center;
+		width: 100vw;
+		justify-content: space-between;
+		color: white;
+		font-size: 32rpx;
+		box-sizing: border-box;
+		padding: 0 20rpx;
+		padding-top: var(--status-bar-height);
+		background-color: #1777FF;
+
+		.icon {
+			display: flex;
+			align-items: center;
+
+			.txt {
+				margin-left: 20rpx;
+			}
+		}
+	}
+
+	.sel-box {
+		position: fixed !important;
+		top: 0 !important;
+		left: 0 !important;
+		z-index: 9999999;
+	}
 
 	.bg {
 		position: fixed;
@@ -145,6 +192,7 @@
 
 	.taxi {
 		margin: 0 auto;
+		margin-top: 100rpx !important;
 		width: $pageWidth;
 	}
 

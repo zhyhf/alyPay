@@ -1,5 +1,22 @@
 <template>
 	<view class="province">
+		<view class="top-header">
+			<view class="left-icon">
+				<uni-icons @click="back" type="left" color="black" size="24" class="left"></uni-icons>
+				<text class="txt">国家政务服务平台(试运行)</text>
+			</view>
+			<view class="right-icon">
+				<view class="application-right">
+					<image class="bg" src="@/static/government/bg.png" mode=""></image>
+					<view class="more">
+						<image src="@/static/government/more.png" mode=""></image>
+					</view>
+					<view class="close">
+						<image src="@/static/government/close.png" mode=""></image>
+					</view>
+				</view>
+			</view>
+		</view>
 		<view class="cur-pos">
 			<view class="top-title">
 				定位/最近访问
@@ -72,6 +89,11 @@
 			};
 		},
 		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
 			chosePro(value) {
 				uni.setStorageSync("pro", value)
 				uni.navigateBack({
@@ -83,13 +105,89 @@
 </script>
 
 <style lang="scss" scoped>
+	.status_bar {
+		position: relative;
+		height: var(--status-bar-height);
+		width: 100%;
+		background-color: #1777FF;
+	}
+
+	.top-header {
+		// border-bottom: 1px solid yellow;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		z-index: 999999;
+		color: black;
+		font-size: 32rpx;
+		font-weight: 500;
+		letter-spacing: 6rpx;
+		padding: 30rpx;
+		padding-top: var(--status-bar-height);
+		box-sizing: border-box;
+		-webkit-font-smoothing: antialiased;
+		background-color: white;
+
+		// border-bottom: 1px solid yellowgreen;
+		.left-icon {
+			display: flex;
+
+		}
+
+		.right-icon {
+			position: absolute;
+			top: 67rpx;
+			right: 10rpx;
+			width: 24vw;
+		}
+	}
+
+	.application-right {
+		position: absolute;
+		right: 4rpx;
+		// top: 35rpx;
+		width: 15vw;
+
+		.more {
+			position: absolute;
+			right: 66rpx;
+			top: 5rpx;
+			width: 30rpx;
+			height: 30rpx;
+
+			image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.close {
+			position: absolute;
+			right: 10rpx;
+			top: 5rpx;
+			width: 30rpx;
+			height: 30rpx;
+
+			image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.bg {
+			width: 120rpx;
+			height: 50rpx;
+		}
+	}
+
 	.top-title {
 		color: #A6A6A6;
 	}
 
 	.cur-pos {
 		padding: 35rpx;
-
+		margin-top: 160rpx;
 
 		.choose {
 			display: flex;

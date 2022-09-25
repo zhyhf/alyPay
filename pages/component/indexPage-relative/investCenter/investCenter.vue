@@ -1,5 +1,24 @@
 <template>
 	<view class="wrapper">
+		<view class="header">
+			<view class="status_bar">
+				<!-- 占位 -->
+			</view>
+			<view class="top-title">
+				生活缴费
+				<view class="right-icon">
+					<view class="application-right">
+						<image class="bg" src="@/static/government/bg.png" mode=""></image>
+						<view class="more">
+							<image src="@/static/government/more.png" mode=""></image>
+						</view>
+						<view class="close">
+							<image src="@/static/government/close.png" mode=""></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
 		<image src="@/static/image/invest-phone.png" class="invest-phone"></image>
 		<view class="content">
 			<image src="@/static/image/invest-money.png" class="invest-money"></image>
@@ -14,50 +33,127 @@
 	export default {
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
-			
+
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-	width: 100vw;
-	background-color: #F5F5F5;
-	position: relative;
-	.invest-phone {
+	.status_bar {
+		position: relative;
+		height: var(--status-bar-height);
 		width: 100%;
-		height: 470rpx;
+		background-color: #1777FF;
 	}
-	.content {
-		width: 96vw;
-		padding: 0 2vw;
-		position: absolute;
+
+	.top-title {
+		// border-bottom: 1px solid yellow;
+		position: fixed;
+		top: 0;
 		left: 0;
-		top: 170rpx;
-		.invest-money {
-			width: 100%;
-			height: 490rpx;
-			margin-bottom: 10rpx;
-		}
-		.invest-icon {
-			width: 100%;
-			height: 150rpx;
-			margin-bottom: 10rpx;
-		}
-		.invest-ad {
-			width: 100%;
-			height: 170rpx;
-			margin-bottom: 10rpx;
-		}
-		.invest-img {
-			width: 100%;
-			height: 230rpx;
-			margin-bottom: 10rpx;
+		width: 100vw;
+		z-index: 999999;
+		color: white;
+		font-size: 32rpx;
+		font-weight: 500;
+		letter-spacing: 6rpx;
+		padding: 30rpx;
+		padding-top: var(--status-bar-height);
+		box-sizing: border-box;
+		-webkit-font-smoothing: antialiased;
+		background-color: #1777FF;
+		// border-bottom: 1px solid yellowgreen;
+
+		.right-icon {
+			position: absolute;
+			top: 65rpx;
+			right: 10rpx;
+			width: 24vw;
 		}
 	}
-}
+
+	.application-right {
+		position: absolute;
+		right: 4rpx;
+		// top: 35rpx;
+		width: 15vw;
+
+		.more {
+			position: absolute;
+			right: 66rpx;
+			top: 5rpx;
+			width: 30rpx;
+			height: 30rpx;
+
+			image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.close {
+			position: absolute;
+			right: 10rpx;
+			top: 5rpx;
+			width: 30rpx;
+			height: 30rpx;
+
+			image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.bg {
+			width: 120rpx;
+			height: 50rpx;
+		}
+	}
+
+	.wrapper {
+		width: 100vw;
+		background-color: #F5F5F5;
+		position: relative;
+
+		.invest-phone {
+			width: 100%;
+			height: 470rpx;
+		}
+
+		.content {
+			width: 96vw;
+			padding: 0 2vw;
+			position: absolute;
+			left: 0;
+			top: 170rpx;
+
+			.invest-money {
+				width: 100%;
+				height: 490rpx;
+				margin-bottom: 10rpx;
+			}
+
+			.invest-icon {
+				width: 100%;
+				height: 150rpx;
+				margin-bottom: 10rpx;
+			}
+
+			.invest-ad {
+				width: 100%;
+				height: 170rpx;
+				margin-bottom: 10rpx;
+			}
+
+			.invest-img {
+				width: 100%;
+				height: 230rpx;
+				margin-bottom: 10rpx;
+			}
+		}
+	}
 </style>

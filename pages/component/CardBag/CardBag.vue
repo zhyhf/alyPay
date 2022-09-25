@@ -1,9 +1,17 @@
 <template>
 	<view class="card-bag-page">
-		<view class="top-tab">
-			<view @click="currentIndex = index" :class="{'tab-item':true,active:currentIndex==index}"
-				v-for="(item,index) in tabArr" :key="index">
-				{{item}}
+		<view class="top-container">
+			<view class="top-status-bar">
+				<view class="icon">
+					<uni-icons color="black" @click="back" type="left" size="24"></uni-icons>
+					<text class="txt">卡包</text>
+				</view>
+			</view>
+			<view class="top-tab">
+				<view @click="currentIndex = index" :class="{'tab-item':true,active:currentIndex==index}"
+					v-for="(item,index) in tabArr" :key="index">
+					{{item}}
+				</view>
 			</view>
 		</view>
 		<view class="bottom-item" v-if="currentIndex == 0">
@@ -22,7 +30,7 @@
 				<image src="@/static/cardBag/wh.png" style="height: 21vh;" mode=""></image>
 			</view>
 		</view>
-		<view class="b-item" style="background-color: transparent;" v-if="currentIndex == 2">
+		<view class="b-item " style="background-color: transparent;" v-if="currentIndex == 2">
 			<view class="can-use">
 				<image src="@/static/cardBag/keyong.png" mode=""></image>
 			</view>
@@ -62,11 +70,50 @@
 					"证件"
 				]
 			};
+		},
+		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.top-container {
+		position: fixed;
+		padding-top: var(--status-bar-height);
+		top: 0;
+		left: 0;
+		z-index: 99999;
+		padding-bottom: 30rpx;
+		background-color: #fff;
+	}
+
+	.top-status-bar {
+		display: flex;
+		align-items: center;
+		width: 100vw;
+		justify-content: space-between;
+		color: black;
+		font-size: 32rpx;
+		box-sizing: border-box;
+		padding: 0 20rpx;
+
+		background-color: white;
+
+		.icon {
+			display: flex;
+			align-items: center;
+
+			.txt {
+				margin-left: 20rpx;
+			}
+		}
+	}
+
 	.top-tab {
 		display: flex;
 		margin-top: 40rpx;
@@ -100,6 +147,7 @@
 
 	.b-item {
 		margin: 40rpx auto;
+		margin-top: 220rpx;
 		width: 95vw;
 		box-sizing: border-box;
 
@@ -127,6 +175,7 @@
 	.bottom-item {
 		margin: 40rpx auto;
 		background-color: #fff;
+		margin-top: 220rpx;
 		width: 95vw;
 		padding: 24rpx;
 		box-sizing: border-box;

@@ -33,7 +33,7 @@
 					</view>
 					<view class="temp item" style="display: flex;">
 						<image class="yun" src="@/static/government/yun.png" mode=""></image>
-						25℃
+						{{wendu}}℃
 					</view>
 				</view>
 				<view class="right-info">
@@ -58,7 +58,8 @@
 			<view class="slider-top" style="position: relative;">
 				<swiper :current="index" :disable-touch="false" style="height: 20vh;margin-top: 5rpx;" circular
 					:indicator-dots="false" :autoplay="true" :interval="15000">
-					<swiper-item style="width: 100%;height: 100%;" v-for="(item,index) in topSliderList" :key="index"  @click="jump">
+					<swiper-item style="width: 100%;height: 100%;" v-for="(item,index) in topSliderList" :key="index"
+						@click="jump">
 						<image style="width: 100%;height: 100%;" :src="item" mode="widthFix"></image>
 					</swiper-item>
 				</swiper>
@@ -93,7 +94,8 @@
 					<text class="prefecture-all" @click="jump('主题专区')">全部 ></text>
 				</view>
 				<view class="item-wrapper">
-					<image v-for="(item, index) in serviceList" :key="index" :src="item.img" class="item" @click="jump(item.title)"></image>
+					<image v-for="(item, index) in serviceList" :key="index" :src="item.img" class="item"
+						@click="jump(item.title)"></image>
 				</view>
 			</view>
 		</view>
@@ -104,6 +106,7 @@
 	export default {
 		data() {
 			return {
+				wendu: '25',
 				index: 0,
 				gCity: '江苏',
 				flag: false,
@@ -144,8 +147,7 @@
 					require('@/static/government/23.png'),
 					require('@/static/government/24.png'),
 				],
-				serviceList: [
-					{
+				serviceList: [{
 						img: require('@/static/government/exam.png'),
 						title: '教育考试服务专区'
 					},
@@ -166,6 +168,18 @@
 		},
 		onShow() {
 			this.gCity = uni.getStorageSync("pro") || "江苏省"
+			uni.request({
+				url: 'http://wthrcdn.etouch.cn/weather_mini?city=南京',
+				method: 'GET',
+				success: res => {
+					this.wendu = res.data.data.wendu
+				},
+				fail: () => {
+					this.openmsg("警告", "天气接口获取失败")
+				},
+				complete: () => {}
+			});
+
 		},
 		mounted() {
 			setInterval(() => {
