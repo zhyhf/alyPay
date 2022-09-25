@@ -1,6 +1,7 @@
 <template>
-	<view class="wrapper">
-		<image src="@/static/loading.gif" class="loading" mode="widthFix"></image>
+		<view class="wrapper">
+			<image src="@/static/loading.gif" class="loading" mode="widthFix"></image>
+		</view>
 	</view>
 </template>
 
@@ -18,7 +19,7 @@
 				uni.navigateTo({
 					url: "/pages/component/myCertificates/myCertificates"
 				})
-			},1500)
+			},600)
 		},
 		onLoad(props) {
 		  

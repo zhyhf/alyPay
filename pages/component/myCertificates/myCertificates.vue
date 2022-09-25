@@ -4,7 +4,7 @@
 			<text class="title">全部证照</text>
 			<text class="manage">管理 ></text>
 		</view>
-		<image src="@/static/government/my-certificate.png" class="certificate"></image>
+		<!-- <image src="@/static/government/my-certificate.png" class="certificate"></image> -->
 		<image v-if="index3" src="@/static/government/shenfen-card.png" class="certificate"></image>
 		<image v-if="index4" src="@/static/government/hukou-card.png" class="certificate"></image>
 		<button class="button" @click="add">添加证照</button>
