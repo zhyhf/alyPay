@@ -2,9 +2,7 @@
 	<view class="container">
 		<view class="status_bar"></view>
 		<view class="header">
-			<!-- <view class="home"> -->
-				<image src="@/static/image/pandemic-home.png" class="home"></image>
-			<!-- </view> -->
+			<image src="@/static/image/pandemic-home.png" class="home"></image>
 			<view class="right-icon">
 				<view class="application">
 					<image src="@/static/government/tihuan.png" mode=""></image>
@@ -49,9 +47,9 @@
 		background-color: #2952A0;
 	}
 	.header {
-		position: fixed;
-		top: 0;
-		left: 0;
+		// position: fixed;
+		// top: 0;
+		// left: 0;
 		width: 100vw;
 		height: 130rpx;
 		z-index: 999999;
@@ -128,7 +126,7 @@
 	}
 	.pandemic-page {
 		width: 100%;
-		margin-top: calc(var(--status-bar-height) + 130rpx);
+		// margin-top: calc(var(--status-bar-height) + 130rpx);
 	}
 	.img {
 		width: 92vw;

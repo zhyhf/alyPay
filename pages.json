@@ -25,36 +25,37 @@
 			"path": "pages/tabBar/component/component",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationStyle": "custom",
-				"navigationBarBackgroundColor": "#1777FF",
-				"app-plus": {
-					"bounce": "vertical",
-					"titleNView": {
-						// "buttons": [{
-						// 	"text": "\ue534",
-						// 	"fontSrc": "/static/uni.ttf",
-						// 	"fontSize": "22px",
-						// 	"color": "#FFFFFF"
-						// }]
-					}
-				}
+				"navigationStyle": "custom"
+				// "navigationBarBackgroundColor": "#1777FF",
+				// "app-plus": {
+				// 	"bounce": "vertical",
+				// 	"titleNView": {
+				// 		// "buttons": [{
+				// 		// 	"text": "\ue534",
+				// 		// 	"fontSrc": "/static/uni.ttf",
+				// 		// 	"fontSize": "22px",
+				// 		// 	"color": "#FFFFFF"
+				// 		// }]
+				// 	}
+				// }
 			}
 		},
 		{
 			"path": "pages/tabBar/API/API",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#1777FF",
-				"app-plus": {
-					"titleNView": {
+				"navigationStyle": "custom"
+				// "navigationBarBackgroundColor": "#1777FF",
+				// "app-plus": {
+					// "titleNView": {
 						// "buttons": [{
 						// 	"text": "\ue534",
 						// 	"fontSrc": "/static/uni.ttf",
 						// 	"fontSize": "22px",
 						// 	"color": "#FFFFFF"
 						// }]
-					}
-				}
+					// }
+				// }
 			}
 		},
 		{

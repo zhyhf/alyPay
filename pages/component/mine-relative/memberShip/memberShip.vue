@@ -107,6 +107,9 @@
 			},
 			show() {
 				this.showFlag = !this.showFlag
+			},
+			back() {
+				uni.navigateBack()
 			}
 		},
 		computed: {
@@ -127,9 +130,6 @@
 					transition: 'all 0.4s',
 					transform: 'translateY(-37rpx)'
 				}
-			},
-			back() {
-				uni.navigateBack()
 			}
 		}
 	}
