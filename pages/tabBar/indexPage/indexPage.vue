@@ -108,7 +108,7 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/gaode.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/huabei.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/forest.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/zhima-credit.png"></image>
@@ -128,14 +128,18 @@
 			<view class="b-guanggao" @click.stop="jumpToLoading">
 				<image src="../../../static/info-card.gif" style="height: 180rpx;"></image>
 			</view>
+			<image src="@/static/image/profit.gif" mode="widthFix" style="width: 100%; margin: 20rpx 0;" @click="jumpToLoading"></image>
 			<view class="b-guanggao" @click.stop="jumpToLoading">
 				<image src="../../../static/image/guanggao.png" mode="widthFix"></image>
 			</view>
 			<view class="b-guanggao" @click="jumpToLoading">
 				<image src="../../../static/image/g2.png" mode="widthFix"></image>
 			</view>
-			<view class="b-guanggao" @click="toPandemicPage">
+			<!-- <view class="b-guanggao" @click="toPandemicPage">
 				<image src="../../../static/image/g3.png" mode="widthFix"></image>
+			</view> -->
+			<view class="b-guanggao" @click="jumpToLoading">
+				<image src="@/static/image/food.png" mode="widthFix"></image>
 			</view>
 			<view class="latest-info" @click="toUsagePage">
 				<view class="b-image">

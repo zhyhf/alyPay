@@ -11,7 +11,7 @@
 <script>
 	import componentPage from '@/pages/tabBar/component/component.vue'
 	import API from '@/pages/tabBar/API/API.vue'
-	import extUI from '@/pages/tabBar/extUI/extUI.nvue'
+	import extUI from '@/pages/tabBar/extUI/extUI.vue'
 	import templatePage from '@/pages/tabBar/template/template.vue'
 	import {
 		mapMutations,
