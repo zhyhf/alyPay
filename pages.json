@@ -1576,29 +1576,29 @@
 		"list": [{
 				"pagePath": "pages/tabBar/indexPage/indexPage",
 				"iconPath": "static/image/shouye.png",
-				"selectedIconPath": "static/image/shouye.png",
+				"selectedIconPath": "static/image/shouye-active.png",
 				"text": "首页"
 			},
 			{
 				"pagePath": "pages/tabBar/component/component",
 				"iconPath": "static/image/licai.png",
-				"selectedIconPath": "static/image/licai.png",
+				"selectedIconPath": "static/image/licai-active.png",
 				"text": "理财"
 			},
 			{
 				"pagePath": "pages/tabBar/API/API",
-				"iconPath": "static/image/shenghuo.png",
-				"selectedIconPath": "static/image/shenghuo.png",
+				"iconPath": "static/image/life.png",
+				"selectedIconPath": "static/image/life-active.png",
 				"text": "生活"
 			}, {
 				"pagePath": "pages/tabBar/extUI/extUI",
 				"iconPath": "static/image/message.png",
-				"selectedIconPath": "static/image/message.png",
+				"selectedIconPath": "static/image/message-active.png",
 				"text": "消息"
 			}, {
 				"pagePath": "pages/tabBar/template/template",
 				"iconPath": "static/image/my.png",
-				"selectedIconPath": "static/image/my.png",
+				"selectedIconPath": "static/image/my-active.png",
 				"text": "我的"
 			}
 		]
