@@ -1,9 +1,11 @@
 <template>
 	<view class="city-sel">
-		<view class="top-header">
-			<uni-icons @click="back" type="left" color="white" size="24" class="left"></uni-icons>
-			<view class="txt">
-				南京
+		<view class="top_contanier">
+			<view class="top-header">
+				<uni-icons @click="back" type="left" color="white" size="24" class="left"></uni-icons>
+				<view class="txt">
+					南京
+				</view>
 			</view>
 		</view>
 		<view class="current">
@@ -99,6 +101,10 @@
 </script>
 
 <style lang="scss" scoped>
+	.top_contanier{
+		background-image:url(@/static/weather.gif) ;
+		height: 290rpx;
+	}
 	.top-header {
 		padding-top: var(--status-bar-height);
 		display: flex;
@@ -107,8 +113,6 @@
 		margin-bottom: 30rpx;
 		height: 80rpx;
 		color: white;
-		background-color: #1777FF;
-
 		.txt {
 			margin: 0 auto;
 		}
