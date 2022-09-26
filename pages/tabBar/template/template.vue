@@ -1,44 +1,43 @@
 <template>
 	<view>
-		<image
-			src="../../../static/mine/header.png"
-			style="width: 100vw; height: 160rpx;"
-			@click="navigateToInfo"></image>
+		<view class="top-header">
+			<view class="left-info">
+				我的
+			</view>
+			<view class="right-info">
+				<view class="left-img">
+					<image style="width: 50rpx; height: 50rpx;" src="@/static/mine/kefu.png" mode=""></image>
+				</view>
+				<view class="right-img">
+					<image style="width: 50rpx; height: 50rpx;" class="bg" src="@/static/mine/setting.png" mode="">
+					</image>
+				</view>
+			</view>
+		</view>
+		<view class="" style="margin-top: 130rpx;">
+			<image style src="../../../static/mine/header.png" style="width: 100vw; height: 160rpx;"
+				@click="navigateToInfo">
+			</image>
 			<view class="content-item" style="margin:10rpx 20rpx 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in topList"
-						style="align-items:center;border-radius: 20rpx;height:100rpx;"
-						:title="item.title"
-						showArrow
-						link
-						:thumb="item.icon"
-						:to="item.navigatePath"
-					/>
+						style="align-items:center;border-radius: 20rpx;height:100rpx;" :title="item.title" showArrow
+						link :thumb="item.icon" :to="item.navigatePath" />
 				</uni-list>
 			</view>
 			<view class="content-item" style="margin: 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in middleList"
-						style="align-items:center;border-radius: 20rpx;height:102rpx;"
-						:title="item.title"
-						showArrow
-						link
-						:thumb="item.icon"
-						:rightText="item.rightText ? item.rightText : ''"
-						:to="item.navigatePath"
-					/>
+						style="align-items:center;border-radius: 20rpx;height:102rpx;" :title="item.title" showArrow
+						link :thumb="item.icon" :rightText="item.rightText ? item.rightText : ''"
+						:to="item.navigatePath" />
 				</uni-list>
 			</view>
 			<view class="content-item" style="margin: 20rpx;">
 				<uni-list style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in bottomList"
-						style="align-items:center;border-radius: 20rpx;height:106rpx;"
-						:title="item.title"
-						showArrow
-						link
-						:thumb="item.icon"
-						:to="item.navigatePath"
-					/>
+						style="align-items:center;border-radius: 20rpx;height:106rpx;" :title="item.title" showArrow
+						link :thumb="item.icon" :to="item.navigatePath" />
 				</uni-list>
 			</view>
 		</view>
@@ -49,8 +48,7 @@
 	export default {
 		data() {
 			return {
-				topList: [
-					{
+				topList: [{
 						title: '支付宝会员',
 						icon: require('../../../static/mine/membership.png'),
 						navigatePath: '/pages/component/mine-relative/memberShip/memberShip'
@@ -61,8 +59,7 @@
 						navigatePath: '/pages/component/mine-relative/userProtect/userProtect'
 					}
 				],
-				middleList: [
-					{
+				middleList: [{
 						title: '账单',
 						icon: require('../../../static/mine/bill.png'),
 						navigatePath: '/pages/component/mine-relative/bill/bill'
@@ -99,8 +96,7 @@
 						navigatePath: '/pages/component/loading/loading'
 					}
 				],
-				bottomList: [
-					{
+				bottomList: [{
 						title: '芝麻信用',
 						icon: require('../../../static/mine/zhima.png'),
 						navigatePath: '/pages/component/loading/loading'
@@ -116,7 +112,7 @@
 		methods: {
 			navigateToInfo() {
 				uni.navigateTo({
-					url : '/pages/component/mine-relative/information/information'
+					url: '/pages/component/mine-relative/information/information'
 				})
 			}
 		}
@@ -124,43 +120,92 @@
 </script>
 
 <style scoped lang="scss">
+	.top-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding-top: var(--status-bar-height);
+		padding-bottom: 20rpx;
+		z-index: 9999;
+		background-color: #1777FF;
+		width: 100vw;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-right: 17rpx;
+		padding-left: 17rpx;
+		box-sizing: border-box;
+		color: white;
+
+		.right-img {
+			margin-left: 20rpx;
+		}
+
+		.left-info {
+			display: flex;
+			font-size: 34rpx;
+			align-items: center;
+
+			.txt {
+				margin-left: 20rpx;
+			}
+		}
+
+		.right-info {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
 	.my-avatar {
 		width: 100vw;
 		height: 160rpx !important;
 	}
+
 	.content-wrapper {
 		width: 100vw;
+
 		// background-color: lightgrey;
 		.content-item {
 			border-radius: 10rpx;
 			margin: 20rpx;
+
 			/deep/.uni-list:after {
 				height: 0;
 			}
+
 			/deep/.uni-list--border-bottom {
 				display: none;
 			}
 		}
 	}
+
 	/deep/.uni-list-item__icon-img {
 		margin-right: 20rpx !important;
 	}
+
 	/deep/.uni-list-item__content-title {
 		font-size: 38rpx !important;
 	}
-	/deep/ .uni-list--border-bottom{
+
+	/deep/ .uni-list--border-bottom {
 		height: 0px !important;
 	}
-	/deep/ .uni-list:after{
+
+	/deep/ .uni-list:after {
 		height: 0px !important;
 	}
-	/deep/ .uni-list-item__icon{
+
+	/deep/ .uni-list-item__icon {
 		margin-top: 0rpx;
 	}
-	/deep/ .uni-list-item__extra-text{
+
+	/deep/ .uni-list-item__extra-text {
 		margin-top: 2px;
 	}
-	/deep/ .uniui-arrowright:before{
+
+	/deep/ .uniui-arrowright:before {
 		margin-top: -2rpx !important
 	}
 </style>

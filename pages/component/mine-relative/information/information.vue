@@ -5,6 +5,9 @@
 			<view class="txt">
 				个人信息
 			</view>
+			<view class="right-ke" style="text-align: right;">
+				<image style="width: 45rpx;height: 45rpx;" src="/static//mine/kefu2.jpg" mode="widthFix"></image>
+			</view>
 		</view>
 		<uni-list style="padding-top:150rpx;">
 			<uni-list-item title="头像" link>
@@ -106,7 +109,7 @@
 		font-size: 32rpx;
 		padding-bottom: 30rpx;
 		color: #000;
-		background-color: #F6F6F6;
+		background-color: white;
 		padding-left: 20rpx;
 		padding-right: 20rpx;
 		box-sizing: border-box;
@@ -119,6 +122,7 @@
 
 		.txt {
 			text-align: center;
+			// transform: translateX(-50%);
 			margin: 0 auto;
 		}
 	}

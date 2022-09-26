@@ -1,18 +1,15 @@
 <template>
 	<view class="wrapper">
 		<view class="header">
-			<view class="status_bar">
-				<!-- 占位 -->
-			</view>
 			<view class="top-title">
-				生活缴费
+				充值中心
 				<view class="right-icon">
 					<view class="application-right">
 						<image class="bg" src="@/static/government/bg.png" mode=""></image>
 						<view class="more">
 							<image src="@/static/government/more.png" mode=""></image>
 						</view>
-						<view class="close">
+						<view class="close" @click="back">
 							<image src="@/static/government/close.png" mode=""></image>
 						</view>
 					</view>
@@ -37,19 +34,16 @@
 			}
 		},
 		methods: {
-
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.status_bar {
-		position: relative;
-		height: var(--status-bar-height);
-		width: 100%;
-		background-color: #1777FF;
-	}
-
 	.top-title {
 		// border-bottom: 1px solid yellow;
 		position: fixed;

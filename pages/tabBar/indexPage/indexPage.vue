@@ -10,7 +10,7 @@
 						</view>
 					</view>
 					<view class="b-text">
-						多云23℃
+						{{weather}}{{wendu}}℃
 					</view>
 				</view>
 				<view class="text-input">
@@ -70,7 +70,7 @@
 		</view>
 		<view class="more-main">
 			<view class="more-chose">
-				<view class="chose-item" @click="jumpToLoading">
+				<view class="chose-item" @click="jump">
 					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png">
 					</image>
 				</view>
@@ -161,9 +161,23 @@
 		onShow() {
 			this.city = uni.getStorageSync('city') || this.city
 			this.showList = false
+			uni.request({
+				url: 'http://wthrcdn.etouch.cn/weather_mini?city=南京',
+				method: 'GET',
+				success: res => {
+					this.weather = res.data.data.forecast[0].type
+					this.wendu = res.data.data.wendu
+				},
+				fail: () => {
+					this.openmsg("警告", "天气接口获取失败")
+				},
+				complete: () => {}
+			});
 		},
 		data() {
 			return {
+				wendu: '25',
+				weather: '多云',
 				close: require("@/static/addControl/close.png"),
 				add: require("@/static/icons/add.png"),
 				showList: false,

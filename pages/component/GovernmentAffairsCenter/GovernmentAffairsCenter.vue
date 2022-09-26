@@ -36,8 +36,8 @@
 						{{wendu}}℃
 					</view>
 				</view>
-				<view class="right-info">
-					<view class="header" @click="toMyInfo">
+				<view class="right-info" @click="toMyInfo">
+					<view class="header">
 						<image src="@/static/image/header.png" mode=""></image>
 					</view>
 					<view class="user-name">
@@ -367,7 +367,7 @@
 			height: 88rpx;
 			background-color: white;
 			border-radius: 6rpx;
-			box-shadow: 1rpx 2rpx 0 4rpx rgba(0, 0, 0, .1);
+			box-shadow: 1rpx 2rpx 0 4rpx rgba(241, 241, 241, .5);
 			color: #6f6f6f !important;
 			box-sizing: border-box;
 		}

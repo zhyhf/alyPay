@@ -1,31 +1,50 @@
 <template>
-	<view class="wrapper">
+	<view class="transferRecord">
 		<view class="top-header">
 			<view class="left-info">
 				<uni-icons type="left" color="black" size="26" @click="back"></uni-icons>
 				<view class="txt">
-					消息盒子
+					<view class="name">
+						{{name}}
+					</view>
+					<view class="phone">
+						{{phone}}
+					</view>
 				</view>
 			</view>
-			<view class="right-info">
-				<uni-icons type="gear" size="24" color="black"></uni-icons>
-			</view>
 		</view>
-		<view class="" style="margin-top: 130rpx;">
-
-			<image class="payment-assistant" src="@/static/image/payment-assistant.png"></image>
-			<image class="payment" src="@/static/image/payment.png"></image>
-			<image class="sport" src="@/static/image/sport.png"></image>
+		<view class="container">
+			<view class="detail" v-for="(item,index) in account" :key="index">
+				<view class="detail-item">
+					<view class="total">
+						{{item.total}}
+					</view>
+					<image :src="item.url" mode="widthFix"></image>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
 	export default {
+		onLoad(options) {
+			const {
+				name,
+				phone,
+				account
+			} = options
+			this.name = name
+			this.phone = phone
+			this.account = JSON.parse(account)
+			console.log(options)
+		},
 		data() {
 			return {
-
-			}
+				name: '',
+				phone: '',
+				account: null
+			};
 		},
 		methods: {
 			back() {
@@ -62,6 +81,11 @@
 			.txt {
 				margin-left: 20rpx;
 			}
+
+			.phone {
+				font-size: 24rpx;
+				color: #ccc;
+			}
 		}
 
 		.right-info {
@@ -70,27 +94,24 @@
 		}
 	}
 
-	.wrapper {
-		width: 94vw;
-		padding: 20rpx 3vw;
-		background-color: #F5F5F5;
+	.container {
+		padding-top: 165rpx;
+	}
 
-		.payment-assistant {
-			width: 100%;
-			height: 762rpx;
-			margin-bottom: 20rpx;
-		}
+	.detail {
+		&-item {
+			width: 100vw;
 
-		.payment {
-			width: 100%;
-			height: 450rpx;
-			margin-bottom: 20rpx;
-		}
+			image {
+				width: 100%;
+			}
 
-		.sport {
-			width: 100%;
-			height: 364rpx;
-			margin-bottom: 20rpx;
+			.total {
+				width: 100vw;
+				text-align: center;
+				color: #ccc;
+				line-height: 90rpx;
+			}
 		}
 	}
 </style>

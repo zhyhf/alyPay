@@ -6,7 +6,7 @@
 				<text class="txt">个人专属服务空间</text>
 			</view>
 			<view class="right-icon">
-				<view class="application-right">
+				<view class="application-right" @click="back">
 					<image class="bg" src="@/static/government/bg.png" mode=""></image>
 					<view class="more">
 						<image src="@/static/government/more.png" mode=""></image>
@@ -26,7 +26,8 @@
 						Hi,**帅
 					</view>
 				</view>
-				<view class="user-setting" style="display: flex;align-items: center; color: rgba(0, 0, 0, .6);">
+				<view @click="toLoading" class="user-setting"
+					style="display: flex;align-items: center; color: rgba(0, 0, 0, .6);">
 					<uni-icons type="gear" size="24" color="rgba(0, 0, 0, .6)"></uni-icons>
 					设置
 				</view>
@@ -64,29 +65,29 @@
 			</view>
 			<view class="more-tools">
 				<view class="tools-main">
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/dangan.png" mode="aspectFill"></image>
 					</view>
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/tuijian.png" mode="aspectFill"></image>
 					</view>
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/shouchang.png" mode="aspectFill">
 						</image>
 					</view>
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/zxun.png" mode="aspectFill"></image>
 					</view>
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/touxu.png" mode="aspectFill"></image>
 					</view>
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/jianyi.png" mode="aspectFill"></image>
 					</view>
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/fank.png" mode="aspectFill"></image>
 					</view>
-					<view class="tool-item">
+					<view class="tool-item" @click="toLoading1">
 						<image class="top-image" src="../../../static/image/zhengjian.png" mode="aspectFill">
 						</image>
 					</view>
@@ -107,6 +108,16 @@
 				uni.navigateBack({
 					delta: 1
 				});
+			},
+			toLoading() {
+				uni.navigateTo({
+					url: '/pages/component/loading3/loading3'
+				})
+			},
+			toLoading1() {
+				uni.navigateTo({
+					url: '/pages/component/loading/loading'
+				})
 			}
 		}
 	}

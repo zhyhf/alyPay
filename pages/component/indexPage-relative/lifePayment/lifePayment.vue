@@ -1,9 +1,6 @@
 <template>
 	<view class="wrapper">
 		<view class="header">
-			<view class="status_bar">
-				<!-- 占位 -->
-			</view>
 			<view class="top-title">
 				生活缴费
 				<view class="right-icon">
@@ -12,7 +9,7 @@
 						<view class="more">
 							<image src="@/static/government/more.png" mode=""></image>
 						</view>
-						<view class="close">
+						<view class="close" @click="back">
 							<image src="@/static/government/close.png" mode=""></image>
 						</view>
 					</view>
@@ -48,7 +45,11 @@
 			}
 		},
 		methods: {
-
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			}
 		}
 	}
 </script>
@@ -142,6 +143,7 @@
 			border-top-left-radius: 20rpx;
 			border-top-right-radius: 20rpx;
 			padding-top: 10rpx;
+			margin-top: 55rpx;
 
 			.life-item {
 				width: 100%;

@@ -47,14 +47,14 @@
 				"navigationStyle": "custom"
 				// "navigationBarBackgroundColor": "#1777FF",
 				// "app-plus": {
-					// "titleNView": {
-						// "buttons": [{
-						// 	"text": "\ue534",
-						// 	"fontSrc": "/static/uni.ttf",
-						// 	"fontSize": "22px",
-						// 	"color": "#FFFFFF"
-						// }]
-					// }
+				// "titleNView": {
+				// "buttons": [{
+				// 	"text": "\ue534",
+				// 	"fontSrc": "/static/uni.ttf",
+				// 	"fontSize": "22px",
+				// 	"color": "#FFFFFF"
+				// }]
+				// }
 				// }
 			}
 		},
@@ -81,16 +81,17 @@
 				"navigationBarTitleText": "我的",
 				"navigationBarTextStyle": "white",
 				"navigationBarBackgroundColor": "#1777FF",
-				"app-plus": {
-					"titleNView": {
-						// "buttons": [{
-						// 	"text": "\ue534",
-						// 	"fontSrc": "/static/uni.ttf",
-						// 	"fontSize": "22px",
-						// 	"color": "#FFFFFF"
-						// }]
-					}
-				}
+				"navigationStyle": "custom"
+				// "app-plus": {
+				// 	"titleNView": {
+				// 		// "buttons": [{
+				// 		// 	"text": "\ue534",
+				// 		// 	"fontSrc": "/static/uni.ttf",
+				// 		// 	"fontSize": "22px",
+				// 		// 	"color": "#FFFFFF"
+				// 		// }]
+				// 	}
+				// }
 			}
 		},
 		{
@@ -574,9 +575,23 @@
 				}
 			}
 
+		}, {
+			"path": "pages/component/indexPage-relative/pandemic/pandemic",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/indexPage-relative/usage/usage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	    ,{
-            "path" : "pages/component/indexPage-relative/pandemic/pandemic",
+            "path" : "pages/component/TransferRecord/TransferRecord",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -585,7 +600,7 @@
             
         }
         ,{
-            "path" : "pages/component/indexPage-relative/usage/usage",
+            "path" : "pages/component/loading3/loading3",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
