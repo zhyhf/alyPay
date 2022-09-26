@@ -524,7 +524,7 @@
 
 		width: 100vw;
 		margin-right: 4.1vw;
-		// justify-content: space-between; 
+		// justify-content: space-between;
 		// background-color: #f7f7f7;
 	}
 
