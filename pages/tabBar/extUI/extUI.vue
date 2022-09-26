@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="container" @click="jump">
 		<view class="status_bar"></view>
 		<view class="header">
 			<view class="detail">
@@ -24,7 +24,11 @@
 			}
 		},
 		methods: {
-
+			jump() {
+				uni.navigateTo({
+					url: '/pages/component/loading/loading?type=1'
+				})
+			}
 		}
 	}
 </script>
@@ -44,12 +48,13 @@
 	.header {
 		width: 100%;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
 		position: fixed;
 		top: var(--status-bar-height);
 		left: 0;
 		background-color:  #3974f6;
+		padding-left: 3vw;
 		padding-bottom: 20rpx;
 		z-index: 99;
 		.detail {
@@ -70,10 +75,10 @@
 			position: absolute;
 			width: 40rpx;
 			height: 40rpx;
-			right: 20rpx;
+			right: 45rpx;
 		}
 		.book {
-			right: 90rpx;
+			right:110rpx;
 		}
 	}
 	.heaeder-input {

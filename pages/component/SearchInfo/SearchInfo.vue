@@ -10,7 +10,8 @@
 				<text class="more-dots">...</text>
 			</view>
 		</view>
-		<view class="tab-container">
+		<image src="@/static/loading4.gif" class="loading" mode="widthFix" v-show="loading"></image>
+		<view class="tab-container" v-show="!loading">
 			<text
 				ref="tabItem"
 				v-for="(item, index) in tabs"
@@ -18,10 +19,10 @@
 				@click="changeIndex(index)"
 			>{{ item }}</text>
 		</view>
-		<view v-show="activeIndex !== 0" class="loading-wrapper">
-			<image src="@/static/loading.gif" class="loading" mode="widthFix"></image>
+		<view v-show="activeIndex !== 0 && !loading" class="loading-wrapper">
+			<image src="@/static/loading4.gif" class="loading" mode="widthFix"></image>
 		</view>
-		<view v-show="activeIndex === 0" class="search-result">
+		<view v-show="activeIndex === 0 && !loading" class="search-result">
 			<image src="../../../static/searchRes.png" mode="widthFix" @click="toCenter" class="img2"></image>
 			
 			<view class="title">
@@ -44,7 +45,6 @@
 	export default {
 		name: 'searchInfo',
 		onLaunch(props) {
-			console.log('res----')
 			console.log(props)
 		},
 		data() {
@@ -57,8 +57,14 @@
 					'生活号',
 					'理财',
 					'市民服务'
-				]
+				],
+				loading: true
 			};
+		},
+		mounted() {
+			setTimeout(() => {
+				this.loading = false
+			}, 2000)
 		},
 		methods: {
 			toLoading() {
@@ -89,6 +95,13 @@
 	.status_bar {
 		height: var(--status-bar-height);
 		width: 100%;
+	}
+	.loading {
+		width: 180rpx;
+		position: absolute;
+		left: 50%;
+		top: 140rpx;
+		transform: translate3d(-50%, 0, 0);
 	}
 	.top-input {
 		display: flex;
@@ -153,11 +166,11 @@
 		height: 1050rpx;
 		position: relative;
 		.loading {
-			width: 150rpx;
+			width: 180rpx;
 			position: absolute;
 			left: 50%;
-			top: 50%;
-			transform: translate3d(-50%, -50%, 0);
+			top: 100rpx;
+			transform: translate3d(-50%, 0, 0);
 		}
 	}
 	

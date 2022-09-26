@@ -107,7 +107,7 @@
 				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/gaode.png"></image>
 				</view>
-				<view class="chose-item" @click="jumpToLoading">
+				<view class="chose-item" @click="jumpToForest">
 					<image mode="scaleToFill" class="image" src="../../../static/image/forest.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
@@ -169,6 +169,11 @@
 			uni.clearStorage()
 		},
 		methods: {
+			jumpToForest() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/antForest/antForest'
+				})
+			},
 			toUsagePage() {
 				uni.navigateTo({
 					url: '/pages/component/indexPage-relative/usage/usage'

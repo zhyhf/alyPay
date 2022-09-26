@@ -23,7 +23,8 @@
 				loading: [
 					require('@/static/loading.gif'),
 					require('@/static/loading2.gif'),
-					require('@/static/loading3.gif')
+					require('@/static/loading3.gif'),
+					require('@/static/loading4.gif')
 				],
 				loadingSrc: require('@/static/loading.gif'),
 				title: '加载中 ...',
