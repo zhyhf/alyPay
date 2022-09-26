@@ -487,7 +487,7 @@
 
 	.more-chose {
 		margin: 0 auto;
-		margin-top: 20rpx;
+		margin-top: 18rpx;
 		// width: 98vw;
 		display: flex;
 		flex-wrap: wrap;
@@ -500,7 +500,7 @@
 	}
 
 	.chose-item {
-		margin: 2.3vw;
+		margin: 2.1vw;
 		// width: 14.5vw;
 		// height: 14.5vw;
 

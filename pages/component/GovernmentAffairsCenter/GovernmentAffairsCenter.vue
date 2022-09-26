@@ -534,7 +534,7 @@
 		.gov-life {
 			width: 94vw;
 			height: 150rpx;
-			margin-top: 24rpx;
+			margin-top: 34rpx;
 		}
 
 		.certificate {

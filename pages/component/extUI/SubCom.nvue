@@ -1,12 +1,12 @@
 <template>
     <div>
-		<view style="display:flex;justify-content: center;align-items:center; padding-top: 40rpx;">
+		<view style="display:flex;justify-content: center;align-items:center; padding-top: 65rpx;">
 			<view  scroll-y="true" style="padding-bottom:20rpx;letter-spacing: 5rpx;padding-top: 15rpx;">
-				<text style="font-size:36rpx;font-weight: 500;">拿起手机，眨眨眼</text>
+				<text style="font-size:40rpx;font-weight: 500;">拿起手机，眨眨眼</text>
 			</view>
 	   </view>
         <div class="livefater">
-            <div style="width: 210px;height: 210px;border-radius: 150px;overflow: hidden;">
+            <div style="width: 260px;height: 260px;border-radius: 150px;overflow: hidden;">
                 <live-pusher id='livePusher' ref="livePusher" class="livePusher" url=""
                     mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" :beauty="2" whiteness="2"
                     aspect="1:1" @statechange="statechanse" @netstatus="netstatus" @error="error"></live-pusher>
@@ -233,17 +233,17 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        height: 320px;
+        height: 300px;
     }
 	 .gaiimg3 {
-		  width: 90px;
-		  height: 90px;
+		  width: 100px;
+		  height: 100px;
 		  margin-top: -220px;
 	  }
-   .gaiimg2 {
-        width:320px;
-        height:320px;
-        margin-top: -265px;
-    }
+	   .gaiimg2 {
+			width:340px;
+			height:340px;
+			margin-top: -260px;
+		}
 </style>
 </style>
