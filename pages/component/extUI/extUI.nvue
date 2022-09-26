@@ -1,6 +1,6 @@
 <template>
-	<div style="background-color: #F5F5F5">
-		<view class="top-header" style="padding-top: 88rpx;width: 100vw;">
+	<div style="background-color: #F8F8F8">
+		<view class="top-header" style="padding-top: 88rpx;width: 100vw;padding-bottom:15rpx;">
 			<view class="back" style="display: flex; align-items: center;">
 				<image @click="back" style="width: 35rpx;height: 35rpx;" src="/static/image/back.png" mode=""></image>
 				<view class="txt">

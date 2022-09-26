@@ -19,11 +19,8 @@
 				uni.navigateTo({
 					url: "/pages/component/myCertificates/myCertificates"
 				})
-			},200)
+			},100)
 		},
-		onLoad(props) {
-		  
-		}
 	}
 </script>
 
