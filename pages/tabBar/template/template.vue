@@ -189,11 +189,23 @@
 		font-size: 38rpx !important;
 	}
 
-	ss /deep/ .uni-list--border-bottom {
+	/deep/ .uni-list--border-bottom {
 		height: 0px !important;
 	}
 
 	/deep/ .uni-list:after {
 		height: 0px !important;
+	}
+
+	/deep/ .uni-list-item__icon {
+		margin-top: 0rpx;
+	}
+
+	/deep/ .uni-list-item__extra-text {
+		margin-top: 2px;
+	}
+
+	/deep/ .uniui-arrowright:before {
+		margin-top: -2rpx !important
 	}
 </style>

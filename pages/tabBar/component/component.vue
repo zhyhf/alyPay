@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="container" @click="jump">
 		<view class="status_bar"></view>
 		<view class="header">
 			<image src="@/static/image/finance-left-icon.png" class="f-icon"></image>
@@ -20,6 +20,13 @@
 		data() {
 			return {
 				
+			}
+		},
+		methods: {
+			jump() {
+				uni.navigateTo({
+					url: '/pages/component/loading/loading?type=1'
+				})
 			}
 		}
 	}

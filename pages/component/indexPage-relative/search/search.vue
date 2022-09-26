@@ -9,7 +9,8 @@
 				<image src="@/static/image/search-icon.png" class="search-icon"></image>
 				<image src="@/static/image/search-clear.png" class="clear-icon" @click="clear"></image>
 			</view>
-			<view v-show="text.length > 0" class="search-res">
+			<image v-show="loading" src="@/static/loading4.gif" class="loading" mode="widthFix"></image>
+			<view v-show="text.length > 0 && !loading" class="search-res">
 				<image src="@/static/image/search-result.png" class="search-image" @click="jump"></image>
 				<view class="search-list">
 					<view class="search-item" v-for="(item, index) in serachList" :key="index">
@@ -19,16 +20,16 @@
 					</view>
 				</view>
 			</view>
-			<view v-show="text.length === 0" class="history-wrapper">
+			<view v-show="text.length === 0 && !loading" class="history-wrapper">
 				<text class="history">生活缴费</text>
 				<text class="history">生活缴费电费</text>
 				<text class="history">防疫出行政策查询</text>
 			</view>
-			<view v-show="text.length === 0" class="search-history">
+			<view v-show="text.length === 0 && !loading" class="search-history">
 				<text class="search-history-title">搜索历史</text>
 				<text class="search-history-card" @click="jump">国家政务服务平台</text>
 			</view>
-			<view v-show="text.length === 0" class="discover">
+			<view v-show="text.length === 0 && !loading" class="discover">
 				<text class="discover-title">搜索发现</text>
 				<view class="discover-container">
 					<view class="yuanshen">
@@ -94,7 +95,8 @@
 					{
 						title: '国家税务局'
 					}
-				]
+				],
+				loading: true
 			}
 		},
 		computed: {
@@ -103,6 +105,11 @@
 					backgroundColor: '#fbfbfb'
 				}  : {}
 			}
+		},
+		mounted() {
+			setTimeout(() => {
+				this.loading = false
+			}, 2000)
 		},
 		methods: {
 			search() {
@@ -134,6 +141,7 @@
 .wrapper {
 	padding: 30rpx 2.5vw;
 	background-color: #F5F5F5;
+	position: relative;
 	.header {
 		height: var(--status-bar-height);
 		width: 100%;
@@ -174,6 +182,13 @@
 			height: 36rpx;
 			margin-right: 20rpx;
 		}
+	}
+	.loading {
+		width: 180rpx;
+		position: absolute;
+		left: 50%;
+		bottom: -120rpx;
+		transform: translate3d(-50%, 0, 0);
 	}
 	.search-res {
 		width: 100%;

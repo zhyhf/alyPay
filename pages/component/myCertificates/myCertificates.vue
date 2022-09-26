@@ -2,7 +2,7 @@
 	<view class="wrapper">
 		<view class="header">
 			<text class="title">全部证照</text>
-			<text class="manage">管理 ></text>
+			<text class="manage" @click="jump">管理 ></text>
 		</view>
 		<!-- <image src="@/static/government/my-certificate.png" class="certificate"></image> -->
 		<image v-if="index3" src="@/static/government/shenfen-card.png" class="certificate"></image>
@@ -33,6 +33,12 @@
 			}
 		},
 		methods: {
+			jump() {
+				const title = '证照管理'
+				uni.navigateTo({
+					url: `/pages/component/loading/loading?type=1&title=${title}`
+				})
+			},
 			add() {
 				uni.navigateTo({
 					url: '/pages/component/manageCertificates/manageCertificates'

@@ -1,9 +1,9 @@
 <template>
 	<view class="wrapper">
 		<view class="status_bar"></view>
-		<view class="header">
+		<view class="header" v-show="activeIndex > -1">
 			<view class="search">
-				<image src="@/static/image/back.png" class="img left"></image>
+				<image src="@/static/image/back.png" class="img left" @click="back"></image>
 				<view class="search-wrapper">
 					<input type="text" class="search-input">
 					<image src="@/static/image/search-icon.png" class="search-icon"></image>
@@ -22,10 +22,12 @@
 				</text>
 				
 			</view>
+			<image v-show="showMonthBar" src="@/static/mine/month-bar.png" class="month-bar" mode="widthFix"></image>
 		</view>
 		
-		<view class="content">
-			<view class="bg-wrapper">
+		<scroll-view class="content" @scroll="scroll" scroll-y="true">
+			<image v-show="activeIndex !== 0" src="@/static/loading.gif" class="loading" mode="widthFix"></image>
+			<view v-show="activeIndex === 0" class="bg-wrapper">
 				<image src="@/static/mine/bill-bg.png" mode="widthFix" style="width: 100%;"></image>
 				<view class="bill">
 					<picker mode="date" fields="month" :value="date" @change="bindDateChange" style="margin-bottom: 10rpx;">
@@ -39,10 +41,14 @@
 						<text class="detail-item">{{ '支出 ¥12,042.19'}}</text>
 						<text class="detail-item">{{ '收入 ¥ 0.00'}}</text>
 					</view>
-					<text class="analysis">收支分析 ></text>
+					<text class="analysis" @click="jump">收支分析 ></text>
 				</view>
 			</view>
-			<image src="@/static/mine/bill-detail-item.png" style="width: 100%;" mode="widthFix"></image>
+			<image v-show="activeIndex === 0" src="@/static/mine/bill-detail-item.png" style="width: 100%;" mode="widthFix"></image>
+		</scroll-view>
+		<view class="bottom-tab">
+			<image :src="bottomIcon1" class="bottom-icon" @click="click1"></image>
+			<image :src="bottomIcon2" class="bottom-icon" @click="click2"></image>
 		</view>
 	</view>
 </template>
@@ -53,10 +59,40 @@
 			return {
 				tabs: ['全部', '服务中', '待评价', '筛选'],
 				activeIndex: 0,
-				date: this.getCurrentMonth()
+				date: this.getCurrentMonth(),
+				scrollTop: 0,
+				showMonthBar: false,
+				bottomIcon1: require('@/static/mine/bill-active.png'),
+				bottomIcon2: require('@/static/mine/bill-analysis.png')
+			}
+		},
+		watch: {
+			scrollTop(val) {
+				this.showMonthBar = (val >= 160)
 			}
 		},
 		methods: {
+			click1() {
+				this.bottomIcon1 = require('@/static/mine/bill-active.png')
+				this.bottomIcon2 = require('@/static/mine/bill-analysis.png')
+				this.activeIndex = 0
+			},
+			click2() {
+				this.bottomIcon1 = require('@/static/mine/bill-default.png')
+				this.bottomIcon2 = require('@/static/mine/bill-analysis-active.png')
+				this.activeIndex = -1
+			},
+			back() {
+				uni.navigateBack()
+			},
+			jump() {
+				uni.navigateTo({
+					url: '/pages/component/loading/loading?type=1'
+				})
+			},
+			scroll(e) {
+				this.scrollTop = e.target.scrollTop
+			},
 			bindDateChange(e) {
 				this.date = e.target.value
 				console.log(this.date)
@@ -79,12 +115,14 @@
 	.wrapper {
 		width: 100vw;
 		background-color: #F5F5F5;
+		position: relative;
 		.status_bar {
 			height: var(--status-bar-height);
 			width: 100%;
 			background-color: #fff;
 			position: fixed;
 			left: 0;
+			z-index: 99;
 		}
 		.header {
 			background-color: #fff;
@@ -92,7 +130,7 @@
 			position: fixed;
 			top: var(--status-bar-height);
 			left: 0;
-			
+			z-index: 99;
 			.search {
 				display: flex;
 				align-items: center;
@@ -150,12 +188,25 @@
 					font-weight: 500;
 				}
 			}
+			.month-bar {
+				width: 100%;
+				z-index: 99;
+			}
 		}
 		.content {
 			width: 100vw;
 			background-color: #F5F5F5;
-			height: 100vh;
-			padding-top: calc(var(--status-bar-height) + 180rpx);
+			height: calc(100vh - var(--status-bar-height) - 255rpx);
+			padding-top: calc(var(--status-bar-height) + 155rpx);
+			position: relative;
+			.loading {
+				margin: 0 auto;
+				position: absolute;
+				width: 160rpx;
+				left: 50%;
+				top: 260px;
+				transform: translate3d(-50%, -50%, 0);
+			}
 			.bg-wrapper {
 				width: 100%;
 				position: relative;
@@ -175,6 +226,21 @@
 						margin-left: 23rpx;
 					}
 				}
+			}
+		}
+		.bottom-tab {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 120rpx;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			background-color: #fff;
+			.bottom-icon {
+				width: 80rpx;
+				height: 80rpx;
 			}
 		}
 	}
