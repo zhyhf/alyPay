@@ -200,10 +200,11 @@
 			padding-top: calc(var(--status-bar-height) + 155rpx);
 			position: relative;
 			.loading {
+				margin: 0 auto;
 				position: absolute;
 				width: 160rpx;
 				left: 50%;
-				top: 50%;
+				top: 260px;
 				transform: translate3d(-50%, -50%, 0);
 			}
 			.bg-wrapper {

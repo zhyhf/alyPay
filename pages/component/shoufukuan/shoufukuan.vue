@@ -16,8 +16,9 @@
 		<uni-card :isShadow="true" mode="basic" :border="false" style="background-color:#4492FF">
 			<uni-list>
 				<uni-list-item v-for="(item, index) in list"
-					style="height: 95rpx;background-color: #4492FF;color:#4492FF" :title="item.title" showArrow link
-					:thumb="item.url" thumb-size="base" @click="show(index)" />
+					style="height:90rpx;background-color: #4492FF;color:#4492FF" :title="item.title" showArrow link
+					:thumb="item.url" 
+					@click="show(index)" />
 			</uni-list>
 		</uni-card>
 	</view>
@@ -91,10 +92,6 @@
 		color: #fff;
 	}
 
-	/deep/ .uniui-arrowright:before {
-		color: #fff;
-	}
-
 	/deep/ .uni-list-item__container {
 		padding-left: 5px !important;
 	}
@@ -112,6 +109,14 @@
 	}
 
 	/deep/ .uni-card .uni-card__content {
-		padding: 0px !important;
+		padding: 6px !important;
+	
+	}
+	/deep/ .uni-list-item__icon{
+		margin-top: 0rpx;
+	}
+	/deep/ .uniui-arrowright:before {
+		color: #fff;
+		margin-top: -3rpx;
 	}
 </style>
