@@ -20,7 +20,7 @@
 				共1张
 			</view>
 			<view class="item-bg">
-				<image style="height: 21vh;" src="@/static/cardBag/wy.png" mode=""></image>
+				<image style="height: 20vh;" src="@/static/cardBag/wy.png" mode=""></image>
 			</view>
 		</view>
 		<view class="bottom-item" v-if="currentIndex == 1">
@@ -28,7 +28,7 @@
 				共1张
 			</view>
 			<view class="item-bg">
-				<image src="@/static/cardBag/wh.png" style="height: 21vh;" mode=""></image>
+				<image src="@/static/cardBag/wh.png" style="height: 20vh;" mode=""></image>
 			</view>
 		</view>
 		<view class="b-item " style="background-color: transparent;" v-if="currentIndex == 2">
@@ -95,7 +95,7 @@
 	}
 	.bottomCont{
 		position:absolute;
-		top: 150px;
+		top: 120px;
 		left: 50%;
 		width: 1000px;
 		margin-left: -500px;

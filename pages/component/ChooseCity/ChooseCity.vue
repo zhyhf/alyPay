@@ -151,7 +151,7 @@
 
 	.current {
 		padding-left: 22rpx;
-
+         margin-top: 26rpx;
 		.current-text {
 			color: #ccc;
 			font-weight: 700;
