@@ -111,10 +111,10 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/forest.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/zhima-credit.png"></image>
+					<image mode="scaleToFill" class="image" style="width: 13.5vw;" src="../../../static/image/zhima-credit.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/wode.png"></image>
+					<image mode="scaleToFill" class="image" style="width: 15.5vw;" src="../../../static/image/wode.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/more.png"></image>
@@ -126,7 +126,14 @@
 				<image src="../../../static/image/cMsg.png" mode="widthFix" @click="toMessageBox"></image>
 			</view>
 			<view class="b-guanggao" @click.stop="jumpToLoading">
-				<image src="../../../static/info-card.gif" style="height: 180rpx;"></image>
+				<swiper style="width: 100%;" circular :autoplay="true" :interval="4000">
+					<swiper-item style="width: 100%;">
+						<image src="@/static/info-card.gif" style="width: 100%;" mode="widthFix"></image>
+					</swiper-item>
+					<swiper-item>
+						<image src="@/static/info-card2.gif" style="width: 100%;"  mode="widthFix"></image>
+					</swiper-item>
+				</swiper>
 			</view>
 			<image src="@/static/image/profit.gif" mode="widthFix" style="width: 100%; margin: 20rpx 0;" @click="jumpToLoading"></image>
 			<view class="b-guanggao" @click.stop="jumpToLoading">

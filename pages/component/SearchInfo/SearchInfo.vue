@@ -74,7 +74,6 @@
 				})
 			},
 			changeIndex(index) {
-				console.log(this.$refs.tabItem[index].$el.getBoundingClientRect().left)
 				this.activeIndex = index
 			},
 			back() {
@@ -100,7 +99,7 @@
 		width: 180rpx;
 		position: absolute;
 		left: 50%;
-		top: 140rpx;
+		top: 260rpx;
 		transform: translate3d(-50%, 0, 0);
 	}
 	.top-input {
@@ -169,7 +168,7 @@
 			width: 180rpx;
 			position: absolute;
 			left: 50%;
-			top: 100rpx;
+			top: 150rpx;
 			transform: translate3d(-50%, 0, 0);
 		}
 	}
