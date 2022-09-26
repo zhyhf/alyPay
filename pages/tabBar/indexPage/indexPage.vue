@@ -126,7 +126,7 @@
 				<image src="../../../static/image/cMsg.png" mode="widthFix" @click="toMessageBox"></image>
 			</view>
 			<view class="b-guanggao" @click.stop="jumpToLoading">
-				<swiper style="width: 100%;" circular :autoplay="true" :interval="4000">
+				<swiper style="width: 100%;height:200rpx" circular :autoplay="true" :interval="4000">
 					<swiper-item style="width: 100%;">
 						<image src="@/static/info-card.gif" style="width: 100%;" mode="widthFix"></image>
 					</swiper-item>
@@ -287,7 +287,6 @@
 		padding: 0;
 		margin: 0;
 	}
-
 	.bottom {
 		display: flex;
 		flex-direction: column;

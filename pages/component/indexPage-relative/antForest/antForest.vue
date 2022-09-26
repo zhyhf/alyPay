@@ -26,7 +26,7 @@
 	.container {
 		width: 100vw;
 		.loading {
-			width: 200rpx;
+			width: 160rpx;
 			position: absolute;
 			top: 50%;
 			left: 50%;
