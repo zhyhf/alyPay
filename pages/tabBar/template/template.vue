@@ -51,7 +51,7 @@
 				topList: [{
 						title: '支付宝会员',
 						icon: require('../../../static/mine/membership.png'),
-						navigatePath: '/pages/component/mine-relative/memberShip/memberShip'
+						navigatePath: '/pages/component/loading/loading?type=1'
 					},
 					{
 						title: '用户保护中心',
