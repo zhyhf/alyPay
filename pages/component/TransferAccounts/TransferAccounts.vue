@@ -10,7 +10,7 @@
 			<view class="top-title">
 				转账
 				<view class="right-icon">
-					<view class="application-right">
+					<view class="application-right" @click="back">
 						<image class="bg" src="@/static/government/bg.png" mode=""></image>
 						<view class="more">
 							<image src="@/static/government/more.png" mode=""></image>
@@ -23,22 +23,22 @@
 			</view>
 			<view class="tA-main">
 				<view class="tA-search">
-					<uni-icons class="search-icon" type="search" size="24" color="#6F6F6F"></uni-icons>
+					<uni-icons class="search-icon" type="search" size="24" color="#646464"></uni-icons>
 					<input class="search" type="text">
 				</view>
 				<view class="tA-choose">
 					<view class="top-choose">
-						<view class="alypay item">
-							<image src="@/static/Taccount/icon/1.png" mode=""></image>
+						<view class="alypay item" @click="toLoading">
+							<image src="@/static/Taccount/icon/1.png" mode="widthFix"></image>
 						</view>
-						<view class="bank item">
-							<image src="@/static/Taccount/icon/2.png" mode=""></image>
+						<view class="bank item" @click="toLoading">
+							<image src="@/static/Taccount/icon/2.png" mode="widthFix"></image>
 						</view>
-						<view class="red item">
-							<image src="@/static/Taccount/icon/3.png" mode=""></image>
+						<view class="red item" @click="toLoading">
+							<image src="@/static/Taccount/icon/3.png" mode="widthFix"></image>
 						</view>
-						<view class="log item">
-							<image src="@/static/Taccount/icon/4.png" mode=""></image>
+						<view class="log item" @click="toLoading">
+							<image src="@/static/Taccount/icon/4.png" mode="widthFix"></image>
 						</view>
 					</view>
 					<view class="more">
@@ -60,21 +60,20 @@
 					</view>
 					<view class="bto-list">
 						<view class="left-list">
-							<view @click="toTransferPage(item)" class="list-item" v-for="(item,index) in leftImgs"
-								:key="index">
-								<image :src="item.url" mode=""></image>
-								<view class="right-info">
-									<view class="text">
-										{{item.name}}
-									</view>
-									<view class="phone">
-										{{item.phone}}
+							<template v-for="(item,index) in leftImgs">
+								<view @click="toTransferPage(item)" class="list-item"
+									v-if="!(tabIndex == 0 && index == 0)" :key="index">
+									<image :src="item.url" mode=""></image>
+									<view class="right-info">
+										<view class="text">
+											{{item.name}}
+										</view>
+										<view class="phone">
+											{{item.phone}}
+										</view>
 									</view>
 								</view>
-							</view>
-						</view>
-						<view class="right-list">
-
+							</template>
 						</view>
 					</view>
 				</view>
@@ -89,21 +88,33 @@
 			return {
 				tabIndex: 0,
 				leftImgs: [{
-					url: require('@/static/Taccount/contact/a.png'),
-					name: "张劲华(**华)",
-					phone: '189******07'
-				}, {
-					url: require('@/static/Taccount/contact/b.png'),
-					name: "孔婷婷(孔婷婷)",
-					phone: "186******33"
-				}, {
-					url: require('@/static/Taccount/contact/c.png'),
-					name: "王磊(王磊)",
-					phone: '916***@qq.com'
-				}]
+						url: require('@/static/Taccount/contact/a.png'),
+						name: "张劲华(**华)",
+						phone: '189******07'
+					}, {
+						url: require('@/static/Taccount/contact/b.png'),
+						name: "孔婷婷(孔婷婷)",
+						phone: "186******33"
+					},
+					{
+						url: require('@/static/Taccount/contact/c.png'),
+						name: "王磊(王磊)",
+						phone: '916***@qq.com'
+					}
+				]
 			};
 		},
 		methods: {
+			toLoading() {
+				uni.navigateTo({
+					url: "/pages/component/loading/loading"
+				})
+			},
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
 			changTab(index) {
 				this.tabIndex = index
 			},
@@ -273,7 +284,7 @@
 			width: 100%;
 			padding: 20rpx;
 			padding-bottom: 10rpx;
-			border-bottom: 2rpx solid #ccc;
+			border-bottom: 2rpx solid #E5E5E5;
 			font-size: 30rpx;
 			color: #ccc;
 			height: 100%;
@@ -288,6 +299,7 @@
 			}
 
 			.active {
+				color: #1777FF;
 				border-bottom: 6rpx solid #1777FF;
 			}
 		}
@@ -313,7 +325,7 @@
 			margin-left: 30rpx;
 			flex-direction: column;
 			justify-content: space-around;
-			border-bottom: 2rpx solid #ccc;
+			border-bottom: 2rpx solid #F7F7F7;
 		}
 
 		.phone {
