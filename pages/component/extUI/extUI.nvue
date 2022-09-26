@@ -1,5 +1,5 @@
 <template>
-	<div style="background-color: #F5F5F5;">
+	<div style="background-color: #F5F5F5">
 		<view class="top-header" style="padding-top: 88rpx;width: 100vw;">
 			<view class="back" style="display: flex; align-items: center;">
 				<image @click="back" style="width: 35rpx;height: 35rpx;" src="/static/image/back.png" mode=""></image>
