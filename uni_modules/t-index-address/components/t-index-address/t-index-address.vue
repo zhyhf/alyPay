@@ -33,8 +33,8 @@
 					<text>{{ group.initial }}</text>
 				</view>
 				<view class="t-index-address__list">
-					<view class="t-index-address__cell" v-for="(city, index) in group.list" :key="index"
-						@click="$emit('select', city)">
+					<view class="t-index-address__cell" v-for="(city, index) in group.list" :key="index" @click="$emit('select', city)"
+					>
 						<text>{{ city.name }}</text>
 					</view>
 				</view>
@@ -86,6 +86,12 @@
 			};
 		},
 		watch: {
+			SelectCity(item) {
+				uni.setStorageSync('city', item)
+				uni.navigateBack({
+					delta: 1
+				})
+			},
 			activeIndex(value) {
 				this.scrollview = value;
 			},
