@@ -7,7 +7,7 @@
 					收付款
 				</view>
 			</view>
-			<image src="../../../static/image/threePoints.png" style="color:white;width:60px" mode="widthFix"></image>
+			<image src="../../../static/image/threePoints.png" style="color:white;width:20px;margin-right:3px" mode="widthFix"></image>
 		</view>
 		<view style="padding-top: 155rpx;">
 			<image src="../../../static/image/shoufukuanInner.png" mode="widthFix"
