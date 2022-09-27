@@ -10,10 +10,11 @@
 						</view>
 					</view>
 					<view class="b-text">
-						{{weather}}{{wendu}}℃
+						{{weather}} {{wendu}}℃
 					</view>
 				</view>
 				<view class="text-input">
+					<uni-icons class="search" type="search" size="20" color="#ccc"></uni-icons>
 					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" @click="focus" />
 					<view class="btn" @click="search">
 						搜索
@@ -111,10 +112,12 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/forest.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" style="width: 13.5vw;" src="../../../static/image/zhima-credit.png"></image>
+					<image mode="scaleToFill" class="image" style="width: 13.5vw;"
+						src="../../../static/image/zhima-credit.png"></image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" style="width: 15.5vw;" src="../../../static/image/wode.png"></image>
+					<image mode="scaleToFill" class="image" style="width: 15.5vw;" src="../../../static/image/wode.png">
+					</image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
 					<image mode="scaleToFill" class="image" src="../../../static/image/more.png"></image>
@@ -131,11 +134,12 @@
 						<image src="@/static/info-card.gif" style="width: 100%;" mode="widthFix"></image>
 					</swiper-item>
 					<swiper-item>
-						<image src="@/static/info-card2.gif" style="width: 100%;"  mode="widthFix"></image>
+						<image src="@/static/info-card2.gif" style="width: 100%;" mode="widthFix"></image>
 					</swiper-item>
 				</swiper>
 			</view>
-			<image src="@/static/image/profit.gif" mode="widthFix" style="width: 100%; margin: 20rpx 0;" @click="jumpToLoading"></image>
+			<image src="@/static/image/profit.gif" mode="widthFix" style="width: 100%; margin: 20rpx 0;"
+				@click="jumpToLoading"></image>
 			<view class="b-guanggao" @click.stop="jumpToLoading">
 				<image src="../../../static/image/guanggao.png" mode="widthFix"></image>
 			</view>
@@ -301,6 +305,7 @@
 		padding: 0;
 		margin: 0;
 	}
+
 	.bottom {
 		display: flex;
 		flex-direction: column;
@@ -341,7 +346,7 @@
 	.gongneng {
 		padding-bottom: 0rpx;
 		margin-top: 80rpx;
-		padding-top: 65rpx;
+		padding-top: 90rpx;
 		width: 100vw;
 		height: 134rpx;
 		display: flex;
@@ -349,8 +354,8 @@
 		justify-content: space-around;
 
 		image {
-			width: 16vw;
-			height: 16vw;
+			width: 95rpx;
+			height: 105rpx;
 		}
 	}
 
@@ -370,12 +375,10 @@
 			position: relative;
 			height: 100%;
 			margin-top: 18rpx;
-
 			image {
-				width: 55rpx;
-				height: 55rpx;
+				width: 47rpx;
+				height: 47rpx;
 			}
-
 
 			.sys {
 				image {
@@ -432,9 +435,10 @@
 
 		.b-text {
 			// padding-top: 1rpx;
-			font-size: 24rpx;
+			font-size: 20rpx;
 			// margin-right: -3rpx;
-			color: #ccc;
+			letter-spacing: 4rpx;
+			color: #7DCAFF;
 		}
 
 		.t-text {
@@ -442,23 +446,24 @@
 			width: 24vw;
 			margin-top: 3rpx;
 			// justify-content: flex-end;
-			padding-left: 40rpx;
+			padding-left: 36rpx;
 			padding-right: 35rpx;
 			font-size: 32rpx;
 			letter-spacing: 12rpx;
 
 			.city {
-				width: 50%;
+				width: 48%;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
+				letter-spacing: 4rpx;
 			}
 
 			.down {
 				margin-top: -2rpx;
 
 				image {
-					width: 18rpx;
+					width: 20rpx;
 					height: 18rpx;
 				}
 			}
@@ -473,6 +478,7 @@
 		}
 
 		.text-input {
+			position: relative;
 			margin-top: 10rpx;
 			display: flex;
 			align-items: center;
@@ -481,6 +487,12 @@
 			overflow: hidden;
 			border-radius: 16rpx;
 			flex: 5;
+
+			.search {
+				position: absolute;
+				left: 18rpx;
+				top: 13rpx;
+			}
 
 			.btn {
 				position: absolute;
@@ -502,7 +514,7 @@
 		}
 
 		.add {
-			flex: 1.3;
+			flex: 1.2;
 		}
 	}
 

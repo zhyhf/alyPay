@@ -84,7 +84,7 @@
 
 			.phone {
 				font-size: 24rpx;
-				color: #ccc;
+				color: #171717;
 			}
 		}
 
@@ -95,7 +95,7 @@
 	}
 
 	.container {
-		padding-top: 165rpx;
+		padding-top: 153rpx;
 	}
 
 	.detail {
@@ -109,8 +109,11 @@
 			.total {
 				width: 100vw;
 				text-align: center;
-				color: #ccc;
-				line-height: 90rpx;
+				color: #9D9D9F;
+				line-height: 80rpx;
+				height: 80rpx;
+				// padding-bottom: 20rpx;
+				box-sizing: border-box;
 			}
 		}
 	}

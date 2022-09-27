@@ -1,14 +1,10 @@
 <template>
 	<view class="tA-container">
-		<view class="tA-bg">
-			<image src="../../../static/travel/bg.png" mode="widthFix"></image>
-		</view>
 		<view class="tA-main">
-			<view class="status_bar">
-				<!-- 占位 -->
-			</view>
 			<view class="top-title">
-				转账
+				<text class="txt">
+					转账
+				</text>
 				<view class="right-icon">
 					<view class="application-right" @click="back">
 						<image class="bg" src="@/static/government/bg.png" mode=""></image>
@@ -23,26 +19,20 @@
 			</view>
 			<view class="tA-main">
 				<view class="tA-search">
-					<uni-icons class="search-icon" type="search" size="24" color="#646464"></uni-icons>
-					<input class="search" type="text">
+					<uni-icons class="search-icon" type="search" size="20" color="#ccc"></uni-icons>
+					<input class="search" placeholder-style="color:#999999" type="text"
+						placeholder="输入手机号、银行卡号、联系人姓名转账">
 				</view>
 				<view class="tA-choose">
-					<view class="top-choose">
-						<view class="alypay item" @click="toLoading">
-							<image src="@/static/Taccount/icon/1.png" mode="widthFix"></image>
-						</view>
-						<view class="bank item" @click="toLoading">
-							<image src="@/static/Taccount/icon/2.png" mode="widthFix"></image>
-						</view>
-						<view class="red item" @click="toLoading">
-							<image src="@/static/Taccount/icon/3.png" mode="widthFix"></image>
-						</view>
-						<view class="log item" @click="toLoading">
-							<image src="@/static/Taccount/icon/4.png" mode="widthFix"></image>
+					<view :class="{'top-choose':true,active:!moreFlag}">
+						<view class="fixed-height">
+							<view class="alypay" @click="toLoading" :key="index" v-for="(item,index) in chooseImg">
+								<image :src="item" mode="widthFix"></image>
+							</view>
 						</view>
 					</view>
-					<view class="more">
-						<uni-icons type="bottom" size="18"></uni-icons>
+					<view class="more" @click="moreFlag = !moreFlag">
+						<uni-icons :type="moreFlag?'top':'bottom'" size="18" color="#979797"></uni-icons>
 					</view>
 				</view>
 				<view class="tA-bottom">
@@ -63,7 +53,7 @@
 							<template v-for="(item,index) in leftImgs">
 								<view @click="toTransferPage(item)" class="list-item"
 									v-if="!(tabIndex == 0 && index == 0)" :key="index">
-									<image :src="item.url" mode=""></image>
+									<image :src="item.url" mode="widthFix"></image>
 									<view class="right-info">
 										<view class="text">
 											{{item.name}}
@@ -75,7 +65,11 @@
 								</view>
 							</template>
 						</view>
+
 					</view>
+				</view>
+				<view class="no-more">
+					没有更多啦~
 				</view>
 			</view>
 		</view>
@@ -87,6 +81,25 @@
 		data() {
 			return {
 				tabIndex: 0,
+				moreFlag: false,
+				chooseImg: [
+					require('@/static/Taccount/icon/1.png'),
+					require('@/static/Taccount/icon/2.png'),
+					require('@/static/Taccount/icon/3.png'),
+					require('@/static/Taccount/icon/4.png'),
+					require('@/static/Taccount/icon/5.png'),
+					require('@/static/Taccount/icon/6.png'),
+					require('@/static/Taccount/icon/7.png'),
+					require('@/static/Taccount/icon/8.png'),
+					require('@/static/Taccount/icon/9.png'),
+					require('@/static/Taccount/icon/10.png'),
+					require('@/static/Taccount/icon/11.png'),
+					require('@/static/Taccount/icon/12.png'),
+					require('@/static/Taccount/icon/13.png'),
+					require('@/static/Taccount/icon/14.png'),
+					require('@/static/Taccount/icon/15.png'),
+					require('@/static/Taccount/icon/16.png'),
+				],
 				leftImgs: [{
 						url: require('@/static/Taccount/contact/a.png'),
 						name: "张劲华(**华)",
@@ -135,41 +148,58 @@
 		background-color: #1777FF;
 	}
 
-	.tA-bg {
-		position: fixed;
-		top: -7vh;
-		left: 0;
-		width: 100vw;
+	// .tA-bg {
+	// 	position: absolute;
+	// 	top: -7vh;
+	// 	left: 0;
+	// 	width: 100vw;
 
-		image {
-			width: 100%;
+	// 	image {
+	// 		width: 100%;
 
-		}
+	// 	}
+	// }
+	.tA-container {
+		position: relative;
 	}
 
 	.tA-main {
 		position: absolute;
-		top: 0;
+		top: -20rpx;
 		left: 0;
+		padding-top: var(--status-bar-height);
+		background-image: url(../../../static/travel/bg.png);
+		background-size: 100% 480rpx;
+		background-repeat: no-repeat;
+		background-position: 0 -135rpx;
+		box-sizing: border-box;
 	}
 
 	.top-title {
-		// border-bottom: 1px solid yellow;
+		display: flex;
+		align-items: center;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100vw;
 		z-index: 999999;
 		color: #FDFDFD;
-		font-size: 32rpx;
+		font-size: 34rpx;
 		font-weight: 500;
 		letter-spacing: 6rpx;
 		padding: 30rpx;
 		padding-top: var(--status-bar-height);
 		box-sizing: border-box;
+		height: 140rpx;
 		-webkit-font-smoothing: antialiased;
 		background-color: #1777FF;
-		// border-bottom: 1px solid yellowgreen;
+
+		// border: 1px solid yellowgreen;
+
+		.txt {
+			margin-top: 14rpx;
+			padding-top: 10rpx;
+		}
 
 		.right-icon {
 			position: absolute;
@@ -181,16 +211,16 @@
 
 	.application-right {
 		position: absolute;
-		right: 4rpx;
+		right: 50rpx;
 		// top: 35rpx;
 		width: 15vw;
 
 		.more {
 			position: absolute;
-			right: 66rpx;
-			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			left: 25rpx;
+			top: 8rpx;
+			width: 43rpx;
+			height: 43rpx;
 
 			image {
 				width: 100%;
@@ -200,10 +230,10 @@
 
 		.close {
 			position: absolute;
-			right: 10rpx;
-			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			left: 94rpx;
+			top: 7rpx;
+			width: 43rpx;
+			height: 43rpx;
 
 			image {
 				width: 100%;
@@ -212,13 +242,13 @@
 		}
 
 		.bg {
-			width: 120rpx;
-			height: 50rpx;
+			width: 150rpx;
+			height: 57rpx;
 		}
 	}
 
 	.tA-main {
-		margin-top: 74rpx;
+		margin-top: 63rpx;
 		height: 100vh;
 
 		.tA-search {
@@ -230,8 +260,8 @@
 
 			.search-icon {
 				position: absolute;
-				left: 30rpx;
-				top: 8rpx;
+				left: 39rpx;
+				top: 22rpx;
 			}
 
 			.search {
@@ -239,6 +269,9 @@
 				height: 75rpx;
 				border-radius: 16rpx;
 				background-color: white;
+				padding-left: 65rpx;
+				box-sizing: border-box;
+
 			}
 		}
 	}
@@ -247,34 +280,54 @@
 		.top-choose {
 			margin: 30rpx auto;
 			margin-bottom: 0;
-			display: flex;
-			justify-content: space-around;
 			width: 95vw;
+			height: 550rpx;
 			background-color: white;
 			border-radius: 16rpx;
-			padding-bottom: 10rpx;
-			padding-top: 20rpx;
+			padding: 20rpx 30rpx 10rpx 30rpx;
+			transition: all .2s;
+			box-sizing: border-box;
+		}
+
+		.fixed-height {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			height: 550rpx;
+			box-sizing: border-box;
+		}
+
+		.active {
+			height: 155rpx;
+			overflow: hidden;
 		}
 
 		.more {
 			width: 95vw;
+			padding: 0 30rpx;
 			margin: 0 auto;
 			margin-top: -8rpx;
-			height: 60rpx;
+			height: 50rpx;
 			background-color: #fff;
 			border-bottom-left-radius: 16rpx;
 			border-bottom-right-radius: 16rpx;
 			text-align: center;
+			box-sizing: border-box;
+			// background-color: red;
 		}
 
 		image {
-			width: 140rpx;
-			height: 130rpx;
+			margin: 0 19rpx;
+			// margin-bottom: -30rpx;
+			width: 108rpx;
+			// height: 106rpx;
+			// border: 1px solid red;
 		}
 	}
 
 	.tA-bottom {
 		margin: 30rpx auto;
+		margin-bottom: 10rpx;
 		width: 95vw;
 		border-radius: 16rpx;
 		background-color: white;
@@ -283,10 +336,11 @@
 			display: flex;
 			width: 100%;
 			padding: 20rpx;
+			padding-left: 30rpx;
 			padding-bottom: 10rpx;
 			border-bottom: 2rpx solid #E5E5E5;
 			font-size: 30rpx;
-			color: #ccc;
+			color: #969696;
 			height: 100%;
 			box-sizing: border-box;
 
@@ -299,6 +353,7 @@
 			}
 
 			.active {
+				font-weight: 700;
 				color: #1777FF;
 				border-bottom: 6rpx solid #1777FF;
 			}
@@ -312,15 +367,15 @@
 	.list-item {
 		display: flex;
 		align-items: center;
-		padding-left: 10rpx;
+		padding-left: 30rpx;
 		// height: 126rpx;
 
 		// border-bottom: 1px solid #ccc;
 		.right-info {
-			height: 100%;
+			height: 70%;
 			display: flex;
 			flex: 1;
-			padding: 25rpx 0;
+			padding: 15rpx 0;
 			// line-height: 20rpx;
 			margin-left: 30rpx;
 			flex-direction: column;
@@ -329,14 +384,20 @@
 		}
 
 		.phone {
-			color: #ccc;
-			font-weight: 700;
+			color: #989898;
+			font-weight: 500;
 			margin-top: 16rpx;
 		}
 
 		image {
-			width: 100rpx;
-			height: 100rpx;
+			width: 90rpx;
+			height: 90rpx;
 		}
+	}
+
+	.no-more {
+		text-align: center;
+		color: #a3a3a3;
+		font-size: 24rpx;
 	}
 </style>
