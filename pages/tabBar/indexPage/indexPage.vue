@@ -14,6 +14,7 @@
 					</view>
 				</view>
 				<view class="text-input">
+					<uni-icons class="search" type="search" size="20" color="#ccc"></uni-icons>
 					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" @click="focus" />
 					<view class="btn" @click="search">
 						搜索
@@ -479,6 +480,7 @@
 		}
 
 		.text-input {
+			position: relative;
 			margin-top: 10rpx;
 			display: flex;
 			align-items: center;
@@ -487,6 +489,12 @@
 			overflow: hidden;
 			border-radius: 16rpx;
 			flex: 5;
+
+			.search {
+				position: absolute;
+				left: 18rpx;
+				top: 13rpx;
+			}
 
 			.btn {
 				position: absolute;
