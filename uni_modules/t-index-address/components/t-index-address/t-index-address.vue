@@ -86,12 +86,6 @@
 			};
 		},
 		watch: {
-			SelectCity(item) {
-				uni.setStorageSync('city', item)
-				uni.navigateBack({
-					delta: 1
-				})
-			},
 			activeIndex(value) {
 				this.scrollview = value;
 			},
@@ -122,6 +116,12 @@
 			onTouchStop() {
 				this.touchmove = false;
 			},
+			SelectCity(item) {
+				uni.setStorageSync('city', item)
+				uni.navigateBack({
+					delta: 1
+				})
+			}
 		},
 		mounted() {
 			this.initCityList();
