@@ -2,7 +2,7 @@
 	<div style="background-color: #F8F8F8">
 		<view class="top-header" style="padding-top: 88rpx;width: 100vw;padding-bottom:15rpx;">
 			<view class="back" style="display: flex; align-items: center;">
-				<image @click="back" style="width: 35rpx;height: 35rpx;" src="/static/image/back.png" mode=""></image>
+				<image @click="back" style="width: 35rpx;height: 35rpx;margin-right: 30rpx;" src="/static/image/back.png" mode=""></image>
 				<view class="txt">
 					人脸识别认证
 				</view>
@@ -41,7 +41,7 @@
 				</view>
 			</view>
 			<view style="margin: 0 auto; margin-left: 20px;margin-right: 20px;">
-				<button type="primary" @click="handleClick">
+				<button type="primary" style="border: none;" @click="handleClick">
 					人脸识别认证
 				</button>
 			</view>
@@ -83,7 +83,7 @@
 		padding-top: var(--status-bar-height);
 		padding-right: 20rpx;
 		padding-left: 20rpx;
-		box-sizing: border-box;
+		// box-sizing: border-box;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
@@ -94,47 +94,24 @@
 	.right-info {
 		display: flex;
 		flex-direction: row;
-
-		.left-img {
-			margin-right: 20rpx;
-
-			image {
-				width: 50rpx;
-				height: 50rpx;
-			}
-		}
-
-		.right-img {
-			position: relative;
-
-			image {
-				width: 140rpx;
-				height: 50rpx;
-			}
-		}
 	}
-
+	.left-img {
+		margin-right: 20rpx;
+	}
+	.right-img {
+			position: relative;
+		}
 	.back {
 		display: flex;
 		flex-direction: row;
 		font-size: 32rpx;
-
-		image {
-			margin-right: 30rpx;
-			width: 35rpx;
-			height: 35rpx;
-		}
-	}
-
-	/deep/ .uni-button {
-		width: 100% !important;
 	}
 
 	.text-box {
 		margin-bottom: 40rpx;
 		padding: 40rpx 0;
 		display: flex;
-		min-height: 300rpx;
+		height: 300rpx;
 		background-color: #FFFFFF;
 		justify-content: center;
 		align-items: center;
@@ -181,7 +158,6 @@
 		align-items: center;
 		font-weight: 700;
 	}
-
 	.info {
 		color: #fff !important;
 		font-size: 20rpx;

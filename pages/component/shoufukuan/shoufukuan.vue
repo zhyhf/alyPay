@@ -9,7 +9,7 @@
 			</view>
 			<uni-icons type="more" color="white" size="24"></uni-icons>
 		</view>
-		<view style="padding-top: 140rpx;">
+		<view style="padding-top: 155rpx;">
 			<image src="../../../static/image/shoufukuanInner.png" mode="widthFix"
 				style="display:block;margin:0 auto;width: 93%;"></image>
 		</view>
@@ -76,6 +76,7 @@
 
 		.txt {
 			margin: 0 auto;
+			font-size: 18px;
 		}
 	}
 
@@ -117,6 +118,10 @@
 	}
 	/deep/ .uniui-arrowright:before {
 		color: #fff;
-		margin-top: -3rpx;
+		margin-top: -8px;
 	}
+	/deep/ .uni-list-item__content-title{
+		font-size: 17px;
+	}
+
 </style>

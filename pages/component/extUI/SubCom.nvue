@@ -176,7 +176,7 @@
 </script>
   
 <style>
-    <style lang="less">page {
+	page {
         background: #0c8cf9;
     }
   
@@ -246,5 +246,4 @@
 			height:342px;
 			margin-top: -299px;
 		}
-</style>
 </style>

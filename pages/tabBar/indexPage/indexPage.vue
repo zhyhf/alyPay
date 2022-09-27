@@ -369,11 +369,11 @@
 		.add {
 			position: relative;
 			height: 100%;
-			margin-top: 16rpx;
+			margin-top: 18rpx;
 
 			image {
-				width: 50rpx;
-				height: 50rpx;
+				width: 55rpx;
+				height: 55rpx;
 			}
 
 
@@ -528,7 +528,7 @@
 	.chose-item {
 		.image {
 			margin-top: 1.2vw;
-			margin-left: 3.8vw;
+			margin-left: 4.1vw;
 			width: 14.5vw;
 			height: 14.5vw;
 		}
