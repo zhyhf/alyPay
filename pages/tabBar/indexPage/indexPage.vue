@@ -343,11 +343,11 @@
 	}
 
 	.gongneng {
-		padding-bottom: 6rpx;
-		margin-top: 130rpx;
-		padding-top: 28rpx;
+		padding-bottom: 0rpx;
+		margin-top: 80rpx;
+		padding-top: 90rpx;
 		width: 100vw;
-		height: 136rpx;
+		height: 134rpx;
 		display: flex;
 		background-color: #0C7DFF;
 		justify-content: space-around;
@@ -518,28 +518,23 @@
 		justify-content: center;
 		align-items: center;
 		padding-left: 2vw;
+		padding-right: 2vw;
+		margin-top: 14rpx;
 	}
 
 	.more-chose {
-		margin: 0 auto;
-		margin-top: 18rpx;
-		// width: 98vw;
+		// margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-
 		width: 100vw;
-		margin-right: 4.1vw;
-		// justify-content: space-between;
-		// background-color: #f7f7f7;
+		// margin-right: 2.1vw;
 	}
 
 	.chose-item {
-		margin: 2.1vw;
-		// width: 14.5vw;
-		// height: 14.5vw;
-
 		.image {
+			margin-top: 1.2vw;
+			margin-left: 3.8vw;
 			width: 14.5vw;
 			height: 14.5vw;
 		}
