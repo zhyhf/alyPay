@@ -1,13 +1,13 @@
 <template>
-	<view class="city-sel">
-		<view class="top_contanier">
-			<view class="top-header">
-				<uni-icons @click="back" type="left" color="white" size="24" class="left"></uni-icons>
-				<view class="txt">
-					南京
+	<scroll-view class="city-sel" @scroll="scroll" scroll-y :show-scrollbar="false">
+		<view class="top_contanier" :style="headerStyle">
+			<view class="top-header" :style="headerTextStyle">
+				<uni-icons @click="back" type="left" :color="color" size="24" class="left"></uni-icons>
+				<view class="txt" :style="textColor">
+					{{ title }}
 				</view>
 			</view>
-			<view class="degree">
+			<view class="degree" v-show="showData">
 				<view class="left">
 					<text class="left-degree">22°</text>
 					<image src="@/static/image/cloudy.png" class="left-weather"></image>
@@ -15,8 +15,8 @@
 				</view>
 				<view class="right" @click="jump">未来24小时预报 ></view>
 			</view>
-			<text class="hint">天气数据来自中国气象局</text>
-			<view class="future-wrapper">
+			<text class="hint" v-show="showData">天气数据来自中国气象局</text>
+			<view class="future-wrapper" v-show="showData">
 				<view class="weather-item" v-for="(item, index) in futureWeather" :key="index">
 					<text class="time">{{ item.title }}</text>
 					<image src="@/static/image/cloudy.png" class="weather"></image>
@@ -24,12 +24,12 @@
 				</view>
 			</view>
 		</view>
-		<view class="city-wrapper">
-			<view class="input-wrapper">
+		<view class="container">
+			<view class="input-wrapper" :style="inputStyle">
 				<input type="text" class="input-text" placeholder="输入城市名、拼音和首字母查询">
 				<image src="@/static/image/search-icon.png" class="search-icon"></image>
 			</view>
-			<view class="current">
+			<!-- <view class="current" :style="contentStyle">
 				<view class="current-text">
 					定位 / 最近访问
 				</view>
@@ -53,22 +53,35 @@
 						{{item}}
 					</view>
 				</view>
-			</view>
+			</view> -->
 			<view class="city-list">
-				<!-- <view class="mask" v-if="maskFlag" @touchmove="getHeight">
-			
-				</view> -->
-				<t-index-address @select="select">
+				<t-index-address @select="select" :scrollY="scrollY">
 				</t-index-address>
 			</view>
 		</view>
-	</view>
+	</scroll-view>
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
+				scrollTop: 0,
+				scrollY: false,
+				inputStyle: {
+					position: 'relative'
+				},
+				title: '南京',
+				contentStyle: {},
+				headerStyle: {
+					backgroundImage: `url(${require('@/static/weather.gif')})`
+				},
+				headerTextStyle: {},
+				textColor: {
+					color: '#fff'
+				},
+				color: 'white',
+				showData: true,
 				maskFlag: true,
 				hotArr: [
 					'杭州',
@@ -117,7 +130,58 @@
 				this.$set(this.futureWeather[i], 'title', weeks[day])
 			}
 		},
+		watch: {
+			scrollTop(val) {
+				if (val > 160) {
+					this.scrollY = true
+					this.title = '国内'
+					this.inputStyle = {
+						position: 'fixed',
+						top:'178rpx',
+						zIndex: 9999
+					}
+					this.contentStyle = {
+						marginTop: '80rpx'
+					}
+					this.headerStyle = {
+						backgroundColor: '#fff',
+						color: '#fff',
+						height: '180rpx',
+						zIndex: 999
+					}
+					this.showData = false
+					this.headerTextStyle = {
+						zIndex: '999'
+					}
+					this.textColor = {
+						color: '#333'
+					}
+					this.color = '#333'
+				} else {
+					this.scrollY = false
+					this.title = '南京'
+					this.inputStyle = {
+						position: 'relative',
+					}
+					this.contentStyle = {}
+					this.headerStyle = {
+						backgroundImage: `url(${require('@/static/weather.gif')})`,
+						filter: `blur(${ 0.01875 * val }px)`
+					}
+					this.showData = true
+					this.headerTextStyle = {}
+					this.textColor = {
+						color: '#fff'
+					}
+					this.color = 'white'
+				}
+			}
+		},
 		methods: {
+			scroll(e) {
+				// console.log(e)
+				this.scrollTop = e.target.scrollTop
+			},
 			jump() {
 				const title = '未来24小时预报'
 				uni.navigateTo({
@@ -160,9 +224,13 @@
 
 <style lang="scss" scoped>
 	.top_contanier{
-		background-image:url(@/static/weather.gif) ;
-		height: 380rpx;
+		// background-image:url(@/static/weather.gif) ;
 		background-size: 100% 100%;
+		height: 470rpx;
+		width: 100vw;
+		position: fixed;
+		left: 0;
+		top: 0;
 	}
 	.top-header {
 		padding-top: var(--status-bar-height);
@@ -171,6 +239,12 @@
 		font-size: 32rpx;
 		height: 80rpx;
 		color: white;
+		position: relative;
+		.left {
+			position: absolute;
+			left: 20rpx;
+			top: calc(var(--status-bar-height) + 16rpx);
+		}
 		.txt {
 			margin: 0 auto;
 		}
@@ -243,18 +317,22 @@
 		}
 	}
 	
-	.city-wrapper {
+	.container {
+		width: 100%;
+		z-index: 99;
 		background: #fff;
-		border-radius: 20rpx;
-		margin-top: -16rpx;
+		border-radius: 30rpx;
 		padding-top: 20rpx;
+		position: absolute;
+		top: 450rpx; // 190
+		left: 0;
 		.input-wrapper {
 			width: 100%;
 			margin-bottom: 20rpx;
 			position: relative;
 			.input-text {
-				width: calc(94% - 70rpx);
-				margin-left: 3%;
+				width: calc(96% - 70rpx);
+				margin-left: 2%;
 				border-radius: 16rpx;
 				height: 60rpx;
 				background-color: #f6f6f6;
@@ -272,23 +350,14 @@
 	
 	.city-list {
 		position: relative;
-	}
-
-	.mask {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		// background-color: red;
-		z-index: 9999999;
-		background-color: transparent;
+		
 	}
 
 	.city-sel {
 		width: 100vw;
-		// padding: 20rpx;
+		height: 100vh;
 		box-sizing: border-box;
+		position: relative;
 	}
 
 	.hot-city {

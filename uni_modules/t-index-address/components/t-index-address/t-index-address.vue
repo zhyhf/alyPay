@@ -1,7 +1,33 @@
 <template>
 	<view class="t-index-address">
-		<scroll-view class="t-index-address__scroll-view" :scroll-into-view="scrollview" :scroll-y="true"
+		<scroll-view class="t-index-address__scroll-view" :scroll-into-view="scrollview" :scroll-y="scrollY"
 			:enable-flex="true">
+			<view class="current" :style="contentStyle">
+				<view class="current-text">
+					定位 / 最近访问
+				</view>
+				<view class="current-item">
+					<view style="display: flex;align-items: center;justify-content: center;" class="item"
+						@click="SelectCity(item)" v-for="(item,index) in currentArr" :key="index">
+						<text v-if="index == 0 ">
+							<image style="width: 25rpx; height: 30rpx;margin: 18rpx 10rpx 0 0;" src="@/static/icons/bp.png"
+								mode=""></image>
+						</text>
+						{{item}}
+					</view>
+				</view>
+			</view>
+			<view class="hot-city current">
+				<view class="current-text">
+					热门城市
+				</view>
+				<view class="current-item">
+					<view class="item" @click="SelectCity(item)" v-for="(item,index) in hotArr" :key="index">
+						{{item}}
+					</view>
+				</view>
+			</view>
+
 			<view :id="group.initial" v-for="group in cityList" :key="group.initial">
 				<view class="t-index-address__anchor">
 					<text>{{ group.initial }}</text>
@@ -14,7 +40,7 @@
 				</view>
 			</view>
 		</scroll-view>
-		<view class="t-index-address__sidebar">
+		<view :style="sideBarStyle" class="t-index-address__sidebar">
 			<view class="t-index-address__index" v-for="group in cityList" :key="group.initial"
 				@touchstart.stop.prevent="onTouchMove(group.initial)" @touchend.stop.prevent="onTouchStop"
 				@touchcancel.stop.prevent="onTouchStop">
@@ -37,12 +63,47 @@
 				cityList: [],
 				activeIndex: "A",
 				touchmove: false,
+				hotArr: [
+					'杭州',
+					"北京",
+					"上海",
+					"广州",
+					"深圳",
+					"成都",
+					"重庆",
+					"天津"
+				],
+				currentArr: [
+					'南京',
+					"杭州",
+					"滁州"
+				],
+				sideBarStyle: {
+					opacity: 0,
+					transition: 'all 0.3s'
+				},
+				contentStyle: {}
 			};
 		},
 		watch: {
 			activeIndex(value) {
 				this.scrollview = value;
 			},
+			scrollY(value) {
+				this.sideBarStyle = {
+					opacity: value ? 1 : 0,
+					transition: 'all 0.6s'
+				}
+				this.contentStyle = {
+					marginTop: value ? '80rpx' : 0
+				}
+			}
+		},
+		props: {
+			scrollY: {
+				type: Boolean,
+				default: false
+			}
 		},
 		methods: {
 			initCityList() {
@@ -125,6 +186,42 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+	}
+	.hot-city {
+		padding: 0 20rpx;
+
+		.current-item {
+			flex-wrap: wrap !important;
+			justify-content: space-between;
+			padding-right: 30rpx;
+		}
+	}
+
+	.current {
+		padding-left: 22rpx;
+	     // margin-top: 26rpx;
+		.current-text {
+			color: #ccc;
+			font-weight: 500;
+		}
+
+		.current-item {
+			margin-top: 30rpx;
+			display: flex;
+			padding-bottom: 4rpx;
+
+			.item {
+				width: 18vw;
+				margin-bottom: 30rpx;
+				background-color: white;
+				height: 60rpx;
+				line-height: 60rpx;
+				text-align: center;
+				margin-right: 20rpx;
+				border-radius: 10rpx;
+				box-shadow: 0 0 0 4rpx rgba(0, 0, 0, .1);
+			}
 		}
 	}
 </style>
