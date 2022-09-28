@@ -63,8 +63,8 @@
 			}
 			.active {
 				color: #393939;
-				font-weight: 500;
-				border-bottom: 4rpx solid #213CC9;
+				font-weight: 600;
+				border-bottom: 6rpx solid #147EF6;
 			}
 			.search {
 				position: absolute;
@@ -75,7 +75,7 @@
 			}
 			.person {
 				position: absolute;
-				right: 24rpx;
+				right: 26rpx;
 				top: 26rpx;
 				width: 48rpx;
 				height: 48rpx;

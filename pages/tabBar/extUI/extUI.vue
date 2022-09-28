@@ -5,7 +5,7 @@
 			<view class="detail">
 				<text class="text">消息</text>
 				<image src="@/static/image/broom.png" class="broom"></image>
-			</view>	
+			</view>
 			<image src="@/static/image/address-book.png" class="img book"></image>
 			<image src="@/static/image/add.png" class="img"></image>
 		</view>
