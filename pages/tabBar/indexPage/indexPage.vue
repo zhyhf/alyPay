@@ -354,8 +354,8 @@
 		justify-content: space-around;
 
 		image {
-			width: 95rpx;
-			height: 105rpx;
+			width: 90rpx;
+			height: 100rpx;
 		}
 	}
 
@@ -376,8 +376,8 @@
 			height: 100%;
 			margin-top: 18rpx;
 			image {
-				width: 47rpx;
-				height: 47rpx;
+				width: 45rpx;
+				height: 45rpx;
 			}
 
 			.sys {
@@ -463,8 +463,8 @@
 				margin-top: -2rpx;
 
 				image {
-					width: 20rpx;
-					height: 18rpx;
+					width: 18rpx;
+					height: 16rpx;
 				}
 			}
 		}
@@ -525,7 +525,7 @@
 		align-items: center;
 		padding-left: 2vw;
 		padding-right: 2vw;
-		margin-top: 14rpx;
+		margin-top: 10rpx;
 	}
 
 	.more-chose {
