@@ -13,6 +13,7 @@
 			<image src="../../../static/image/life-person.png" class="person"></image>
 		</view>
 		<image src="@/static/loading2.gif" class="loading" mode="widthFix"></image>
+		<my-tab-bar class="tabBar"></my-tab-bar>
 	</view>
 </template>
 
@@ -38,6 +39,11 @@
 		background-color: #FBFBFB;
 		height: 100vh;
 		position: relative;
+		.tabBar{
+			height: 110rpx;
+			top: calc(100vh - var(--status-bar-height) - 183rpx);
+			left: 0;
+		}
 		.status_bar {
 			width: 100%;
 			height: var(--status-bar-height);

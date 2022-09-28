@@ -1593,10 +1593,11 @@
 
 	},
 	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#007AFF",
-		"borderStyle": "black",
-		"backgroundColor": "#F8F8F8",
+		"custom": true,
+		// "color": "#7A7E83",
+		// "selectedColor": "#007AFF",
+		// "borderStyle": "black",
+		// "backgroundColor": "#F8F8F8",
 		"list": [{
 				"pagePath": "pages/tabBar/indexPage/indexPage",
 				"iconPath": "static/image/shouye.png",

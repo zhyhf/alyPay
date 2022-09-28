@@ -12,6 +12,7 @@
 		<image src="@/static/image/f1.png" mode="widthFix" style="width: 100%;" class="image"></image>
 		<image src="@/static/image/f2.png" mode="widthFix" style="width: 100%;"></image>
 		<image src="@/static/image/f3.png"mode="widthFix" style="width: 100%;"></image>
+		<my-tab-bar></my-tab-bar>
 	</view>
 </template>
 
@@ -35,6 +36,7 @@
 <style lang="scss" scoped>
 	.container {
 		width: 100vw;
+		position: relative;
 		.status_bar {
 			width: 100%;
 			height: var(--status-bar-height);

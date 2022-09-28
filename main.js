@@ -3,6 +3,8 @@ import store from './store'
 
 // #ifndef VUE3
 import Vue from 'vue'
+import MyTabBar from '@/components/myTabBar/myTabBar.vue'
+Vue.component('myTabBar', MyTabBar)
 Vue.config.productionTip = false
 Vue.prototype.$store = store
 Vue.prototype.$adpid = "1111111111"

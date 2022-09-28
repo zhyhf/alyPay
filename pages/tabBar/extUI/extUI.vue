@@ -15,6 +15,7 @@
 		</view>
 		<image src="@/static/image/message1.png" mode="widthFix" class="message1"></image>
 		<image src="@/static/image/message2.png" mode="widthFix" class="message2"></image>
+		<my-tab-bar></my-tab-bar>
 	</view>
 </template>
 <script>
@@ -47,6 +48,7 @@
 		left: 40rpx;
 		top: 38rpx;
 	}
+	position: relative;
 	.status_bar {
 		width: 100%;
 		height: var(--status-bar-height);

@@ -9,6 +9,7 @@
 
 	export default {
 		onLaunch: function() {
+			uni.hideTabBar()
 			// #ifdef H5
 			console.log(
 				`%c hello uniapp %c v${version} `,

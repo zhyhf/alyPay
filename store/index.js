@@ -23,8 +23,12 @@ const store = createStore({
 		activeOpen: '',
 		menu: [],
 		univerifyErrorMsg: '',
+		tabBarActiveIndex: 0,
 	},
 	mutations: {
+		changeTabBarActiveIndex(state, index) {
+			state.tabBarActiveIndex = index
+		},
 		login(state, provider) {
 			state.hasLogin = true;
 			state.loginProvider = provider;
