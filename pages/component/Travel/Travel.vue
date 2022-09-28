@@ -57,9 +57,10 @@
 				</image>
 			</view>
 			<!-- 机票 -->
-			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == 'ticket'">
-				<image style="width: 100vw;" src="../../../static/travel/ti.png" mode="widthFix">
-				</image>
+			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'ticket'">
+				<!-- <image style="width: 100vw;" src="../../../static/travel/ti.png" mode="widthFix">
+				</image> -->
+				<Ticket></Ticket>
 			</view>
 			<!-- 骑行 -->
 			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'cycling'">
@@ -71,9 +72,11 @@
 
 <script>
 	import Cycle from './components/Cycle.vue'
+	import Ticket from './components/ticket.vue'
 	export default {
 		components: {
-			Cycle
+			Cycle,
+			Ticket
 		},
 		data() {
 			return {
