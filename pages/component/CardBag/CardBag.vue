@@ -32,7 +32,7 @@
 						<image src="@/static/cardBag/wh.png" style="height: 20vh;" mode=""></image>
 					</view>
 				</view>
-				<view class="b-item " style="background-color: transparent;" v-if="currentIndex == 2">
+				<view class="b-item" style="background-color: transparent;" v-if="currentIndex == 2">
 					<view class="can-use">
 						<image src="@/static/cardBag/keyong.png" mode=""></image>
 					</view>
@@ -191,7 +191,7 @@
 
 		.can-use {
 			height: 32vh;
-			margin-top: 10rpx;
+			// margin-top: 10rpx;
 
 			image {
 				height: 100%;
@@ -217,7 +217,7 @@
 		font-weight: 400;
 		// margin-top: 220rpx;
 		width: 95vw;
-		padding: 24rpx;
+		padding: 26rpx;
 		box-sizing: border-box;
 		font-size: 32rpx;
 		box-shadow: 2rpx 2rpx 1rpx 2rpx rgba(0, 0, 0, .1);
