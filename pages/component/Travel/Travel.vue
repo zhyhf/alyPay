@@ -39,12 +39,12 @@
 			</view>
 			<!-- 公交 -->
 			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == 'bus'">
-				<image style="width: 100vw;" src="../../../static/travel/bu.png" mode="widthFix">
+				<image style="width: 95vw;margin-left: 2.5vw;" src="../../../static/travel/bu.png" mode="widthFix">
 				</image>
 			</view>
 			<!-- 地铁 -->
 			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == 'subway'">
-				<image style="width: 100vw;" src="../../../static/travel/su.png" mode="widthFix">
+				<image style="width: 95vw;margin-left: 2.5vw;" src="../../../static/travel/su.png" mode="widthFix">
 				</image>
 			</view>
 			<!-- 12306 -->
@@ -142,7 +142,7 @@
 		box-sizing: border-box;
 		padding: 0 20rpx;
 		padding-top: var(--status-bar-height);
-		background-color: #1777FF;
+		background-color: #0C7DFF;
 
 		.icon {
 			display: flex;
@@ -150,7 +150,13 @@
 
 			.txt {
 				margin-left: 20rpx;
+				font-weight: 500;
+				font-size: 38rpx;
 			}
+		}
+		.right-text {
+			font-size: 28rpx;
+			font-weight: normal;
 		}
 	}
 
@@ -217,15 +223,17 @@
 		justify-content: space-between;
 		position: fixed;
 		// height: 20vh;
-		width: 100vw;
-		background-color: #1777FF;
+		width: calc(100vw - 40rpx);
+		padding-top: 20rpx;
+		margin: 0 20rpx;
+		background-color: #0C7DFF;
 
 		.travel-item {
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
 			align-items: center;
-			background-color: #1777FF;
+			background-color: #0C7DFF;
 		}
 
 		.active-icon {
@@ -245,11 +253,11 @@
 	}
 
 	.travel-map {
-		margin-top: 30rpx;
+		margin-top: 40rpx;
 		width: $pageWidth;
 		border-radius: 20rpx;
 		overflow: hidden;
-		padding-top: 180rpx;
+		padding-top: 270rpx;
 
 		.map {
 			width: 100%;

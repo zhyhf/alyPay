@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="position: relative;">
 		<view class="top-header">
 			<view class="left-info">
 				我的
@@ -41,6 +41,7 @@
 				</uni-list>
 			</view>
 		</view>
+		<my-tab-bar></my-tab-bar>
 	</view>
 </template>
 

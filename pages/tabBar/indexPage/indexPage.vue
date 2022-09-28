@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="position: relative;">
 		<view class="uni-center">
 			<view class="top-header">
 				<view class="left-text" @click="toCity">
@@ -163,10 +163,18 @@
 				</view>
 			</view>
 		</view>
+		<my-tab-bar></my-tab-bar>
 	</view>
 </template>
 <script>
+	// import MyTabBar from '@/components/myTabBar/myTabBar.vue'
 	export default {
+		// components: {
+		// 	MyTabBar
+		// },
+		onLoad() {
+			uni.hideTabBar()
+		},
 		onShow() {
 			this.city = uni.getStorageSync('city') || this.city
 			this.showList = false
