@@ -62,17 +62,17 @@
 			}
 			.search {
 				position: absolute;
-				right: 100rpx;
+				right: 138rpx;
 				top: 28rpx;
-				width: 40rpx;
-				height: 40rpx;
+				width: 43rpx;
+				height: 43rpx;
 			}
 			.person {
 				position: absolute;
 				right: 24rpx;
 				top: 26rpx;
-				width: 43rpx;
-				height: 43rpx;
+				width: 48rpx;
+				height: 48rpx;
 			}
 		}
 		.loading {

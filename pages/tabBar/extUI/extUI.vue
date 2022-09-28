@@ -10,7 +10,8 @@
 			<image src="@/static/image/add.png" class="img"></image>
 		</view>
 		<view class="heaeder-input">
-			<input type="text" class="input">
+			<uni-icons class="search" type="search" size="23" color="#ccc"></uni-icons>
+			<input type="text" class="input" placeholder="搜索你的好友、最近转账联系人等">
 		</view>
 		<image src="@/static/image/message1.png" mode="widthFix" class="message1"></image>
 		<image src="@/static/image/message2.png" mode="widthFix" class="message2"></image>
@@ -36,6 +37,16 @@
 <style lang="scss" scoped>
 .container {
 	width: 100vw;
+	/deep/ .uni-input-placeholder{
+		color:#9A9A9A;
+		padding-left: 84rpx;
+		font-size: 30rpx;
+	}
+	.search {
+		position: absolute;
+		left: 40rpx;
+		top: 38rpx;
+	}
 	.status_bar {
 		width: 100%;
 		height: var(--status-bar-height);
@@ -55,52 +66,54 @@
 		left: 0;
 		background-color:  #3974f6;
 		padding-left: 3vw;
-		padding-bottom: 20rpx;
+		padding-bottom: 26rpx;
+		padding-top: 20rpx;
 		z-index: 99;
 		.detail {
 			display: flex;
+			margin-top: 5rpx;
 			.text {
-				font-size: 36rpx;
+				font-size: 38rpx;
 				color: #fff;
 				font-weight: 500;
 			}
-			.broom {
-				width: 36rpx;
-				height: 36rpx;
+			.broom{
+				width: 46rpx;
+				height: 46rpx;
 				margin-left: 18rpx;
-				margin-top: 8rpx;
+				margin-top: 9rpx;
 			}
 		}
 		.img {
 			position: absolute;
-			width: 40rpx;
-			height: 40rpx;
+			width: 47rpx;
+			height: 47rpx;
 			right: 45rpx;
 		}
 		.book {
-			right:110rpx;
+			right:125rpx;
 		}
 	}
 	.heaeder-input {
 		width: 100vw;
 		background-color: #3974f6;
-		padding: 20rpx 0;
-		margin-top: -2rpx;
+		padding: 30rpx 0 26rpx 0;
+		margin-top: 10rpx;
 		position: fixed;
-		top: calc(70rpx + var(--status-bar-height));
+		top: calc(84rpx + var(--status-bar-height));
 		left: 0; 
 		z-index: 99;
 		.input {
 			width: 95vw;
 			height: 60rpx;
 			margin-left: 2.5vw;
-			border-radius: 20rpx;
+			border-radius: 15rpx;
 			background-color: #fbfbfb;
 		}
 	}
 	.message1 {
 		width: 100%;
-		margin-top: calc(160rpx + var(--status-bar-height));;
+		margin-top: calc(196rpx + var(--status-bar-height));;
 	}
 	.message2 {
 		width: 100%;
