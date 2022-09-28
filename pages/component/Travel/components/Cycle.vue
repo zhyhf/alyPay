@@ -46,11 +46,15 @@
 			changeTab(tab) {
 				if (tab == 1) {
 					this.tabStyle = {
-						left: 0
+						left: 0,
+						borderTopLeftRadius: '20rpx',
+						borderTopRightRadius: 0
 					}
 				} else {
 					this.tabStyle = {
-						left: "50%"
+						left: "50%",
+						borderTopLeftRadius: 0,
+						borderTopRightRadius: '20rpx'
 					}
 				}
 			}
@@ -64,17 +68,22 @@
 	.map-main {
 		padding-bottom: 20rpx;
 		background-color: #fff;
+		border-top-left-radius: 20rpx;
+		border-top-right-radius: 20rpx;
 	}
 
 	.top-tab {
 		position: relative;
 		width: $pageWidth;
 
-		background-color: rgba(0, 0, 0, .1);
+		background-color: #F6F6F6;
 		height: 80rpx;
 		line-height: 80rpx;
-		font-weight: 700;
+		font-weight: normal;
 		font-size: 30rpx;
+		border-top-left-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+		color: #000000;
 
 		.cur-choose {
 			position: absolute;
@@ -84,6 +93,8 @@
 			width: 50%;
 			background-color: #fff;
 			transition: all .3s;
+			font-weight: 500;
+			border-top-left-radius: 20rpx;
 		}
 
 		.choose-box {
@@ -121,9 +132,9 @@
 	}
 
 	.saoma {
-		margin-top: 20rpx;
+		margin-top: 30rpx;
 		width: 95%;
-		margin-bottom: 40rpx;
+		margin-bottom: 30rpx;
 		background-color: #0C7DFF;
 		color: white;
 	}
