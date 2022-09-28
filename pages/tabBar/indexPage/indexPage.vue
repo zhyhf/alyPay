@@ -138,8 +138,13 @@
 					</swiper-item>
 				</swiper>
 			</view>
-			<image src="@/static/image/profit.gif" mode="widthFix" style="width: 100%; margin: 20rpx 0;"
-				@click="jumpToLoading"></image>
+			<view class="b-guanggao">
+				<image src="@/static/image/consume-title.png" mode="widthFix" style="width: 60%;"></image>
+				<view class="consume-box">
+					<image src="@/static/image/consume1.gif" mode="widthFix" class="consume-item"></image>
+					<image src="@/static/image/consume2.gif" mode="widthFix" class="consume-item"></image>
+				</view>
+			</view>
 			<view class="b-guanggao" @click.stop="jumpToLoading">
 				<image src="../../../static/image/guanggao.png" mode="widthFix"></image>
 			</view>
@@ -340,6 +345,15 @@
 
 		image {
 			width: 100%;
+		}
+	}
+	
+	.consume-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.consume-item {
+			width: 48.5%;
 		}
 	}
 
