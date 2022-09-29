@@ -9,7 +9,7 @@
 							<image src="../../../static/image/down.png" mode=""></image>
 						</view>
 					</view>
-					<view class="b-text">+
+					<view class="b-text">
 						{{weather}} {{wendu}}℃
 					</view>
 				</view>
