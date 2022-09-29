@@ -1,16 +1,10 @@
 <template>
 	<view class="wrapper">
 		<view class="status_bar"></view>
-		<view class="header" v-if="showHeader">
+		<view class="header">
 			<view class="left">
 				<uni-icons type="left" color="black" size="24" @click="back"></uni-icons>
-			<!-- 	<image src="@/static/image/back.png" class="back" @click="back"></image> -->
 				<text class="text">{{ title }}</text>
-			</view>
-			<view class="right-icon" v-if="showDefaultIcon">
-				<view class="application-right">
-					<image class="bg" src="@/static/government/p2.png" mode=""></image>
-				</view>
 			</view>
 		</view>
 		<image :src="loadingSrc" class="loading" mode="widthFix"></image>
@@ -21,33 +15,21 @@
 	export default {
 		data() {
 			return {
-				loading: [
-					require('@/static/loading.gif'),
-					require('@/static/loading2.gif'),
-					require('@/static/loading3.gif'),
-					require('@/static/loading4.gif')
-				],
 				loadingSrc: require('@/static/loading.gif'),
-				title: '加载中 ...',
-				showHeader: false,
-				showDefaultIcon: true,
+				title: '消息盒子',
 			}
+		},
+		mounted(){
+			setTimeout(()=>{
+				uni.navigateTo({
+					url: "/pages/component/indexPage-relative/latestMessage/latestMessage"
+				})
+			},20)
 		},
 		methods: {
 			back() {
 				uni.navigateBack()
 			}
-		},
-		onLoad(props) {
-			props.type && (this.loadingSrc = this.loading[props.type])
-			props.showDefaultIcon && (this.showDefaultIcon = this.loading(props.showDefaultIcon))
-			if (props.title && props.title.length > 0) {
-				this.title = props.title
-				this.showHeader = true
-			}
-			uni.setNavigationBarTitle({
-				title: this.title
-			})
 		}
 	}
 </script>
@@ -105,14 +87,6 @@
 				}
 			}
 			
-			// .home {
-			// 	width: 44rpx;
-			// 	height: 44rpx;
-			// 	position: absolute;
-			// 	top: 52rpx;
-			// 	left: 38rpx;
-			// }
-		
 			.right-icon {
 				position: absolute;
 				top: 15rpx;

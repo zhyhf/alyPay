@@ -489,6 +489,14 @@
 			}
 
 		}, {
+			"path": "pages/component/indexPage-relative/latestMessage/loading",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
 			"path": "pages/component/indexPage-relative/investCenter/investCenter",
 			"style": {
 				"navigationBarTitleText": "充值中心",

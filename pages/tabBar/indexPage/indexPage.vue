@@ -302,12 +302,7 @@
 			},
 			toMessageBox() {
 				uni.navigateTo({
-					url: `/pages/component/loading/loading?type=0&title=消息盒子&showDefaultIcon=false`
-				})
-				setTimeout(()=>{
-					uni.navigateTo({
-						url: '/pages/component/indexPage-relative/latestMessage/latestMessage'
-					})
+					url: '/pages/component/indexPage-relative/latestMessage/loading'
 				})
 			},
 			toPandemicPage() {
