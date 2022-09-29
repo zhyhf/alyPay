@@ -63,7 +63,7 @@
 </script>
 
 <style lang="scss" scoped>
-	$pageWidth:92vw;
+	$pageWidth:94vw;
 
 	.map-main {
 		padding-bottom: 20rpx;
