@@ -3,10 +3,11 @@
 		<view class="status_bar"></view>
 		<view class="header" v-if="showHeader">
 			<view class="left">
-				<image src="@/static/image/back.png" class="back" @click="back"></image>
+				<uni-icons type="left" color="black" size="24" @click="back"></uni-icons>
+			<!-- 	<image src="@/static/image/back.png" class="back" @click="back"></image> -->
 				<text class="text">{{ title }}</text>
 			</view>
-			<view class="right-icon">
+			<view class="right-icon" v-if="showDefaultIcon">
 				<view class="application-right">
 					<image class="bg" src="@/static/government/p2.png" mode=""></image>
 				</view>
@@ -28,7 +29,7 @@
 				],
 				loadingSrc: require('@/static/loading.gif'),
 				title: '加载中 ...',
-				showHeader: false
+				showDefaultIcon: true,
 			}
 		},
 		methods: {
@@ -38,6 +39,7 @@
 		},
 		onLoad(props) {
 			props.type && (this.loadingSrc = this.loading[props.type])
+			props.showDefaultIcon && (this.showDefaultIcon = this.loading(props.showDefaultIcon))
 			if (props.title && props.title.length > 0) {
 				this.title = props.title
 				this.showHeader = true
@@ -54,7 +56,12 @@
 		width: 100vw;
 		height: 100vh;
 		position: relative;
+		margin-top: 6rpx;
 		background-color: #fbfbfb;
+		.right-info {
+			display: flex;
+			flex-direction: row;
+		}
 		.status_bar {
 			height: var(--status-bar-height);
 			width: 100%;
@@ -87,8 +94,8 @@
 				top: 50rpx;
 				left: 38rpx;
 				.back {
-					width: 36rpx;
-					height: 36rpx;
+					width: 35rpx;
+					height: 35rpx;
 					margin-right: 10rpx;
 				}
 				.text {

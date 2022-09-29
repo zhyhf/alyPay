@@ -2,7 +2,7 @@
 	<view class="wrapper">
 		<view class="top-header">
 			<view class="left-info">
-				<uni-icons type="left" color="black" size="26" @click="back"></uni-icons>
+				<uni-icons type="left" color="black" size="24" @click="back"></uni-icons>
 				<view class="txt">
 					消息盒子
 				</view>
@@ -12,10 +12,10 @@
 			</view>
 		</view>
 		<view class="" style="margin-top: 130rpx;">
-
-			<image class="payment-assistant" src="@/static/image/payment-assistant.png"></image>
-			<image class="payment" src="@/static/image/payment.png"></image>
-			<image class="sport" src="@/static/image/sport.png"></image>
+			<image class="payment-assistant" src="@/static/image/payment-assistant.png" @click="handleLoad"></image>
+			<image class="sport" src="@/static/image/sport.png" @click="handleLoad"></image>
+			<image class="payment" src="@/static/image/payment.png" @click="handleLoad"></image>
+			<image class="payment" src="@/static/image/shouhu.png" @click="handleLoad"></image>
 		</view>
 	</view>
 </template>
@@ -32,6 +32,12 @@
 				uni.navigateBack({
 					delta: 1
 				})
+			},
+			// 跳转loading页面
+			handleLoad(){
+				uni.navigateTo({
+					url: '/pages/component/loading/loading'
+				})
 			}
 		}
 	}
@@ -45,7 +51,7 @@
 		padding-top: var(--status-bar-height);
 		padding-bottom: 20rpx;
 		z-index: 9999;
-		background-color: white;
+		background-color: #fff;
 		width: 100vw;
 		display: flex;
 		flex-wrap: wrap;
@@ -56,7 +62,7 @@
 
 		.left-info {
 			display: flex;
-			font-size: 34rpx;
+			font-size: 36rpx;
 			align-items: center;
 
 			.txt {
@@ -72,18 +78,18 @@
 
 	.wrapper {
 		width: 94vw;
-		padding: 20rpx 3vw;
-		background-color: #F5F5F5;
+		padding: 33rpx 3vw;
+		// background-color: #F5F5F5;
 
 		.payment-assistant {
 			width: 100%;
-			height: 762rpx;
+			height: 420rpx;
 			margin-bottom: 20rpx;
 		}
 
 		.payment {
 			width: 100%;
-			height: 450rpx;
+			height: 364rpx;
 			margin-bottom: 20rpx;
 		}
 

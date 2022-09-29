@@ -14,8 +14,8 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<uni-icons class="search" type="search" size="20" color="#ccc"></uni-icons>
-					<input @input="changValue" style="border: 1px solid #ccc;padding-right: 40rpx;" @click="focus" />
+					<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
+					<input @input="changValue" style="padding-right: 40rpx;" @click="focus" />
 					<view class="btn" @click="search">
 						搜索
 					</view>
@@ -129,7 +129,7 @@
 				<image src="../../../static/image/cMsg.png" mode="widthFix" @click="toMessageBox"></image>
 			</view>
 			<view class="b-guanggao" @click.stop="jumpToLoading">
-				<swiper style="width: 100%;height:200rpx" circular :autoplay="true" :interval="4000">
+				<swiper style="width: 100%;height:180rpx" circular :autoplay="true" :interval="4000">
 					<swiper-item style="width: 100%;">
 						<image src="@/static/info-card.gif" style="width: 100%;" mode="widthFix"></image>
 					</swiper-item>
@@ -302,7 +302,12 @@
 			},
 			toMessageBox() {
 				uni.navigateTo({
-					url: '/pages/component/indexPage-relative/latestMessage/latestMessage'
+					url: `/pages/component/loading/loading?type=0&title=消息盒子&showDefaultIcon=false`
+				})
+				setTimeout(()=>{
+					uni.navigateTo({
+						url: '/pages/component/indexPage-relative/latestMessage/latestMessage'
+					})
 				})
 			},
 			toPandemicPage() {
@@ -382,7 +387,7 @@
 	}
 
 	.top-header {
-		width: 100vw;
+		width: 102vw;
 		padding-top: var(--status-bar-height);
 		padding-bottom: 10rpx;
 		display: flex;
@@ -391,7 +396,7 @@
 		z-index: 99;
 		position: fixed;
 		top: 0rpx;
-		left: 0;
+		left: -12rpx;
 
 		.add {
 			position: relative;
@@ -468,9 +473,9 @@
 			width: 24vw;
 			margin-top: 3rpx;
 			// justify-content: flex-end;
-			padding-left: 36rpx;
-			padding-right: 35rpx;
-			font-size: 32rpx;
+			padding-left: 35rpx;
+			padding-right: 33rpx;
+			font-size: 34rpx;
 			letter-spacing: 12rpx;
 
 			.city {
@@ -505,7 +510,7 @@
 			position: relative;
 			height: 65rpx;
 			overflow: hidden;
-			border-radius: 16rpx;
+			border-radius: 12rpx;
 			flex: 5;
 
 			.search {
