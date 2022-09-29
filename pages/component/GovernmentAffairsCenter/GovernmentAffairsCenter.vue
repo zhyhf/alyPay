@@ -56,7 +56,7 @@
 
 		<view class="content">
 			<view class="slider-top" style="position: relative;">
-				<swiper :current="index" :disable-touch="false" style="height: 20vh;margin-top: 5rpx;" circular
+				<swiper :current="index" :disable-touch="false" style="height: 18vh;margin-top: 4rpx;" circular
 					:indicator-dots="false" :autoplay="true" :interval="15000">
 					<swiper-item style="width: 100%;height: 100%;" v-for="(item,index) in topSliderList" :key="index"
 						@click="jump">
@@ -243,8 +243,8 @@
 		top: 35rpx;
 
 		image {
-			width: 50rpx;
-			height: 50rpx;
+			width: 60rpx;
+			height: 60rpx;
 		}
 	}
 
@@ -256,10 +256,10 @@
 
 		.more {
 			position: absolute;
-			right: 66rpx;
+			right: 62rpx;
 			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			width: 40rpx;
+			height: 40rpx;
 
 			image {
 				width: 100%;
@@ -270,7 +270,7 @@
 		.close {
 			position: absolute;
 			right: 10rpx;
-			top: 5rpx;
+			top: 3rpx;
 			width: 30rpx;
 			height: 30rpx;
 
@@ -281,8 +281,8 @@
 		}
 
 		.bg {
-			width: 120rpx;
-			height: 50rpx;
+			width: 130rpx;
+			height: 52rpx;
 		}
 	}
 
@@ -293,11 +293,12 @@
 		width: 100vw;
 		z-index: 999999;
 		color: #FDFDFD;
-		font-size: 32rpx;
+		font-size: 36rpx;
 		font-weight: 500;
 		letter-spacing: 6rpx;
-		padding: 30rpx;
-		padding-top: var(--status-bar-height);
+		padding-left: 20rpx;
+		padding-right: 20rpx;
+		padding-top: 60rpx;
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
 		background-color: #D81706;
@@ -306,7 +307,7 @@
 			position: absolute;
 			top: 30rpx;
 			right: 10rpx;
-			width: 24vw;
+			width: 26vw;
 		}
 	}
 
@@ -314,7 +315,7 @@
 		position: relative;
 		width: 102%;
 		margin-left: -2rpx;
-		height: 488rpx;
+		height: 480rpx;
 		margin-top: -2rpx;
 		// background-color: red;
 		color: #FDFDFD;
@@ -374,7 +375,7 @@
 	}
 
 	.userPosInfo {
-		margin-top: 40rpx;
+		margin-top: 96rpx;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
@@ -448,6 +449,7 @@
 
 			.user-name {
 				margin-left: 20rpx;
+				font-size: 30rpx;
 			}
 
 			.header {

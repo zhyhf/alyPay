@@ -8,7 +8,7 @@
 				</view>
 			</view>
 			<view class="right-info">
-				<uni-icons type="gear" size="24" color="black"></uni-icons>
+				<uni-icons type="gear" size="24" color="black" @click="handleJump"></uni-icons>
 			</view>
 		</view>
 		<view class="" style="margin-top: 130rpx;">
@@ -37,6 +37,11 @@
 			handleLoad(){
 				uni.navigateTo({
 					url: '/pages/component/loading/loading'
+				})
+			},
+			handleJump(){
+				uni.navigateTo({
+					url: '/pages/component/loading/loading&title=设置&showDefaultIcon=false'
 				})
 			}
 		}
