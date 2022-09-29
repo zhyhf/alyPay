@@ -1,17 +1,17 @@
 <template>
-	<view class="container" :style="wrapperStyle">
+	<view class="container" :style="wrapperStyle" @click="jump">
 		<view class="status_bar"></view>
 		<view class="header">
-			<image src="@/static/image/finance-left-icon.png" class="f-icon"></image>
+			<image src="@/static/image/finance-left-icon.png" class="f-icon" style="width: 55rpx;"></image>
 			<view class="input-wrapper">
 				<input type="text" class="input">
-				<image src="@/static/image/search-icon.png" class="search"></image>
+				<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
 			</view>
 			<image src="@/static/image/finance-right-icon.png" class="f-icon"></image>
 		</view>
 		<view class="info-container image">
 			<image src="@/static/image/extend.png" mode="widthFix" style="width: 100%;"></image>
-			<image src="@/static/image/arrow.png" class="arrow" :style="arrowStyle" @click="extend"></image>
+			<image src="@/static/image/arrow.png" class="arrow" :style="arrowStyle" @click.stop="extend"></image>
 		</view>
 		<view class="move-content" :style="contentStyle">
 			<view class="content">
@@ -21,7 +21,17 @@
 					</view>
 				</view>
 			</view>
-			<image src="@/static/image/f2.png" mode="widthFix" class="detail"></image>
+			<view style="width: 100%; position: relative;">
+				<image src="@/static/image/f2.png" mode="widthFix" class="detail"></image>
+				<button style="background-color: #1B76FB;
+					width: 84%;
+					margin: 30rpx 60rpx 0;
+					color: #fff;
+					position: absolute;
+					bottom: 105rpx;">
+					<text>立即领取</text>
+				</button>
+			</view>
 			<view class="good-wrapper">
 				<view class="good-header">
 					<text class="good-title">理财有好货</text>
@@ -108,7 +118,7 @@
 				},
 				flag: true,
 				contentStyle: {
-					transform: 'translateY(-470rpx)'
+					transform: 'translateY(-505rpx)'
 				},
 				wrapperStyle: {
 					height: '1550rpx'
@@ -121,7 +131,7 @@
 			},
 			extend() {
 				this.arrowStyle = this.flag ? {
-					top: '580rpx',
+					top: '610rpx',
 					transform: 'translateX(-50%) rotate(0deg)'
 				} : {
 					top: '120rpx',
@@ -130,7 +140,7 @@
 				this.contentStyle = this.flag ? {
 					transform: 'translateY(0rpx)'
 				} : {
-					transform: 'translateY(-470rpx)'
+					transform: 'translateY(-505rpx)'
 				},
 				this.wrapperStyle = this.flag ? {
 					height: 'auto'
@@ -194,7 +204,7 @@
 					height: 36rpx;
 					position: absolute;
 					left: 10rpx;
-					top: 12rpx;
+					top: 8rpx;
 				}
 			}
 		}
@@ -214,7 +224,7 @@
 		}
 		.move-content {
 			width: 100%;
-			transform: translateY(-470rpx);
+			transform: translateY(-510rpx);
 			background-color: #efeff4;
 			transition: all .3s;
 		}
