@@ -31,7 +31,7 @@
 				</view>
 			</view>
 			
-			<image src="@/static/travel/ticket-header.png" style="width: 100%;" mode="widthFix"></image>
+			<image src="@/static/travel/ticket-header.png" style="width: 100%;" mode="widthFix" @click="jump"></image>
 		</view>
 		<image src="@/static/travel/ticket-content.png" mode="widthFix" style="width: 100%; margin-top: 20rpx;"></image>
 	</view>
@@ -53,6 +53,11 @@
 			this.today = (date.getMonth() + 1) + '月' + date.getDate() + '日'
 		},
 		methods: {
+			jump() {
+				uni.navigateTo({
+					url: '/pages/component/loading/loading?type=1'
+				})
+			},
 			changeTab(tab) {
 				if (tab == 1) {
 					this.tabStyle = {

@@ -1,5 +1,5 @@
 <template>
-	<view style="position: relative;">
+	<view style="position: relative;padding-bottom: 120rpx">
 		<view class="uni-center">
 			<view class="top-header">
 				<view class="left-text" @click="toCity">
