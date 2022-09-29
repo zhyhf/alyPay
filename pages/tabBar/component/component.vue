@@ -37,6 +37,7 @@
 	.container {
 		width: 100vw;
 		position: relative;
+		padding-bottom: 120rpx;
 		.status_bar {
 			width: 100%;
 			height: var(--status-bar-height);

@@ -34,27 +34,23 @@
 			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'taxi'">
 				<map class="map" name=""></map>
 				<view class="map-bottom">
-					<image src="../../../static/travel/ta.png" mode="widthFix"></image>
+					<image src="@/static/travel/cab1.png" mode="widthFix"></image>
+					<image src="@/static/travel/cab2.png" mode="widthFix"></image>
 				</view>
 			</view>
 			<!-- 公交 -->
 			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == 'bus'">
-				<image style="width: 95vw;margin-left: 2.5vw;" src="../../../static/travel/bu.png" mode="widthFix">
+				<image style="width: 94vw;margin-left: 3vw;" src="../../../static/travel/bu.png" mode="widthFix">
 				</image>
 			</view>
 			<!-- 地铁 -->
 			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == 'subway'">
-				<image style="width: 95vw;margin-left: 2.5vw;" src="../../../static/travel/su.png" mode="widthFix">
+				<image style="width: 94vw;margin-left: 3vw;" src="../../../static/travel/su.png" mode="widthFix">
 				</image>
 			</view>
 			<!-- 12306 -->
-			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == '12306'">
-				<image style="width: 100vw;margin-bottom: 8rpx;" src="../../../static/travel/1.png" mode="widthFix">
-				</image>
-				<image style="width: 100vw;margin-bottom: 8rpx;" src="../../../static/travel/2.png" mode="widthFix">
-				</image>
-				<image style="width: 100vw;" src="../../../static/travel/3.png" mode="widthFix">
-				</image>
+			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == '12306'">
+				<Purchase></Purchase>
 			</view>
 			<!-- 机票 -->
 			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'ticket'">
@@ -73,10 +69,12 @@
 <script>
 	import Cycle from './components/Cycle.vue'
 	import Ticket from './components/ticket.vue'
+	import Purchase from './components/purchase.vue'
 	export default {
 		components: {
 			Cycle,
-			Ticket
+			Ticket,
+			Purchase
 		},
 		data() {
 			return {
@@ -133,7 +131,7 @@
 </script>
 
 <style lang="scss" scoped>
-	$pageWidth:92vw;
+	$pageWidth:94vw;
 
 	.top-status-bar {
 		display: flex;
@@ -184,7 +182,7 @@
 		width: 100vw;
 		position: absolute;
 		left: 0;
-		top: 6vh;
+		top: -20rpx;
 
 		image {
 			width: 100vw;
@@ -201,7 +199,7 @@
 
 	.taxi {
 		margin: 0 auto;
-		margin-top: 100rpx !important;
+		// margin-top: 100rpx !important;
 		width: $pageWidth;
 	}
 
@@ -260,11 +258,12 @@
 		width: $pageWidth;
 		border-radius: 20rpx;
 		overflow: hidden;
-		padding-top: 270rpx;
+		padding-top: 280rpx;
+		position: relative;
 
 		.map {
 			width: 100%;
-			height: 45vh;
+			height: 37vh;
 			border-radius: 20rpx;
 		}
 
@@ -272,6 +271,7 @@
 			width: 100%;
 
 			image {
+				border-radius: 20rpx;
 				width: $pageWidth;
 			}
 		}
