@@ -14,7 +14,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="" style="margin-top: 130rpx;">
+		<view class="" style="margin-top: 140rpx;">
 			<image style src="../../../static/mine/header.png" style="width: 100vw; height: 160rpx;"
 				@click="navigateToInfo">
 			</image>
@@ -144,15 +144,14 @@
 
 		.left-info {
 			display: flex;
-			font-size: 34rpx;
+			font-size: 38rpx;
 			align-items: center;
-
-			.txt {
-				margin-left: 20rpx;
-			}
+            margin-top: 16rpx;
+			margin-left: 22rpx;
 		}
 
 		.right-info {
+			margin-top: 16rpx;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
@@ -161,7 +160,7 @@
 
 	.my-avatar {
 		width: 100vw;
-		height: 160rpx !important;
+		height: 130rpx !important;
 	}
 
 	.content-wrapper {

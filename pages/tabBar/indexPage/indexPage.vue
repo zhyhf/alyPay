@@ -1,6 +1,6 @@
 <template>
 	<view style="position: relative;">
-		<view class="uni-center">
+		<view>
 			<view class="top-header">
 				<view class="left-text" @click="toCity">
 					<view class="t-text">
@@ -9,7 +9,7 @@
 							<image src="../../../static/image/down.png" mode=""></image>
 						</view>
 					</view>
-					<view class="b-text">
+					<view class="b-text">+
 						{{weather}} {{wendu}}℃
 					</view>
 				</view>
@@ -493,10 +493,8 @@
 
 		.left-text {
 			color: white;
-			// flex: 2;
-			width: 24vw;
+			width: 25vw;
 			box-sizing: border-box;
-			// font-size: 24rpx;
 		}
 
 		.text-input {
