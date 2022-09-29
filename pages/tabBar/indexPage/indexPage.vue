@@ -119,7 +119,7 @@
 					<image mode="scaleToFill" class="image" style="width: 15.5vw;" src="../../../static/image/wode.png">
 					</image>
 				</view>
-				<view class="chose-item" @click="jumpToLoading">
+				<view class="chose-item" @click="jumpToMore">
 					<image mode="scaleToFill" class="image" src="../../../static/image/more.png"></image>
 				</view>
 			</view>
@@ -207,6 +207,11 @@
 			uni.clearStorage()
 		},
 		methods: {
+			jumpToMore() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/application/application'
+				})
+			},
 			jumpToForest() {
 				uni.navigateTo({
 					url: '/pages/component/indexPage-relative/antForest/antForest'

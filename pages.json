@@ -625,6 +625,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/component/indexPage-relative/application/application",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",
