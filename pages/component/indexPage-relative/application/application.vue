@@ -2,23 +2,24 @@
 	<view class="wrapper">
 		<view class="status_bar"></view>
 		<view class="header">
-			<image src="@/static/image/back.png" class="back"></image>
+			<image src="@/static/image/back.png" class="back" @click="back"></image>
 			<text class="title">应用中心</text>
 			<view class="header-right">
-				<text class="right-text">管理</text>
-				<uni-icons class="right-icon" type="search" size="25" color="#ccc"></uni-icons>
+				<text class="right-text" @click="jumpToLoading">管理</text>
+				<uni-icons class="right-icon" type="search" size="25" color="#ccc" @click="jumpToSearch"></uni-icons>
 			</view>
 		</view>
 		
 		<view class="card index-page" :style="indexStyle">
 			<view class="right">
-				<text class="right-text">已经收起13个首页应用</text>
+				<text class="right-text" v-show="flag">已经收起13个首页应用</text>
+				<image v-show="flag" src="@/static/more/header-icon.png" style="width: 100rpx;position: relative;bottom: 4rpx;" mode="widthFix"></image>
 				<image class="arrow" src="@/static/mine/arrow-up.png" @click="click" :style="arrowStyle"></image>
 			</view>
 			<text class="card-title">{{ indexPageList.title }}</text>
 			<view class="content">
 				<view class="content-item" v-for="(icon, i) in indexPageList.app" :key="i">
-					<image :src="icon" class="icon" mode="widthFix" style="width: 74%; margin-left: 13%;"></image>
+					<image :src="icon" class="icon" mode="widthFix"  @click="toApp(indexPageList.title, i)" style="width: 74%; margin-left: 13%;"></image>
 				</view>
 			</view>
 		</view>
@@ -27,7 +28,7 @@
 			<text class="card-title">{{ item.title }}</text>
 			<view class="content">
 				<view class="content-item" v-for="(icon, i) in item.app" :key="i">
-					<image :src="icon" class="icon" mode="widthFix"></image>
+					<image :src="icon" class="icon" mode="widthFix" @click="toApp(item.title, i)"></image>
 				</view>
 			</view>
 		</view>
@@ -137,6 +138,87 @@
 			}
 		},
 		methods: {
+			back() {
+				uni.navigateBack()
+			},
+			toApp(title, index) {
+				if (title === '便民生活') {
+					if (index === 0) {
+						uni.navigateTo({
+							url: '/pages/component/indexPage-relative/investCenter/investCenter'
+						});
+					} else if (index === 1) {
+						uni.navigateTo({
+							url: '/pages/component/indexPage-relative/lifePayment/lifePayment'
+						})
+					} else if (index === 13) {
+						uni.navigateTo({
+							url: '/pages/component/GovernmentAffairsCenter/GovernmentAffairsCenter'
+						})
+					} else {
+						uni.navigateTo({
+							url: '/pages/component/loading/loading?type=1'
+						})
+					}
+				} else if (title === '财富管理') {
+					if (index === 3) {
+						uni.navigateTo({
+							url: "/pages/component/TransferAccounts/TransferAccounts"
+						})
+					} else {
+						uni.navigateTo({
+							url: '/pages/component/loading/loading?type=1'
+						})
+					}
+				} else if (title === '教育公益') {
+					if (index === 0) {
+						uni.navigateTo({
+							url: '/pages/component/indexPage-relative/antForest/antForest'
+						})
+					} else {
+						uni.navigateTo({
+							url: '/pages/component/loading/loading?type=1'
+						})
+					}
+				} else if (title === '首页应用') {
+					if (index === 0) {
+						uni.navigateTo({
+							url: '/pages/component/indexPage-relative/lifePayment/lifePayment'
+						})
+					} else if (index === 5) {
+						uni.navigateTo({
+							url: "/pages/component/TransferAccounts/TransferAccounts"
+						})
+					} else if (index === 6) {
+						uni.navigateTo({
+							url: '/pages/component/indexPage-relative/investCenter/investCenter'
+						});
+					} else if (index === 11) {
+						uni.navigateTo({
+							url: '/pages/component/indexPage-relative/antForest/antForest'
+						})
+					} else {
+						uni.navigateTo({
+							url: '/pages/component/loading/loading?type=1'
+						})
+					}
+				} else {
+					// 统一跳到 loading
+					uni.navigateTo({
+						url: '/pages/component/loading/loading?type=1'
+					})
+				}
+			},
+			jumpToSearch() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/search/search'
+				})
+			},
+			jumpToLoading() {
+				uni.navigateTo({
+					url: '/pages/component/loading/loading?type=1'
+				})
+			},
 			click() {
 				this.indexStyle = this.flag ? {
 					height: 'auto'
@@ -160,12 +242,23 @@
 		.status_bar {
 			width: 100%;
 			height: var(--status-bar-height);
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: #EFEFF4;
+			z-index:999;
 		}
 		.header {
-			position: relative;
+			z-index:99;
+			width: 100%;
+			position: fixed;
+			left: 0;
+			top: var(--status-bar-height);
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			background-color: #EFEFF4;
+			padding-bottom: 20rpx;
 			.back {
 				position: absolute;
 				left: 20rpx;
@@ -193,6 +286,7 @@
 			margin: 20rpx;
 			background-color: #fff;
 			border-radius: 20rpx;
+			z-index: 9;
 			.card-title {
 				font-size: 34rpx;
 				font-weight: 500;
@@ -206,7 +300,6 @@
 					width: 20%;
 					.icon {
 						width: 86%;
-						// margin-left: 7%;
 						margin: 6rpx 0 6rpx 7%;
 					}
 				}
@@ -217,6 +310,7 @@
 			overflow: hidden;
 			height: 85rpx;
 			transition: all .3s;
+			margin-top: calc(100rpx + var(--status-bar-height));
 			.right {
 				display: flex;
 				align-items: center;
