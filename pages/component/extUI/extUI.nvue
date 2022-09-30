@@ -14,6 +14,12 @@
 				<view class="right-img">
 					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
+					<view class="more">
+						<image style="width: 36rpx; height: 10rpx;" src="@/static/government/moreBlack.png"></image>
+					</view>
+					<view class="close">
+						<image style="width: 34rpx; height: 34rpx;" src="@/static/government/closeBlack.png"></image>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -89,6 +95,29 @@
 		flex-direction: row;
 		width: 100vw;
 		background-color: #f5f5f5;
+	}
+	.more{
+		position: absolute;
+		top: 8rpx;
+		left: 16rpx;
+		width: 36rpx;
+		height: 10rpx;
+		image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.close {
+		position: absolute;
+		right: 20rpx;
+		top: 9rpx;
+		width: 34rpx;
+		height: 34rpx;
+	
+		image {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	.right-info {

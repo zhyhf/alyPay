@@ -9,11 +9,17 @@
 			</view>
 			<view class="right-info">
 				<view class="left-img">
-					<image style="width: 50rpx; height: 50rpx;" src="@/static/government/p1.png" mode=""></image>
+					<image style="width: 56rpx; height: 56rpx;margin-right: 12rpx;" src="@/static/government/p1.png" mode=""></image>
 				</view>
-				<view class="right-img">
-					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
+				<view class="right-img" style="position: relative;margin-right: 16rpx;">
+					<image style="width: 142rpx; height: 56rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
+					<view class="more">
+						<image src="@/static/government/moreBlack.png"></image>
+					</view>
+					<view class="close">
+						<image src="@/static/government/closeBlack.png"></image>
+					</view>
 				</view>
 			</view>
 			<view class="header-wrapper" style="width: 100vw;">
@@ -21,7 +27,7 @@
 			</view>
 		</view>
 
-		<view class="category-wrapper" style="margin-top: 200rpx;background-color: #fff;">
+		<view class="category-wrapper" style="margin-top: 224rpx;">
 			<text class="category-title">常用证件</text>
 		</view>
 		<uni-list>
@@ -32,7 +38,7 @@
 			<text class="category-title">交通行驶</text>
 		</view>
 		<uni-list>
-			<uni-list-item style="height: 65rpx;" class="list" v-for="(item, index) in trafficList" :title="item.title"
+			<uni-list-item style="height: 74rpx;" class="list" v-for="(item, index) in trafficList" :title="item.title"
 				to="/pages/me/copyright/copyright" link :thumb="item.url" thumb-size="medium" @click="show" />
 		</uni-list>
 		<uni-popup ref="popup" background-color="#fff">
@@ -53,7 +59,7 @@
 </template>
 
 <script>
-	export default {
+	export default { 
 		data() {
 			return {
 				casualList: [{
@@ -154,6 +160,32 @@
 </script>
 
 <style lang="scss" scoped>
+	/deep/ .uni-list-item__content-title{
+		margin-top: 18rpx;
+	}
+	.more{
+		position: absolute;
+		top: 2rpx;
+		left: 16rpx;
+		width: 36rpx;
+		height: 10rpx;
+		image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.close {
+		position: absolute;
+		right: 20rpx;
+		top: 9rpx;
+		width: 34rpx;
+		height: 34rpx;
+	
+		image {
+			width: 100%;
+			height: 100%;
+		}
+	}
 	.top-header {
 		position: fixed;
 		top: 0;
@@ -180,6 +212,7 @@
 		.right-info {
 			display: flex;
 			flex-direction: row;
+			margin-right: 6rpx;
 		}
 	}
 
@@ -252,12 +285,12 @@
 	}
 
 	.header-wrapper {
-		margin-top: 10rpx;
+		margin-top: 46rpx;
 		margin-left: 27rpx;
 
 		.header-text {
 			font-size: 32rpx;
-			font-weight: bold;
+			font-weight: 400;
 		}
 	}
 

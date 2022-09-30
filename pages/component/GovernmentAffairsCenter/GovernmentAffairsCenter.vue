@@ -14,10 +14,11 @@
 				<view class="application-right">
 					<image class="bg" src="@/static/government/bg.png" mode=""></image>
 					<view class="more">
-						<image src="@/static/government/more.png" mode=""></image>
+						<image src="@/static/government/more.png"></image>
 					</view>
+					<view class="shuxian"></view>
 					<view class="close">
-						<image src="@/static/government/close.png" mode=""></image>
+						<image src="@/static/government/close.png" @click='back' mode=""></image>
 					</view>
 				</view>
 			</view>
@@ -56,20 +57,20 @@
 
 		<view class="content">
 			<view class="slider-top" style="position: relative;">
-				<swiper :current="index" :disable-touch="false" style="height: 18vh;margin-top: 4rpx;" circular
+				<swiper :current="index" :disable-touch="false" style="height: 178rpx;margin-top: 2rpx;" circular
 					:indicator-dots="false" :autoplay="true" :interval="15000">
 					<swiper-item style="width: 100%;height: 100%;" v-for="(item,index) in topSliderList" :key="index"
 						@click="jump">
 						<image style="width: 100%;height: 100%;" :src="item" mode="widthFix"></image>
 					</swiper-item>
 				</swiper>
-				<view disable-touch="false" class="app-line" style="position: absolute;bottom: 4.5vh;z-index: 999;">
+				<view disable-touch="false" class="app-line" style="position: absolute;bottom: 1.5vh;z-index: 999;">
 					<view v-for="(item,i) in topSliderList.length" :key="i"
 						:class="index===i ? 'line-item line-item-active' : 'line-item'"></view>
 				</view>
 			</view>
 			<image src="@/static/government/service.png" class="gov-service" mode="widthFix" @click="jump"></image>
-			<view class="app-container" style="margin-top: -3.5vh;">
+			<view class="app-container" style="margin-top: 0.4vh;">
 				<view class="app-wrapper" :style="sliderStyle">
 					<view class="app-item" v-for="(item, index) in appLists" :key="index" @click="jump">
 						<image :src="item" style="height: 100%; width: 100%;"></image>
@@ -194,6 +195,9 @@
 			}, 10000)
 		},
 		methods: {
+			back(){
+				uni.navigateBack()
+			},
 			toChoseCity() {
 				uni.navigateTo({
 					url: "/pages/component/CCityChose/CCityChose"
@@ -223,8 +227,9 @@
 		position: relative;
 		height: var(--status-bar-height);
 		width: 100%;
-		background-color: #D81706;
-		border-bottom: #D81706;
+		background-color: #DE1B09;
+		border: none;
+		// border-bottom: #DB1A06;
 
 		.border {
 			position: absolute;
@@ -234,45 +239,54 @@
 			width: 100vw;
 			height: 10rpx;
 			z-index: 999;
-			background-color: #D81706;
+			background-color: #DE1B09;
 		}
 	}
 
 	.application {
 		position: absolute;
-		top: 35rpx;
+		top: 32rpx;
+		right: 152rpx;
 
 		image {
-			width: 60rpx;
-			height: 60rpx;
+			width: 57rpx;
+			height: 57rpx;
 		}
 	}
 
 	.application-right {
 		position: absolute;
-		right: 4rpx;
+		right: 2rpx;
 		top: 35rpx;
-		width: 15vw;
+		width: 19vw;
 
 		.more {
 			position: absolute;
-			right: 62rpx;
-			top: 5rpx;
+			right: 84rpx;
+			top: -9rpx;
 			width: 40rpx;
-			height: 40rpx;
+			height: 10rpx;
 
 			image {
 				width: 100%;
 				height: 100%;
 			}
 		}
+		.shuxian{
+			position: absolute;
+			right: 70rpx;
+			top: 12rpx;
+			width: 0.05px;
+			height: 30rpx;
+			background-color: #efeff4;
+		}
 
 		.close {
 			position: absolute;
-			right: 10rpx;
-			top: 3rpx;
-			width: 30rpx;
-			height: 30rpx;
+			right: 20rpx;
+			top: 5rpx;
+			width: 34rpx;
+			height: 34rpx;
 
 			image {
 				width: 100%;
@@ -281,8 +295,8 @@
 		}
 
 		.bg {
-			width: 130rpx;
-			height: 52rpx;
+			width: 140rpx;
+			height: 54rpx;
 		}
 	}
 
@@ -295,10 +309,11 @@
 		color: #FDFDFD;
 		font-size: 36rpx;
 		font-weight: 500;
-		letter-spacing: 6rpx;
+		letter-spacing: 1rpx;
 		padding-left: 20rpx;
 		padding-right: 20rpx;
-		padding-top: 60rpx;
+		padding-top: 65rpx;
+		padding-bottom: 35rpx;
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
 		background-color: #D81706;
@@ -306,22 +321,22 @@
 		.right-icon {
 			position: absolute;
 			top: 30rpx;
-			right: 10rpx;
+			right: 16rpx;
 			width: 26vw;
 		}
 	}
 
 	.gov-header {
 		position: relative;
-		width: 102%;
+		width: 100%;
 		margin-left: -2rpx;
-		height: 480rpx;
-		margin-top: -2rpx;
+		height: 496rpx;
+		margin-top: -70rpx;
 		// background-color: red;
 		color: #FDFDFD;
 		font-size: 32rpx;
 		font-weight: 500;
-		letter-spacing: 6rpx;
+		letter-spacing: 0px;
 		padding: 30rpx;
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
@@ -375,7 +390,7 @@
 	}
 
 	.userPosInfo {
-		margin-top: 96rpx;
+		margin-top: 130rpx;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
@@ -445,11 +460,9 @@
 			justify-content: flex-end;
 			width: 40vw;
 
-
-
 			.user-name {
-				margin-left: 20rpx;
-				font-size: 30rpx;
+				margin-left: 18rpx;
+				font-size: 28rpx;
 			}
 
 			.header {
@@ -483,7 +496,7 @@
 		.gov-service {
 			width: 100%;
 			position: relative;
-			top: -34rpx;
+			top: 28rpx;
 			// width: 94vw;
 			// height: 136rpx;
 			// margin-top: 10rpx;
@@ -536,7 +549,7 @@
 		.gov-life {
 			width: 94vw;
 			height: 150rpx;
-			margin-top: 34rpx;
+			margin-top: 46rpx;
 		}
 
 		.certificate {
@@ -552,11 +565,11 @@
 				.certificate-title {
 					color: #313131;
 					font-size: 40rpx;
-					font-weight: bold;
+					font-weight: 500;
 				}
 
 				.certificate-all {
-					color: darkred;
+					color: #B12217;
 					font-size: 30rpx;
 					position: relative;
 					top: 10rpx;
@@ -583,11 +596,11 @@
 				.prefecture-title {
 					color: #313131;
 					font-size: 40rpx;
-					font-weight: bold;
+					font-weight: 500;
 				}
 
 				.prefecture-all {
-					color: darkred;
+					color: #B12217;
 					font-size: 30rpx;
 					position: relative;
 					top: 10rpx;
