@@ -115,7 +115,7 @@
 					<image mode="scaleToFill" class="image" style="width: 13.5vw;"
 						src="../../../static/image/zhima-credit.png"></image>
 				</view>
-				<view class="chose-item" @click="jumpToLoading">
+				<view class="chose-item" @click="jumpToMine">
 					<image mode="scaleToFill" class="image" style="width: 15.5vw;" src="../../../static/image/wode.png">
 					</image>
 				</view>
@@ -207,6 +207,11 @@
 			uni.clearStorage()
 		},
 		methods: {
+			jumpToMine() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/mine/mine'
+				})
+			},
 			jumpToMore() {
 				uni.navigateTo({
 					url: '/pages/component/indexPage-relative/application/application'

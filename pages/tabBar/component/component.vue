@@ -234,13 +234,14 @@
 				flex-wrap: wrap;
 				align-items: center;
 				justify-content: space-around;
-				padding-top: 10rpx;
+				// padding-top: 10rpx;
+				padding: 20rpx 0;
 				.fn-item {
 					width: 20%;
 					margin: 10rpx 0;
 					.img {
-						width: 60%;
-						margin-left: 20%;
+						width: 70%;
+						margin-left: 15%;
 					}
 				}
 			}
