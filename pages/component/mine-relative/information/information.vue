@@ -131,6 +131,9 @@
 </script>
 
 <style lang="scss" scoped>
+	/deep/ .uni-list-item__content{
+		margin-top: 8rpx;
+	}
 	.top-header {
 		position: fixed;
 		width: 100vw;

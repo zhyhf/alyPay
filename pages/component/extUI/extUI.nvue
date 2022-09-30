@@ -98,9 +98,9 @@
 	}
 	.more{
 		position: absolute;
-		top: 8rpx;
+		top: 18rpx;
 		left: 16rpx;
-		width: 36rpx;
+		width: 40rpx;
 		height: 10rpx;
 		image {
 			width: 100%;
