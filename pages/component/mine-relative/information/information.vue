@@ -10,7 +10,7 @@
 			</view>
 		</view>
 		<uni-list style="padding-top:150rpx;">
-			<uni-list-item title="头像" link>
+			<uni-list-item title="头像" link clickable @click="clickAvatar">
 				<template v-slot:footer>
 					<image class="slot-image" src="/static/mine/avatar.png" style="width: 70rpx; height: 70rpx;">
 					</image>
@@ -18,7 +18,7 @@
 			</uni-list-item>
 
 			<uni-list-item v-for="(item, index) in topList" :title="item.title" showArrow link
-				:rightText="item.rightText ? item.rightText : ''"></uni-list-item>
+				:rightText="item.rightText ? item.rightText : ''" :to="item.navigatePath"></uni-list-item>
 		</uni-list>
 
 		<view class="indentity-intro">
@@ -26,45 +26,50 @@
 			<text class="identity-text">根据相关法律法规要求，请保持身份信息完善，以便使用支付宝支付相关功能</text>
 		</view>
 		<uni-list>
-			<uni-list-item v-for="(item, index) in middleList" :title="item.title" :showArrow="item.showArrow" clickable
-				:rightText="item.rightText ? item.rightText : ''"></uni-list-item>
+			<uni-list-item v-for="(item, index) in middleList" :title="item.title" :showArrow="item.showArrow" clickable @click="click(index)"
+				:rightText="item.rightText ? item.rightText : ''" :to="item.navigatePath"></uni-list-item>
 		</uni-list>
 
 		<uni-list class="bottom-block">
-			<uni-list-item v-for="(item, index) in bottomList" :title="item.title" link></uni-list-item>
+			<uni-list-item v-for="(item, index) in bottomList" :title="item.title" link :to="item.navigatePath"></uni-list-item>
 		</uni-list>
 	</view>
 </template>
 
 <script>
+	import { mapState } from 'vuex'
 	export default {
 		data() {
 			return {
 				topList: [{
 						title: '昵称',
-						rightText: '未设置'
+						rightText: '未设置',
+						navigatePath: '/pages/component/mine-relative/name/name'
 					},
 					{
 						title: '支付宝账号',
-						rightText: '186******31'
+						rightText: '186******31',
+						navigatePath: '/pages/component/mine-relative/account/account'
 					},
 					{
 						title: '我的主页',
-						icon: require('@/static/mine/huabei.png')
+						icon: require('@/static/mine/huabei.png'),
+						navigatePath: '/pages/component/mine-relative/myHomePage/myHomePage'
 					}
 				],
 				middleList: [{
 						title: '实名认证',
 						rightText: '已认证(**帅)',
-						showArrow: true
+						showArrow: false
 					},
 					{
 						title: '身份基本信息',
 						rightText: '已完善',
-						showArrow: true
+						showArrow: true,
+						navigatePath: '/pages/component/mine-relative/baseInfo/baseInfo'
 					},
 					{
-						title: '认证照片',
+						title: '证件照片',
 						rightText: '已上传',
 						showArrow: true
 					},
@@ -75,19 +80,47 @@
 					},
 					{
 						title: '变更姓名或证件号',
-						showArrow: true
+						showArrow: true,
+						navigatePath: '/pages/component/mine-relative/modify/modify'
 					}
 				],
 				bottomList: [{
-						title: '我的车辆'
+						title: '我的车辆',
+						navigatePath: '/pages/component/mine-relative/car/car'
 					},
 					{
-						title: '更多'
+						title: '更多',
+						navigatePath: '/pages/component/mine-relative/more/more'
 					}
 				]
 			}
 		},
+		computed: {
+			...mapState(['userName'])
+		},
+		mounted() {
+			this.topList[0].rightText = this.userName.length > 0 ? this.userName : '未设置'
+		},
+		watch: {
+			userName(val) {
+				this.topList[0].rightText = val
+			}
+		},
 		methods: {
+			clickAvatar() {
+				uni.navigateTo({
+					url: '/pages/component/mine-relative/avatar/avatar'
+				})
+			},
+			click(index) {
+				if (index === 2) {
+					uni.showModal({
+						content: '你已经成功上传证件照片。如果没有更换过证件，无需重新上传。',
+						confirmText: '上传新证件',
+						cancelText: '暂不上传',
+					})
+				}
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1

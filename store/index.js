@@ -24,8 +24,12 @@ const store = createStore({
 		menu: [],
 		univerifyErrorMsg: '',
 		tabBarActiveIndex: 0,
+		userName: ''
 	},
 	mutations: {
+		changeUserName(state, name) {
+			state.userName = name
+		},
 		changeTabBarActiveIndex(state, index) {
 			state.tabBarActiveIndex = index
 		},
