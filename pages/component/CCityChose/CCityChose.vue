@@ -152,9 +152,9 @@
 		.more {
 			position: absolute;
 			right: 66rpx;
-			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			top: -5rpx;
+			width: 32rpx;
+			height: 6rpx;
 
 			image {
 				width: 100%;

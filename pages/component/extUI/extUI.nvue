@@ -12,10 +12,11 @@
 					<image style="width: 50rpx; height: 50rpx;" src="@/static/government/p1.png" mode=""></image>
 				</view>
 				<view class="right-img">
+					<button type="default"></button>
 					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
 					<view class="more">
-						<image style="width: 36rpx; height: 10rpx;" src="@/static/government/moreBlack.png"></image>
+						<image style="width: 38rpx; height: 8rpx;" src="@/static/government/moreBlack.png"></image>
 					</view>
 					<view class="close">
 						<image style="width: 34rpx; height: 34rpx;" src="@/static/government/closeBlack.png"></image>

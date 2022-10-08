@@ -72,55 +72,69 @@
 		<view class="more-main">
 			<view class="more-chose">
 				<view class="chose-item" @click="jump">
-					<image mode="scaleToFill" class="image" src="../../../static/image/shenghuo1.png">
+					<image mode="scaleToFill" class="image" src="../../../static/image/sh1.png">
 					</image>
+					<text style="font-size: 25rpx;margin-left: 0.4vw;margin-top:1vw;margin-top">生活缴费</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/yundong.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/yund1.png"></image>
+					<text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">运动</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/jiangkang.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/jiankang1.png"></image>
+				    <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">健康码</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/kuaidi.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/mk1.png"></image>
+				     <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">我的快递</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/shimin.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/sm1.png"></image>
+				    <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">市民中心</text>
 				</view>
 				<view class="chose-item">
 					<image mode="scaleToFill" @click="toTAccounts" class="image"
-						src="../../../static/image/zhuanzhang.png">
+						src="../../../static/image/zhang1.png">
 					</image>
+					 <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">转账</text>
 				</view>
 				<view class="chose-item">
-					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/phone.png">
+					<image @click="toInvestPage" mode="scaleToFill" class="image" src="../../../static/image/cz1.png">
+						 <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">充值中心</text>
 					</image>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/jiebei.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/jieb1.png"></image>
+					 <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">借呗</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/movie.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/dianying1.png"></image>
+				    <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">电影演出</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/takeout.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/ele1.png"></image>
+				     <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">饿了么</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" src="../../../static/image/gaode.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/gaode1.png"></image>
+				      <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">高德打车</text>
 				</view>
 				<view class="chose-item" @click="jumpToForest">
-					<image mode="scaleToFill" class="image" src="../../../static/image/forest.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/mayi1.png"></image>
+				     <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">蚂蚁森林</text>
 				</view>
 				<view class="chose-item" @click="jumpToLoading">
-					<image mode="scaleToFill" class="image" style="width: 13.5vw;"
-						src="../../../static/image/zhima-credit.png"></image>
+					<image mode="scaleToFill" class="image" src="../../../static/image/zmx1.png"></image>
+					<text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">芝麻信用</text>
 				</view>
 				<view class="chose-item" @click="jumpToMine">
-					<image mode="scaleToFill" class="image" style="width: 15.5vw;" src="../../../static/image/wode.png">
+					<image mode="scaleToFill" class="image" src="../../../static/image/wx1.png">
 					</image>
+                   <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">我的小程序</text>
 				</view>
 				<view class="chose-item" @click="jumpToMore">
-					<image mode="scaleToFill" class="image" src="../../../static/image/more.png"></image>
+					<image mode="scaleToFill" style="width:10.2vw;height:10.2vw" class="image" src="../../../static/image/more1.png"></image>
+				    <text style="font-size: 25rpx;margin-top: 0.5vw;">更多</text>
 				</view>
 			</view>
 		</view>
@@ -568,11 +582,15 @@
 	}
 
 	.chose-item {
+		display: grid;
+		text-align: center;
+		margin-bottom: 2vw;
 		.image {
-			margin-top: 1.2vw;
-			margin-left: 4.1vw;
-			width: 14.5vw;
-			height: 14.5vw;
+			margin-top: 3.8vw;
+			margin-left: 4.6vw;
+			margin-right: 4.2vw;
+			width: 9.6vw;
+			height: 9.6vw;
 		}
 	}
 </style>

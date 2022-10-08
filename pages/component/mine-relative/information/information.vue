@@ -1,13 +1,13 @@
 <template>
 	<view>
 		<view class="top-header">
-			<uni-icons @click="back" type="left" color="#000" size="24" class="left"></uni-icons>
-			<view class="txt">
-				个人信息
-			</view>
-			<view class="right-ke" style="text-align: right;">
-				<image style="width: 45rpx;height: 45rpx;" src="/static//mine/kefu2.jpg" mode="widthFix"></image>
-			</view>
+				<uni-icons @click="back" type="left" color="#000" size="24" class="left"></uni-icons>
+				<view class="txt">
+					个人信息
+				</view>
+				<view class="right-ke" style="text-align: right;">
+					<image style="width: 45rpx;height: 45rpx;" src="/static/mine/kefu2.png" mode="widthFix"></image>
+				</view>
 		</view>
 		<uni-list style="padding-top:150rpx;">
 			<uni-list-item title="头像" link clickable @click="clickAvatar">
@@ -134,18 +134,33 @@
 	/deep/ .uni-list-item__content{
 		margin-top: 8rpx;
 	}
+	/deep/ .uni-list-item__content-title{
+		font-size: 34rpx;
+	}
+	/deep/ .uni-list-item__extra-text{
+		font-size: 32rpx;
+	}
+	/deep/ .uni-list:after{
+		height: 0px;
+	}
+	/deep/ .uni-icon-wrapper{
+		margin-top: -4rpx;
+	}
+	/deep/ .uni-list-item__container{
+		padding: 28rpx 30rpx;
+	}
 	.top-header {
 		position: fixed;
 		width: 100vw;
 		top: 0;
 		left: 0;
-		padding-top: var(--status-bar-height);
+		padding-top: calc(var(--status-bar-height) + 12rpx);
 		display: flex;
 		align-items: center;
 		font-size: 32rpx;
 		padding-bottom: 30rpx;
 		color: #000;
-		background-color: white;
+		background-color: #F5F5F5;
 		padding-left: 20rpx;
 		padding-right: 20rpx;
 		box-sizing: border-box;
@@ -157,8 +172,8 @@
 		}
 
 		.txt {
+			font-size: 36rpx;
 			text-align: center;
-			// transform: translateX(-50%);
 			margin: 0 auto;
 		}
 	}
@@ -169,11 +184,11 @@
 		background-color: #fff;
 		padding: 0 30rpx;
 		padding-top: 15rpx;
-		margin-top: 20rpx;
+		margin-top: 28rpx;
 
 		.identity-title {
 			display: block;
-			font-size: 30rpx;
+			font-size: 34rpx;
 			font-weight: bold;
 			margin-bottom: 10rpx;
 		}
@@ -184,6 +199,6 @@
 	}
 
 	.bottom-block {
-		margin: 20rpx 0;
+		margin: 28rpx 0;
 	}
 </style>
