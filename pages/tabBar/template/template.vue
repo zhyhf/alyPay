@@ -216,6 +216,6 @@
 	}
 
 	/deep/ .uniui-arrowright:before {
-		margin-top: -2rpx !important
+		margin-bottom:18rpx !important
 	}
 </style>
