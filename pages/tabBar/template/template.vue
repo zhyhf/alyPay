@@ -5,10 +5,10 @@
 				我的
 			</view>
 			<view class="right-info">
-				<view class="left-img">
+				<view class="left-img" @click="toService">
 					<image style="width: 50rpx; height: 50rpx;" src="@/static/mine/kefu.png" mode=""></image>
 				</view>
-				<view class="right-img">
+				<view class="right-img" @click="toSetting">
 					<image style="width: 50rpx; height: 50rpx;" class="bg" src="@/static/mine/setting.png" mode="">
 					</image>
 				</view>
@@ -111,6 +111,16 @@
 			}
 		},
 		methods: {
+			toSetting(){
+				uni.navigateTo({
+					url:'/pages/component/mine-relative/mySetting/mySetting'
+				})
+			},
+			toService(){
+				uni.navigateTo({
+					url:'/pages/component/customerServer/customerServer'
+				})
+			},
 			navigateToInfo() {
 				uni.navigateTo({
 					url: '/pages/component/mine-relative/information/information'
