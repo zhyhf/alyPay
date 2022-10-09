@@ -18,7 +18,7 @@
 				<view class="fn-wrapper">
 					<view class="fn-item" v-for="(item, index) in list" :key="index">
 						<image :src="item.img" mode="widthFix" class="img"></image>
-						  <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">{{item.text}}</text>
+						  <text style="margin-left: 0.8vw;margin-top:1vw;font-size: 25rpx;">{{item.text}}</text>
 					</view>
 				</view>
 			</view>
@@ -33,7 +33,8 @@
 					<text>立即领取</text>
 				</button>
 			     <view>
-					<text style="color: #9A9693;font-size: 22rpx;position: absolute;bottom: 80rpx;letter-spacing: 1rpx;">支持体验基金或兑换其他福利</text>
+					<text style="color: #9A9693;font-size: 22rpx;position: absolute;
+					bottom: 60rpx;letter-spacing: 1rpx;left:50%">支持体验基金或兑换其他福利</text>
 				 </view>
 			</view>
 			<view class="good-wrapper">
