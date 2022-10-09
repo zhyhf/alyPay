@@ -12,7 +12,6 @@
 					<image style="width: 50rpx; height: 50rpx;" src="@/static/government/p1.png" mode=""></image>
 				</view>
 				<view class="right-img">
-					<button type="default"></button>
 					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
 					<view class="more">
