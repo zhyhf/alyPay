@@ -184,7 +184,7 @@
 		width: 100vw;
 		z-index: 999999;
 		color: #FDFDFD;
-		font-size: 34rpx;
+		font-size: 36rpx;
 		font-weight: 500;
 		letter-spacing: 6rpx;
 		padding: 30rpx;
@@ -218,9 +218,9 @@
 		.more {
 			position: absolute;
 			left: 25rpx;
-			top: 8rpx;
-			width: 43rpx;
-			height: 43rpx;
+			top: -9rpx;
+			width: 40rpx;
+			height: 10rpx;
 
 			image {
 				width: 100%;
@@ -231,9 +231,9 @@
 		.close {
 			position: absolute;
 			left: 94rpx;
-			top: 7rpx;
-			width: 43rpx;
-			height: 43rpx;
+			top: 8rpx;
+			width: 40rpx;
+			height: 40rpx;
 
 			image {
 				width: 100%;

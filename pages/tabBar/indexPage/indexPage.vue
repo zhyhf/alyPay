@@ -133,7 +133,7 @@
                    <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">我的小程序</text>
 				</view>
 				<view class="chose-item" @click="jumpToMore">
-					<image mode="scaleToFill" style="width:10.2vw;height:10.2vw" class="image" src="../../../static/image/more1.png"></image>
+					<image mode="scaleToFill" style="width:8.8vw;height:8.8vw" class="image" src="../../../static/image/more1.png"></image>
 				    <text style="font-size: 25rpx;margin-top: 0.5vw;">更多</text>
 				</view>
 			</view>
@@ -586,11 +586,11 @@
 		text-align: center;
 		margin-bottom: 2vw;
 		.image {
-			margin-top: 3.8vw;
-			margin-left: 4.6vw;
-			margin-right: 4.2vw;
-			width: 9.6vw;
-			height: 9.6vw;
+			margin-top: 3vw;
+			margin-left: 6vw;
+			margin-right: 5vw;
+			width: 8vw;
+			height: 8vw;
 		}
 	}
 </style>

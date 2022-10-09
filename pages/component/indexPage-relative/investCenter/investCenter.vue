@@ -52,21 +52,20 @@
 		width: 100vw;
 		z-index: 999999;
 		color: white;
-		font-size: 32rpx;
+		font-size: 36rpx;
 		font-weight: 500;
 		letter-spacing: 6rpx;
 		padding: 30rpx;
-		padding-top: var(--status-bar-height);
+		padding-top: calc(14rpx + var(--status-bar-height));
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
 		background-color: #1777FF;
-		// border-bottom: 1px solid yellowgreen;
 
 		.right-icon {
 			position: absolute;
-			top: 65rpx;
-			right: 10rpx;
-			width: 24vw;
+			top: 72rpx;
+			right: 14rpx;
+			width: 28vw;
 		}
 	}
 
@@ -74,14 +73,14 @@
 		position: absolute;
 		right: 4rpx;
 		// top: 35rpx;
-		width: 15vw;
+		// width: 15vw;
 
 		.more {
 			position: absolute;
 			right: 66rpx;
-			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			top: -8rpx;
+			width: 32rpx;
+			height: 10rpx;
 
 			image {
 				width: 100%;
@@ -93,8 +92,8 @@
 			position: absolute;
 			right: 10rpx;
 			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			width: 34rpx;
+			height: 34rpx;
 
 			image {
 				width: 100%;

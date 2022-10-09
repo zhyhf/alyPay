@@ -2,7 +2,7 @@
 	<view class="container" :style="wrapperStyle" @click="jump">
 		<view class="status_bar"></view>
 		<view class="header">
-			<image src="@/static/image/finance-left-icon.png" class="f-icon" style="width: 55rpx;"></image>
+			<image src="@/static/image/finance-left-icon.png" class="f-icon1" style="width: 48rpx;"></image>
 			<view class="input-wrapper">
 				<input type="text" class="input">
 				<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
@@ -17,7 +17,8 @@
 			<view class="content">
 				<view class="fn-wrapper">
 					<view class="fn-item" v-for="(item, index) in list" :key="index">
-						<image :src="item" mode="widthFix" class="img"></image>
+						<image :src="item.img" mode="widthFix" class="img"></image>
+						  <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">{{item.text}}</text>
 					</view>
 				</view>
 			</view>
@@ -69,16 +70,46 @@
 		data() {
 			return {
 				list: [
-					require('@/static/image/licai1.png'),
-					require('@/static/image/licai2.png'),
-					require('@/static/image/licai3.png'),
-					require('@/static/image/licai4.png'),
-					require('@/static/image/licai5.png'),
-					require('@/static/image/licai6.png'),
-					require('@/static/image/licai7.png'),
-					require('@/static/image/licai8.png'),
-					require('@/static/image/licai9.png'),
-					require('@/static/image/licai10.png')
+					{
+						text:'余额宝',
+						img:require('@/static/image/licai1.png')
+					},
+					{
+						text:'稳健理财',
+						img:require('@/static/image/licai2.png')
+					},
+					{
+						text:'基金',
+						img:require('@/static/image/licai3.png')
+					},
+					{
+						text:'黄金',
+						img:require('@/static/image/licai4.png')
+					},
+					{
+						text:'股票',
+						img:require('@/static/image/licai5.png')
+					},
+					{
+						text:'券商理财',
+						img:require('@/static/image/licai6.png')
+					},
+					{
+						text:'保险',
+						img:require('@/static/image/licai7.png')
+					},
+					{
+						text:'帮你投',
+						img:require('@/static/image/licai9.png')
+					},
+					{
+						text:'养老金',
+						img:require('@/static/image/licai8.png')
+					},
+					{
+						text:'更多',
+						img:require('@/static/image/more1.png')
+					},
 				],
 				goods: [
 					'新客优选',
@@ -114,7 +145,8 @@
 				],
 				arrowStyle: {
 					top: '120rpx',
-					transform: 'translateX(-50%) rotate(180deg)'
+					transform: 'translateX(-50%) rotate(0deg)'
+					// transform: 'translateX(-50%) rotate(180deg)'
 				},
 				flag: true,
 				contentStyle: {
@@ -132,10 +164,10 @@
 			extend() {
 				this.arrowStyle = this.flag ? {
 					top: '610rpx',
-					transform: 'translateX(-50%) rotate(0deg)'
+					transform: 'translateX(-50%) rotate(180deg)'
 				} : {
 					top: '120rpx',
-					transform: 'translateX(-50%) rotate(180deg)'
+					transform: 'translateX(-50%) rotate(0deg)'
 				},
 				this.contentStyle = this.flag ? {
 					transform: 'translateY(0rpx)'
@@ -185,6 +217,11 @@
 			top: var(--status-bar-height);
 			left: 0;
 			z-index: 99;
+			.f-icon1 {
+				display: inline-block;
+				height: 60rpx;
+				margin: 0 26rpx;
+			}
 			.f-icon {
 				display: inline-block;
 				width: 60rpx;
@@ -239,9 +276,12 @@
 				.fn-item {
 					width: 20%;
 					margin: 10rpx 0;
+					display: grid;
+					text-align: center;
 					.img {
-						width: 70%;
-						margin-left: 15%;
+						width: 43%;
+						margin-left: 6.3vw;
+						margin-right: 4.2vw;
 					}
 				}
 			}
@@ -256,7 +296,8 @@
 			background-color: #fff;
 			border-radius: 20rpx;
 			padding: 25rpx 10rpx;
-			margin-top: 16rpx;
+			margin-top: 18rpx;
+			margin-bottom: 16rpx;
 			.good-header {
 				display: flex;
 				align-items: center;

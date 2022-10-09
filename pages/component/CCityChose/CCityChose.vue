@@ -145,16 +145,16 @@
 
 	.application-right {
 		position: absolute;
-		right: 4rpx;
+		right: 9rpx;
 		// top: 35rpx;
 		width: 15vw;
 
 		.more {
 			position: absolute;
-			right: 66rpx;
-			top: -5rpx;
-			width: 32rpx;
-			height: 6rpx;
+			right: 64rpx;
+			top: -8rpx;
+			width: 36.6rpx;
+			height: 8.4rpx;
 
 			image {
 				width: 100%;

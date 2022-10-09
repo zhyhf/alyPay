@@ -70,11 +70,11 @@
 		width: 100vw;
 		z-index: 999999;
 		color: black;
-		font-size: 32rpx;
+		font-size: 36rpx;
 		font-weight: 500;
-		letter-spacing: 6rpx;
+		letter-spacing: 3rpx;
 		padding: 30rpx;
-		padding-top: var(--status-bar-height);
+		padding-top: calc(10rpx + var(--status-bar-height));
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
 		background-color: #DCEBFF;
@@ -82,24 +82,24 @@
 
 		.right-icon {
 			position: absolute;
-			top: 65rpx;
-			right: 10rpx;
-			width: 24vw;
+			top: 69rpx;
+			right: 12rpx;
+			width: 28vw;
 		}
 	}
 
 	.application-right {
 		position: absolute;
-		right: 4rpx;
+		right: 8rpx;
 		// top: 35rpx;
-		width: 15vw;
+		width: 16vw;
 
 		.more {
 			position: absolute;
-			right: 66rpx;
-			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			right: 70rpx;
+			top: -11rpx;
+			width: 36rpx;
+			height: 9rpx;
 
 			image {
 				width: 100%;
@@ -109,10 +109,10 @@
 
 		.close {
 			position: absolute;
-			right: 10rpx;
-			top: 5rpx;
-			width: 30rpx;
-			height: 30rpx;
+			right: 15rpx;
+			top: 2rpx;
+			width: 32rpx;
+			height: 32rpx;
 
 			image {
 				width: 100%;
@@ -143,7 +143,7 @@
 			border-top-left-radius: 20rpx;
 			border-top-right-radius: 20rpx;
 			padding-top: 10rpx;
-			margin-top: 55rpx;
+			margin-top: 118rpx;
 
 			.life-item {
 				width: 100%;

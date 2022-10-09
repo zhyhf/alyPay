@@ -144,7 +144,7 @@
 		font-weight: 500;
 		letter-spacing: 6rpx;
 		padding: 30rpx;
-		padding-top: var(--status-bar-height);
+		padding-top: calc(14rpx + var(--status-bar-height));
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
 		background-color: transparent;
@@ -152,12 +152,14 @@
 		// border-bottom: 1px solid yellowgreen;
 		.left-icon {
 			display: flex;
-
+            .txt{
+				font-size: 36rpx;
+			}
 		}
 
 		.right-icon {
 			position: absolute;
-			top: 67rpx;
+			top: 72rpx;
 			right: 10rpx;
 			width: 24vw;
 		}
@@ -165,16 +167,16 @@
 
 	.application-right {
 		position: absolute;
-		right: 4rpx;
+		right: 9rpx;
 		// top: 35rpx;
 		width: 15vw;
 
 		.more {
 			position: absolute;
-			right: 66rpx;
-			top: -5rpx;
-			width: 32rpx;
-			height: 6rpx;
+			right: 64rpx;
+			top: -8rpx;
+			width: 36.6rpx;
+			height: 8.4rpx;
 
 			image {
 				width: 100%;
@@ -235,7 +237,7 @@
 				position: absolute;
 				left: 0;
 				content: "";
-				width: 20rpx;
+				width: 14rpx;
 				height: 40rpx;
 				background-color: indianred;
 			}
