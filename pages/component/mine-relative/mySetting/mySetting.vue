@@ -153,8 +153,8 @@
 		margin-top: 2px;
 	}
 	
-	/deep/ .uniui-arrowright:before {
-		margin-top: -2rpx !important
+	/deep/ .uniui-arrowright::before {
+		margin-bottom:18rpx !important
 	}
 	.login {
 		background-color: #fff;

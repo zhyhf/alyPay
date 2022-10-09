@@ -7,13 +7,13 @@
 						<image src="@/static/government/tihuan.png" mode=""></image>
 					</view> -->
 					<view class="application-right">
-						<image class="bg" src="@/static/government/bg.png" mode=""></image>
+						<image class="bg" src="@/static/government/bg.png" mode="widthFix"></image>
 						<view class="more" @click="toMore">
-							<image src="@/static/government/more.png"></image>
+							<image src="@/static/government/more.png" mode="widthFix"></image>
 						</view>
 						<view class="shuxian"></view>
 						<view class="close" @click="back">
-							<image src="@/static/government/close.png" @click='back' mode=""></image>
+							<image src="@/static/government/close.png" @click='back' mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -111,7 +111,7 @@
 		.more {
 			position: absolute;
 			right: 84rpx;
-			top: -9rpx;
+			top: -8rpx;
 			width: 40rpx;
 			height: 10rpx;
 	
@@ -132,9 +132,9 @@
 		.close {
 			position: absolute;
 			right: 20rpx;
-			top: 5rpx;
-			width: 34rpx;
-			height: 34rpx;
+			top: 6rpx;
+			width: 36rpx;
+			height: 36rpx;
 	
 			image {
 				width: 100%;
@@ -143,8 +143,8 @@
 		}
 	
 		.bg {
-			width: 140rpx;
-			height: 54rpx;
+			width: 150rpx;
+			height: 60rpx;
 		}
 	}
 	.top-title {

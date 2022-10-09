@@ -8,6 +8,29 @@
 			</view>
 			<image src="@/static/image/address-book.png" class="img book"></image>
 			<image src="@/static/image/add.png" class="img"></image>
+			<view class="list" v-if="showList">
+				<view class="sanjiao">
+				</view>
+				<view class="sys item" @click="toGroup">
+					<image src="/static/message/group.png" mode=""></image>
+					<text class="item-t">
+						发起群聊
+					</text>
+				</view>
+				<view class="ewm item" @click="toAdd">
+					<image src="/static/message/addP.png" mode=""></image>
+					<text class="item-t">
+						添加朋友
+					</text>
+				</view>
+				<view class="zl item" @click="scanInfo">
+					<image src="/static/addControl/b.png" mode=""></image>
+					<text class="item-t">
+						扫一扫
+					</text>
+				</view>
+			
+			</view>
 		</view>
 		<view class="heaeder-input">
 			<uni-icons class="search" type="search" size="23" color="#ccc"></uni-icons>
@@ -22,10 +45,20 @@
 	export default {
 		data() {
 			return {
-
+				showList:true
 			}
 		},
 		methods: {
+			toAdd(){
+				uni.navigateTo({
+					url:"/pages/component/addPerson/addPerson"
+				})
+			},
+			toGroup(){
+				uni.navigateTo({
+					url:"/pages/component/groupChat/groupChat"
+				})
+			},
 			jump() {
 				uni.navigateTo({
 					url: '/pages/component/loading/loading?type=1'
@@ -36,6 +69,50 @@
 </script>
 
 <style lang="scss" scoped>
+	.list {
+		position: absolute;
+		color: white !important;
+		font-size: 30rpx;
+		right: 46rpx;
+		top: 86rpx;
+		z-index: 999 !important;
+		width: 36vw;
+		height: 22vh;
+		border-radius: 16rpx;
+		background-color: black;
+		padding-left: 20rpx;
+	
+		.sanjiao {
+			position: absolute;
+			right: 10rpx;
+			top: -26rpx;
+			z-index: 999 !important;
+			border-bottom: 15rpx solid black;
+			border-right: 15rpx solid transparent;
+			border-top: 15rpx solid transparent;
+			border-left: 15rpx solid transparent;
+	
+		}
+	
+		.item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 80%;
+			height: 7.2vh;
+	
+		}
+	
+		.item-t {
+			margin: 0 20rpx;
+		}
+	
+		image {
+			width: 40rpx;
+			height: 40rpx;
+		}
+	}
+	
 .container {
 	width: 100vw;
 	/deep/ .uni-input-placeholder{
@@ -70,7 +147,7 @@
 		padding-left: 3vw;
 		padding-bottom: 26rpx;
 		padding-top: 20rpx;
-		z-index: 99;
+		z-index: 99999;
 		.detail {
 			display: flex;
 			margin-top: 5rpx;
