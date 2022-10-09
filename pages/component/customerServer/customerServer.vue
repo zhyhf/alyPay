@@ -8,11 +8,11 @@
 					</view> -->
 					<view class="application-right">
 						<image class="bg" src="@/static/government/bg.png" mode=""></image>
-						<view class="more">
+						<view class="more" @click="toMore">
 							<image src="@/static/government/more.png"></image>
 						</view>
 						<view class="shuxian"></view>
-						<view class="close">
+						<view class="close" @click="back">
 							<image src="@/static/government/close.png" @click='back' mode=""></image>
 						</view>
 					</view>
@@ -41,6 +41,18 @@
 			return {
 				
 			};
+		},
+		methods:{
+			back(){
+				uni.navigateBack({
+					delta:1
+				})
+			},
+			toMore(){
+				uni.navigateTo({
+					url: '/pages/component/loading/loading'
+				})
+			}
 		}
 	}
 </script>
@@ -72,7 +84,8 @@
 		.service {
 			position: absolute;
 			right: 40rpx;
-			top: 0rpx;
+			top: -1.999999888rpx;
+			// bottom: 2rpx;
 			image {
 				width: 120rpx;
 			}
