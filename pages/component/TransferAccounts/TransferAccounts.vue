@@ -7,7 +7,7 @@
 				</text>
 				<view class="right-icon">
 					<view class="application-right" @click="back">
-						<image class="bg" src="@/static/government/bg.png" mode=""></image>
+						<image class="bg" src="@/static/government/bg1.png" mode=""></image>
 						<view class="more">
 							<image src="@/static/government/more.png" mode=""></image>
 						</view>
@@ -204,21 +204,16 @@
 		.right-icon {
 			position: absolute;
 			top: 65rpx;
-			right: 10rpx;
+			right: 15rpx;
 			width: 24vw;
 		}
 	}
 
 	.application-right {
-		position: absolute;
-		right: 50rpx;
-		// top: 35rpx;
-		width: 15vw;
-
 		.more {
 			position: absolute;
 			left: 25rpx;
-			top: -9rpx;
+			top: -3rpx;
 			width: 40rpx;
 			height: 10rpx;
 
@@ -227,11 +222,10 @@
 				height: 100%;
 			}
 		}
-
 		.close {
 			position: absolute;
-			left: 94rpx;
-			top: 8rpx;
+			left: 110rpx;
+			top: 14rpx;
 			width: 40rpx;
 			height: 40rpx;
 
@@ -242,8 +236,8 @@
 		}
 
 		.bg {
-			width: 150rpx;
-			height: 57rpx;
+			width: 170rpx;
+			height: 66rpx;
 		}
 	}
 

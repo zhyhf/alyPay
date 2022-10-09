@@ -566,8 +566,15 @@
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
-
-		}, {
+		}, 
+		{
+			"path": "pages/component/licaiLoading/licaiLoading",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, 
+		{
 			"path": "pages/component/mine-relative/balance/balance",
 			"style": {
 				"navigationBarTitleText": "余额",

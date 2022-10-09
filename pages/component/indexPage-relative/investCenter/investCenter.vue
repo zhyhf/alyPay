@@ -63,7 +63,7 @@
 
 		.right-icon {
 			position: absolute;
-			top: 72rpx;
+			top: 76rpx;
 			right: 14rpx;
 			width: 28vw;
 		}

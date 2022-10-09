@@ -5,7 +5,7 @@
 				生活缴费
 				<view class="right-icon">
 					<view class="application-right">
-						<image class="bg" src="@/static/government/bg.png" mode=""></image>
+						<image class="bg" src="@/static/government/bg1.png" mode=""></image>
 						<view class="more">
 							<image src="@/static/government/more.png" mode=""></image>
 						</view>
@@ -82,24 +82,24 @@
 
 		.right-icon {
 			position: absolute;
-			top: 69rpx;
-			right: 12rpx;
-			width: 28vw;
+			top: 65rpx;
+			right: 15rpx;
+			width: 24vw;
 		}
 	}
 
 	.application-right {
-		position: absolute;
-		right: 8rpx;
-		// top: 35rpx;
-		width: 16vw;
+		// position: absolute;
+		// right: 8rpx;
+		// // top: 35rpx;
+		// width: 16vw;
 
 		.more {
 			position: absolute;
-			right: 70rpx;
-			top: -11rpx;
-			width: 36rpx;
-			height: 9rpx;
+			left: 25rpx;
+			top: -3rpx;
+			width: 40rpx;
+			height: 10rpx;
 
 			image {
 				width: 100%;
@@ -109,10 +109,10 @@
 
 		.close {
 			position: absolute;
-			right: 15rpx;
-			top: 2rpx;
-			width: 32rpx;
-			height: 32rpx;
+			left: 110rpx;
+			top: 14rpx;
+			width: 40rpx;
+			height: 40rpx;
 
 			image {
 				width: 100%;
@@ -121,8 +121,8 @@
 		}
 
 		.bg {
-			width: 120rpx;
-			height: 50rpx;
+			width: 170rpx;
+			height: 66rpx;
 		}
 	}
 

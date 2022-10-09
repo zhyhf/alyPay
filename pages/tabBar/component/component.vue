@@ -1,5 +1,5 @@
 <template>
-	<view class="container" :style="wrapperStyle" @click="jump">
+	<view class="container" :style="wrapperStyle">
 		<view class="status_bar"></view>
 		<view class="header">
 			<image src="@/static/image/finance-left-icon.png" class="f-icon1" style="width: 48rpx;"></image>
@@ -7,13 +7,13 @@
 				<input type="text" class="input">
 				<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
 			</view>
-			<image src="@/static/image/finance-right-icon.png" class="f-icon"></image>
+			<image src="@/static/image/finance-right-icon.png" @click="jumpToLicai" class="f-icon"></image>
 		</view>
 		<view class="info-container image">
 			<image src="@/static/image/extend.png" mode="widthFix" style="width: 100%;"></image>
 			<image src="@/static/image/arrow.png" class="arrow" :style="arrowStyle" @click.stop="extend"></image>
 		</view>
-		<view class="move-content" :style="contentStyle">
+		<view class="move-content" :style="contentStyle" @click="jump">
 			<view class="content">
 				<view class="fn-wrapper">
 					<view class="fn-item" v-for="(item, index) in list" :key="index">
@@ -160,6 +160,12 @@
 		methods: {
 			changeIndex(index) {
 				this.activeIndex = index
+			},
+			// 跳转loading
+			jumpToLicai(){
+				uni.navigateTo({
+					url: '/pages/component/licaiLoading/licaiLoading'
+				})
 			},
 			extend() {
 				this.arrowStyle = this.flag ? {
