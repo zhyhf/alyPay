@@ -731,6 +731,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/component/customerServer/customerServer",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/component/mine-relative/mySetting/mySetting",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",

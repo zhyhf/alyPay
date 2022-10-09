@@ -5,7 +5,7 @@
 				<view class="txt">
 					个人信息
 				</view>
-				<view class="right-ke" style="text-align: right;">
+				<view class="right-ke" style="text-align: right;" @click="toService">
 					<image style="width: 45rpx;height: 45rpx;" src="/static/mine/kefu2.png" mode="widthFix"></image>
 				</view>
 		</view>
@@ -107,6 +107,11 @@
 			}
 		},
 		methods: {
+			toService(){
+				uni.navigateTo({
+					url:'/pages/component/customerServer/customerServer'
+				})
+			},
 			clickAvatar() {
 				uni.navigateTo({
 					url: '/pages/component/mine-relative/avatar/avatar'
