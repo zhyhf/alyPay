@@ -29,9 +29,12 @@
 					margin: 30rpx 60rpx 0;
 					color: #fff;
 					position: absolute;
-					bottom: 105rpx;">
+					bottom: 108rpx;">
 					<text>立即领取</text>
 				</button>
+			     <view>
+					<text style="color: #9A9693;font-size: 22rpx;position: absolute;bottom: 80rpx;letter-spacing: 1rpx;">支持体验基金或兑换其他福利</text>
+				 </view>
 			</view>
 			<view class="good-wrapper">
 				<view class="good-header">
@@ -286,8 +289,8 @@
 					text-align: center;
 					.img {
 						width: 43%;
-						margin-left: 6.3vw;
-						margin-right: 4.2vw;
+						margin-left: 6.6vw;
+						margin-right: 4.5vw;
 					}
 				}
 			}
