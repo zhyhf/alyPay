@@ -14,7 +14,7 @@
 						用户保护中心
 					</view>
 					<view class="right-info">
-						<uni-icons type="more" size="26" color="black"></uni-icons>
+						<uni-icons type="more-filled" size="26" color="black"></uni-icons>
 					</view>
 				</view>
 			</view>
@@ -29,7 +29,7 @@
 		data() {
 			return {
 				topStyle: {
-					backgroundColor: '#fff'
+					backgroundColor: 'transparent'
 				}
 			}
 		},

@@ -27,7 +27,10 @@
 					<view :class="{'top-choose':true,active:!moreFlag}">
 						<view class="fixed-height">
 							<view class="alypay" @click="toLoading" :key="index" v-for="(item,index) in chooseImg">
-								<image :src="item" mode="widthFix"></image>
+								<image :src="item.url" mode="widthFix"></image>
+								 <text>
+									 {{item.title}}
+								 </text>
 							</view>
 						</view>
 					</view>
@@ -82,23 +85,54 @@
 			return {
 				tabIndex: 0,
 				moreFlag: false,
-				chooseImg: [
-					require('@/static/Taccount/icon/1.png'),
-					require('@/static/Taccount/icon/2.png'),
-					require('@/static/Taccount/icon/3.png'),
-					require('@/static/Taccount/icon/4.png'),
-					require('@/static/Taccount/icon/5.png'),
-					require('@/static/Taccount/icon/6.png'),
-					require('@/static/Taccount/icon/7.png'),
-					require('@/static/Taccount/icon/8.png'),
-					require('@/static/Taccount/icon/9.png'),
-					require('@/static/Taccount/icon/10.png'),
-					require('@/static/Taccount/icon/11.png'),
-					require('@/static/Taccount/icon/12.png'),
-					require('@/static/Taccount/icon/13.png'),
-					require('@/static/Taccount/icon/14.png'),
-					require('@/static/Taccount/icon/15.png'),
-					require('@/static/Taccount/icon/16.png'),
+				chooseImg:[
+					{
+					url:require('@/static/Taccount/icon/1.png'),
+					title:"转到支付宝"
+				},
+				{
+					url:require('@/static/Taccount/icon/2.png'),
+					title:"转到银行卡"
+				},	{
+					url:require('@/static/Taccount/icon/3.png'),
+					title:"红包"
+				},	{
+					url:require('@/static/Taccount/icon/4.png'),
+					title:"转账记录"
+				},	{
+					url:require('@/static/Taccount/icon/5.png'),
+					title:"转微信好友"
+				},	{
+					url:require('@/static/Taccount/icon/6.png'),
+					title:"小荷包"
+				},	{
+					url:require('@/static/Taccount/icon/7.png'),
+					title:"预约转账"
+				},	{
+					url:require('@/static/Taccount/icon/8.png'),
+					title:"向多人转账"
+				},	{
+					url:require('@/static/Taccount/icon/10.png'),
+					title:"转账名片"
+				},	{
+					url:require('@/static/Taccount/icon/11.png'),
+					title:"语音转账"
+				},	{
+					url:require('@/static/Taccount/icon/12.png'),
+					title:"AA收款"
+				},	{
+					url:require('@/static/Taccount/icon/13.png'),
+					title:"收交房租"
+				},	{
+					url:require('@/static/Taccount/icon/14.png'),
+					title:"跨境汇款"
+				},	{
+					url:require('@/static/Taccount/icon/15.png'),
+					title:"信用卡还款"
+				},	{
+					url:require('@/static/Taccount/icon/16.png'),
+					title:"亲情卡"
+				},
 				],
 				leftImgs: [{
 						url: require('@/static/Taccount/contact/a.png'),
@@ -292,16 +326,17 @@
 		}
 
 		.active {
-			height: 155rpx;
+			height: 190rpx;
 			overflow: hidden;
 		}
 
 		.more {
 			width: 95vw;
 			padding: 0 30rpx;
+			padding-top: 20rpx;
 			margin: 0 auto;
 			margin-top: -8rpx;
-			height: 50rpx;
+			height: 70rpx;
 			background-color: #fff;
 			border-bottom-left-radius: 16rpx;
 			border-bottom-right-radius: 16rpx;
@@ -309,11 +344,17 @@
 			box-sizing: border-box;
 			// background-color: red;
 		}
-
+		.alypay {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size: 24rpx;
+		}
 		image {
 			margin: 0 19rpx;
-			// margin-bottom: -30rpx;
-			width: 108rpx;
+			margin-bottom: 6rpx;
+			width: 80rpx;
 			// height: 106rpx;
 			// border: 1px solid red;
 		}
