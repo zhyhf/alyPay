@@ -94,10 +94,30 @@
 					<text class="prefecture-title">专区</text>
 					<text class="prefecture-all" @click="jump('主题专区')">全部 ></text>
 				</view>
-				<view class="item-wrapper">
-					<image v-for="(item, index) in serviceList" :key="index" :src="item.img" class="item"
-						@click="jump(item.title)"></image>
-				</view>
+
+					<view class="swiper-bottom">
+						<swiper :current="bottomIndex" :circular="false" :disable-touch="false" style="height: 660rpx;margin-top: 2rpx;" 
+							:indicator-dots="false" :autoplay="false">
+							<swiper-item style="width: 100%;height: 100%;" 
+								@click="jump">
+								<view class="item-wrapper">		
+								<image v-for="(item, index) in serviceList" :key="index" :src="item.img" class="item"
+									@click="jump(item.title)"></image>
+								</view>
+							</swiper-item>
+							<swiper-item style="width: 100%;height: 100%;"  
+								@click="jump">
+								<view class="item-wrapper">		
+								<image v-for="(item, index) in serviceList2" :key="index" :src="item.img" class="item"
+									@click="jump(item.title)"></image>
+								</view>
+							</swiper-item>	
+						</swiper>
+						<view disable-touch="false" class="app-line" style="position: absolute;bottom: 1.5vh;z-index: 999;">
+							<view v-for="(item,bi) in 2" :key="bi"
+								:class="bottomIndex== bi ? 'line-item line-item-active' : 'line-item'"></view>
+						</view>
+					</view>
 			</view>
 		</view>
 	</view>
@@ -107,6 +127,7 @@
 	export default {
 		data() {
 			return {
+				bottomIndex:0,
 				wendu: '25',
 				index: 0,
 				gCity: '江苏',
@@ -148,6 +169,31 @@
 					require('@/static/government/23.png'),
 					require('@/static/government/24.png'),
 				],
+				serviceList2:[
+					{
+						img: require('@/static/government/c.png'),
+					},
+					{
+						img: require('@/static/government/d.png'),
+					},
+					{
+							img: require('@/static/government/exam.png'),
+							title: '教育考试服务专区'
+						},
+						{
+							img: require('@/static/government/a.png'),
+							title: '就业服务专栏'
+						},
+						{
+							img: require('@/static/government/food-chain.png'),
+							title: '冷链食品追溯服务专区'
+						},
+						{
+							img: require('@/static/government/small-enterprise.png'),
+							title: '小微企业和个体工商户服务专栏'
+						},
+						
+				],
 				serviceList: [{
 						img: require('@/static/government/exam.png'),
 						title: '教育考试服务专区'
@@ -163,7 +209,13 @@
 					{
 						img: require('@/static/government/small-enterprise.png'),
 						title: '小微企业和个体工商户服务专栏'
-					}
+					},
+					{
+						img: require('@/static/government/a.png'),
+					},
+					{
+						img: require('@/static/government/b.png'),
+					},
 				]
 			}
 		},
@@ -193,6 +245,10 @@
 				}
 				this.flag = !this.flag
 			}, 10000)
+			setInterval(() => {
+				if (this.bottomIndex == 1) this.bottomIndex = 0
+				else this.bottomIndex++
+			}, 2000)
 		},
 		methods: {
 			back(){
@@ -223,6 +279,9 @@
 </script>
 
 <style lang="scss" scoped>
+	.swiper-bottom {
+		position: relative;
+	}
 	.status_bar {
 		position: relative;
 		height: var(--status-bar-height);

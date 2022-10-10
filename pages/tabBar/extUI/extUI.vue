@@ -105,7 +105,7 @@
 		right: 46rpx;
 		top: 86rpx;
 		z-index: 999 !important;
-		width: 36vw;
+		width: 34vw;
 		// height: 22vh;
 		padding-bottom: 20rpx;
 		padding-top: 10rpx;

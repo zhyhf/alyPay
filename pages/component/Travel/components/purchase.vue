@@ -26,6 +26,7 @@
 			this.today = (date.getMonth() + 1) + '月' + date.getDate() + '日'
 		},
 		methods: {
+			
 			jump() {
 				uni.navigateTo({
 					url: '/pages/component/loading/loading?type=1'

@@ -12,7 +12,7 @@
 						<uni-icons color="white" @click="back" type="left" size="24"></uni-icons>
 						<text class="txt">出行·南京</text>
 					</view>
-					<view class="right-text">
+					<view class="right-text" @click="toLoading">
 						管理
 					</view>
 				</view>
@@ -33,19 +33,19 @@
 			<!-- 打车 -->
 			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'taxi'">
 				<map class="map" name=""></map>
-				<view class="map-bottom">
+				<view class="map-bottom" @click="toLoading">
 					<image src="@/static/travel/cab1.png" mode="widthFix"></image>
 					<image src="@/static/travel/cab2.png" mode="widthFix"></image>
 				</view>
 			</view>
 			<!-- 公交 -->
 			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == 'bus'">
-				<image style="width: 94vw;margin-left: 3vw;" src="../../../static/travel/bu.png" mode="widthFix">
+				<image @click="toLoading" style="width: 94vw;margin-left: 3vw;" src="../../../static/travel/bu.png" mode="widthFix">
 				</image>
 			</view>
 			<!-- 地铁 -->
 			<view style="width: 100vw;" class="travel-map" v-if="travelSelArr[currentIndex].type == 'subway'">
-				<image style="width: 94vw;margin-left: 3vw;" src="../../../static/travel/su.png" mode="widthFix">
+				<image @click="toLoading" style="width: 94vw;margin-left: 3vw;" src="../../../static/travel/su.png" mode="widthFix">
 				</image>
 			</view>
 			<!-- 12306 -->
@@ -53,13 +53,13 @@
 				<Purchase></Purchase>
 			</view>
 			<!-- 机票 -->
-			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'ticket'">
+			<view  class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'ticket'">
 				<!-- <image style="width: 100vw;" src="../../../static/travel/ti.png" mode="widthFix">
 				</image> -->
 				<Ticket></Ticket>
 			</view>
 			<!-- 骑行 -->
-			<view class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'cycling'">
+			<view  class="travel-map taxi" v-if="travelSelArr[currentIndex].type == 'cycling'">
 				<Cycle></Cycle>
 			</view>
 		</view>
@@ -118,6 +118,11 @@
 			};
 		},
 		methods: {
+			toLoading(){
+				uni.navigateTo({
+					url:'/pages/component/loading/loading'
+				})
+			},
 			changeTab(i) {
 				this.currentIndex = i
 			},

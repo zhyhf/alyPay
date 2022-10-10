@@ -7,13 +7,13 @@
 					收付款
 				</view>
 			</view>
-			<image src="../../../static/image/threePoints.png" style="color:white;width:20px;margin-right:3px" mode="widthFix"></image>
+			<image @click="toLoading" src="../../../static/image/threePoints.png" style="color:white;width:20px;margin-right:3px" mode="widthFix"></image>
 		</view>
 		<view style="padding-top: 155rpx;">
-			<image src="../../../static/image/shoufukuanInner.png" mode="widthFix"
+			<image @click="toLoading" src="../../../static/image/shoufukuanInner.png" mode="widthFix"
 				style="display:block;margin:0 auto;width: 93%;"></image>
 		</view>
-		<uni-card :isShadow="true" mode="basic" :border="false" style="background-color:#4492FF">
+		<uni-card @click="toLoading" :isShadow="true" mode="basic" :border="false" style="background-color:#4492FF">
 			<uni-list>
 				<uni-list-item v-for="(item, index) in list"
 					style="height:90rpx;background-color: #4492FF;color:#4492FF" :title="item.title" showArrow link
@@ -39,6 +39,11 @@
 			};
 		},
 		methods: {
+			toLoading(){
+				uni.navigateTo({
+					url:"/pages/component/loading/loading"
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1
