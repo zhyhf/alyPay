@@ -96,7 +96,7 @@
 				</view>
 
 					<view class="swiper-bottom">
-						<swiper :current="bottomIndex" :circular="false" :disable-touch="false" style="height: 660rpx;margin-top: 2rpx;" 
+						<swiper :current="bottomIndex" :circular="true" :disable-touch="false" style="height: 660rpx;margin-top: 2rpx;" 
 							:indicator-dots="false" :autoplay="false">
 							<swiper-item style="width: 100%;height: 100%;" 
 								@click="jump">
@@ -179,14 +179,6 @@
 					{
 							img: require('@/static/government/exam.png'),
 							title: '教育考试服务专区'
-						},
-						{
-							img: require('@/static/government/a.png'),
-							title: '就业服务专栏'
-						},
-						{
-							img: require('@/static/government/food-chain.png'),
-							title: '冷链食品追溯服务专区'
 						},
 						{
 							img: require('@/static/government/small-enterprise.png'),
