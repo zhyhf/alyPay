@@ -34,7 +34,7 @@
 		</view>
 		<view class="heaeder-input">
 			<uni-icons class="search" type="search" size="23" color="#ccc"></uni-icons>
-			<input type="text" class="input" placeholder="搜索你的好友、最近转账联系人等">
+			<input @click="focus" type="text" class="input" placeholder="搜索你的好友、最近转账联系人等">
 		</view>
 		<image @click="jump" src="@/static/image/message1.png" mode="widthFix" class="message1"></image>
 		<image @click="jump" src="@/static/image/message2.png" mode="widthFix" class="message2"></image>
@@ -52,6 +52,11 @@
 			this.showList = false
 		},
 		methods: {
+			focus() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/search/search'
+				})
+			},
 			toLoading(){
 				uni.navigateTo({
 					url:'/pages/component/loading/loading'
