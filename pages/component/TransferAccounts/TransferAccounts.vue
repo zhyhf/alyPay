@@ -354,7 +354,7 @@
 		image {
 			margin: 0 19rpx;
 			margin-bottom: 6rpx;
-			width: 80rpx;
+			width: 72rpx;
 			// height: 106rpx;
 			// border: 1px solid red;
 		}

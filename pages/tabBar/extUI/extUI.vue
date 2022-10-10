@@ -7,7 +7,7 @@
 				<image src="@/static/image/broom.png" class="broom"></image>
 			</view>
 			<image @click="toLoading" src="@/static/image/address-book.png" class="img book"></image>
-			<image src="@/static/image/add.png" class="img" @click="showList = true"></image>
+			<image src="@/static/image/add.png" class="img" @click="showList = !showList"></image>
 			<view class="list" v-if="showList">
 				<view class="sanjiao">
 				</view>
@@ -106,7 +106,9 @@
 		top: 86rpx;
 		z-index: 999 !important;
 		width: 36vw;
-		height: 22vh;
+		// height: 22vh;
+		padding-bottom: 20rpx;
+		padding-top: 10rpx;
 		border-radius: 16rpx;
 		background-color: black;
 		padding-left: 20rpx;
@@ -124,11 +126,12 @@
 		}
 	
 		.item {
+			margin-left: 20rpx;
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			// justify-content: center;
 			width: 80%;
-			height: 7.2vh;
+			height: 6.8vh;
 	
 		}
 	

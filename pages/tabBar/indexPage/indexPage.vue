@@ -447,7 +447,9 @@
 				top: 80rpx;
 				z-index: 999;
 				width: 36vw;
-				height: 30vh;
+				// height: vh;
+				padding-bottom: 20rpx;
+				padding-top: 10rpx;
 				border-radius: 16rpx;
 				background-color: black;
 				padding-left: 20rpx;
@@ -467,7 +469,7 @@
 					display: flex;
 					align-items: center;
 					width: 100%;
-					height: 7.2vh;
+					height: 6.8vh;
 
 				}
 
