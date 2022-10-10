@@ -14,10 +14,10 @@
 				<view class="right-img">
 					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
-					<view class="more">
+					<view class="more" @click="jump">
 						<image style="width: 38rpx; height: 8rpx;" src="@/static/government/moreBlack.png"></image>
 					</view>
-					<view class="close">
+					<view class="close" @click="back">
 						<image style="width: 34rpx; height: 34rpx;" src="@/static/government/closeBlack.png"></image>
 					</view>
 				</view>
@@ -73,6 +73,12 @@
 			back() {
 				uni.navigateBack({
 					delta: 1
+				})
+			},
+			// 跳转loading
+			jump(){
+				uni.navigateTo({
+					url: `/pages/component/loading/loading?type=1`
 				})
 			},
 			handleClick() {
