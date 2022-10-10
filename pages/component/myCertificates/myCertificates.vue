@@ -14,10 +14,10 @@
 				<view class="right-img" style="position: relative;margin-right: 16rpx;">
 					<image style="width: 142rpx; height: 56rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
-					<view class="more">
+					<view class="more" @click="jumpLoading">
 						<image src="@/static/government/moreBlack.png"></image>
 					</view>
-					<view class="close">
+					<view class="close" @click="back">
 						<image src="@/static/government/closeBlack.png"></image>
 					</view>
 				</view>
@@ -56,10 +56,21 @@
 			}
 		},
 		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
 			jump() {
 				const title = '证照管理'
 				uni.navigateTo({
 					url: `/pages/component/loading/loading?type=1&title=${title}`
+				})
+			},
+			// 跳转loading
+			jumpLoading(){
+				uni.navigateTo({
+					url: `/pages/component/loading/loading?type=1`
 				})
 			},
 			add() {
@@ -110,7 +121,7 @@
 	
 		.left-info {
 			display: flex;
-			font-size: 34rpx;
+			font-size: 36rpx;
 			align-items: center;
 	
 			.txt {

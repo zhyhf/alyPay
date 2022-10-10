@@ -10,6 +10,12 @@
 			<view class="right-icon" v-if="showDefaultIcon">
 				<view class="application-right">
 					<image class="bg" src="@/static/government/p2.png" mode=""></image>
+					<view class="more" @click="jumpLoading">
+						<image src="@/static/government/moreBlack.png"></image>
+					</view>
+					<view class="close" @click="back">
+						<image src="@/static/government/closeBlack.png"></image>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -37,6 +43,11 @@
 		methods: {
 			back() {
 				uni.navigateBack()
+			},
+			jumpLoading(){
+				uni.navigateTo({
+					url: `/pages/component/loading/loading?type=1`
+				})
 			}
 		},
 		onLoad(props) {
@@ -116,7 +127,7 @@
 		
 			.right-icon {
 				position: absolute;
-				top: 15rpx;
+				top: 19rpx;
 				right: 20rpx;
 				width: 24vw;
 			}
@@ -132,15 +143,15 @@
 			.application-right {
 				position: absolute;
 				right: 4rpx;
-				top: 35rpx;
+				top: 44rpx;
 				width: 15vw;
 			
 				.more {
 					position: absolute;
-					right: 66rpx;
-					top: 5rpx;
+					right: 76rpx;
+					top: -8rpx;
 					width: 30rpx;
-					height: 30rpx;
+					height: 10rpx;
 			
 					image {
 						width: 100%;
@@ -152,8 +163,8 @@
 					position: absolute;
 					right: 10rpx;
 					top: 5rpx;
-					width: 30rpx;
-					height: 30rpx;
+					width: 36rpx;
+					height: 36rpx;
 			
 					image {
 						width: 100%;
