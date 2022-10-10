@@ -16,7 +16,7 @@
 				</view>
 			</view>
 		</view>
-		<swiper class="swiper" circular autoplay :interval="interval" :duration="1000" vertical>
+		<swiper @click="toLoading" class="swiper" circular autoplay :interval="interval" :duration="1000" vertical>
 			<swiper-item>
 				<view class="life-item">
 					<image src="@/static/image/energy.png" class="icon-item"></image>
@@ -31,9 +31,9 @@
 				</view>
 			</swiper-item>
 		</swiper>
-		<image class="card-list" src="@/static/image/card-list.png"></image>
-		<image class="auto-pay" src="@/static/image/auto-pay.png"></image>
-		<image class="home-service" src="@/static/image/home-service.png"></image>
+		<image @click="toLoading" class="card-list" src="@/static/image/card-list.png"></image>
+		<image @click="toLoading" class="auto-pay" src="@/static/image/auto-pay.png"></image>
+		<image @click="toLoading" class="home-service" src="@/static/image/home-service.png"></image>
 	</view>
 </template>
 
@@ -45,6 +45,11 @@
 			}
 		},
 		methods: {
+			toLoading(){
+				uni.navigateTo({
+					url:"/pages/component/loading/loading"
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1

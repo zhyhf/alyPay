@@ -94,7 +94,7 @@
 		.header-right {
 			position: absolute;
 			right: 20rpx;
-			top: 15rpx;
+			top: 11rpx;
 			.right-text {
 				color: #323232;
 				margin-right: 20rpx;

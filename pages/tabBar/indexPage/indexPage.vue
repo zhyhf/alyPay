@@ -469,7 +469,7 @@
 					display: flex;
 					align-items: center;
 					width: 100%;
-					height: 6.8vh;
+					height: 90rpx;
 
 				}
 
