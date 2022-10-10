@@ -66,6 +66,7 @@
 		background-color: #fff;
 		padding-bottom: 20rpx;
 		height: 50rpx;
+		border-bottom: 1rpx solid rgba(0,0,0,.05);
 		.back {
 			position: absolute;
 			left: 20rpx;

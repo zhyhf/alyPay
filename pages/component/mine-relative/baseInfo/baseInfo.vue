@@ -27,6 +27,8 @@
 <style scoped lang="scss">
 .wrapper {
 	width: 100%;
+	height: 100vh;
+	background-color: #f6f6f6;
 	.status_bar {
 		width: 100%;
 		height: var(--status-bar-height);
@@ -43,18 +45,20 @@
 		left: 0;
 		top: var(--status-bar-height);
 		display: flex;
-		justify-content: center;
+		// justify-content: center;
 		align-items: center;
 		background-color: #fff;
 		padding-bottom: 20rpx;
 		.back {
-			position: absolute;
-			left: 20rpx;
-			top: 10rpx;
+			// position: absolute;
+			// left: 20rpx;
+			// top: 10rpx;
+			margin:10rpx 20rpx 0 20rpx;
 			width: 34rpx;
 			height: 34rpx;
 		}
 		.title {
+			margin:10rpx 20rpx 0 20rpx;
 			font-size: 38rpx;
 			font-weight: 500;
 		}

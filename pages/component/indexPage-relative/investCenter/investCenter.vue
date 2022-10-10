@@ -70,40 +70,34 @@
 	}
 
 	.application-right {
-		position: absolute;
-		right: 4rpx;
-		// top: 35rpx;
-		// width: 15vw;
-
 		.more {
 			position: absolute;
-			right: 66rpx;
-			top: -8rpx;
-			width: 32rpx;
+			left: 25rpx;
+			top: -3rpx;
+			width: 40rpx;
 			height: 10rpx;
-
+	
 			image {
 				width: 100%;
 				height: 100%;
 			}
 		}
-
 		.close {
 			position: absolute;
-			right: 10rpx;
-			top: 5rpx;
-			width: 34rpx;
-			height: 34rpx;
-
+			left: 110rpx;
+			top: 14rpx;
+			width: 40rpx;
+			height: 40rpx;
+	
 			image {
 				width: 100%;
 				height: 100%;
 			}
 		}
-
+	
 		.bg {
-			width: 120rpx;
-			height: 50rpx;
+			width: 170rpx;
+			height: 66rpx;
 		}
 	}
 

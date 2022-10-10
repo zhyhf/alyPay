@@ -37,6 +37,8 @@
 <style lang="scss" scoped>
 .wrapper {
 	width: 100%;
+	height: 100vh;
+	background-color: #fff;
 	.status_bar {
 		width: 100%;
 		height: var(--status-bar-height);
@@ -66,6 +68,7 @@
 				margin-right: 20rpx;
 			}
 			.text {
+				margin-left: 16rpx;
 				font-size: 40rpx;
 				font-weight: 500;
 			}
@@ -94,9 +97,11 @@
 				}
 				.icon-left {
 					left: 24rpx;
-					top: 22rpx;
+					top: 24rpx;
 				}
 				.icon-right {
+					width: 40rpx;
+					top: 8rpx;
 					right: 18rpx
 				}
 			}

@@ -154,7 +154,7 @@
 			</view>
 			<view class="b-guanggao">
 				<image src="@/static/image/consume-title.png" mode="widthFix" style="width: 60%;"></image>
-				<view class="consume-box">
+				<view class="consume-box" @click="jumpToLoading">
 					<image src="@/static/image/consume1.gif" mode="widthFix" class="consume-item"></image>
 					<image src="@/static/image/consume2.gif" mode="widthFix" class="consume-item"></image>
 				</view>
@@ -171,7 +171,7 @@
 			<view class="b-guanggao" @click="jumpToLoading">
 				<image src="@/static/image/food.png" mode="widthFix"></image>
 			</view>
-			<view class="latest-info" @click="toUsagePage">
+			<view class="latest-info" @click="jumpToLoading">
 				<view class="b-image">
 					<image src="../../../static/image/msg.png" mode="widthFix"></image>
 				</view>

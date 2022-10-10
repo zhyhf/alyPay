@@ -2,9 +2,9 @@
 	<view class="container" :style="wrapperStyle">
 		<view class="status_bar"></view>
 		<view class="header">
-			<image src="@/static/image/finance-left-icon.png" class="f-icon1" style="width: 48rpx;"></image>
+			<image @click="jump" src="@/static/image/finance-left-icon.png" class="f-icon1" style="width: 48rpx;"></image>
 			<view class="input-wrapper">
-				<input type="text" class="input" @focus="focus">
+				<input :auto-blur="true" type="text" class="input" @focus="focus">
 				<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
 			</view>
 			<image src="@/static/image/finance-right-icon.png" @click="jumpToLicai" class="f-icon"></image>
