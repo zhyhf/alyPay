@@ -166,7 +166,7 @@
 					transform: 'translateY(-496rpx)'
 				},
 				wrapperStyle: {
-					height: '2100rpx'
+					height: '2050rpx'
 				}
 			}
 		},
@@ -199,9 +199,9 @@
 					transform: 'translateY(-496rpx)'
 				},
 				this.wrapperStyle = this.flag ? {
-					height: 'auto'
+					height: '2546rpx'
 				} : {
-					height: '2100rpx'
+					height: '2050rpx'
 				}
 				this.flag = !this.flag
 			},
