@@ -6,7 +6,7 @@
 					个人信息
 				</view>
 				<view class="right-ke" style="text-align: right;" @click="toService">
-					<image style="width: 45rpx;height: 45rpx;" src="/static/mine/kefu2.png" mode="widthFix"></image>
+					<image style="width: 46rpx;height: 46rpx;" src="/static/mine/kefu2.png" mode="widthFix"></image>
 				</view>
 		</view>
 		<uni-list style="padding-top:150rpx;">
@@ -75,11 +75,11 @@
 					},
 					{
 						title: '人像验证',
-						rightText: '已经验证',
+						rightText: '已验证',
 						showArrow: false
 					},
 					{
-						title: '变更姓名或证件号',
+						title: '变更姓名或证件号码',
 						showArrow: true,
 						navigatePath: '/pages/component/mine-relative/modify/modify'
 					}
@@ -149,7 +149,7 @@
 		height: 0px;
 	}
 	/deep/ .uni-icon-wrapper{
-		margin-top: -4rpx;
+		margin-top: 2rpx;
 	}
 	/deep/ .uni-list-item__container{
 		padding: 28rpx 30rpx;
