@@ -80,7 +80,7 @@
 					<image mode="scaleToFill" class="image" src="../../../static/image/yund1.png"></image>
 					<text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">运动</text>
 				</view>
-				<view class="chose-item" @click="jumpToLoading">
+				<view class="chose-item" @click="toHealthCode">
 					<image mode="scaleToFill" class="image" src="../../../static/image/jiankang1.png"></image>
 				    <text style="margin-left: 0.4vw;margin-top:1vw;font-size: 25rpx;">健康码</text>
 				</view>
@@ -221,6 +221,11 @@
 			uni.clearStorage()
 		},
 		methods: {
+			toHealthCode(){
+				uni.navigateTo({
+					url:"/pages/component/healthCode/healthCode"
+				})
+			},
 			jumpToMine() {
 				uni.navigateTo({
 					url: '/pages/component/indexPage-relative/mine/mine'
@@ -237,7 +242,7 @@
 				})
 			},
 			toUsagePage() {
-				uni.navigateTo({
+				uni.switchTab({
 					url: '/pages/component/indexPage-relative/usage/usage'
 				})
 			},

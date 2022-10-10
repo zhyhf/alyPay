@@ -776,6 +776,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/component/healthCode/healthCode",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",
