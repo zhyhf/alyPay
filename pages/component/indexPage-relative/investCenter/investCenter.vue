@@ -5,7 +5,7 @@
 				充值中心
 				<view class="right-icon">
 					<view class="application-right">
-						<image class="bg" src="@/static/government/bg.png" mode=""></image>
+						<image class="bg" src="@/static/government/bg1.png" mode=""></image>
 						<view class="more">
 							<image src="@/static/government/more.png" mode=""></image>
 						</view>
@@ -63,9 +63,9 @@
 
 		.right-icon {
 			position: absolute;
-			top: 76rpx;
-			right: 14rpx;
-			width: 28vw;
+			top: 65rpx;
+			right: 12rpx;
+			width: 24vw;
 		}
 	}
 
