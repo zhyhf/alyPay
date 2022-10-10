@@ -8,10 +8,10 @@
 			<view class="right-icon">
 				<view class="application-right">
 					<image class="bg" src="@/static/government/bg.png" mode=""></image>
-					<view class="more">
+					<view class="more" @click="jump">
 						<image src="@/static/government/more.png" mode=""></image>
 					</view>
-					<view class="close">
+					<view class="close" @click="back">
 						<image src="@/static/government/close.png" mode=""></image>
 					</view>
 				</view>
@@ -89,6 +89,12 @@
 			};
 		},
 		methods: {
+			// 跳转loading
+			jump(){
+				uni.navigateTo({
+					url: `/pages/component/loading/loading?type=1`
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1

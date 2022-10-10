@@ -73,7 +73,8 @@
 		width: 85%;
 		background-color: #1777FF;
 		color: white;
-		margin-bottom: 3.8vh;
+		margin-bottom: 3.4vh;
+		margin-top: 10rpx;
 	}
 	.main-container {
 		padding-top: 24rpx;
@@ -83,7 +84,7 @@
 	}
 	.health-code-main {
 		position: fixed;
-		top:16vh;
+		top:190rpx;
 		z-index: 999;
 		left: 50%;
 		transform: translateX(-50%);
@@ -92,14 +93,11 @@
 		width: 92%;
 		// height: 55vh;
 		.code-tabbar {
-			margin-top: 5.5vh;
+			margin-top: 60rpx;
 			display: flex;
 			justify-content: space-around;
 			font-size: 36rpx;
 			border-bottom: 1rpx solid rgba(0, 0, 0, .05);
-			// color: #1777FF;	
-			// background-color: pink;
-			height: 5.5vh;
 		}
 		.active {
 				color: #1777FF !important;
@@ -112,7 +110,7 @@
 			.line {
 				margin-top: 20rpx;
 				width: 60rpx;
-				height: 10rpx;
+				height: 6rpx;
 				border-radius: 16rpx;
 				background-color: #1777FF;
 			}
@@ -121,12 +119,12 @@
 	}
 	.bg-top {
 	   position: absolute;
-	   top: -36%;	
+	   top: -30%;	
 	   width: 160vw;
 	   height: 120vw;
 	   margin-left: -30vw;
 	   border-radius: 50%;
-	   background:linear-gradient(to top , #fff 0% ,#1777FF 18%);
+	   background:linear-gradient(to bottom , #1777FF 100%, #fff 0% );
 	   filter:blur(10px);
 	
 	}
@@ -169,9 +167,9 @@
 	
 		.close {
 			position: absolute;
-			right: 20rpx;
-			top: 6rpx;
-			width: 36rpx;
+			right: 18rpx;
+			top: 8rpx;
+			width: 36.5rpx;
 			height: 36rpx;
 	
 			image {

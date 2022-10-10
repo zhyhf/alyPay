@@ -9,11 +9,11 @@
 			国家政务服务平台(试运行)
 			<view class="right-icon">
 				<view class="application">
-					<image src="@/static/government/tihuan.png" mode=""></image>
+					<image src="@/static/government/tihuan.png" mode="" @click="jump('')"></image>
 				</view>
 				<view class="application-right">
 					<image class="bg" src="@/static/government/bg.png" mode=""></image>
-					<view class="more">
+					<view class="more"  @click="jump('')">
 						<image src="@/static/government/more.png"></image>
 					</view>
 					<view class="shuxian"></view>
@@ -564,7 +564,7 @@
 
 				.certificate-title {
 					color: #313131;
-					font-size: 40rpx;
+					font-size: 46rpx;
 					font-weight: 500;
 				}
 
