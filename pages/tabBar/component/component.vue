@@ -4,7 +4,7 @@
 		<view class="header">
 			<image src="@/static/image/finance-left-icon.png" class="f-icon1" style="width: 48rpx;"></image>
 			<view class="input-wrapper">
-				<input type="text" class="input">
+				<input type="text" class="input" @focus="focus">
 				<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
 			</view>
 			<image src="@/static/image/finance-right-icon.png" @click="jumpToLicai" class="f-icon"></image>
@@ -173,6 +173,11 @@
 		methods: {
 			changeIndex(index) {
 				this.activeIndex = index
+			},
+			focus() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/search/search'
+				})
 			},
 			// 跳转loading
 			jumpToLicai(){

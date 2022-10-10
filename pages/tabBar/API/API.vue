@@ -9,8 +9,8 @@
 				class="tab-item"
 				@click="changeTab(index)"
 			>{{ item }}</text>
-			<image src="../../../static/image/search-icon.png" class="search"></image>
-			<image src="../../../static/image/life-person.png" class="person"></image>
+			<image src="../../../static/image/search-icon.png" @click="focus" class="search"></image>
+			<image src="../../../static/image/life-person.png" class="person" @click="toLoading"></image>
 		</view>
 		<image src="@/static/loading2.gif" class="loading" mode="widthFix"></image>
 		<my-tab-bar class="tabBar"></my-tab-bar>
@@ -26,9 +26,19 @@
 			}
 		},
 		methods: {
+			toLoading(){
+				uni.navigateTo({
+					url:"/pages/component/loading/loading"
+				})
+			},
 			changeTab(index) {
 				this.activeIndex = index
-			}
+			},
+			focus() {
+				uni.navigateTo({
+					url: '/pages/component/indexPage-relative/search/search'
+				})
+			},
 		}
 	}
 </script>

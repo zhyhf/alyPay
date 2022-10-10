@@ -14,7 +14,7 @@
 			<view class="content-item" style="">
 				<uni-list>
 					<uni-list-item v-for="(item, index) in topList"
-						style="align-items:center;border-radius: 20rpx;height:100rpx;" :title="item.title" showArrow
+						style="align-items:center;border-radius: 20rpx;height:120rpx;" :title="item.title" showArrow
 						link :thumb="item.icon" :to="item.navigatePath" />
 				</uni-list>
 			</view>
@@ -44,11 +44,15 @@
 </script>
 
 <style lang="scss" scoped>
+	/deep/ .uni-list--base {
+		width: 64rpx;
+		height: 64rpx;
+	}
 	/deep/ .uni-list-item__content-title{
-		font-size: 30rpx;
+		font-size: 32rpx;
 	}
 	/deep/ .uni-list-item__extra-text{
-		font-size: 30rpx;
+		font-size: 32rpx;
 	}
 	
 	/deep/ .uni-list--border-bottom {
@@ -80,6 +84,9 @@
 			margin-left: 20rpx;
 		}
 	}
+.group-title {
+	padding: 15rpx 0;
+}
 .group-txt {
 	padding: 15rpx 0 15rpx 25rpx;
 	color: #6f6f6f;

@@ -1,13 +1,13 @@
 <template>
-	<view class="container" @click="jump">
+	<view class="container">
 		<view class="status_bar"></view>
 		<view class="header">
 			<view class="detail">
 				<text class="text">消息</text>
 				<image src="@/static/image/broom.png" class="broom"></image>
 			</view>
-			<image src="@/static/image/address-book.png" class="img book"></image>
-			<image src="@/static/image/add.png" class="img"></image>
+			<image @click="toLoading" src="@/static/image/address-book.png" class="img book"></image>
+			<image src="@/static/image/add.png" class="img" @click="showList = true"></image>
 			<view class="list" v-if="showList">
 				<view class="sanjiao">
 				</view>
@@ -36,8 +36,8 @@
 			<uni-icons class="search" type="search" size="23" color="#ccc"></uni-icons>
 			<input type="text" class="input" placeholder="搜索你的好友、最近转账联系人等">
 		</view>
-		<image src="@/static/image/message1.png" mode="widthFix" class="message1"></image>
-		<image src="@/static/image/message2.png" mode="widthFix" class="message2"></image>
+		<image @click="jump" src="@/static/image/message1.png" mode="widthFix" class="message1"></image>
+		<image @click="jump" src="@/static/image/message2.png" mode="widthFix" class="message2"></image>
 		<my-tab-bar></my-tab-bar>
 	</view>
 </template>
@@ -45,25 +45,49 @@
 	export default {
 		data() {
 			return {
-				showList:true
+				showList:false
 			}
 		},
+		onShow() {
+			this.showList = false
+		},
 		methods: {
+			toLoading(){
+				uni.navigateTo({
+					url:'/pages/component/loading/loading'
+				})
+			},
 			toAdd(){
+				this.showList = false
 				uni.navigateTo({
 					url:"/pages/component/addPerson/addPerson"
 				})
 			},
 			toGroup(){
+				this.showList = false
 				uni.navigateTo({
 					url:"/pages/component/groupChat/groupChat"
 				})
 			},
 			jump() {
+				this.showList = false
 				uni.navigateTo({
 					url: '/pages/component/loading/loading?type=1'
 				})
-			}
+			},
+			scanInfo() {	
+				this.showList = false
+				uni.scanCode({
+					onlyFromCamera: true,
+					success(res) {
+						console.log("扫描成功")
+						this.showList = false
+					},
+					fail() {
+						this.showList = false
+					},
+				})
+			},
 		}
 	}
 </script>
