@@ -33,8 +33,8 @@
 					<text>立即领取</text>
 				</button>
 			     <view>
-					<text style="color: #9A9693;font-size: 22rpx;position: absolute;
-					bottom: 60rpx;letter-spacing: 1rpx;left:50%">支持体验基金或兑换其他福利</text>
+					<text style="color: #9A9693;font-size: 24rpx;position: absolute;
+					bottom: 55rpx;letter-spacing: 0.2rpx;left:28%">支持体验基金或兑换其他福利</text>
 				 </view>
 			</view>
 			<view class="good-wrapper">
@@ -61,6 +61,15 @@
 						<text>立即体验</text>
 						<image src="@/static/image/right-arrow.png" class="right-arrow"></image>
 					</button>
+				</view>
+			</view>
+			<view class="uni-flex uni-row" style="margin-top:26rpx;margin-bottom: 30rpx;padding-left: 3.5vw;">
+				<view>
+					<image src="@/static/image/newLicai1.png" mode="widthFix" class="newLicai1"></image>
+				</view>
+				<view style="margin-left: 3vw;">
+					<image src="@/static/image/newLicai2.png" mode="widthFix" class="newLicai2"></image>
+				    <image src="@/static/image/newLicai3.png" mode="widthFix" class="newLicai3"></image>
 				</view>
 			</view>
 		</view>
@@ -154,10 +163,10 @@
 				},
 				flag: true,
 				contentStyle: {
-					transform: 'translateY(-505rpx)'
+					transform: 'translateY(-496rpx)'
 				},
 				wrapperStyle: {
-					height: '1550rpx'
+					height: '2100rpx'
 				}
 			}
 		},
@@ -187,12 +196,12 @@
 				this.contentStyle = this.flag ? {
 					transform: 'translateY(0rpx)'
 				} : {
-					transform: 'translateY(-505rpx)'
+					transform: 'translateY(-496rpx)'
 				},
 				this.wrapperStyle = this.flag ? {
 					height: 'auto'
 				} : {
-					height: '1550rpx'
+					height: '2100rpx'
 				}
 				this.flag = !this.flag
 			},
@@ -209,9 +218,9 @@
 	.container {
 		width: 100vw;
 		position: relative;
-		padding-bottom: 120rpx;
-		height: 1550rpx;
-		overflow: hidden;
+		// padding-bottom: 120rpx;
+		// height: 1550rpx;
+		// overflow: hidden;
 		.status_bar {
 			width: 100%;
 			height: var(--status-bar-height);
@@ -220,6 +229,16 @@
 			top: 0;
 			left: 0;
 			z-index: 99;
+		}
+		.newLicai1{
+			width: 45vw;
+		}
+		.newLicai2{
+			width: 45vw;
+		}
+		.newLicai3{
+			margin-top: 16rpx;
+			width: 45vw;
 		}
 		.header {
 			display: flex;
