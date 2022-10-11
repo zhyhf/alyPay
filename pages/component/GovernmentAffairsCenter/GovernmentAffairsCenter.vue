@@ -380,7 +380,7 @@
 		padding-bottom: 35rpx;
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
-		background-color: #D81706;
+		background-color: #DC1A06;
 
 		.right-icon {
 			position: absolute;
@@ -392,9 +392,9 @@
 
 	.gov-header {
 		position: relative;
-		width: 100%;
+		width: 102%;
 		margin-left: -2rpx;
-		height: 496rpx;
+		height: 510rpx;
 		margin-top: -70rpx;
 		// background-color: red;
 		color: #FDFDFD;
@@ -405,10 +405,11 @@
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
 		background: url('@/static/government/header.png');
-		background-size: 100% 100%;
+		background-size: cover;
+		// background-position:2% 0%;
 		margin-bottom: 20rpx;
-
 		// background-color: white;
+		// margin-top: 30rpx;
 	}
 
 	.search {

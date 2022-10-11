@@ -95,7 +95,7 @@
 			font-weight: 500;
 			letter-spacing: 6rpx;
 			padding: 30rpx;
-			padding-top: calc(var(--status-bar-height) + 20rpx);
+			padding-top: calc(var(--status-bar-height) + 25rpx);
 			box-sizing: border-box;
 			background-color: #fbfbfb;
 			-webkit-font-smoothing: antialiased;
