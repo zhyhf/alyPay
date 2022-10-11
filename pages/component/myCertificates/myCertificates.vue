@@ -75,6 +75,12 @@
 					url: `/pages/component/loading/loading?type=1&title=${title}`
 				})
 			},
+			// 跳转loading
+			jumpLoading(){
+				uni.navigateTo({
+					url: `/pages/component/loading/loading?type=1`
+				})
+			},
 			add() {
 				uni.navigateTo({
 					url: '/pages/component/manageCertificates/manageCertificates'
@@ -123,7 +129,7 @@
 	
 		.left-info {
 			display: flex;
-			font-size: 34rpx;
+			font-size: 36rpx;
 			align-items: center;
 	
 			.txt {

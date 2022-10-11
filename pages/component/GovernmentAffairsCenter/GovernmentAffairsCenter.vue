@@ -615,7 +615,7 @@
 
 				.certificate-title {
 					color: #313131;
-					font-size: 46rpx;
+					font-size: 40rpx;
 					font-weight: 500;
 				}
 
