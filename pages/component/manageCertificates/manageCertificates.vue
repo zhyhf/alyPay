@@ -12,7 +12,7 @@
 					<image @click="toLoading" style="width: 56rpx; height: 56rpx;margin-right: 12rpx;" src="@/static/government/p1.png" mode=""></image>
 				</view>
 				<view class="right-img" style="position: relative;margin-right: 16rpx;">
-					<image @click="toLoading" style="width: 142rpx; height: 56rpx;" class="bg" src="@/static/government/p2.png" mode="">
+					<image style="width: 142rpx; height: 56rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
 					<view class="more" @click="toLoading">
 						<image src="@/static/government/moreBlack.png"></image>
@@ -176,7 +176,7 @@
 	.more{
 		position: absolute;
 		top: 2rpx;
-		left: 16rpx;
+		left: 20rpx;
 		width: 36rpx;
 		height: 10rpx;
 		image {
@@ -187,7 +187,7 @@
 	.close {
 		position: absolute;
 		right: 20rpx;
-		top: 9rpx;
+		top: 11rpx;
 		width: 34rpx;
 		height: 34rpx;
 	
