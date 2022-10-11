@@ -33,7 +33,8 @@
 			</view>
 		</view>
 		<view class="heaeder-input">
-			<uni-icons class="search" type="search" size="23" color="#ccc"></uni-icons>
+			<image src="@/static/image/search-outline.png" mode="widthFix" class="search-icon"></image>
+			<!-- <uni-icons class="search" type="search" size="23" color="#ccc"></uni-icons> -->
 			<input @click="focus" type="text" class="input" placeholder="搜索你的好友、最近转账联系人等">
 		</view>
 		<image @click="jump" src="@/static/image/message1.png" mode="widthFix" class="message1"></image>
@@ -98,6 +99,14 @@
 </script>
 
 <style lang="scss" scoped>
+	.search-icon {
+		position: absolute;
+		top: 40rpx;
+		left: 43rpx;
+		z-index: 999;
+		width: 40rpx;
+		// background-color: #0493F3;
+	}
 	.list {
 		position: absolute;
 		color: white !important;
