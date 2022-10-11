@@ -9,7 +9,7 @@
             <div style="width: 240px;height: 240px;border-radius: 150px;overflow: hidden;">
                 <live-pusher id='livePusher' ref="livePusher" class="livePusher" url=""
                     mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" :beauty="2" whiteness="2"
-                    aspect="1:1" @statechange="statechanse" @netstatus="netstatus" @error="error"></live-pusher>
+                    aspect="1:1" @statechange="statechange"  @error="error"></live-pusher>
             </div>
 			<cover-image src="/static/image/kongxinCircle.png" class="gaiimg2"></cover-image>
 			<!-- <cover-image v-if="showCircle"  src="/static/image/loadingJi.png" class="gaiimg3"></cover-image> -->
@@ -33,7 +33,6 @@
 				 showCircle: false,
 			}
         },
-
         mounted() {
 		    this.poenCarme();
             this.context = uni.createLivePusherContext("livePusher", this);
@@ -57,7 +56,8 @@
 			      }
 			    },
 				  //状态
-				    statechange(e) {
+				statechange(e) {
+					console.log('5555555',e)
 				      //状态改变
 				      if (e.detail.code == 1003 || e.detail.code == 1007) {
 				        //1007

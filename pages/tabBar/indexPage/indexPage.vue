@@ -14,7 +14,7 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<image src="@/static/image/search-icon.png"  class="searchTop"></image>
+					<image src="@/static/image/search-outline.png"  class="searchTop"></image>
 				<!-- 	<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons> -->
 					<input @input="changValue" style="padding-right: 40rpx;" @click="focus" />
 					<view class="btn" @click="search">
@@ -557,9 +557,8 @@
 				position: absolute;
 				left: 18rpx;
 				top: 17rpx;
-				width: 32rpx;
-				height: 32rpx;
-				color: #999D9C;
+				width: 36rpx;
+				height: 36rpx;
 			}
 
 			.btn {
