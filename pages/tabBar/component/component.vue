@@ -274,7 +274,7 @@
 				.searchTop {
 					position: absolute;
 					left: 18rpx;
-					top: 17rpx;
+					top: 14rpx;
 					width: 36rpx;
 					height: 36rpx;
 				}
