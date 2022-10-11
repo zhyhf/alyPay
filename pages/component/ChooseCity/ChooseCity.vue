@@ -27,7 +27,7 @@
 		<view class="container">
 			<view class="input-wrapper" :style="inputStyle">
 				<input type="text" class="input-text" placeholder="输入城市名、拼音和首字母查询">
-				<image src="@/static/image/search-icon.png" class="search-icon"></image>
+				<image src="@/static/image/search-outline.png" class="search-icon"></image>
 			</view>
 			<!-- <view class="current" :style="contentStyle">
 				<view class="current-text">
