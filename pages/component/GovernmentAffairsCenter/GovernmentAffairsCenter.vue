@@ -34,7 +34,7 @@
 					</view>
 					<view class="temp item" style="display: flex;">
 						<image class="yun" src="@/static/government/yun.png" mode=""></image>
-						{{wendu}}℃
+						{{wendu}}
 					</view>
 				</view>
 				<view class="right-info" @click="toMyInfo">
@@ -221,17 +221,20 @@
 		},
 		onShow() {
 			this.gCity = uni.getStorageSync("pro") || "江苏省"
-			uni.request({
-				url: 'http://wthrcdn.etouch.cn/weather_mini?city=南京',
-				method: 'GET',
-				success: res => {
-					this.wendu = res.data.data.wendu
-				},
-				fail: () => {
-					this.openmsg("警告", "天气接口获取失败")
-				},
-				complete: () => {}
-			});
+			this.wendu = JSON.parse(uni.getStorageSync('weather')).wendu || '15℃'
+			// uni.request({
+			// 	url: 'https://www.mxnzp.com/api/weather/current/南京?app_id=ixssxqertpltndez&app_secret=QUF5S2JLZkNqSHdyeVVLczdCNSt1QT09',
+			// 	method: 'GET',
+			// 	success: res => {
+			// 		console.log(res)
+			// 		this.wendu = res.data.data.wendu
+			// 	},
+			// 	fail: () => {
+			// 		// this.openmsg("警告", "天气接口获取失败")
+			// 	},
+			// 	complete: () => {}
+			// });
+			
 
 		},
 		mounted() {
