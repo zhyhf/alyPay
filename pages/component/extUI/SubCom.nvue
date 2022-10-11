@@ -36,9 +36,9 @@
         mounted() {
 		    this.poenCarme();
             this.context = uni.createLivePusherContext("livePusher", this);
-            var that = this
+            const that = this
             setTimeout(() => {
-                this.startPreview()
+                that.startPreview()
             })
         },
         methods: {
@@ -57,7 +57,6 @@
 			    },
 				  //状态
 				statechange(e) {
-					console.log('5555555',e)
 				      //状态改变
 				      if (e.detail.code == 1003 || e.detail.code == 1007) {
 				        //1007
@@ -72,8 +71,8 @@
 					//#ifdef APP-PLUS
 					if (plus.os.name == 'Android') {
 						this.poenCarmeInterval = setInterval(function() {
-							if (!_this.camerastate) _this.startPreview();
-						}, 400);
+							if (!this.camerastate) this.startPreview();
+						}, 1000);
 					}
 					//#endif
 				},
@@ -82,7 +81,7 @@
 			  if (!this.checkCamera()) {
 					return false;
 				  }
-                var that = this
+                const that = this
                 this.context.snapshot({
                     success: (e) => {
 						clearInterval(that.Timer)
@@ -92,18 +91,17 @@
 								url: "/pages/component/loading2/loading2"
 							})
 						},400)
-                        this.$emit('faceImg', e.message)
                     }
                 });
             },
             // 开启摄像头
             startPreview() {
-                var that = this
+                const that = this
                 this.context.startPreview({
                     success: (a) => {
                         that.Timer = setInterval(function() {
                             that.snapshot()
-							this.camerastate = true;
+							that.camerastate = true;
                         }, that.time)
                     },
                     fail(err) {
@@ -115,7 +113,7 @@
 			    stopPreview() {
 			      this.context.stopPreview({
 			        success: (a) => {
-			          thss.camerastate = false; //标记相机未启动
+			          this.camerastate = false; //标记相机未启动
 			        },
 			      });
 			    },
@@ -176,9 +174,9 @@
 </script>
   
 <style>
-	page {
+/* 	page {
         background: #0c8cf9;
-    }
+    } */
   
     .u-navbar__content__left {
         display: flex !important;

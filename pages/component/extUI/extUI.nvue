@@ -15,10 +15,10 @@
 					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
 					<view class="more" @click="jump">
-						<image style="width: 38rpx; height: 8rpx;" src="@/static/government/moreBlack.png"></image>
+						<image style="width: 38rpx; height: 8rpx;" class="imageMore" src="@/static/government/moreBlack.png"></image>
 					</view>
 					<view class="close" @click="back">
-						<image style="width: 34rpx; height: 34rpx;" src="@/static/government/closeBlack.png"></image>
+						<image style="width: 34rpx; height: 34rpx;" class="imageClose" src="@/static/government/closeBlack.png"></image>
 					</view>
 				</view>
 			</view>
@@ -92,7 +92,6 @@
 
 <style lang="scss" scoped>
 	.top-header {
-		padding-top: var(--status-bar-height);
 		padding-right: 20rpx;
 		padding-left: 20rpx;
 		// box-sizing: border-box;
@@ -108,7 +107,7 @@
 		left: 16rpx;
 		width: 40rpx;
 		height: 10rpx;
-		image {
+		.imageMore {
 			width: 100%;
 			height: 100%;
 		}
@@ -120,7 +119,7 @@
 		width: 34rpx;
 		height: 34rpx;
 	
-		image {
+		.imageClose {
 			width: 100%;
 			height: 100%;
 		}
