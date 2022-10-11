@@ -8,7 +8,7 @@
         <div class="livefater">
             <div style="width: 240px;height: 240px;border-radius: 150px;overflow: hidden;">
                 <live-pusher id='livePusher' ref="livePusher" class="livePusher" url=""
-                    mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" :beauty="2" whiteness="2"
+                    mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" beauty="2" whiteness="2"
                     aspect="1:1" @statechange="statechange"  @error="error"></live-pusher>
             </div>
 			<cover-image src="/static/image/kongxinCircle.png" class="gaiimg2"></cover-image>
@@ -22,7 +22,7 @@
     export default {
         props: {
             time: {
-                default: 1500,
+                default: 1000,
                 type: Number
             },
         },
@@ -34,6 +34,7 @@
 			}
         },
         mounted() {
+			this.checkCamera()
 		    this.poenCarme();
             this.context = uni.createLivePusherContext("livePusher", this);
             const that = this
@@ -71,7 +72,7 @@
 					//#ifdef APP-PLUS
 					if (plus.os.name == 'Android') {
 						this.poenCarmeInterval = setInterval(function() {
-							if (!this.camerastate) this.startPreview();
+							this.startPreview();
 						}, 1000);
 					}
 					//#endif
