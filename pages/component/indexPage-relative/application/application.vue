@@ -6,7 +6,8 @@
 			<text class="title">应用中心</text>
 			<view class="header-right">
 				<text class="right-text" @click="jumpToLoading">管理</text>
-				<uni-icons class="right-icon" type="search" size="25" color="#ccc" @click="jumpToSearch"></uni-icons>
+				<image src="@/static/image/search-icon.png" @click="jumpToSearch" class="search"></image>
+				<!-- <uni-icons class="right-icon" type="search" size="25" color="#ccc" @click="jumpToSearch"></uni-icons> -->
 			</view>
 		</view>
 		
@@ -248,6 +249,13 @@
 			background-color: #EFEFF4;
 			z-index:999;
 		}
+		.search {
+			position: absolute;
+			right: 10rpx;
+			top: 12rpx;
+			width: 40rpx;
+			height: 40rpx;
+		}
 		.header {
 			z-index:99;
 			width: 100%;
@@ -276,9 +284,10 @@
 				top: 0;
 				.right-text {
 					color: #3675DC;
-					margin-right: 20rpx;
-					font-size: 34rpx;position: relative;
-					top: -4rpx;
+					margin-right: 76rpx;
+					font-size: 34rpx;
+					position: relative;
+					top: 2rpx;
 				}
 			}
 		}
