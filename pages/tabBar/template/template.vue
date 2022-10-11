@@ -19,7 +19,7 @@
 				@click="navigateToInfo">
 			</image>
 			<view class="content-item" style="margin:10rpx 20rpx 20rpx;">
-				<uni-list style="border-radius: 20rpx;">
+				<uni-list  style="border-radius: 20rpx;">
 					<uni-list-item v-for="(item, index) in topList"
 						style="align-items:center;border-radius: 20rpx;height:100rpx;" :title="item.title" showArrow
 						link :thumb="item.icon" :to="item.navigatePath" />
@@ -131,6 +131,7 @@
 </script>
 
 <style scoped lang="scss">
+	
 	.top-header {
 		position: fixed;
 		top: 0;
