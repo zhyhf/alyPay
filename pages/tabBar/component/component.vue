@@ -5,7 +5,8 @@
 			<image @click="jump" src="@/static/image/finance-left-icon.png" class="f-icon1" style="width: 48rpx;"></image>
 			<view class="input-wrapper">
 				<input :auto-blur="true" type="text" class="input" @click="focus">
-				<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
+				<image src="@/static/image/search-outline.png"  class="searchTop"></image>
+				<!-- <uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons> -->
 			</view>
 			<image src="@/static/image/finance-right-icon.png" @click="jumpToLicai" class="f-icon"></image>
 		</view>
@@ -270,13 +271,20 @@
 					background-color: #fbfbfb;
 					height: 60rpx;
 				}
-				.search {
+				.searchTop {
+					position: absolute;
+					left: 18rpx;
+					top: 17rpx;
 					width: 36rpx;
 					height: 36rpx;
-					position: absolute;
-					left: 10rpx;
-					top: 8rpx;
 				}
+				// .search {
+				// 	width: 36rpx;
+				// 	height: 36rpx;
+				// 	position: absolute;
+				// 	left: 10rpx;
+				// 	top: 8rpx;
+				// }
 			}
 		}
 		.info-container {
