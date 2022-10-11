@@ -47,7 +47,8 @@
 				</view>
 			</view>
 			<view class="search">
-				<uni-icons class="search-icon" type="search" size="26" color="#6F6F6F"></uni-icons>
+				<image src="@/static/image/search-outline.png" mode="widthFix" class="search-icon"></image>
+				<!-- <uni-icons class="search-icon" type="search" size="26" color="#6F6F6F"></uni-icons> -->
 				<input type="text">
 				<view class="search-btn" @click="jump">
 					<text class="spe">|</text> 搜索
@@ -433,15 +434,16 @@
 
 		.search-icon {
 			position: absolute;
-			top: 20rpx;
+			top: 24rpx;
 			left: 30rpx;
 			z-index: 999;
+			width: 44rpx;
 			// background-color: #0493F3;
 		}
 
 		input {
 			margin-right: 60rpx;
-			padding-left: 40rpx;
+			padding-left: 74rpx;
 			width: 75vh;
 			height: 88rpx;
 			background-color: white;

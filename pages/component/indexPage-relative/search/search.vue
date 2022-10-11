@@ -6,7 +6,7 @@
 				<image src="@/static/image/search-back.png" class="back-icon" @click="back"></image>
 				<input v-model="text" type="text" auto-focus class="search-input" >
 				<text class="cancel" @click="search">搜索</text>
-				<image src="@/static/image/search-icon.png" class="search-icon"></image>
+				<image src="@/static/image/search-outline.png" class="search-icon"></image>
 				<image src="@/static/image/search-clear.png" class="clear-icon" @click="clear"></image>
 			</view>
 			<image v-show="loading" src="@/static/loading4.gif" class="loading" mode="widthFix"></image>
