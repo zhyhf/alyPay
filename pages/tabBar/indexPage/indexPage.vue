@@ -541,7 +541,7 @@
 				top: 17rpx;
 				width: 32rpx;
 				height: 32rpx;
-				color: #ccc;
+				color: #999D9C;
 			}
 
 			.btn {

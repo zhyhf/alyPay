@@ -138,6 +138,9 @@
 		// border-bottom: 1px solid yellowgreen;
 		.left-icon {
 			display: flex;
+			.txt{
+				font-size: 36rpx;
+			}
 
 		}
 
