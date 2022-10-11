@@ -206,12 +206,13 @@
 			// 	},
 			// 	complete: () => {}
 			// });
+			// this.getWeather()
 			
 		},
 		data() {
 			return {
 				weatherArr:['10℃','11℃','13℃','14℃','15℃','16℃','17℃','18℃','19℃','20℃'],
-				wendu: '25',
+				wendu: '',
 				weather: '多云',
 				close: require("@/static/addControl/close.png"),
 				add: require("@/static/icons/add.png"),
@@ -221,18 +222,24 @@
 			}
 		},
 		mounted() {
+			// uni.clearStorage()
 			this.searchValue = ''
-			let weather = uni.getStorageSync('weather')
-			let currentHour = new Date().getHours()
-			if(weather && (currentHour - JSON.parse(weather).time<1))return
-			let index =~~(Math.random()*(this.weatherArr.length))
-			this.wendu = this.weatherArr[index]
-			uni.setStorageSync('weather',JSON.stringify({
-				time:new Date().getHours(),
-				wendu:this.wendu
-			})) 
+			this.getWeather()
 		},
 		methods: {
+			getWeather(){
+				let weather = uni.getStorageSync('weather')
+				let currentHour = new Date().getHours()
+				if(weather && (currentHour - JSON.parse(weather).time<=1)){
+					return this.wendu = JSON.parse(uni.getStorageSync('weather')).wendu || '15℃'
+				}
+				let index =~~(Math.random()*(this.weatherArr.length))
+				this.wendu = this.weatherArr[index]
+				uni.setStorageSync('weather',JSON.stringify({
+					time:new Date().getHours(),
+					wendu:this.wendu
+				})) 
+			},
 			toHealthCode(){
 				uni.navigateTo({
 					url:"/pages/component/healthCode/healthCode"

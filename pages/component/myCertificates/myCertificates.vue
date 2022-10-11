@@ -46,7 +46,7 @@
 			}
 		},
 		mounted() {
-			let arr = JSON.parse(uni.getStorageSync('selectArr')) || []
+			let arr =(uni.getStorageSync('selectArr') && JSON.parse(uni.getStorageSync('selectArr')) )|| []
 			console.log(arr)
 			if (arr.length > 0) {
 				for (const item of arr) {
@@ -88,7 +88,7 @@
 	.more{
 		position: absolute;
 		top: 2rpx;
-		left: 16rpx;
+		left: 20rpx;
 		width: 36rpx;
 		height: 10rpx;
 		image {
@@ -99,7 +99,7 @@
 	.close {
 		position: absolute;
 		right: 20rpx;
-		top: 9rpx;
+		top: 11rpx;
 		width: 34rpx;
 		height: 34rpx;
 	
@@ -134,7 +134,8 @@
 		.right-info {
 			display: flex;
 			flex-direction: row;
-			// margin-top: -20rpx;
+			align-items: center;
+			margin-top: 16rpx;
 			margin-right: 6rpx;
 		}
 	}
@@ -156,7 +157,7 @@
 			display: flex;
 			justify-content: space-between;
 			.default {
-				margin-top: 70rpx;
+				margin-top: 114rpx;
 				width: 100vw;
 			}
 			.title {
