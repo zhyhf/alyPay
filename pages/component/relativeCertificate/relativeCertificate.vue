@@ -56,6 +56,9 @@
 						}
 						uni.setStorageSync('selectArr', JSON.stringify(selectArr))
 						setTimeout(() => {
+							// uni.navigateBack({
+							// 	delta:3
+							// })
 							uni.navigateTo({
 								url: `/pages/component/myCertificates/myCertificates?index=${that.index}`
 							})

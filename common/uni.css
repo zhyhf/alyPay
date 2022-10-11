@@ -378,6 +378,12 @@ radio-group label, checkbox-group label{
 	transform: scaleY(.5);
 	background-color: #c8c7cc;
 } */
+.uni-list-item__container:active{
+		background-color: #fff !important;
+	}
+.uni-list-item--hover {
+		background-color: #fff !important;
+	}
 .uni-list-cell {
 	position: relative;
 	display: flex;

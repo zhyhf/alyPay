@@ -421,7 +421,6 @@
 		position: fixed;
 		top: 0rpx;
 		left: -12rpx;
-
 		.add {
 			position: relative;
 			height: 100%;
@@ -430,15 +429,12 @@
 				width: 45rpx;
 				height: 45rpx;
 			}
-
 			.sys {
 				image {
 					// width: 10rpx;
 					// height: 10rpx;
 				}
 			}
-
-
 			.list {
 				position: absolute;
 				color: white !important;

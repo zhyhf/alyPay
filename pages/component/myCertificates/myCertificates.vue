@@ -2,19 +2,19 @@
 	<view class="wrapper">
 		<view class="top-header">
 			<view class="left-info">
-				<uni-icons type="left" color="black" size="26"></uni-icons>
+				<uni-icons type="left" color="black" size="26" @click="back"></uni-icons>
 				<view class="txt">
 					我的证照
 				</view>
 			</view>
 			<view class="right-info">
-				<view class="left-img">
+				<view class="left-img" @click="toLoading">
 					<image style="width: 56rpx; height: 56rpx;margin-right: 12rpx;" src="@/static/government/p1.png" mode=""></image>
 				</view>
 				<view class="right-img" style="position: relative;margin-right: 16rpx;">
 					<image style="width: 142rpx; height: 56rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
-					<view class="more" @click="jumpLoading">
+					<view class="more" @click="toLoading">
 						<image src="@/static/government/moreBlack.png"></image>
 					</view>
 					<view class="close" @click="back">
@@ -23,9 +23,12 @@
 				</view>
 			</view>
 		</view>
-		<view class="header">
+		<view class="header" v-if="index3 == 1 || index4 == 1">
 			<text class="title">全部证照</text>
 			<text class="manage" @click="jump">管理 ></text>
+		</view>
+		<view v-else class="header">
+			<image class="default" src="@/static/government/default.png" mode="widthFix"></image>
 		</view>
 		<!-- <image src="@/static/government/my-certificate.png" class="certificate"></image> -->
 		<image v-if="index3" src="@/static/government/shenfen-card.png" class="certificate"></image>
@@ -56,9 +59,14 @@
 			}
 		},
 		methods: {
-			back() {
+			toLoading(){
+				uni.navigateTo({
+					url:'/pages/component/loading/loading'
+				})
+			},
+			back(){
 				uni.navigateBack({
-					delta: 1
+					delta:1
 				})
 			},
 			jump() {
@@ -136,22 +144,26 @@
 		}
 	}
 	.header {
-		padding-top: var(--status-bar-height);
+		padding-top: calc(var(--status-bar-height) + 20rpx);
 	}
 
 	.wrapper {
 		width: 94vw;
-		height: 470rpx;
+		// height: 470rpx;
 		margin-top: 85rpx;
 		padding: 0 3vw;
 		position: relative;
 		height: 100vh;
+		background-color: #fff;
 
 		.header {
 			height: 60rpx;
 			display: flex;
 			justify-content: space-between;
-
+			.default {
+				margin-top: 70rpx;
+				width: 100vw;
+			}
 			.title {
 				font-size: 36rpx;
 				font-weight: bold;

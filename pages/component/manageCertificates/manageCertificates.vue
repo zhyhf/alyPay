@@ -2,22 +2,22 @@
 	<view style="min-height: 100vh;">
 		<view class="top-header">
 			<view class="left-info">
-				<uni-icons type="left" color="black" size="26"></uni-icons>
+				<uni-icons type="left" color="black" size="26" @click="back"></uni-icons>
 				<view class="txt">
 					添加证照
 				</view>
 			</view>
 			<view class="right-info">
 				<view class="left-img">
-					<image style="width: 56rpx; height: 56rpx;margin-right: 12rpx;" src="@/static/government/p1.png" mode=""></image>
+					<image @click="toLoading" style="width: 56rpx; height: 56rpx;margin-right: 12rpx;" src="@/static/government/p1.png" mode=""></image>
 				</view>
 				<view class="right-img" style="position: relative;margin-right: 16rpx;">
-					<image style="width: 142rpx; height: 56rpx;" class="bg" src="@/static/government/p2.png" mode="">
+					<image @click="toLoading" style="width: 142rpx; height: 56rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
-					<view class="more">
+					<view class="more" @click="toLoading">
 						<image src="@/static/government/moreBlack.png"></image>
 					</view>
-					<view class="close">
+					<view class="close" @click="back">
 						<image src="@/static/government/closeBlack.png"></image>
 					</view>
 				</view>
@@ -132,6 +132,16 @@
 			}
 		},
 		methods: {
+			back(){
+				uni.navigateBack({
+					delta:1
+				})
+			},
+			toLoading(){
+				uni.navigateTo({
+					url:'/pages/component/loading/loading'
+				})
+			},
 			show(index) {
 				this.index = index
 				if (index === 3 || index === 4) {
