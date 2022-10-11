@@ -1,10 +1,10 @@
 <template>
 	<view class="container">
 		<view class="header">
-			<uni-icons type="left" color="white" size="32"></uni-icons>
+			<uni-icons type="left" color="white" size="26" @click="back"></uni-icons>
 			<text class="title">余额</text>
-			<view class="header-right">
-				<uni-icons @click="toLoading" type="more-filled" size="24" color="white"></uni-icons>
+			<view class="header-right" @click="toLoading">
+				<uni-icons type="more-filled" size="24" color="white"></uni-icons>
 			</view>
 		</view>
 		<image src="@/static/mine/balance-bg.png" class="balance-bg" mode="widthFix"></image>
@@ -53,9 +53,14 @@
 			}
 		},
 		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				});
+			},
 			toLoading(){
 				uni.navigateTo({
-					url:"/pages/component/loading/loading"
+					url: `/pages/component/loading/loading?title=''`
 				})
 			},
 			jump(title) {
@@ -90,7 +95,7 @@
 		}
 		.title {
 			margin:0rpx 20rpx 0 20rpx;
-			font-size: 38rpx;
+			font-size: 37rpx;
 			font-weight: 500;
 		}
 		.header-right {
@@ -110,15 +115,16 @@
 	width: 100vw;
 	position: relative;
 	.balance-bg {
-		// margin-top: 88rpx;
 		width: 100vw;
+		height: 694rpx !important;
 	}
 	.balance {
 		width: 95vw;
 		padding: 10rpx 2.5vw;
+		padding-top: 40rpx;
 		border-radius: 16rpx;
 		position: absolute;
-		top: 108rpx;
+		top: 146rpx;
 		.my-balance {
 			position: relative;
 			.balance-img {
