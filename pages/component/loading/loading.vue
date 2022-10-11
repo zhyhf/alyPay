@@ -143,7 +143,7 @@
 			.application-right {
 				position: absolute;
 				right: 4rpx;
-				top: 44rpx;
+				top: 35rpx;
 				width: 15vw;
 			
 				.more {

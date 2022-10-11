@@ -576,18 +576,9 @@
 		}, 
 		{
 			"path": "pages/component/mine-relative/balance/balance",
-			"style": {
-				"navigationBarTitleText": "余额",
-				"navigationBarTextStyle": "white",
-				"navigationBarBackgroundColor": "#3476FE",
-				"enablePullDownRefresh": false,
-				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"type": "menu"
-						}]
-					}
-				}
+			"style": {	
+				"enablePullDownRefresh": false
+				
 			}
 
 		}, {

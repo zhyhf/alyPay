@@ -1,5 +1,12 @@
 <template>
 	<view class="container">
+		<view class="header">
+			<uni-icons type="left" color="white" size="32"></uni-icons>
+			<text class="title">余额</text>
+			<view class="header-right">
+				<uni-icons @click="toLoading" type="more-filled" size="24" color="white"></uni-icons>
+			</view>
+		</view>
 		<image src="@/static/mine/balance-bg.png" class="balance-bg" mode="widthFix"></image>
 		<view class="balance">
 			<view class="my-balance">
@@ -46,6 +53,11 @@
 			}
 		},
 		methods: {
+			toLoading(){
+				uni.navigateTo({
+					url:"/pages/component/loading/loading"
+				})
+			},
 			jump(title) {
 				uni.navigateTo({
 					url: `/pages/component/loading/loading?title=${title}`
@@ -56,10 +68,49 @@
 </script>
 
 <style scoped lang="scss">
+	.header {
+		z-index:99;
+		width: 100%;
+		position: fixed;
+		left: 0;
+		top: var(--status-bar-height);
+		display: flex;
+		// justify-content: center;
+		align-items: center;
+		background-color: #3476FE;
+		padding-bottom: 20rpx;
+		color: white;
+		.back {
+			// position: absolute;
+			// left: 20rpx;
+			// top: 10rpx;
+			margin:10rpx 20rpx 0 20rpx;
+			width: 34rpx;
+			height: 34rpx;
+		}
+		.title {
+			margin:0rpx 20rpx 0 20rpx;
+			font-size: 38rpx;
+			font-weight: 500;
+		}
+		.header-right {
+			position: absolute;
+			right: 20rpx;
+			top: 11rpx;
+			.right-text {
+				color: #323232;
+				margin-right: 20rpx;
+				// margin-top: 10rpx;
+				font-size: 34rpx;position: relative;
+				top: 0rpx;
+			}
+		}
+	}
 .container {
 	width: 100vw;
 	position: relative;
 	.balance-bg {
+		// margin-top: 88rpx;
 		width: 100vw;
 	}
 	.balance {
@@ -67,7 +118,7 @@
 		padding: 10rpx 2.5vw;
 		border-radius: 16rpx;
 		position: absolute;
-		top: 0;
+		top: 108rpx;
 		.my-balance {
 			position: relative;
 			.balance-img {

@@ -8,7 +8,7 @@
 					<input type="text" class="search-input">
 					<image src="@/static/image/search-icon.png" class="search-icon"></image>
 				</view>
-				<image src="@/static/mine/more.png" class="img right"></image>
+				<uni-icons @click="toLoading" style="margin-right: 20rpx;" class="right" type="more-filled" size="24" color="black"></uni-icons>
 			</view>
 			<view class="tabs">
 				<text
@@ -44,7 +44,7 @@
 					<text class="analysis" @click="jump">收支分析 ></text>
 				</view>
 			</view>
-			<image v-show="activeIndex === 0" src="@/static/mine/bill-detail-item.png" style="width: 100%;" mode="widthFix"></image>
+			<image @click="toLoading" v-show="activeIndex === 0" src="@/static/mine/bill-detail-item.png" style="width: 100%;" mode="widthFix"></image>
 		</scroll-view>
 		<view class="bottom-tab">
 			<image :src="bottomIcon1" class="bottom-icon" @click="click1"></image>
@@ -84,6 +84,11 @@
 			},
 			back() {
 				uni.navigateBack()
+			},
+			toLoading(){
+				uni.navigateTo({
+					url:'/pages/component/loading/loading'
+				})
 			},
 			jump() {
 				uni.navigateTo({
@@ -154,6 +159,7 @@
 						background-color: #F5F5F5;
 						border-radius: 10rpx;
 						height: 60rpx;
+						border: 1rpx solid #2E76D3;
 					}
 					.search-icon {
 						width: 34rpx;
@@ -184,7 +190,7 @@
 					}
 				}
 				.tab-active {
-					color: #213CC9;
+					color: #2E76D3;
 					font-weight: 500;
 				}
 			}
