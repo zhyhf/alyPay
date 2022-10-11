@@ -177,12 +177,20 @@
 						img: require('@/static/government/d.png'),
 					},
 					{
-							img: require('@/static/government/exam.png'),
-							title: '教育考试服务专区'
+							img: require('@/static/government/e.png'),
+							
 						},
 						{
-							img: require('@/static/government/small-enterprise.png'),
-							title: '小微企业和个体工商户服务专栏'
+							img: require('@/static/government/f.png'),
+							
+						},
+						{
+							img: require('@/static/government/g.png'),
+							
+						},
+						{
+							img: require('@/static/government/h.png'),
+						
 						},
 						
 				],
@@ -273,6 +281,7 @@
 <style lang="scss" scoped>
 	.swiper-bottom {
 		position: relative;
+		background-color: #fff;
 	}
 	.status_bar {
 		position: relative;

@@ -20,7 +20,7 @@
 			</view>
 		</view>
 		<!-- <image src="/static/mine/pro1.png" mode="" class="img"></image> -->
-		<image src="../../../../static/mine/user-protect.png" class="img"></image>
+		<image @click="toLoading" src="../../../../static/mine/user-protect.png" class="img"></image>
 	</view>
 </template>
 
@@ -34,7 +34,11 @@
 			}
 		},
 		methods: {
-
+			toLoading(){
+				uni.navigateTo({
+					url:'/pages/component/loading/loading'
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1

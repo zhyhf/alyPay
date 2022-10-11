@@ -31,14 +31,14 @@
 			<text class="category-title">常用证件</text>
 		</view>
 		<uni-list>
-			<uni-list-item v-for="(item, index) in casualList" style="height: 65rpx;" class="list" :title="item.title"
+			<uni-list-item v-for="(item, index) in casualList" style="height: 110rpx;line-height: 110rpx;margin-bottom: 0 !important;" class="list" :title="item.title"
 				showArrow link :thumb="item.url" thumb-size="medium" @click="show(index)" />
 		</uni-list>
 		<view class="category-wrapper">
 			<text class="category-title">交通行驶</text>
 		</view>
 		<uni-list>
-			<uni-list-item style="height: 74rpx;" class="list" v-for="(item, index) in trafficList" :title="item.title"
+			<uni-list-item style="height: 110rpx;line-height: 110rpx; margin-bottom: 0 !important;" class="list" v-for="(item, index) in trafficList" :title="item.title"
 				to="/pages/me/copyright/copyright" link :thumb="item.url" thumb-size="medium" @click="show" />
 		</uni-list>
 		<uni-popup ref="popup" background-color="#fff">
