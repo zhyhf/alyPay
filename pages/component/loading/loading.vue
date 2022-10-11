@@ -75,27 +75,27 @@
 			display: flex;
 			flex-direction: row;
 		}
-		.status_bar {
-			height: var(--status-bar-height);
-			width: 100%;
-			background-color: #fbfbfb;
-			position: fixed;
-			left: 0;
-			z-index: 99;
-		}
+		// .status_bar {
+		// 	height: var(--status-bar-height);
+		// 	width: 100%;
+		// 	background-color: #fbfbfb;
+		// 	position: fixed;
+		// 	left: 0;
+		// 	z-index: 99;
+		// }
 		.header {
 			// position: fixed;
 			// top: 0;
 			// left: 0;
 			width: 100vw;
-			height: 130rpx;
+			height: 150rpx !important;
 			z-index: 999999;
 			color: #333;
 			font-size: 32rpx;
 			font-weight: 500;
 			letter-spacing: 6rpx;
 			padding: 30rpx;
-			padding-top: calc(var(--status-bar-height) + 25rpx);
+			padding-top: calc(var(--status-bar-height) + 20rpx);
 			box-sizing: border-box;
 			background-color: #fbfbfb;
 			-webkit-font-smoothing: antialiased;
