@@ -104,7 +104,7 @@
 	}
 	.more{
 		position: absolute;
-		top: 18rpx;
+		top: 22rpx;
 		left: 16rpx;
 		width: 40rpx;
 		height: 10rpx;
