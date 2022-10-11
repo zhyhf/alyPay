@@ -10,7 +10,7 @@
 						</view>
 					</view>
 					<view class="b-text">
-						{{weather}} {{wendu}}℃
+						{{weather}} {{wendu}}
 					</view>
 				</view>
 				<view class="text-input">
@@ -192,21 +192,24 @@
 		onShow() {
 			this.city = uni.getStorageSync('city') || this.city
 			this.showList = false
-			uni.request({
-				url: 'http://wthrcdn.etouch.cn/weather_mini?city=南京',
-				method: 'GET',
-				success: res => {
-					this.weather = res.data.data.forecast[0].type
-					this.wendu = res.data.data.wendu
-				},
-				fail: () => {
-					this.openmsg("警告", "天气接口获取失败")
-				},
-				complete: () => {}
-			});
+			// uni.request({
+			// 	url: 'http://wthrcdn.etouch.cn/weather_mini?city=南京',
+			// 	method: 'GET',
+			// 	success: res => {
+			// 		this.weather = res.data.data.forecast[0].type
+			// 		this.wendu = res.data.data.wendu
+			// 		console.log(this.wendu)
+			// 	},
+			// 	fail: () => {
+			// 		// this.openmsg("警告", "天气接口获取失败")
+			// 	},
+			// 	complete: () => {}
+			// });
+			
 		},
 		data() {
 			return {
+				weatherArr:['10℃','11℃','13℃','14℃','15℃','16℃','17℃','18℃','19℃','20℃'],
 				wendu: '25',
 				weather: '多云',
 				close: require("@/static/addControl/close.png"),
@@ -218,7 +221,15 @@
 		},
 		mounted() {
 			this.searchValue = ''
-			uni.clearStorage()
+			let weather = uni.getStorageSync('weather')
+			let currentHour = new Date().getHours()
+			if(weather && (currentHour - JSON.parse(weather).time<1))return
+			let index =~~(Math.random()*(this.weatherArr.length))
+			this.wendu = this.weatherArr[index]
+			uni.setStorageSync('weather',JSON.stringify({
+				time:new Date().getHours(),
+				wendu:this.wendu
+			})) 
 		},
 		methods: {
 			toHealthCode(){

@@ -9,7 +9,7 @@
 			</view>
 			<view class="degree" v-show="showData">
 				<view class="left">
-					<text class="left-degree">22°</text>
+					<text class="left-degree">{{wendu}}</text>
 					<image src="@/static/image/cloudy.png" class="left-weather"></image>
 					<text class="weather-detail"> {{'多云 空气 优'}}</text>
 				</view>
@@ -66,6 +66,7 @@
 	export default {
 		data() {
 			return {
+				wendu:'',
 				scrollTop: 0,
 				scrollY: false,
 				inputStyle: {
@@ -101,23 +102,23 @@
 				futureWeather: [
 					{
 						title: '今天',
-						degree: '27/19°'
+						degree: '20/10°'
 					},
 					{
 						title: '',
-						degree: '24/18°'
+						degree: '21/8°'
 					},
 					{
 						title: '',
-						degree: '28/21°'
+						degree: '22/9°'
 					},
 					{
 						title: '',
-						degree: '30/23°'
+						degree: '20/10°'
 					},
 					{
 						title: '',
-						degree: '33/25°'
+						degree: '21/7°'
 					}
 				]
 			};
@@ -129,6 +130,10 @@
 				day = (day + 1) % 7
 				this.$set(this.futureWeather[i], 'title', weeks[day])
 			}
+			this.wendu = JSON.parse(uni.getStorageSync('weather')).wendu || '15℃'
+		},
+		onShow() {
+			this.wendu = JSON.parse(uni.getStorageSync('weather')).wendu || '15℃'
 		},
 		watch: {
 			scrollTop(val) {

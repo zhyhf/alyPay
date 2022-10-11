@@ -134,7 +134,7 @@
 		.right-info {
 			display: flex;
 			flex-direction: row;
-			margin-top: -20rpx;
+			// margin-top: -20rpx;
 			margin-right: 6rpx;
 		}
 	}
