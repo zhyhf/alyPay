@@ -14,7 +14,8 @@
 					</view>
 				</view>
 				<view class="text-input">
-					<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons>
+					<image src="@/static/image/search-icon.png"  class="searchTop"></image>
+				<!-- 	<uni-icons class="search" type="search" size="22" color="#ccc"></uni-icons> -->
 					<input @input="changValue" style="padding-right: 40rpx;" @click="focus" />
 					<view class="btn" @click="search">
 						搜索
@@ -358,7 +359,6 @@
 		padding: 0;
 		margin: 0;
 	}
-
 	.bottom {
 		display: flex;
 		flex-direction: column;
@@ -546,10 +546,13 @@
 			border-radius: 12rpx;
 			flex: 5;
 
-			.search {
+			.searchTop {
 				position: absolute;
 				left: 18rpx;
-				top: 13rpx;
+				top: 17rpx;
+				width: 32rpx;
+				height: 32rpx;
+				color: #ccc;
 			}
 
 			.btn {
