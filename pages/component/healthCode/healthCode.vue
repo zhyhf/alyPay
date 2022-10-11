@@ -2,10 +2,7 @@
 	<view class="healthCode-container">
 		<view class="top-title">
 			健康码 · 南京
-			<view class="right-icon">
-				<!-- <view class="application">
-					<image src="@/static/government/tihuan.png" mode=""></image>
-				</view> -->
+		<!-- 	<view class="right-icon">
 				<view class="application-right">
 					<image class="bg" src="@/static/government/bg.png" mode="widthFix"></image>
 					<view class="more" @click="toLoading">
@@ -14,6 +11,17 @@
 					<view class="shuxian"></view>
 					<view class="close" @click="back">
 						<image src="@/static/government/close.png" @click='back' mode="widthFix"></image>
+					</view>
+				</view>
+			</view> -->
+			<view class="right-icon">
+				<view class="application-right" @click="back">
+					<image class="bg" src="@/static/government/bg1.png" mode=""></image>
+					<view class="more">
+						<image src="@/static/government/more.png" mode=""></image>
+					</view>
+					<view class="close">
+						<image src="@/static/government/close.png" mode=""></image>
 					</view>
 				</view>
 			</view>
@@ -139,15 +147,10 @@
 	}
 	
 	.application-right {
-		position: absolute;
-		right: 2rpx;
-		top: 35rpx;
-		width: 19vw;
-	
 		.more {
 			position: absolute;
-			right: 84rpx;
-			top: -8rpx;
+			left: 25rpx;
+			top: -3rpx;
 			width: 40rpx;
 			height: 10rpx;
 	
@@ -156,21 +159,12 @@
 				height: 100%;
 			}
 		}
-		.shuxian{
-			position: absolute;
-			right: 70rpx;
-			top: 12rpx;
-			width: 0.05px;
-			height: 30rpx;
-			background-color: #efeff4;
-		}
-	
 		.close {
 			position: absolute;
-			right: 18rpx;
-			top: 8rpx;
-			width: 36.5rpx;
-			height: 36rpx;
+			left: 110rpx;
+			top: 14rpx;
+			width: 40rpx;
+			height: 40rpx;
 	
 			image {
 				width: 100%;
@@ -179,8 +173,8 @@
 		}
 	
 		.bg {
-			width: 150rpx;
-			height: 60rpx;
+			width: 170rpx;
+			height: 66rpx;
 		}
 	}
 	.top-title {
@@ -203,9 +197,9 @@
 	
 		.right-icon {
 			position: absolute;
-			top: 30rpx;
-			right: 16rpx;
-			width: 26vw;
+			top: 65rpx;
+			right: 15rpx;
+			width: 24vw;
 		}
 	}
 </style>

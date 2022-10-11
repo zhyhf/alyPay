@@ -352,9 +352,9 @@
 			font-size: 24rpx;
 		}
 		image {
-			margin: 0 19rpx;
+			margin: 0 26rpx;
 			margin-bottom: 6rpx;
-			width: 70rpx;
+			width: 66rpx;
 			// height: 106rpx;
 			// border: 1px solid red;
 		}
