@@ -774,8 +774,16 @@
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
+        },
+		{
+		    "path" : "pages/component/xingchenma/xingchenma",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
         ,{
             "path" : "pages/component/codePage/codePage",
             "style" :                                                                                    
