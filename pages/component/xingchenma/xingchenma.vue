@@ -34,11 +34,11 @@
 							<view style="display: flex;flex-flow: column;justify-content: center">
 								<view><text style="text-align: center;margin-top: 10rpx;font-size: 32rpx;">186****2731的动态行程卡</text></view>
 								<view><text style="color: #959595;text-align: center;margin-top: 35rpx;">更新于:  <text>{{date}}</text> </text></view>
-								<view><image src="@/static/xingchen.gif" mode="widthFix" style="width: 60%;margin-top: 34rpx;"></image></view>
-								<view style="margin-bottom: 10rpx;"><text style="color: #959595;">您于前7天内到达或途径：
-								  <text style="color:black">江苏省南京市</text></text></view>
+								<view><image src="@/static/xingchen.gif" mode="widthFix" style="width: 70%;margin-top: 34rpx;"></image></view>
 							</view>
 						</view>
+						<view style="position: absolute;bottom: 40rpx;"><text style="color: #959595;">您于前7天内到达或途径：
+						  <text style="color:black">江苏省南京市</text></text></view>
 				  </view>
 			 </view>
 		</view>

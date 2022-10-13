@@ -94,7 +94,7 @@
 					</view>
 				</view>
 				<view class="through-card">
-					<image src="@/static/healthCode/3.png" mode="widthFix"></image>
+					<image src="@/static/healthCode/3.png" mode="widthFix" @click="handleClick"></image>
 					<image src="@/static/healthCode/4.png" mode="widthFix"></image>
 					<image src="@/static/healthCode/5.png" mode="widthFix"></image>
 				</view>
@@ -131,6 +131,11 @@
 			},1000)
 		},
 		methods:{
+			handleClick(){
+				uni.navigateTo({
+					url:"/pages/component/xingchenma/xingchenma"
+				})
+			},
 			format(num){
 				if(num*1<10)
 				return '0'+num
