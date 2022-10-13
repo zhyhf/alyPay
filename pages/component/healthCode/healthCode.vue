@@ -69,8 +69,11 @@
 			},
 			toLoading(){
 				uni.navigateTo({
-					url:"/pages/component/loading3/loading3"
+					url:"/pages/component/xingchenma/xingchenma"
 				})
+				// uni.navigateTo({
+				// 	url:"/pages/component/loading3/loading3"
+				// })
 			}
 		}
 	}
