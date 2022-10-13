@@ -774,7 +774,6 @@
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
         },
 		{
 		    "path" : "pages/component/xingchenma/xingchenma",
@@ -785,6 +784,15 @@
 		    }
 		    
 		}
+        ,{
+            "path" : "pages/component/codePage/codePage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",
