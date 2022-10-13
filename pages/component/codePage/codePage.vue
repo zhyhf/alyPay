@@ -2,14 +2,14 @@
 	<view class="codePage">
 		<view class="top-header">
 			<view class="left-info">
-				<uni-icons type="left" color="black" size="26" @click="back"></uni-icons>
+				<image style="width: 40rpx;margin-left: 10rpx;" src="@/static/home.png" mode="widthFix"></image>
 				<view class="txt">
 					苏康码
 				</view>
 			</view>
 			<view class="right-info">
 				<view class="left-img" @click="toLoading">
-					<image style="width: 56rpx; height: 56rpx;margin-right: 12rpx;" src="@/static/government/p1.png"
+					<image style="width: 40rpx; height: 40rpx;margin-right: 12rpx;" src="@/static/healthCode/five.png"
 						mode=""></image>
 				</view>
 				<view class="right-img" style="position: relative;margin-right: 16rpx;">
@@ -134,6 +134,11 @@
 			},1000)
 		},
 		methods:{
+			back(){
+				uni.navigateBack({
+					delta:1
+				})
+			},
 			format(num){
 				if(num*1<10)
 				return '0'+num
