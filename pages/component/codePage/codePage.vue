@@ -78,7 +78,10 @@
 						<text style="color: #3AC73E;font-weight: 700;" class="right-t">阴性</text>
 					</view>
 					<view class="b-pic">
-						
+						<view class="pic-t">
+							
+						数据来源：江苏省卫生健康委员会，反映近30天内最近一次核酸检测情况，数据在不断汇聚和完善中。
+						</view>
 					</view>
 				</view>
 				<view class="b-btn">
@@ -175,6 +178,19 @@
 			image {
 				margin-left: -10rpx;
 				width: 103%;
+			}
+		}
+		.b-pic {
+			padding: 20rpx 10rpx;
+			// margin-top:20rpx ;
+			// width: 98%;
+			
+			color: #959595;
+			box-sizing: border-box;
+			.pic-t {
+				padding-top: 20rpx;
+				width: 100%;
+				border-top: 1rpx solid rgba(0, 0, 0, .2);
 			}
 		}
 		.top-info {
