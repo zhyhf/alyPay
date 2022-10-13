@@ -2,7 +2,7 @@
 	<view class="codePage">
 		<view class="top-header">
 			<view class="left-info">
-				<image style="width: 40rpx;margin-left: 10rpx;" src="@/static/home.png" mode="widthFix"></image>
+				<image style="width: 38rpx;margin: 0 16rpx 0 30rpx;" src="@/static/healthCode/home.png" mode="widthFix"></image>
 				<view class="txt">
 					苏康码
 				</view>
@@ -116,6 +116,7 @@
 				min:44,
 				seconds:11,
 				startX:0,
+				startY:0,
 				hDay:11,
 				style:{
 					transform: 'translateX(-100vw)'
@@ -153,10 +154,14 @@
 			sliderStart(e){
 				// if(e.touches.length == 1){
 					this.startX = e.touches[0].clientX
+					this.startY = e.touches[0].clientY
 				// }
 			},
 			sliderEnd(e){
 				let endx = e.changedTouches[0].clientX
+				let endy = e.changedTouches[0].clientY
+				let diffY =endy-this.startY
+				if(Math.abs(diffY)>30) return
 				let diff = endx-this.startX
 				if(Math.abs(diff)>10){
 					if(diff>0){
