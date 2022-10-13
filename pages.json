@@ -776,6 +776,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/component/codePage/codePage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			"root": "pages/API",

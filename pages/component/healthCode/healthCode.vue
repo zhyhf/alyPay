@@ -41,7 +41,7 @@
 			<view class="main-container">
 				<image :src="imageList[currentIndex]" mode="widthFix"></image>
 			</view>
-			<button @click="toLoading" class="btn">立即查看</button>
+			<button @click="toCodePage" class="btn">立即查看</button>
 		</view>
 	</view>
 </template>
@@ -62,6 +62,11 @@
 			};
 		},
 		methods:{
+			toCodePage(){
+				uni.navigateTo({
+					url:'/pages/component/codePage/codePage'
+				})
+			},
 			back(){
 				uni.switchTab({
 					url:'/pages/tabBar/indexPage/indexPage'
