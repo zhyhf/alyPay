@@ -15,7 +15,7 @@
 					<image style="width: 130rpx; height: 50rpx;" class="bg" src="@/static/government/p2.png" mode="">
 					</image>
 					<view class="more" @click="jump">
-						<image style="width: 38rpx; height: 8rpx;" class="imageMore" src="@/static/government/moreBlack.png"></image>
+						<image  class="imageMore" src="@/static/government/moreBlack.png"></image>
 					</view>
 					<view class="close" @click="back">
 						<image style="width: 34rpx; height: 34rpx;" class="imageClose" src="@/static/government/closeBlack.png"></image>
@@ -32,9 +32,9 @@
 					   <image src="@/static/xinchengCard.png" mode="widthFix"></image>
 				       	<view style="position: absolute;top: 90rpx;">
 							<view style="display: flex;flex-flow: column;justify-content: center">
-								<view><text style="text-align: center;margin-top: 10rpx;font-size: 32rpx;">186****2731的动态行程卡</text></view>
-								<view><text style="color: #959595;text-align: center;margin-top: 35rpx;">更新于:  <text>{{date}}</text> </text></view>
-								<view><image src="@/static/xingchen.gif" mode="widthFix" style="width: 70%;margin-top: 34rpx;"></image></view>
+								<view><text style="text-align: center;margin-top: 20rpx;font-size: 32rpx;">186****2731的动态行程卡</text></view>
+								<view><text style="color: #959595;text-align: center;margin-top: 40rpx;">更新于:  <text>{{date}}</text> </text></view>
+								<view><image src="@/static/xingchen.gif" mode="widthFix" style="width: 90%;margin-top: 25rpx;"></image></view>
 							</view>
 						</view>
 						<view style="position: absolute;bottom: 40rpx;"><text style="color: #959595;">您于前7天内到达或途径：
@@ -117,7 +117,7 @@
 	}
 	.more{
 		position: absolute;
-		top: 6rpx;
+		top: 3rpx;
 		left: 16rpx;
 		width: 40rpx;
 		height: 10rpx;
