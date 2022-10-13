@@ -53,8 +53,8 @@
 			<view class="middle">
 				<view class="middle-code">
 					<view class="top-time">
-						<text>10-13</text>
-						<text class="time">10:44:11</text>
+						<text>{{month}}-{{day}}</text>
+						<text class="time">{{hour}}:{{min}}:{{seconds}}</text>
 					</view>
 					<view class="code-img">
 						<image src="@/static/healthCode/hcode.png" mode="widthFix"></image>
@@ -62,16 +62,43 @@
 				</view>
 			</view>
 		</view>
-		<view class="b-card">
-			<view class="img-box">
-				<image src="@/static/healthCode/1.png" mode="widthFix"></image>
-				<image src="@/static/healthCode/2.png" mode="widthFix"></image>
+		<view class="b-card" :style="style" >
+			<view class="b-card-left" @touchend="sliderEnd" @touchstart="sliderStart">
+				<view class="top-info">
+					<view class="step">
+						<text class="left-t">采样点：</text>
+						<text class="right-t">新城总部大厦</text>
+					</view>
+					<view class="step">
+						<text class="left-t">检测时间：</text>
+						<text class="right-t">2022-10-{{hDay}} 16:20:58</text>
+					</view>
+					<view class="step">
+						<text class="left-t">检测结果：</text>
+						<text style="color: #3AC73E;font-weight: 700;" class="right-t">阴性</text>
+					</view>
+					<view class="b-pic">
+						
+					</view>
+				</view>
+				<view class="b-btn">
+					<image style="margin-top: 10rpx;" src="@/static/healthCode/10.png" mode="widthFix"></image>
+					<image src="@/static/healthCode/19.png" mode="widthFix"></image>
+				</view>
 			</view>
-		</view>
-		<view class="through-card">
-			<image src="@/static/healthCode/3.png" mode="widthFix"></image>
-			<image src="@/static/healthCode/4.png" mode="widthFix"></image>
-			<image src="@/static/healthCode/5.png" mode="widthFix"></image>
+			<view class="" @touchend="sliderEnd" @touchstart="sliderStart">
+				<view class="b-card-right">
+					<view class="img-box">
+						<image src="@/static/healthCode/1.png" mode="widthFix"></image>
+						<image src="@/static/healthCode/2.png" mode="widthFix"></image>
+					</view>
+				</view>
+				<view class="through-card">
+					<image src="@/static/healthCode/3.png" mode="widthFix"></image>
+					<image src="@/static/healthCode/4.png" mode="widthFix"></image>
+					<image src="@/static/healthCode/5.png" mode="widthFix"></image>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -80,35 +107,122 @@
 	export default {
 		data() {
 			return {
-
+				month:10,
+				day:13,
+				hour:10,
+				min:44,
+				seconds:11,
+				startX:0,
+				hDay:11,
+				style:{
+					transform: 'translateX(-100vw)'
+				}
 			};
+		},
+		mounted() {
+			setInterval(()=>{
+				let date = new Date()
+				this.month = this.format(date.getMonth()+1)
+				this.day = this.format(date.getDate())
+				this.hour = this.format(date.getHours())
+				this.min = this.format(date.getMinutes())
+				this.seconds = this.format(date.getSeconds())
+				this.hDay = new Date(date.getTime() - 24* 60 * 60 * 1000).getDate()
+			},1000)
+		},
+		methods:{
+			format(num){
+				if(num*1<10)
+				return '0'+num
+				else 
+				return num
+			},
+			sliderStart(e){
+				// if(e.touches.length == 1){
+					this.startX = e.touches[0].clientX
+				// }
+			},
+			sliderEnd(e){
+				let endx = e.changedTouches[0].clientX
+				let diff = endx-this.startX
+				if(Math.abs(diff)>10){
+					if(diff>0){
+						this.style = {
+							transform: 'translateX(0)'
+						}
+					}else {
+						this.style = {
+							transform: 'translateX(-100vw)'
+						}
+					}
+				}
+			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	page {
-	background-color: #EDEDED !important;
+		background-color: #EDEDED !important;
+	}
+	.b-card-left {
+		width: 100vw;
+		padding:0 20rpx;
+		box-sizing: border-box;
+		.b-btn {
+			// padding-left: ;
+			width: 100%;
+			image {
+				margin-left: -10rpx;
+				width: 103%;
+			}
+		}
+		.top-info {
+			width: 100%;
+			border-radius: 16rpx;
+			background-color: #fff;
+			.step {
+				line-height: 60rpx;
+			}
+			.left-t {
+				padding-left: 16rpx;
+				color: #959595;
+				font-size: 32rpx;
+			}
+			.right-t {
+				font-size: 34rpx;
+			}
+		}
 	}
 	.through-card {
+		display: flex;
+		flex-direction: column;
 		width: 100vw;
 		padding: 0 10rpx;
 		box-sizing: border-box;
+
 		image {
-			width: 100%;
+			// flex: 1;
+			width: 100% !important;
 		}
 	}
-	.b-card {
+	.b-card-right {
 		width: 100vw;
 		padding: 0 6rpx;
 		box-sizing: border-box;
-		
+	}
+	.b-card {
+		display: flex;
+		width: 200vw;		
+		box-sizing: border-box;
+		transition: all .3s;
 		.img-box {
 			display: flex;
 			justify-content: space-between;
 			width: 100%;
 			// background-color: #fff;
 		}
+
 		image {
 			width: 370rpx;
 		}
