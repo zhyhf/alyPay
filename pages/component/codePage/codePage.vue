@@ -33,7 +33,7 @@
 						<text class="text">苏康码·绿码</text>
 					</view>
 					<view class="b-text">
-						186********2731
+						186****2731
 					</view>
 
 				</view>
@@ -43,7 +43,7 @@
 					</view>
 
 					<view class="b-text">
-						<text>12412414</text>
+						<text>130***********2834</text>
 					</view>
 				</view>
 			</view>

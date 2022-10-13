@@ -30,19 +30,21 @@
 				  <view style="margin-top: 20rpx;"><text style="color: #fff;font-size: 30rpx;">疫情防控, 人人有责</text></view>
 			      <view style="position: relative;margin-top: 20rpx;display: flex;justify-content: center;">
 					   <image src="@/static/xinchengCard.png" mode="widthFix"></image>
-				       	<view style="position: absolute;top: 90rpx;">
+				       	<view style="position: absolute;top: 105rpx;">
 							<view style="display: flex;flex-flow: column;justify-content: center">
-								<view><text style="text-align: center;margin-top: 20rpx;font-size: 32rpx;">186****2731的动态行程卡</text></view>
-								<view><text style="color: #959595;text-align: center;margin-top: 40rpx;">更新于:  <text>{{date}}</text> </text></view>
-								<view><image src="@/static/xingchen.gif" mode="widthFix" style="width: 90%;margin-top: 25rpx;"></image></view>
+								<view><text style="text-align: center;font-size: 32rpx;">186****2731的动态行程卡</text></view>
+								<view style="text-align: center;margin-top: 25rpx;"><text style="color: #959595;">更新于: <text> </text><text>{{date}}</text></text></view>
+								<view><image src="@/static/xingchen.gif" mode="widthFix" style="width: 85%;margin-top: 22rpx;"></image></view>
 							</view>
 						</view>
-						<view style="position: absolute;bottom: 40rpx;"><text style="color: #959595;">您于前7天内到达或途径：
+						<view style="position: absolute;bottom: 45rpx;left: 44rpx"><text style="color: #959595;">您于前7天内到达或途径：
 						  <text style="color:black">江苏省南京市</text></text></view>
 				  </view>
 			 </view>
 		</view>
-		<view style="position: absolute;bottom: 30%;text-align: center;left: 10%;color: #fff;"><text style="font-size: 22rpx;">结果包含您在7天内到访的国家（地区）与停留4小时以上的国内城市色卡仅对到访地作提醒，不关联健康状况</text></view>
+		<view style="position: absolute;bottom: 30%;text-align: center;left: 10%;color: #fff;"><text style="font-size: 22rpx;">结果包含您在7天内到访的国家（地区）与停留4小时以上的国内城市
+		<view><text>色卡仅对到访地作提醒，不关联健康状况</text></view>
+		</text></view>
 	</view>
 </template>
 
