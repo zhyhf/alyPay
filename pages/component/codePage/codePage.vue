@@ -71,16 +71,15 @@
 					</view>
 					<view class="step">
 						<text class="left-t">检测时间：</text>
-						<text class="right-t">2022-10-{{hDay}} 16:20:58</text>
+						<text class="right-t">{{hYear}}-{{hMonth}}-{{hDay}} 16:20:58</text>
 					</view>
 					<view class="step">
 						<text class="left-t">检测结果：</text>
 						<text style="color: #3AC73E;font-weight: 700;" class="right-t">阴性</text>
 					</view>
 					<view class="b-pic">
-						<view class="pic-t">
-							
-						数据来源：江苏省卫生健康委员会，反映近30天内最近一次核酸检测情况，数据在不断汇聚和完善中。
+						<view class="pic-t">							
+						  数据来源：江苏省卫生健康委员会，反映近30天内最近一次核酸检测情况，数据在不断汇聚和完善中。
 						</view>
 					</view>
 				</view>
@@ -118,6 +117,8 @@
 				startX:0,
 				startY:0,
 				hDay:11,
+				hYear:2022,
+				hMonth:10,
 				style:{
 					transform: 'translateX(-100vw)'
 				}
@@ -131,7 +132,10 @@
 				this.hour = this.format(date.getHours())
 				this.min = this.format(date.getMinutes())
 				this.seconds = this.format(date.getSeconds())
-				this.hDay = new Date(date.getTime() - 24* 60 * 60 * 1000).getDate()
+				let preDate = new Date(date.getTime() - 24* 60 * 60 * 1000)
+				this.hDay = preDate.getDate()
+				this.hYear = preDate.getFullYear()
+				this.hMonth = preDate.getMonth()+1
 			},1000)
 		},
 		methods:{
