@@ -42,9 +42,9 @@
 				  </view>
 			 </view>
 		</view>
-		<view style="position: absolute;bottom: 30%;text-align: center;left: 10%;color: #fff;"><text style="font-size: 22rpx;">结果包含您在7天内到访的国家（地区）与停留4小时以上的国内城市
+	<!-- 	<view style="position: absolute;bottom: 27.2vh;text-align: center;left: 10%;color: #fff;"><text style="font-size: 21rpx;">结果包含您在7天内到访的国家（地区）与停留4小时以上的国内城市
 		<view><text>色卡仅对到访地作提醒，不关联健康状况</text></view>
-		</text></view>
+		</text></view> -->
 	</view>
 </template>
 
